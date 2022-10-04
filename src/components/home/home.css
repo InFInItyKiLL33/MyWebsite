@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.homepage {
+    margin: 0;
+}
+
+.backgroundImage {
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    object-fit: cover;
+    filter: brightness(0.3);
+    position: fixed;
+}
+
+.appMain {
+    padding-top: 12.5vh;
+}
+
+.pastExperience {
+    font-style: italic;
+    font-size: 0.75em;
+    font-weight: 400;
+    right: 0;
+    margin: -35px calc(2.5vw + 270px) 0px 0px;
+    color: rgb(255, 255, 255);
+    opacity: 0.4;
+    z-index: -1;
+    position: absolute;
+    animation: 1.5s fadeDelayed2 ease-in, bounceText 3.6s infinite;
+}
+
+.squigglyArrow {
+    scale: 0.25;
+    rotate: -20deg;
+    position: absolute;
+    right: 0;
+    margin: -250px calc(2.5vw + 145px) 0px 72.5vw;
+    opacity: 0.4;
+    z-index: -1;
+    animation: 1.5s fadeDelayed2 ease-in, bounceArrow 3.6s infinite;
+}
+
+@media (min-width: 1666px) {
+    .squigglyArrow {
+        margin-right: calc(((30vw - 450px)*3/5) + 2.5vw + 115px) !important;
+    }
+
+    .pastExperience {
+        margin-right: calc(((30vw - 450px)*3/5) + 2.5vw + 240px) !important;
+    }
+}
+
+@keyframes bounceArrow {
+    0% {margin-top: -250px;}
+    5% {margin-top: -247px;}
+    10% {margin-top: -246px;}
+    15% {margin-top: -247px;}
+    20% {margin-top: -250px;}
+    25% {margin-top: -250px;}
+    30% {margin-top: -247px;}
+    35% {margin-top: -246px;}
+    40% {margin-top: -247px;}
+    45% {margin-top: -250px;}
+    50% {margin-top: -250px;}
+    55% {margin-top: -247px;}
+    60% {margin-top: -246px;}
+    65% {margin-top: -247px;}
+    70% {margin-top: -250px;}
+    100% {margin-top: -250px;}
+}
+
+@keyframes bounceText {
+    0% {margin-top: -35px;}
+    5% {margin-top: -32px;}
+    10% {margin-top: -31px;}
+    15% {margin-top: -32px;}
+    20% {margin-top: -35px;}
+    25% {margin-top: -35px;}
+    30% {margin-top: -32px;}
+    35% {margin-top: -31px;}
+    40% {margin-top: -32px;}
+    45% {margin-top: -35px;}
+    50% {margin-top: -35px;}
+    55% {margin-top: -32px;}
+    60% {margin-top: -31px;}
+    65% {margin-top: -32px;}
+    70% {margin-top: -35px;}
+    100% {margin-top: -35px;}
+}
+
+@keyframes fadeDelayed2 {
+    0% {opacity: 0.0;}
+    50% {opacity: 0.0;}
+    100% {opacity: 0.4;}
+}
