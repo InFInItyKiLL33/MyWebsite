@@ -5,7 +5,7 @@ import './navbar.css';
 function LinkCustom(props) {
     return(
         <Link to={"/" + props.dir} className="links">
-            <p className="linksText" style={{color: props.currentIndex == props.index ? "#ffffff" : "#b0b0b0"}}>{props.value}</p>
+            <p className="linksText" style={{color: props.currentIndex === props.index ? "#ffffff" : "#b0b0b0"}}>{props.value}</p>
             {/* <div className="underline" style={{opacity: props.currentIndex == props.index ? "1" : "0"}}></div> */}
         </Link>
     );

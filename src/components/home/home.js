@@ -11,11 +11,11 @@ class Home extends Component {
         return(
             <div className="homepage">
 
-                <img src={backgroundImage} className="backgroundImage"></img>
+                <img src={backgroundImage} className="backgroundImage" alt="background wing view"></img>
 
                 <Navbar page={this.props.page} />
 
-                <img src={squigglyArrow} className="squigglyArrow"></img>
+                <img src={squigglyArrow} className="squigglyArrow" alt="arrow below timeline button"></img>
                 <p className="pastExperience">My Past Experiences</p>
 
                 <div className="appMain">
