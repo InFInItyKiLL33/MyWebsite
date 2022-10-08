@@ -69,7 +69,7 @@ function About(props) {
                     </p>
                     <p className="aboutMeTexts indented">    
                         Proficient Languages - 
-                        <OrangeSpan text=" Python" /> ({getYears(2016)}), 
+                        <OrangeSpan text=" Python" /> ({getYears(2018)}), 
                         <OrangeSpan text=" CSS" /> ({getYears(2019)}), 
                         <OrangeSpan text=" HTML5" /> ({getYears(2019)}), 
                         <OrangeSpan text=" Javascript" /> ({getYears(2019)}), 
@@ -81,7 +81,7 @@ function About(props) {
                         Less Proficient Languages - 
                         <OrangeSpan text=" C++" /> ({getYears(2019)}), 
                         <OrangeSpan text=" NoSQL" /> ({getYears(2019)}), 
-                        <OrangeSpan text=" Lua" /> ({getYears(2018)}), and
+                        <OrangeSpan text=" Lua" /> ({getYears(2019)}), and
                         <OrangeSpan text=" PHP" /> ({getYears(2020)}).
                     </p>
 

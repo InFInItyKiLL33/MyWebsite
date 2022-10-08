@@ -87,7 +87,7 @@ body {
     box-shadow: 40px 50px 1px 1px rgba(50, 50, 50, 0.4);
 }
 
-.aboutMeTextsWrappers:hover > p > span[class~="orangeText"] {
+.aboutMeTextsWrappers:hover > p > span[class~="orangeText"], .aboutMeTextsWrappers:hover > p > i > span[class~="orangeText"]{
     color: var(--orangeHover)!important;
 }
 
