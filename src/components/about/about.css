@@ -5,28 +5,6 @@ body {
     max-height: 100%;
 }
 
-.fade {
-    animation: 0.75s fade ease-in;
-}
-
-.orangeText {
-    color: #f06f4f;
-    font-weight: 600;
-    transition: 0.25s ease;
-}
-
-.indented {
-    padding-left: 25px!important;
-}
-
-.bolded {
-    font-weight: 700;
-}
-
-.aboutpage {
-    margin-top: 25px;
-}
-
 .myPicture {
     width: 20vw;
     height: 20vw;
@@ -38,15 +16,15 @@ body {
     margin: calc(350px - 12.5vw) 0px 0px 7.5vw;
     border-radius: 50%;
     background-color: rgba(15, 15, 15, 0.5);
-    border: 5px solid #f06f4f;
+    border: 5px solid var(--orange);
     box-shadow: 5vw 2vw 0px 0px rgba(50, 50, 50, 0.4);
     transition: 0.25s ease;
 }
 
 .myPicture:hover {
     transform: translateY(-5px);
-    border-color: #ff3d0d;
-    box-shadow: 5vw calc(2vw  + 10px) 0px 0px rgba(50, 50, 50, 0.4);
+    border-color: var(--orangeHover);
+    box-shadow: 5vw calc(2vw + 10px) 0px 0px rgba(50, 50, 50, 0.4);
 }
 
 .aboutMeText {
@@ -66,7 +44,7 @@ body {
     background-color: white;
     margin-top: 15px;
     margin-bottom: 40px;
-    background-color: #f06f4f;
+    background-color: var(--orange);
     display: block;
 
 }
@@ -94,7 +72,7 @@ body {
 
 .aboutMeTextsWrappers {
     background-color: rgba(30, 30, 30, 0.6);
-    border: 2px solid #f06f4f;
+    border: 2px solid var(--orange);
     width: calc(55vw - 200px);
     margin: 0px 0px 100px calc(35vw + 100px);
     border-radius: 10px;
@@ -105,12 +83,12 @@ body {
 
 .aboutMeTextsWrappers:hover {
     transform: translateY(-5px);
-    border-color: #ff3d0d;
+    border-color: var(--orangeHover);
     box-shadow: 40px 50px 1px 1px rgba(50, 50, 50, 0.4);
 }
 
 .aboutMeTextsWrappers:hover > p > span[class~="orangeText"] {
-    color: #ff3d0d!important;
+    color: var(--orangeHover)!important;
 }
 
 .test {
@@ -121,14 +99,19 @@ body {
     margin-left: 7.5vw;
     font-size: 2em;
     font-weight: 700;
-    color: #f06f4f;
+    color: var(--orange);
 }
 
+/* Mobile Responsive */
 @media (max-width: 1000px) {
 
     .myPicture {
         margin-top: 225px;
         box-shadow: 50px 20px 0px 0px rgba(50, 50, 50, 0.4);
+    }
+
+    .myPicture:hover {
+        box-shadow: 50px 30px 0px 0px rgba(50, 50, 50, 0.4);
     }
         
     .aboutMeText {
@@ -147,6 +130,7 @@ body {
     }
 }
 
+/* High Res Responsive */
 @media (min-width: 2000px) {
 
     .aboutMeText {
@@ -156,6 +140,10 @@ body {
     .myPicture {
         margin-top: 100px;
         box-shadow: 100px 40px 0px 0px rgba(50, 50, 50, 0.4);
+    }
+
+    .myPicture:hover {
+        box-shadow: 100px 50px 0px 0px rgba(50, 50, 50, 0.4);
     }
 
     .aboutMeTextsWrappers {

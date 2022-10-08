@@ -1,8 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* Global Variables */
+:root  {
+  --orange: #f06f4f;
+  --orangeHover: #ff3d0d;
+}
+
+/* Main App */
 body {
   max-width: 100%;
   max-height: 100%;
+  font-family: 'Work Sans', sans-serif;
 }
 
 .App {
@@ -23,4 +31,45 @@ body {
 
 .appMain {
   padding-top: 25vh;
+}
+
+/* Generic Styling */
+.orangeText {
+    color: var(--orange);
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+.indented {
+    padding-left: 25px!important;
+}
+
+.bolded {
+    font-weight: 700;
+}
+
+.aboutpage {
+    margin-top: 25px;
+}
+
+/* Animations */
+.fade {
+    animation: 0.75s fade ease-in;
+}
+
+@keyframes fade {
+    0% {opacity: 0.0;}
+    100% {opacity: 1.0;}
+}
+
+@keyframes fadeDelayed {
+    0% {opacity: 0.0;}
+    50% {opacity: 0.0;}
+    100% {opacity: 1.0;}
+}
+
+@keyframes fadeDelayed2 {
+    0% {opacity: 0.0;}
+    50% {opacity: 0.0;}
+    100% {opacity: 0.4;}
 }

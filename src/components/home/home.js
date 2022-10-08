@@ -5,26 +5,24 @@ import './home.css';
 import BasicInfo from "./basic_info";
 import Navbar from "../navbar";
 
-class Home extends Component {
+function Home(props) {
 
-    render() {
-        return(
-            <div className="homepage">
+    return(
+        <div className="homepage">
 
-                <img src={backgroundImage} className="backgroundImage" alt="background wing view"></img>
+            <img src={backgroundImage} className="backgroundImage" alt="background wing view"></img>
 
-                <Navbar page={this.props.page} />
+            <Navbar page={props.page} />
 
-                <img src={squigglyArrow} className="squigglyArrow" alt="arrow below timeline button"></img>
-                <p className="pastExperience">My Past Experiences</p>
+            <img src={squigglyArrow} className="squigglyArrow" alt="arrow below timeline button"></img>
+            <p className="pastExperience">My Past Experiences</p>
 
-                <div className="appMain">
-                    <BasicInfo />
-                </div>
-
+            <div className="appMain">
+                <BasicInfo />
             </div>
-        )
-    }
+
+        </div>
+    )
 
 };
 

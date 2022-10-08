@@ -93,9 +93,3 @@ body {
     70% {margin-top: -35px;}
     100% {margin-top: -35px;}
 }
-
-@keyframes fadeDelayed2 {
-    0% {opacity: 0.0;}
-    50% {opacity: 0.0;}
-    100% {opacity: 0.4;}
-}

@@ -11,18 +11,17 @@ function LinkCustom(props) {
     );
 };
 
-class Navbar extends Component {
+function Navbar(props) {
 
-    render() {
-        return(
-            <div className="navbarBG">
-                <LinkCustom dir="" index="1" currentIndex={this.props.page} value="Home" />
-                <LinkCustom dir="timeline" index="2" currentIndex={this.props.page} value="Timeline" />
-                <LinkCustom dir="about" index="3" currentIndex={this.props.page} value="About Me" />
-                <LinkCustom dir="contact" index="4" currentIndex={this.props.page} value="Contact" />
-            </div>
-        )
-    }
+    return(
+        <div className="navbarBG">
+            <LinkCustom dir="" index="1" currentIndex={props.page} value="Home" />
+            <LinkCustom dir="timeline" index="2" currentIndex={props.page} value="Timeline" />
+            <LinkCustom dir="about" index="3" currentIndex={props.page} value="About Me" />
+            <LinkCustom dir="contact" index="4" currentIndex={props.page} value="Contact" />
+        </div>
+    )
+    
 };
 
 export default Navbar;
