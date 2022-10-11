@@ -74,6 +74,7 @@ function About(props) {
                         <OrangeSpan text=" HTML5" /> ({getYears(2019)}), 
                         <OrangeSpan text=" Javascript" /> ({getYears(2019)}), 
                         <i><OrangeSpan text=" jQuery" /></i> ({getYears(2019)}), 
+                        <i><OrangeSpan text=" Wordpress" /></i> ({getYears(2021)}), 
                         <OrangeSpan text=" React" /> ({getYears(2022)}),
                         <i><OrangeSpan text=" Git" /> ({getYears(2019)})</i>, and
                         <OrangeSpan text=" SQL" /> ({getYears(2019)}). 

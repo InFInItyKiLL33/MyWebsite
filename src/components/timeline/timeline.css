@@ -23,7 +23,7 @@
 }
 
 .timelineSpecificContent {
-    width: auto;
+    width: 100%;
     opacity: 1.0;
     transition: 0.5s ease;
 }
@@ -68,10 +68,10 @@
     top: auto;
     bottom: auto;
     left: 10%;
-    right: 90%;
+    right: 70%;
     object-fit: contain;
     border: 3px solid var(--orange);
-    margin: auto 0px auto 0px;
+    margin: -75px 0px auto 0px;
     rotate: -2.5deg;
     transition: 0.25s ease;
     position: absolute;
@@ -82,6 +82,11 @@
     rotate: 5deg;
     filter: brightness(0.3);
     z-index: -1;
+}
+
+.eachContentImageReverse {
+    left: 70%;
+    right: 10%;
 }
 
 .closeAnywhere {
@@ -99,6 +104,12 @@
     font-style: italic;
 }
 
+.eachContentLeftWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .eachContent {
     margin: 10vh 0px 30vh 0px;
 }
@@ -111,26 +122,35 @@
     rotate: 45deg;
     background-color: rgb(50, 50, 50);
     border: 5px solid var(--orange);
-    margin: auto 0px auto calc(20vw - 80px);
+    margin: auto 75px auto 75px;
 }
 
 .eachContentHeader, .eachContentYear, .eachContentDescription {
     color: white;
     text-align: left;
-    padding: 20px;
-    padding-left: 50px;
+    padding: 20px 0px 20px 0px;
+    white-space: pre-line;
+    line-height: 1.6em;
 }
 
 .eachContentHeader, .eachContentYear {
     color: var(--orange);
 }
 
+.eachContentTextReverse {
+    text-align: right;
+}
+
 .eachContentYear {
-    width: 150px;
-    min-width: 150px;
-    margin: 25px auto 0px auto;
+    width: 20vw;
+    min-width: 20vw;
+    margin: -250px 0px 0px 0px;
     text-align: center;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: -250px;
 }
 
 .fadeOutImage {

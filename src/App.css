@@ -12,13 +12,27 @@
   flex-direction: row;
 }
 
+.flex-reverse-row {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 .flex-col {
   display: flex;
   flex-direction: column;
 }
 
+.flex-reverse-col {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 .fixed-display {
   display: fixed;
+}
+
+.hyperlink {
+  color: var(--orange);
 }
 
 /* Main App */
