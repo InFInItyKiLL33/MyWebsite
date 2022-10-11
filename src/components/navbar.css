@@ -24,7 +24,7 @@
 
 .links:hover > p, .linksText:hover {
     color: white!important;
-    transition: 0.25s ease;
+    transition: 0.2s ease;
     scale: 1.05;
 }
 

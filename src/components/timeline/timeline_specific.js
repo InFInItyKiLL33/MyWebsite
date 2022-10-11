@@ -29,9 +29,10 @@ function TimelineSpecificContent(props) {
 
 function TimelineSpecific(props) {
 
+    const [fadeoutContent, status] = useState("active");
     const [type, setType] = useState(props.type); // the string related
     const [typeVal, setTypeVal] = useState(props.initialTimeline); // 0 - 3
-    const types = {0: "Programming", 1: "Aviation", 2: "Desgin", 3: "PC Building"};
+    const types = {0: "Programming", 1: "Aviation", 2: "Design", 3: "PC Building"};
     const content = {
         0: [
             [MyWebsite, "My Personal Website", "Oct 2022", "After coming back from my trip to the USA, I had a lot of free time in the Army before I finish my service. That's where I decided to make use of my newly learnt knowledge on React to rebuild a second version of my website."],
@@ -49,24 +50,34 @@ function TimelineSpecific(props) {
     };
 
     function changeType() {
-        setTypeVal((typeVal + 1) % 4);
-        setType(types[(typeVal + 1) % 4]);
-        props.changeImage(props.imageOptions[(typeVal + 1) % 4]);
+        props.fadeImage("fadeOutImage");
+        status("timeline fadeOutTimelineContent");
+        setTimeout(function() {
+            setTypeVal((typeVal + 1) % 4);
+            setType(types[(typeVal + 1) % 4]);
+            props.changeImage(props.imageOptions[(typeVal + 1) % 4]);
+        }, 500);
+        setTimeout(function() {
+            props.fadeImage("active");
+            status("timeline active");
+        }, 1400);
     }
 
     
     return(
 
-        <div className="timeline">
-
-            <div className="timelineUI">
-                <button onClick={changeType}>{type}</button>
-                <div className="timelineLine"></div>
+        <>
+            <button onClick={changeType} className={"timelineChanger " + fadeoutContent}>{type}</button>
+            <div className={"timeline " + fadeoutContent}>
+    
+                <div className="timelineUI">
+                    <div className="timelineLine"></div>
+                </div>
+    
+                <TimelineSpecificContent typeValue={typeVal} value={types[typeVal]} content={content} />
+    
             </div>
-
-            <TimelineSpecificContent typeValue={typeVal} value={types[typeVal]} content={content} />
-
-        </div>
+        </>
         
     )
 

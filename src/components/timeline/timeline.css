@@ -5,8 +5,30 @@
     justify-content: center;
 }
 
+.timelineChanger {
+    height: 100px;
+    color: rgb(176, 176, 176);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+    font-size: 1.25em;
+    font-family: 'Work Sans', sans-serif;
+    margin: 0px auto 0px auto;
+    text-align: center;
+    display: block;
+    font-weight: 600;
+}
+
+.timelineChanger:hover {
+    scale: 1.05;
+    color: white;
+}
+
 .timelineSpecificContent {
     width: auto;
+    opacity: 1.0;
+    transition: 0.5s ease;
 }
 
 .eachContentImage {
@@ -52,4 +74,25 @@
     text-align: center;
     padding: 0;
     font-weight: 600;
+}
+
+.fadeOutImage {
+    animation: 1.4s fadeOutImageKeyframe ease;
+}
+
+.fadeOutTimelineContent {
+    animation: 1.4s fadeOutContent ease;
+    pointer-events: none;
+}
+
+@keyframes fadeOutImageKeyframe {
+    0% {filter: brightness(0.3);}
+    50% {filter: brightness(0.0);}
+    100% {filter: brightness(0.3);}
+}
+
+@keyframes fadeOutContent {
+    0% {opacity: 1;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
 }
