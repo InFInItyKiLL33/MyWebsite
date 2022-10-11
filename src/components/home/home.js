@@ -15,7 +15,7 @@ function Home(props) {
             <Navbar page={props.page} />
 
             <img src={squigglyArrow} className="squigglyArrow" alt="arrow below timeline button"></img>
-            <p className="pastExperience">My Past Experiences</p>
+            <p className="pastExperience semi-bold">My Past Experiences</p>
 
             <div className="appMain">
                 <BasicInfo />

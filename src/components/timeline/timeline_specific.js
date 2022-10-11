@@ -4,30 +4,53 @@ import ReactImg from "../../images/react.png";
 import './timeline.css';
 
 function TimelineSpecificContent(props) {
-    let currentContent = [];
-    for (let i = 0; i < (props.content[props.typeValue]).length; i++) {
-        currentContent.push(
-            <div className="eachContent" key={i}>
-                <p className="eachContentYear">{props.content[props.typeValue][i][2]}</p>
-                <div className="eachContentDecorationDot"></div>
-                <img src={props.content[props.typeValue][i][0]} className="eachContentImage"></img>
-                <div className="eachContentWrapper">
-                    <h1 className="eachContentHeader">{props.content[props.typeValue][i][1]}</h1>
-                    <p className="eachContentDescription">{props.content[props.typeValue][i][3]}</p>
-                </div>
-            </div>
-        );
-    }
+
+    const [clickStatus, changeClickStatus] = useState("");
+    const [clickAnywhereStatus, changeClickAnywhereStatus] = useState("fadeInitialOpacity");
+    function handleClick(e) {
+        if (clickStatus == "" || clickStatus == "unclick") {
+            changeClickStatus("clicked");
+            setTimeout(function() {
+                changeClickStatus("clicked clicked-end");
+            }, 250);
+        } else {
+            changeClickStatus("unclick");
+        };
+
+        if (clickAnywhereStatus == "fadeInitialOpacity") {
+            changeClickAnywhereStatus("fadeInitialOpacity disable-pointer");
+            setTimeout(function() {
+                changeClickAnywhereStatus("fadeOutInitialOpacity");
+            }, 250);
+        } else {
+            changeClickAnywhereStatus("fadeInitialOpacity");
+        };
+    };
 
     return(
-        <div className="timelineSpecificContent">
-            {currentContent}
+        <div className="eachContent flex-row" key={props.index}>
+            <div className="eachContentLeftWrapper">
+                <div className="eachContentImageWrapper flex-row">
+                    <img src={props.content[props.typeValue][props.index][0]} className={"eachContentImage " + clickStatus} onClick={handleClick}></img>
+                    <img src={props.content[props.typeValue][props.index][0]} className="eachContentImage2"></img>
+                    <p className={"closeAnywhere " + clickAnywhereStatus}>Click anywhere to close</p>
+                </div>
+                <p className="eachContentYear bolded">{props.content[props.typeValue][props.index][2]}</p>
+            </div>
+            <div className="eachContentDecorationDot"></div>
+            <div className="eachContentRightWrapper">
+                <h1 className="eachContentHeader">{props.content[props.typeValue][props.index][1]}</h1>
+                <p className="eachContentDescription">{props.content[props.typeValue][props.index][3]}</p>
+            </div>
         </div>
     )
 
 };
 
 function TimelineSpecific(props) {
+
+    
+    let currentContent = [];
 
     const [fadeoutContent, status] = useState("active");
     const [type, setType] = useState(props.type); // the string related
@@ -51,7 +74,7 @@ function TimelineSpecific(props) {
 
     function changeType() {
         props.fadeImage("fadeOutImage");
-        status("timeline fadeOutTimelineContent");
+        status("fadeOutTimelineContent");
         setTimeout(function() {
             setTypeVal((typeVal + 1) % 4);
             setType(types[(typeVal + 1) % 4]);
@@ -59,22 +82,32 @@ function TimelineSpecific(props) {
         }, 500);
         setTimeout(function() {
             props.fadeImage("active");
-            status("timeline active");
+            status("active");
         }, 1400);
     }
+
+    for (let i = 0; i < (content[typeVal]).length; i++) {
+        currentContent.push(
+            <TimelineSpecificContent typeValue={typeVal} value={types[typeVal]} content={content} index={i} />
+        );
+    };
 
     
     return(
 
         <>
-            <button onClick={changeType} className={"timelineChanger " + fadeoutContent}>{type}</button>
-            <div className={"timeline " + fadeoutContent}>
+            <button onClick={changeType} className={"timelineChanger fade bolded " + fadeoutContent}>{type}</button>
+            <div className={"timeline fade flex-row " + fadeoutContent}>
     
                 <div className="timelineUI">
                     <div className="timelineLine"></div>
                 </div>
     
-                <TimelineSpecificContent typeValue={typeVal} value={types[typeVal]} content={content} />
+                {/* <TimelineSpecificContent typeValue={typeVal} value={types[typeVal]} content={content} /> */}
+
+                <div className="timelineSpecificContent">
+                    {currentContent}
+                </div>
     
             </div>
         </>

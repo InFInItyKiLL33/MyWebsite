@@ -89,14 +89,13 @@ body {
     color: var(--orangeHover)!important;
 }
 
-.test {
+.name {
     margin-top: 600px;
     color: white;
     position: fixed;
     width: 400px;
     margin-left: 7.5vw;
     font-size: 2em;
-    font-weight: 700;
     color: var(--orange);
 }
 

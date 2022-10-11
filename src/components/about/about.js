@@ -40,7 +40,7 @@ function About(props) {
                 
                 <div>
                     <img src={MyPicture} className="myPicture" alt="my face"></img>
-                    <p className="test">Poh Jun Kang</p>
+                    <p className="name bolded">Poh Jun Kang</p>
                 </div>
 
                 <p className="aboutMeText orangeText bolded">About Me</p>

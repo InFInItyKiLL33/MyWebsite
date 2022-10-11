@@ -9,9 +9,9 @@ function getAge() {
 function BasicInfo() {
     return(
         <div className="appBGOverlay">
-            <div className="infoBackground">
+            <div className="infoBackground flex-row">
                 <p className="greetings">Hey! I'm</p>
-                <h1 className="name">Poh Jun Kang</h1>
+                <h1 className="homeName">Poh Jun Kang</h1>
             </div>
             <div className="divider"></div>
             <div className="infoDescription">

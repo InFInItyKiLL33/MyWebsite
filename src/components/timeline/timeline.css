@@ -1,6 +1,4 @@
 .timeline {
-    display: flex;
-    flex-direction: row;
     padding: 50px 10vw 50px 10vw;
     justify-content: center;
 }
@@ -17,7 +15,6 @@
     margin: 0px auto 0px auto;
     text-align: center;
     display: block;
-    font-weight: 600;
 }
 
 .timelineChanger:hover {
@@ -31,36 +28,97 @@
     transition: 0.5s ease;
 }
 
-.eachContentImage {
+.eachContentImageWrapper {
+    margin: auto 0px auto 0px;
+    cursor: pointer;
+}
+
+.eachContentImageWrapper:hover > .eachContentImage {
+    rotate: -1deg;
+    scale: 1.05;
+}
+
+.eachContentImageWrapper:hover > .eachContentImage2 {
+    rotate: 7deg;
+}
+
+.clicked {
+    width: 100vw!important;
+    scale: 0.75!important;
+    box-shadow: 0px 0px 0px 100vw rgba(0, 0, 0, 0.7)!important;
+    rotate: 0deg!important;
+    top: 0!important;
+    right: 0%!important;
+    bottom: 0!important;
+    left: 0%!important;
+    margin: auto!important;
+    transform-origin: 50% 50%;
+    z-index: 100;
+    pointer-events: none;
+    position: fixed!important;
+}
+
+.clicked-end {
+    pointer-events: all;
+}
+
+.eachContentImage, .eachContentImage2 {
     width: 20vw;
     height: auto;
+    top: auto;
+    bottom: auto;
+    left: 10%;
+    right: 90%;
     object-fit: contain;
     border: 3px solid var(--orange);
-    margin-left: 50px;
+    margin: auto 0px auto 0px;
+    rotate: -2.5deg;
+    transition: 0.25s ease;
+    position: absolute;
+}
+
+.eachContentImage2 {
+    position: absolute;
+    rotate: 5deg;
+    filter: brightness(0.3);
+    z-index: -1;
+}
+
+.closeAnywhere {
+    position: fixed;
+    color: rgba(255, 255, 255, 0.7);
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    width: fit-content;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0px auto 50px auto;
+    padding: 20px;
+    text-align: center;
+    font-style: italic;
 }
 
 .eachContent {
-    display: flex;
-    flex-direction: row;
     margin: 10vh 0px 30vh 0px;
 }
 
 .eachContentDecorationDot {
-    width: 10px;
-    min-width: 10px;
+    width: 5px;
+    min-width: 5px;
     height: auto;
     aspect-ratio: 1;
-    border-radius: 50%;
+    rotate: 45deg;
     background-color: rgb(50, 50, 50);
-    border: 7.5px solid var(--orange);
-    margin: auto 0px auto 0px;
+    border: 5px solid var(--orange);
+    margin: auto 0px auto calc(20vw - 80px);
 }
 
 .eachContentHeader, .eachContentYear, .eachContentDescription {
     color: white;
     text-align: left;
     padding: 20px;
-    padding-left: 100px;
+    padding-left: 50px;
 }
 
 .eachContentHeader, .eachContentYear {
@@ -70,10 +128,9 @@
 .eachContentYear {
     width: 150px;
     min-width: 150px;
-    margin: auto 0px auto 0px;
+    margin: 25px auto 0px auto;
     text-align: center;
     padding: 0;
-    font-weight: 600;
 }
 
 .fadeOutImage {

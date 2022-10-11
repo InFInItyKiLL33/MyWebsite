@@ -6,6 +6,21 @@
   --orangeHover: #ff3d0d;
 }
 
+/* Shared Classes */
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.fixed-display {
+  display: fixed;
+}
+
 /* Main App */
 body {
   max-width: 100%;
@@ -44,6 +59,10 @@ body {
     padding-left: 25px!important;
 }
 
+.semi-bold {
+  font-weight: 500;
+}
+
 .bolded {
     font-weight: 700;
 }
@@ -54,12 +73,43 @@ body {
 
 /* Animations */
 .fade {
-    animation: 0.75s fade ease-in;
+    animation: 0.75s fade ease;
+}
+
+.fadeInitialOpacity {
+  opacity: 0.0;
+}
+
+.fadeTransition {
+    opacity: 1.0!important;
+    transition: 0.75s ease;
+}
+
+.fadeOut {
+    animation: 0.75s fadeOut ease;
+}
+
+.fadeOutInitialOpacity {
+  opacity: 1.0;
+}
+
+.fadeOutTransition {
+    opacity: 0.0!important;
+    transition: 0.75s ease;
+}
+
+.disable-pointer {
+  pointer-events: none;
 }
 
 @keyframes fade {
     0% {opacity: 0.0;}
     100% {opacity: 1.0;}
+}
+
+@keyframes fadeOut {
+  0% {opacity: 1.0;}
+  100% {opacity: 0.0;}
 }
 
 @keyframes fadeDelayed {
