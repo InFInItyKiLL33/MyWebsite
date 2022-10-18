@@ -3,6 +3,7 @@
 /* Global Variables */
 :root  {
   --orange: #f06f4f;
+  --orangeTranslucent: #f06f4f77;
   --orangeHover: #ff3d0d;
 }
 
@@ -40,6 +41,7 @@ body {
   max-width: 100%;
   max-height: 100%;
   font-family: 'Work Sans', sans-serif;
+  background: black;
 }
 
 .App {
@@ -88,6 +90,12 @@ body {
 /* Animations */
 .fade {
     animation: 0.75s fade ease;
+    transition: 0.75s ease;
+}
+
+.fadeLong {
+    animation: 1s fade ease;
+    transition: 1s ease;
 }
 
 .fadeInitialOpacity {

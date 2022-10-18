@@ -11,18 +11,24 @@ body {
     max-width: 400px;
     max-height: 400px;
     position: fixed;
-    margin: calc(350px - 12.5vw) 0px 0px 7.5vw;
+    margin: calc(250px - 12.5vw) 0px 0px 7.5vw;
     border-radius: 50%;
     background-color: rgba(15, 15, 15, 0.5);
     border: 5px solid var(--orange);
     box-shadow: 5vw 2vw 0px 0px rgba(50, 50, 50, 0.4);
     transition: 0.25s ease;
+    z-index: 2;
+    animation: 1s slideIn ease, 2s fade ease;
 }
 
 .myPicture:hover {
     transform: translateY(-5px);
     border-color: var(--orangeHover);
     box-shadow: 5vw calc(2vw + 10px) 0px 0px rgba(50, 50, 50, 0.4);
+}
+
+.myPicture:hover ~ p {
+    color: var(--orangeHover);
 }
 
 .aboutMeText {
@@ -44,7 +50,7 @@ body {
     margin-bottom: 40px;
     background-color: var(--orange);
     display: block;
-
+    
 }
 
 .footnoteForeword {
@@ -53,7 +59,7 @@ body {
 
 .aboutMeTexts {
     color: white;
-    font-size: 1.2em;
+    font-size: 1.05em;
     text-align: left;
     margin-top: 0px;
     padding: 10px 40px 10px 0px;
@@ -90,20 +96,21 @@ body {
 }
 
 .name {
-    margin-top: 600px;
-    color: white;
+    margin-top: 500px;
     position: fixed;
     width: 400px;
     margin-left: 7.5vw;
     font-size: 2em;
     color: var(--orange);
+    transition: 0.25s ease;
+    animation: 1s slideIn ease, 2s fade ease;
 }
 
 /* Mobile Responsive */
 @media (max-width: 1000px) {
 
     .myPicture {
-        margin-top: 225px;
+        margin-top: 125px;
         box-shadow: 50px 20px 0px 0px rgba(50, 50, 50, 0.4);
     }
 
@@ -135,7 +142,7 @@ body {
     }
 
     .myPicture {
-        margin-top: 100px;
+        margin-top: 0px;
         box-shadow: 100px 40px 0px 0px rgba(50, 50, 50, 0.4);
     }
 
@@ -149,7 +156,31 @@ body {
     }
 }
 
-@keyframes fade {
-    0% {opacity: 0.0;}
-    100% {opacity: 1.0;}
+.slideInInitial {
+    transform: translate(-10px, 0px);
+    transition: 1s ease;
+}
+
+.slideIn {
+    animation: 1s slideIn ease;
+    animation-fill-mode: forwards;
+}
+
+.boxShadowSlideInInitial {
+    box-shadow: 60px 40px 1px 1px rgba(50, 50, 50, 0.4)!important;
+}
+
+.boxShadowSlideIn {
+    animation: 2s boxShadowSlideIn ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slideIn {
+    0% {transform: translate(-10px, 0px);}
+    100% {transform: translate(0px, 0px);}
+}
+
+@keyframes boxShadowSlideIn {
+    0% {box-shadow: 60px 40px 1px 1px rgba(50, 50, 50, 0.4)!important;}
+    100% {box-shadow: 40px 40px 1px 1px rgba(50, 50, 50, 0.4)!important;}
 }
