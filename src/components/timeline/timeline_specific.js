@@ -25,9 +25,10 @@ function TimelineSpecificContent(props) {
     // reverseRow = "flex-row";
     const reverseImage = reverseRow === "flex-reverse-row" ? " eachContentImageReverse" : "";
     const reverseText = reverseRow === "flex-reverse-row" ? " eachContentTextReverse" : "";
+    const reverseBlock = reverseRow === "flex-reverse-row" ? "R" : "L";
     const [imagePos, setImagePos] = useState(0);
-    const zoomRegion = 0.75; // 0.0 - 1.0
-    const maxZoomRegion = 0.4; // 0.0 - zoomRegion
+    const zoomRegion = 0.6; // 0.0 - 1.0
+    const maxZoomRegion = 0.3; // 0.0 - zoomRegion
     const defaultZoom = 1.0; // default scale value
     const zoom = 1.1; // scale value
     const minOpacity = 0.15;
@@ -93,6 +94,7 @@ function TimelineSpecificContent(props) {
 
     return(
         <div className={"eachContent " + reverseRow} key={props.index} onScroll={scrollEffect()}>
+            <div className={"arrowDecoration arrowDecoration" + reverseBlock}></div>
             <div className="eachContentLeftWrapper">
                 <div className="eachContentImageWrapper flex-row">
                     <img src={props.content[props.typeValue][props.index][0]} className={"eachContentImage " + clickStatus + reverseImage} onClick={handleClick}alt={props.content[props.typeValue][props.index][1]}></img>
@@ -117,10 +119,15 @@ function TimelineSpecific(props) {
 
     
     let currentContent = [];
+    let skillButtons = [];
+    let buttonElems = document.getElementsByClassName("timelineChanger fade bolded");
 
     const [fadeoutContent, status] = useState("active");
     const [type, setType] = useState(props.type); // the string related
     const [typeVal, setTypeVal] = useState(props.initialTimeline); // 0 - 3
+    const [sortDirection, setSortDir] = useState("flex-col");
+    const [sortText, setSortText] = useState("Most Recent");
+    const orange = "#f06f4f";
     const types = {0: "Programming", 1: "Aviation", 2: "Design", 3: "PC Building"};
     const content = {
         0: [
@@ -175,19 +182,40 @@ function TimelineSpecific(props) {
         ]
     }; // For each content, 0 -> image file, 1 -> Title, 2 -> Date, 3 -> Description, 4 (Optional) -> Hyperlink
 
-    function changeType() {
+    function changeType(e) {
+        let newType = parseInt(e.target.getAttribute("data-index"));
         props.fadeImage("fadeOutImage");
-        status("fadeOutTimelineContent");
+        status("disablePointer fadeOutTimelineContent");
         setTimeout(function() {
-            setTypeVal((typeVal + 1) % 4);
-            setType(types[(typeVal + 1) % 4]);
-            props.changeImage(props.imageOptions[(typeVal + 1) % 4]);
-        }, 500);
+            status("disablePointer fadeInitialOpacity"); // for smoother transition
+            setTypeVal(newType);
+            setType(types[newType]);
+            props.changeImage(props.imageOptions[newType]);
+        }, 400);
+        // setTimeout(function() {
+        // }, 400);
         setTimeout(function() {
             props.fadeImage("active");
             status("active");
-        }, 1400);
-    }
+        }, 800);
+    };
+    
+    function changeButtonColour(index) {
+        for (let i = 0; i < buttonElems.length; i++) {
+            buttonElems[i].style.color = "";
+        };
+        buttonElems[index].style.color = orange;
+    };
+
+    function changeSortDir() {
+        if (sortDirection === "flex-col") {
+            setSortDir("flex-reverse-col");
+            setSortText("Oldest");
+        } else {
+            setSortDir("flex-col");
+            setSortText("Most Recent");
+        };
+    };
 
     for (let i = 0; i < (content[typeVal]).length; i++) {
         currentContent.push(
@@ -195,24 +223,37 @@ function TimelineSpecific(props) {
         );
     };
 
+    for (let i = 0; i < Object.keys(types).length; i++) {
+        skillButtons.push(
+            <button onClick={changeType} key={i} data-index={i} className={"timelineChanger fade bolded " + fadeoutContent}>{types[i]}</button>
+        );
+    };
+
+    useEffect(() => {
+        changeButtonColour(typeVal);
+    });
+
     
     return(
 
         <>
-            <button onClick={changeType} className={"timelineChanger fade bolded " + fadeoutContent}>{type}</button>
+            {/* <button onClick={changeType} className={"timelineChanger fade bolded " + fadeoutContent}>{type}</button> */}
+            <div className="skillButtonsWrapper flex-row">
+                {skillButtons}
+            </div>
+            <button onClick={changeSortDir} className={"timelineChanger fade timelineSorter " + fadeoutContent}><i>Sort by<br></br>{sortText}</i></button>
             <div className={"timeline fade flex-row " + fadeoutContent}>
     
                 <div className="timelineUI">
                     <div className="timelineLine"></div>
                 </div>
-    
-                {/* <TimelineSpecificContent typeValue={typeVal} value={types[typeVal]} content={content} /> */}
 
-                <div className="timelineSpecificContent">
+                <div className={"timelineSpecificContent " + sortDirection}>
                     {currentContent}
                 </div>
     
             </div>
+            <div className="endSpace"></div>
         </>
         
     )

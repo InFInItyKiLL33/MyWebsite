@@ -3,21 +3,33 @@
     justify-content: center;
 }
 
-.timelineChanger {
-    height: 100px;
+.skillButtonsWrapper {
+    justify-content: center;
+    padding: 0px 15vw 0px 15vw;
+}
+
+.timelineChanger, .timelineSorter {
+    height: 75px;
     color: rgb(176, 176, 176);
     background-color: transparent;
     border: none;
     cursor: pointer;
     transition: 0.2s ease;
-    font-size: 1.25em;
+    font-size: 1.3em;
     font-family: 'Work Sans', sans-serif;
     margin: 0px auto 0px auto;
     text-align: center;
     display: block;
+    z-index: 2;
 }
 
-.timelineChanger:hover {
+.timelineSorter {
+    font-size: 0.75em;
+    height: 30px;
+    color: rgba(176, 176, 176, 0.5);
+}
+
+.timelineChanger:hover, .timelineSorter:hover {
     scale: 1.05;
     color: white;
 }
@@ -115,8 +127,73 @@
 
 .eachContent {
     transition: 0.75s ease;
-    padding: 10vh 0px 15vh 0px;
+    padding: 6vh 0px 15vh 0px;
     /* border-bottom: 1px solid var(--orangeTranslucent); */
+}
+
+.arrowDecoration {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 1px;
+    height: 1px;
+}
+
+.arrowDecorationR::before {
+    width: 1vw;
+    height: 1vw;
+    background-color: transparent;
+    content: "";
+    position: absolute;
+    transform-origin: 10vw 0px;
+    transform: translateX(calc(10vw - 3.75vw)) translateY(-2vw);
+    rotate: -45deg;
+    border: 0.5vw solid var(--orange);
+    border-bottom: none;
+    border-right: none;
+}
+
+.arrowDecorationR::after {
+    width: 1vw;
+    height: 1vw;
+    background-color: transparent;
+    content: "";
+    position: absolute;
+    transform-origin: 10vw 0px;
+    transform: translateX(calc(10vw - 5vw)) translateY(-3.25vw);
+    rotate: -45deg;
+    z-index: -1;
+    border: 0.5vw solid var(--orangeTranslucent);
+    border-bottom: none;
+    border-right: none;
+}
+
+.arrowDecorationL::before {
+    width: 1vw;
+    height: 1vw;
+    background-color: transparent;
+    content: "";
+    position: absolute;
+    transform-origin: -10vw 0px;
+    transform: translateX(calc(-10vw - 0vw)) translateY(2.25vw);
+    rotate: -45deg;
+    border: 0.5vw solid var(--orange);
+    border-top: none;
+    border-left: none;
+}
+
+.arrowDecorationL::after {
+    width: 1vw;
+    height: 1vw;
+    background-color: transparent;
+    content: "";
+    position: absolute;
+    transform-origin: -10vw 0px;
+    transform: translateX(calc(-10vw + 1.25vw)) translateY(3.5vw);
+    rotate: -45deg;
+    z-index: -1;
+    border: 0.5vw solid var(--orangeTranslucent);
+    border-top: none;
+    border-left: none;
 }
 
 .eachContentDecorationDot {
@@ -125,8 +202,9 @@
     height: auto;
     aspect-ratio: 1;
     rotate: 45deg;
-    background-color: rgb(50, 50, 50);
+    background-color: transparent;
     border: 5px solid var(--orange);
+    border: 0px transparent;
     margin: auto 75px auto 75px;
     border-radius: 50%;
 }
@@ -160,12 +238,19 @@
 }
 
 .fadeOutImage {
-    animation: 1.4s fadeOutImageKeyframe ease;
+    animation: 0.8s fadeOutImageKeyframe ease;
 }
 
 .fadeOutTimelineContent {
-    animation: 1.4s fadeOutContent ease;
+    animation: 0.4s fadeOutContent ease;
+}
+
+.disablePointer {
     pointer-events: none;
+}
+
+.endSpace {
+    height: 12.5vh;
 }
 
 @keyframes fadeOutImageKeyframe {
@@ -176,6 +261,6 @@
 
 @keyframes fadeOutContent {
     0% {opacity: 1;}
-    50% {opacity: 0;}
-    100% {opacity: 1;}
+    /* 50% {opacity: 0;} */
+    100% {opacity: 0;}
 }
