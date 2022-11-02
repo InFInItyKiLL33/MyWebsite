@@ -1,32 +1,41 @@
 .timeline {
     padding: 0px 10vw 50px 10vw;
     justify-content: center;
+    margin-left: 3vw;
+    margin-right: 3vw;
 }
 
-.skillButtonsWrapper {
-    justify-content: center;
-    padding: 0px 15vw 0px 15vw;
+.skillsButtonNavbar {
+    justify-content: left;
+    margin: 0px 10vw 50px 10vw;
+    padding-bottom: 7.5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .timelineChanger, .timelineSorter {
-    height: 75px;
-    color: rgb(176, 176, 176);
     background-color: transparent;
     border: none;
     cursor: pointer;
     transition: 0.2s ease;
-    font-size: 1.3em;
+    font-size: 1.2em;
+    font-weight: 600;
     font-family: 'Work Sans', sans-serif;
-    margin: 0px auto 0px auto;
     text-align: center;
-    display: block;
     z-index: 2;
+}
+
+.timelineChanger {
+    color: rgb(176, 176, 176);
+    height: 75px;
+    margin: 0px 2vw 0px 2vw;
 }
 
 .timelineSorter {
     font-size: 0.75em;
-    height: 30px;
+    height: auto;
     color: rgba(176, 176, 176, 0.5);
+    margin: 0px 0px 0px auto;
+    padding-top: 10px;
 }
 
 .timelineChanger:hover, .timelineSorter:hover {
@@ -68,9 +77,9 @@
     left: 0%!important;
     margin: auto!important;
     transform-origin: 50% 50%;
-    z-index: 100;
     pointer-events: none;
     position: fixed!important;
+    opacity: 1.0!important;
 }
 
 .clicked-end {
@@ -82,8 +91,6 @@
     height: auto;
     top: auto;
     bottom: auto;
-    left: 10%;
-    right: 70%;
     object-fit: contain;
     border: 3px solid var(--orange);
     margin: -75px 0px auto 0px;
@@ -99,11 +106,6 @@
     z-index: -1;
 }
 
-.eachContentImageReverse {
-    left: 70%;
-    right: 10%;
-}
-
 .closeAnywhere {
     position: fixed;
     color: rgba(255, 255, 255, 0.7);
@@ -117,6 +119,7 @@
     padding: 20px;
     text-align: center;
     font-style: italic;
+    z-index: 101;
 }
 
 .eachContentLeftWrapper {
@@ -215,6 +218,8 @@
     padding: 10px 0px 10px 0px;
     white-space: pre-line;
     line-height: 1.6em;
+    overflow-wrap: break-word!important;
+    max-width: 50vw;
 }
 
 .eachContentHeader, .eachContentYear {

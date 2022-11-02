@@ -4,116 +4,8 @@ import ReactImg from "../../images/react.png";
 import NHWSSImg1 from "../../images/nhwss1.png";
 import NHWSSImg2 from "../../images/nhwss2.png";
 import ThatAquariumImg from "../../images/thataquarium.png";
+import TimelineSpecificContent from './timeline_specific_content';
 import './timeline.css';
-
-function TimelineHyperlink(props) {
-    if (props.content.length === 5) {
-        return(
-            <a href={props.content[4]} className="hyperlink">here</a>
-        )
-    } else {
-        return(<></>)
-    }
-};
-
-
-function TimelineSpecificContent(props) {
-    
-    const [clickStatus, changeClickStatus] = useState("");
-    const [clickAnywhereStatus, changeClickAnywhereStatus] = useState("fadeInitialOpacity");
-    let reverseRow = Math.floor(props.index % 2) !== 0 ? "flex-reverse-row" : "flex-row";
-    // reverseRow = "flex-row";
-    const reverseImage = reverseRow === "flex-reverse-row" ? " eachContentImageReverse" : "";
-    const reverseText = reverseRow === "flex-reverse-row" ? " eachContentTextReverse" : "";
-    const reverseBlock = reverseRow === "flex-reverse-row" ? "R" : "L";
-    const [imagePos, setImagePos] = useState(0);
-    const zoomRegion = 0.6; // 0.0 - 1.0
-    const maxZoomRegion = 0.3; // 0.0 - zoomRegion
-    const defaultZoom = 1.0; // default scale value
-    const zoom = 1.1; // scale value
-    const minOpacity = 0.15;
-    const maxOpacity = 1.0;
-    const screenHeight = window.innerHeight;
-    
-    function scrollZoom() {
-        const eachContentElem = document.getElementsByClassName("eachContent")[props.index];
-        const imgElem = eachContentElem.getElementsByClassName("eachContentImage")[0];
-        const backImgElem = eachContentElem.getElementsByClassName("eachContentImage2")[0];
-        const offset = 0.5 * eachContentElem.getBoundingClientRect().top + 0.5 * eachContentElem.getBoundingClientRect().bottom;
-        if (offset > (0.5 - 0.5 * zoomRegion) * screenHeight && offset < (0.5 + 0.5 * zoomRegion) * screenHeight) {
-            let finalOffset = zoom;
-            let opacityOffset = maxOpacity;
-            if (offset < (0.5 - 0.5 * maxZoomRegion) * screenHeight || offset > (0.5 + 0.5 * maxZoomRegion) * screenHeight) {
-                let offsetScale = (Math.abs(offset - 0.5 * screenHeight) - maxZoomRegion * 0.5 * screenHeight) / ((0.5 * (zoomRegion - maxZoomRegion)) * screenHeight); // goes from 0.0 to 1.0 based on scroll position inside gradient range
-                finalOffset = zoom - (zoom - defaultZoom) * (offsetScale);
-                opacityOffset = maxOpacity - (maxOpacity - minOpacity) * (offsetScale);
-            };
-            imgElem.style.transform = "scale(" + String(finalOffset) + ")";
-            backImgElem.style.transform = "scale(" + String(finalOffset) + ")";
-            eachContentElem.style.opacity = opacityOffset;
-        } else {
-            imgElem.style.transform = "scale(" + defaultZoom + ")";
-            backImgElem.style.transform = "scale(" + defaultZoom + ")";
-            eachContentElem.style.opacity = minOpacity;
-        };
-        setImagePos(offset);
-    };
-
-    function handleClick(e) {
-        if (clickStatus === "" || clickStatus === "unclick") {
-            changeClickStatus("clicked");
-            setTimeout(function() {
-                changeClickStatus("clicked clicked-end");
-            }, 250);
-        } else {
-            changeClickStatus("unclick");
-        };
-
-        if (clickAnywhereStatus === "fadeInitialOpacity") {
-            changeClickAnywhereStatus("fadeInitialOpacity disable-pointer");
-            setTimeout(function() {
-                changeClickAnywhereStatus("fadeOutInitialOpacity");
-            }, 250);
-        } else {
-            changeClickAnywhereStatus("fadeInitialOpacity");
-        };
-    };
-
-    function scrollEffect() {
-        const onScroll = () => {
-            window.removeEventListener('scroll', onScroll);
-            scrollZoom();
-        };
-        window.addEventListener('scroll', onScroll, { passive: true });
-        return () => window.removeEventListener('scroll', onScroll);
-    };
-
-    useEffect(() => {
-        scrollZoom();
-    });
-
-    return(
-        <div className={"eachContent " + reverseRow} key={props.index} onScroll={scrollEffect()}>
-            <div className={"arrowDecoration arrowDecoration" + reverseBlock}></div>
-            <div className="eachContentLeftWrapper">
-                <div className="eachContentImageWrapper flex-row">
-                    <img src={props.content[props.typeValue][props.index][0]} className={"eachContentImage " + clickStatus + reverseImage} onClick={handleClick}alt={props.content[props.typeValue][props.index][1]}></img>
-                    <img src={props.content[props.typeValue][props.index][0]} className={"eachContentImage2" + reverseImage} alt={props.content[props.typeValue][props.index][1]}></img>
-                </div>
-                <p className="eachContentYear bolded">{props.content[props.typeValue][props.index][2]}</p>
-            </div>
-            <p className={"closeAnywhere " + clickAnywhereStatus}>Click anywhere to close</p>
-            <div className="eachContentDecorationDot"></div>
-            <div className="eachContentRightWrapper">
-                <h1 className={"eachContentHeader" + reverseText}>{props.content[props.typeValue][props.index][1]}</h1>
-                <p className={"eachContentDescription" + reverseText}>{props.content[props.typeValue][props.index][3]} 
-                    <TimelineHyperlink content={props.content[props.typeValue][props.index]} />
-                </p>
-            </div>
-        </div>
-    )
-
-};
 
 function TimelineSpecific(props) {
 
@@ -126,7 +18,7 @@ function TimelineSpecific(props) {
     const [type, setType] = useState(props.type); // the string related
     const [typeVal, setTypeVal] = useState(props.initialTimeline); // 0 - 3
     const [sortDirection, setSortDir] = useState("flex-col");
-    const [sortText, setSortText] = useState("Most Recent");
+    const [sortText, setSortText] = useState("Newest");
     const orange = "#f06f4f";
     const types = {0: "Programming", 1: "Aviation", 2: "Design", 3: "PC Building"};
     const content = {
@@ -168,7 +60,7 @@ function TimelineSpecific(props) {
                 \n
                 I would have definitely continued the internship with how heartwarming and welcome the management was, if it wasn't for the conscription into the Army in April. This would, however, not be the end of working with them as they hired me as a freelancer the next year.
                 \n
-                If you would like to check it out, and if it hasn't changed, you may view it live `, "https://namhongwelfare.org.sg/get-involved/"
+                If you would like to check it out, and if it hasn't changed, you may view it live at`, "https://namhongwelfare.org.sg/get-involved/"
             ]
         ],
         1: [
@@ -207,13 +99,13 @@ function TimelineSpecific(props) {
         buttonElems[index].style.color = orange;
     };
 
-    function changeSortDir() {
+    function changeFlexDir() {
         if (sortDirection === "flex-col") {
             setSortDir("flex-reverse-col");
             setSortText("Oldest");
         } else {
             setSortDir("flex-col");
-            setSortText("Most Recent");
+            setSortText("Newest");
         };
     };
 
@@ -225,7 +117,7 @@ function TimelineSpecific(props) {
 
     for (let i = 0; i < Object.keys(types).length; i++) {
         skillButtons.push(
-            <button onClick={changeType} key={i} data-index={i} className={"timelineChanger fade bolded " + fadeoutContent}>{types[i]}</button>
+            <button onClick={changeType} key={i} data-index={i} className="timelineChanger fade slideInInitialR slideInR bolded ">{types[i]}</button>
         );
     };
 
@@ -238,10 +130,16 @@ function TimelineSpecific(props) {
 
         <>
             {/* <button onClick={changeType} className={"timelineChanger fade bolded " + fadeoutContent}>{type}</button> */}
-            <div className="skillButtonsWrapper flex-row">
+            <div className={"skillsButtonNavbar flex-row fade " + fadeoutContent}>
                 {skillButtons}
+                <button onClick={changeFlexDir} className="timelineChanger timelineSorter slideInInitial slideIn flex-row">
+                    <i className="center m-auto">
+                        {sortText}
+                    </i>
+                    <span class="material-symbols-outlined m-auto">sort</span>
+                </button>
             </div>
-            <button onClick={changeSortDir} className={"timelineChanger fade timelineSorter " + fadeoutContent}><i>Sort by<br></br>{sortText}</i></button>
+            
             <div className={"timeline fade flex-row " + fadeoutContent}>
     
                 <div className="timelineUI">

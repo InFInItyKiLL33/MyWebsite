@@ -111,6 +111,26 @@ body {
     margin-top: 25px;
 }
 
+.disable-pointer {
+  pointer-events: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.indexNegative {
+  z-index: -1;
+}
+
+.indexHigh {
+  z-index: 100;
+}
+
 /* Animations */
 .fade {
     animation: 0.75s fade ease;
@@ -144,8 +164,29 @@ body {
     transition: 0.75s ease;
 }
 
-.disable-pointer {
-  pointer-events: none;
+.slideInInitial {
+    transform: translate(-10px, 0px);
+    transition: 1s ease;
+}
+
+.slideInInitialR {
+    transform: translate(10px, 0px);
+    transition: 1s ease;
+}
+
+.slideIn {
+    animation: 1s slideIn ease;
+    animation-fill-mode: forwards;
+}
+
+.slideInR {
+    animation: 1s slideInR ease;
+    animation-fill-mode: forwards;
+}
+
+.slideInRDelayed {
+    animation: 2s slideInR ease;
+    animation-fill-mode: forwards;
 }
 
 @keyframes fade {
@@ -168,4 +209,14 @@ body {
     0% {opacity: 0.0;}
     50% {opacity: 0.0;}
     100% {opacity: 0.4;}
+}
+
+@keyframes slideIn {
+  0% {transform: translate(-10px, 0px);}
+  100% {transform: translate(0px, 0px);}
+}
+
+@keyframes slideInR {
+  0% {transform: translate(10px, 0px);}
+  100% {transform: translate(0px, 0px);}
 }

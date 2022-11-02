@@ -156,16 +156,6 @@ body {
     }
 }
 
-.slideInInitial {
-    transform: translate(-10px, 0px);
-    transition: 1s ease;
-}
-
-.slideIn {
-    animation: 1s slideIn ease;
-    animation-fill-mode: forwards;
-}
-
 .boxShadowSlideInInitial {
     box-shadow: 60px 40px 1px 1px rgba(50, 50, 50, 0.4)!important;
 }
@@ -173,11 +163,6 @@ body {
 .boxShadowSlideIn {
     animation: 2s boxShadowSlideIn ease;
     animation-fill-mode: forwards;
-}
-
-@keyframes slideIn {
-    0% {transform: translate(-10px, 0px);}
-    100% {transform: translate(0px, 0px);}
 }
 
 @keyframes boxShadowSlideIn {
