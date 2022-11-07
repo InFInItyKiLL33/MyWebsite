@@ -140,7 +140,7 @@ function AboutMeContentWrappers(props) {
                             <span className="bolded">• PC Building •</span> <span className="footnotes"></span>
                         </p>
                         <p className="aboutMeTexts indented">
-                            Built <OrangeSpan text="6 complete PCs" />, and additionally, <OrangeSpan text="helped source parts" /> and <OrangeSpan text="handcrafted lists for 3 PCs" /> in my lifetime
+                            Built <OrangeSpan text="7 complete PCs" />, and additionally, <OrangeSpan text="helped source parts" /> and <OrangeSpan text="handcrafted lists for 3 PCs" /> in my lifetime
                             <BreakLine count="2" />
                             <OrangeSpan text=" Tinkered" /> with PC parts for at least <OrangeSpan text={getYears(2019)} /> years
                         </p>

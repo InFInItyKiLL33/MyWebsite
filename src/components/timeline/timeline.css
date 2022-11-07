@@ -26,8 +26,16 @@
 
 .timelineChanger {
     color: rgb(176, 176, 176);
-    height: 75px;
-    margin: 0px 2vw 0px 2vw;
+    margin: 0px 1vw 0px 1vw;
+}
+
+.timelineIcons {
+    width: 23px;
+    height: 23px;
+}
+
+.timelineOptionsText {
+    margin: 0px 0px 0px 10px;
 }
 
 .timelineSorter {
@@ -41,6 +49,10 @@
 .timelineChanger:hover, .timelineSorter:hover {
     scale: 1.05;
     color: white;
+}
+
+.timelineChangerOrange {
+    color: var(--orange)!important;
 }
 
 .timelineSpecificContent {
@@ -257,6 +269,70 @@
 .endSpace {
     height: 12.5vh;
 }
+
+/* Timeline initial */
+
+.timelineInitialWrapper {
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    justify-content: space-evenly;
+    z-index: -1;
+    margin-top: -180px;
+    position: absolute;
+}
+
+.timelineInitialTypes {
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: inset 0 15px 40px 15px rgba(0, 0, 0, 0.75);
+    padding: 0;
+    border: none;
+}
+
+.timelineInitialTypesImg {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(0.3) grayscale(0.75);
+    transition: 0.3s ease;
+    z-index: -1;
+    position: relative;
+}
+
+.timelineInitialTypesImgAlt {
+    object-fit: contain!important;
+    scale: 0.9;
+}
+
+.timelineInitialTypes:hover > img {
+    filter: brightness(1) grayscale(0.0);
+}
+
+.timelineInitialTypes:hover > p {
+    color: rgba(255, 255, 255, 1);
+}
+
+.timelineInitialTypesText {
+    position: relative;
+    margin-top: -100vh;
+    color: rgba(176, 176, 176, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    font-weight: 700;
+    transition: 0.3s ease;
+    font-size: 3em;
+    pointer-events: none;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);
+    font-family: 'Work Sans', sans-serif;
+}
+
+/* Keyframes */
 
 @keyframes fadeOutImageKeyframe {
     0% {filter: brightness(0.3);}

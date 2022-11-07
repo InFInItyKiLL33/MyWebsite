@@ -5,22 +5,35 @@ import NHWSSImg1 from "../../images/nhwss1.png";
 import NHWSSImg2 from "../../images/nhwss2.png";
 import ThatAquariumImg from "../../images/thataquarium.png";
 import TimelineSpecificContent from './timeline_specific_content';
+import TypeButtons from './type_buttons';
 import './timeline.css';
+import ProgrammingImgDefault from '../../images/programming_icon_default.png';
+import ProgrammingImgHover from '../../images/programming_icon_hover.png';
+import ProgrammingImgActive from '../../images/programming_icon_active.png';
+import AviationImgDefault from '../../images/aviation_icon_default.png';
+import AviationImgHover from '../../images/aviation_icon_hover.png';
+import AviationImgActive from '../../images/aviation_icon_active.png';
+import DesignImgDefault from '../../images/design_icon_default.png';
+import DesignImgHover from '../../images/design_icon_hover.png';
+import DesignImgActive from '../../images/design_icon_active.png';
+import PCBuildingImgDefault from '../../images/pc_building_icon_default.png';
+import PCBuildingImgHover from '../../images/pc_building_icon_hover.png';
+import PCBuildingImgActive from '../../images/pc_building_icon_active.png';
 
 function TimelineSpecific(props) {
 
     
     let currentContent = [];
     let skillButtons = [];
-    let buttonElems = document.getElementsByClassName("timelineChanger fade bolded");
 
     const [fadeoutContent, status] = useState("active");
-    const [type, setType] = useState(props.type); // the string related
-    const [typeVal, setTypeVal] = useState(props.initialTimeline); // 0 - 3
     const [sortDirection, setSortDir] = useState("flex-col");
     const [sortText, setSortText] = useState("Newest");
     const orange = "#f06f4f";
-    const types = {0: "Programming", 1: "Aviation", 2: "Design", 3: "PC Building"};
+    const defaultIcons = [ProgrammingImgDefault, AviationImgDefault, DesignImgDefault, PCBuildingImgDefault];
+    const hoverIcons = [ProgrammingImgHover, AviationImgHover, DesignImgHover, PCBuildingImgHover];
+    const activeIcons = [ProgrammingImgActive, AviationImgActive, DesignImgActive, PCBuildingImgActive];
+    const timelineChangerOrange = "timelineChangerOrange"
     const content = {
         0: [
             [
@@ -73,33 +86,28 @@ function TimelineSpecific(props) {
 
         ]
     }; // For each content, 0 -> image file, 1 -> Title, 2 -> Date, 3 -> Description, 4 (Optional) -> Hyperlink
+    
+    // set whichever type value is active to the right image
+    let tempTypeImage = [...defaultIcons];
+    tempTypeImage[props.typeVal] = activeIcons[props.typeVal];
+    const [typeImage, setTypeImage] = useState(tempTypeImage); // this needs to be here instead of TypeButtons component as I need to unactive the previous active type
 
-    function changeType(e) {
+    function changeType(e) { // click on type header
         let newType = parseInt(e.target.getAttribute("data-index"));
         props.fadeImage("fadeOutImage");
         status("disablePointer fadeOutTimelineContent");
         setTimeout(function() {
             status("disablePointer fadeInitialOpacity"); // for smoother transition
-            setTypeVal(newType);
-            setType(types[newType]);
+            props.setTypeVal(newType);
             props.changeImage(props.imageOptions[newType]);
         }, 400);
-        // setTimeout(function() {
-        // }, 400);
         setTimeout(function() {
             props.fadeImage("active");
             status("active");
         }, 800);
     };
-    
-    function changeButtonColour(index) {
-        for (let i = 0; i < buttonElems.length; i++) {
-            buttonElems[i].style.color = "";
-        };
-        buttonElems[index].style.color = orange;
-    };
 
-    function changeFlexDir() {
+    function changeFlexDir() { // sort
         if (sortDirection === "flex-col") {
             setSortDir("flex-reverse-col");
             setSortText("Oldest");
@@ -109,21 +117,21 @@ function TimelineSpecific(props) {
         };
     };
 
-    for (let i = 0; i < (content[typeVal]).length; i++) {
+    for (let i = 0; i < (content[props.typeVal]).length; i++) { // generate content to display
         currentContent.push(
-            <TimelineSpecificContent typeValue={typeVal} value={types[typeVal]} content={content} index={i} />
+            <TimelineSpecificContent typeValue={props.typeVal} value={props.types[props.typeVal]} content={content} index={i} />
         );
     };
 
-    for (let i = 0; i < Object.keys(types).length; i++) {
+    for (let i = 0; i < Object.keys(props.types).length; i++) { // generate type headers
+        let toOrange = props.typeVal === i ? timelineChangerOrange : "";
         skillButtons.push(
-            <button onClick={changeType} key={i} data-index={i} className="timelineChanger fade slideInInitialR slideInR bolded ">{types[i]}</button>
+            <TypeButtons index={i} toOrange={toOrange} typeVal={props.typeVal} changeType={changeType} types={props.types} defaultIcons={defaultIcons} hoverIcons={hoverIcons} activeIcons={activeIcons} typeImage={typeImage} setTypeImage={setTypeImage} />
         );
     };
 
-    useEffect(() => {
-        changeButtonColour(typeVal);
-    });
+    // useEffect(() => {
+    // });
 
     
     return(
@@ -136,7 +144,7 @@ function TimelineSpecific(props) {
                     <i className="center m-auto">
                         {sortText}
                     </i>
-                    <span class="material-symbols-outlined m-auto">sort</span>
+                    <span className="material-symbols-outlined m-auto">sort</span>
                 </button>
             </div>
             
