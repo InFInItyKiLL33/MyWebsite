@@ -7,7 +7,7 @@ function TimelineInitial(props) {
     
     for (let i = 0; i < Object.keys(props.types).length; i++) {
         options.push(
-            <TimelineInitialTypes index={i} imageOptions={props.imageOptions} imageInitialOptions={props.imageInitialOptions} types={props.types} setTypeVal={props.setTypeVal} changeTimelineState={props.changeTimelineState} changeImage={props.changeImage} />
+            <TimelineInitialTypes index={i} imageOptions={props.imageOptions} imageInitialOptions={props.imageInitialOptions} types={props.types} setTypeVal={props.setTypeVal} changeTimelineState={props.changeTimelineState} changeImage={props.changeImage} changeTransitionAnimationState={props.changeTransitionAnimationState} />
         );
     };
 
