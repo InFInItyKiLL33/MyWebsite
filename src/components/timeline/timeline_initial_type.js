@@ -3,9 +3,12 @@ import React, { useState } from "react";
 function TimelineInitialTypes(props) {
 
     function chooseType(e) {
-        props.setTypeVal(parseInt(e.target.getAttribute("data-index")));
-        props.changeTimelineState(1);
-        props.changeImage(props.imageOptions[e.target.getAttribute("data-index")]);
+        props.changeTransitionAnimationState(parseInt(e.target.getAttribute("data-index")) + 1);
+        setTimeout(function() {
+            props.setTypeVal(parseInt(e.target.getAttribute("data-index")));
+            props.changeTimelineState(1);
+            props.changeImage(props.imageOptions[e.target.getAttribute("data-index")]);
+        }, 1000)
     };
 
     let alternateFit = props.index === 2 ? "timelineInitialTypesImgAlt" : "";

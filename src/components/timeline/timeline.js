@@ -9,6 +9,7 @@ import './timeline.css';
 import Navbar from "../navbar";
 import TimelineInitial from "./timeline_initial";
 import TimelineSpecific from './timeline_specific';
+import TimelineAviationAnimation from "./animations/aviation";
 
 function Timeline(props) {
     const initialTimeline = 0;
@@ -19,6 +20,7 @@ function Timeline(props) {
     const imageInitialOptions = [backgroundImage0, backgroundImage1, backgroundImage2, backgroundImage3];
     const [imageType, changeImage] = useState(imageOptions[typeVal]);
     const [timelineState, changeTimelineState] = useState(0); // 0 - Initial, 1 - Specific
+    const [transitionAnimation, changeTransitionAnimationState] = useState(0); // 0 - Disable, 1 - Run animation for type 1, 2 - for 2, etc..
 
     return(
 
@@ -35,9 +37,11 @@ function Timeline(props) {
         
                 <Navbar page={props.page} />
 
+                {transitionAnimation === 2 ? <TimelineAviationAnimation /> : <></>}
+
                 {
                     timelineState === 0 ? 
-                        <TimelineInitial types={types} imageOptions={imageOptions} imageInitialOptions={imageInitialOptions} setTypeVal={setTypeVal} changeTimelineState={changeTimelineState} changeImage={changeImage} /> 
+                        <TimelineInitial types={types} imageOptions={imageOptions} imageInitialOptions={imageInitialOptions} setTypeVal={setTypeVal} changeTimelineState={changeTimelineState} changeImage={changeImage} changeTransitionAnimationState={changeTransitionAnimationState} /> 
                     : 
                         <TimelineSpecific type="Programming" changeImage={changeImage} fadeImage={status} imageOptions={imageOptions} initialTimeline={initialTimeline} typeVal={typeVal} setTypeVal={setTypeVal} types={types} />
                 }
