@@ -1,9 +1,8 @@
-import "./animations.css";
+import React, { useState } from "react";
+import "./aviation_animation.css";
 import AviationAnimationImg from "../../../images/aviation.svg";
 
 function TimelineAviationAnimation(props) {
-
-
 
     return(
         <>

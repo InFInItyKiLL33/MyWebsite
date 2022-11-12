@@ -1,0 +1,93 @@
+/* Initial Load */
+
+.timelineInitialTypesAnimationBefore {
+    opacity: 0.0!important;
+}
+
+.timelineInitialTypesAnimation {
+    animation-fill-mode: both;
+    cursor: pointer;
+    animation: timelineLoadTopDown 1s;
+}
+
+.timelineInitialTypesAnimationReverse {
+    animation-fill-mode: both;
+    cursor: pointer;
+    animation: timelineLoadBottomUp 1s;
+}
+
+.timelineInitialTypesAnimation > p, .timelineInitialTypesAnimationReverse > p {
+    animation-fill-mode: both;
+    animation: timelineLoadText 1s;
+}
+
+.timelineInitialTypes[data-index] {
+    animation-delay: calc(1s * attr(data-index));
+}
+
+/* Choosing */
+
+.timelineInitialTypes:hover > img {
+    filter: brightness(1) grayscale(0.0);
+}
+
+.timelineInitialTypes:hover > p {
+    color: rgba(255, 255, 255, 1)!important;
+}
+
+.timelineFadeout {
+    animation: timelineFadeout 1.5s ease;
+    animation-fill-mode: forwards;
+}
+
+/* After Click */
+
+.timelineFadeoutSelected {
+    pointer-events: none;
+}
+
+.timelineFadeoutSelected > img {
+    filter: brightness(1) grayscale(0.0);
+}
+
+.timelineFadeoutSelected > p {
+    color: rgba(255, 255, 255, 1);
+}
+
+.timelineUnloadTopDown {
+    animation: timelineUnloadTopDown 1.25s ease;
+}
+
+.timelineUnloadBottomUp {
+    animation: timelineUnloadBottomUp 1.25s ease;
+}
+
+/* Keyframes */
+
+@keyframes timelineFadeout {
+    0% {pointer-events: none; box-shadow: inset 0 15px 40px 15px rgba(0, 0, 0, 0.75);}
+    100% {pointer-events: none; box-shadow: inset 0 15px 25vw 15px rgba(0, 0, 0, 1);}
+}
+
+@keyframes timelineUnloadTopDown {
+    0% {transform: translateY(0vh); opacity: 1.0; pointer-events: none; cursor: none;}
+    100% {transform: translateY(-2.5vh); opacity: 0.0;}
+}
+@keyframes timelineUnloadBottomUp {
+    0% {transform: translateY(0vh); opacity: 1.0; pointer-events: none; cursor: none;}
+    100% {transform: translateY(2.5vh); opacity: 0.0;}
+}
+
+@keyframes timelineLoadTopDown {
+    0% {transform: translateY(-2.5vh); opacity: 0.0; pointer-events: none; cursor: none;}
+    100% {transform: translateY(0vh); opacity: 1.0;}
+}
+@keyframes timelineLoadBottomUp {
+    0% {transform: translateY(2.5vh); opacity: 0.0; pointer-events: none; cursor: none;}
+    100% {transform: translateY(0vh); opacity: 1.0;}
+}
+
+@keyframes timelineLoadText {
+    0% {color: rgba(0, 0, 0, 0);}
+    100% {color: rgba(176, 176, 176, 0.3);}
+}
