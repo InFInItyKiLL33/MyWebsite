@@ -3,10 +3,13 @@ import React, { useState, useEffect } from "react";
 function TimelineInitialTypes(props) {
 
     const [initialTimelineAnimationDelay, setDelay] = useState(" timelineInitialTypesAnimationBefore");
-    const customAnimationDelay = [1600, 825, 2000, 2000];
-    let alternateFit = props.index === 2 ? "timelineInitialTypesImgAlt" : "";
+    const [activeData, setActiveData] = useState("inactive");
+    const customAnimationDelay = [1600, 825, 2000, 3000];
+    let alternateFit = props.index === 3 ? "timelineInitialTypesImgAlt" : "";
 
     function chooseType(e) {
+
+        setActiveData("active");
 
         for (let i = 0; i < Object.keys(props.types).length; i++) {
             if (i !== props.index) {
@@ -39,7 +42,7 @@ function TimelineInitialTypes(props) {
     });
 
     return(
-        <button className={"timelineInitialTypes " + props.timelineToFadeOut[props.index] + initialTimelineAnimationDelay} key={props.index} data-index={props.index} onClick={chooseType}>
+        <button className={"timelineInitialTypes " + props.timelineToFadeOut[props.index] + initialTimelineAnimationDelay} key={props.index} data-index={props.index} data-selection={activeData} onClick={chooseType}>
             <img src={props.imageInitialOptions[props.index]} data-index={props.index} className={"timelineInitialTypesImg " + alternateFit}></img>
             <p className="timelineInitialTypesText" data-index={props.index}>{props.types[props.index]}</p>
         </button>

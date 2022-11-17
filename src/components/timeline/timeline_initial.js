@@ -10,7 +10,6 @@ function TimelineInitial(props) {
 
     function staggeredFadeout(timerIndex, finalDelay) {
         setTimeout(function() {
-            console.log(timerIndex, finalDelay);
             let timelineFadeoutSetter = timelineToFadeOut;
             timelineFadeoutSetter[timerIndex] = "timelineFadeout " + (timerIndex % 2 === 0 ? "timelineUnloadTopDown" : "timelineUnloadBottomUp");
             setToFadeOut(timelineFadeoutSetter);

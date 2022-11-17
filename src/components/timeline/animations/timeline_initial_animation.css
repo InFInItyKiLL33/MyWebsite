@@ -21,23 +21,24 @@
     animation: timelineLoadText 1s;
 }
 
-.timelineInitialTypes[data-index] {
-    animation-delay: calc(1s * attr(data-index));
-}
-
 /* Choosing */
 
-.timelineInitialTypes:hover > img {
+.timelineInitialTypes:hover > img, .timelineInitialTypes[data-selection="active"] > img {
     filter: brightness(1) grayscale(0.0);
 }
 
-.timelineInitialTypes:hover > p {
+.timelineInitialTypes:hover > p, .timelineInitialTypes[data-selection="active"] > p {
     color: rgba(255, 255, 255, 1)!important;
 }
 
 .timelineFadeout {
     animation: timelineFadeout 1.5s ease;
     animation-fill-mode: forwards;
+}
+
+.timelineInitialTypes[data-selection="active"], .timelineFadeout {
+    pointer-events: none;
+    cursor: default;
 }
 
 /* After Click */
@@ -56,10 +57,12 @@
 
 .timelineUnloadTopDown {
     animation: timelineUnloadTopDown 1.25s ease;
+    animation-fill-mode: forwards;
 }
 
 .timelineUnloadBottomUp {
     animation: timelineUnloadBottomUp 1.25s ease;
+    animation-fill-mode: forwards;
 }
 
 /* Keyframes */

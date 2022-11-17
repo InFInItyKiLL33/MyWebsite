@@ -51,6 +51,30 @@
   flex-direction: column-reverse;
 }
 
+.flex-jc-start {
+  justify-content: start;
+}
+
+.flex-jc-center {
+  justify-content: center;
+}
+
+.flex-jc-end {
+  justify-content: end;
+}
+
+.flex-jc-space-a {
+  justify-content: space-around;
+}
+
+.flex-jc-space-b {
+  justify-content: space-between;
+}
+
+.flex-jc-space-e {
+  justify-content: space-evenly;
+}
+
 .fixed-display {
   display: fixed;
 }

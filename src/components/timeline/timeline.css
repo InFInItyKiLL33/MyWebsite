@@ -98,7 +98,7 @@
     pointer-events: all;
 }
 
-.eachContentImage, .eachContentImage2 {
+.eachContentImage, .eachContentImage3 {
     width: 20vw;
     height: auto;
     top: auto;
@@ -111,7 +111,7 @@
     position: absolute;
 }
 
-.eachContentImage2 {
+.eachContentImage3 {
     position: absolute;
     rotate: 5deg;
     filter: brightness(0.3);

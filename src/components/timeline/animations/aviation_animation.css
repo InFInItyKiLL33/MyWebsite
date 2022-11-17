@@ -2,17 +2,20 @@
     --aviationExhaustColour: rgb(10, 10, 10);
 }
 
-.timelineAviationAnimImgWrapper {
+.timelineAviationAnimImgWrapper, .timelineAviationAnimExhaustL, .timelineAviationAnimExhaustR {
     width: 100vw;
     height: 150vh;
     transform: translateY(120vh);
     animation: timelineAviationAnimP1 1.75s cubic-bezier(.59,.12,.49,.74);
     /* transform: translateY(50vh); */
     position: absolute;
-    background: linear-gradient(var(--aviationExhaustColour) 10%, rgb(0, 0, 0) 40%, rgb(0, 0, 0) 60%, rgba(0, 0, 0, 0) 100%);
     animation-fill-mode: forwards;
     z-index: 0;
     opacity: 1;
+}
+
+.timelineAviationAnimImgWrapper {
+    background: linear-gradient(var(--aviationExhaustColour) 10%, rgb(0, 0, 0) 40%, rgb(0, 0, 0) 60%, rgba(0, 0, 0, 0) 100%);
 }
 
 .timelineAviationAnimImgWrapper::before, .timelineAviationAnimImgWrapper::after {
@@ -37,6 +40,51 @@
     clip-path: inset(20vh 0px 0px -1vw);
 }
 
+.timelineAviationAnimExhaustL::before, .timelineAviationAnimExhaustL::after, .timelineAviationAnimExhaustR::before, .timelineAviationAnimExhaustR::after {
+    content: "";
+    width: 50vw;
+    height: 400vh;
+    background: transparent;
+    border-radius: 50%;
+    position: absolute;
+    /* border-bottom: calc(max(0.1vw, 2px)) solid var(--orangeTranslucent); */
+    margin-top: calc(-200vh + 1vh);
+}
+
+.timelineAviationAnimExhaustL {
+    margin-left: -0.5vw;
+}
+
+.timelineAviationAnimExhaustR {
+    margin-left: 0.5vw;
+}
+
+.timelineAviationAnimExhaustL::before, .timelineAviationAnimExhaustR::before {
+    transform: translate(calc(0vw - 0vw), calc(-37.5vh - 1.25vw));
+    box-shadow: 20vh 12.5vh 0px 12.5vh #f06f4f33;
+    clip-path: inset(220vh -0vw 1vh 25vw);
+    animation: timelineAviationAnimExhaustColour1 1.75s cubic-bezier(.59,.12,.49,.74);
+}
+
+.timelineAviationAnimExhaustL::after, .timelineAviationAnimExhaustR::after {
+    transform: translate(calc(50vw + 0vw), calc(-37.5vh - 1.25vw));
+    box-shadow: -20vh 12.5vh 0px 12.5vh #f06f4f33;
+    clip-path: inset(220vh 25vw 1vh -0vw);
+    animation: timelineAviationAnimExhaustColour2 1.75s cubic-bezier(.59,.12,.49,.74);
+}
+
+.timelineAviationAnimExhaustL::after {
+    height: 500vh;
+    margin-top: calc(-250vh + 1vh);
+    clip-path: inset(270vh 25vw 51vh -0vw);
+}
+
+.timelineAviationAnimExhaustR::before {
+    height: 500vh;
+    margin-top: calc(-250vh + 1vh);
+    clip-path: inset(270vh -0vw 51vh 25vw);
+}
+
 .timelineAviationAnimImg {
     filter: invert(69%) sepia(64%) saturate(4973%) hue-rotate(331deg) brightness(102%) contrast(88%);
     position: absolute;
@@ -54,4 +102,16 @@
 @keyframes timelineAviationAnimP1 {
     0% {transform: translateY(120vh);}
     100% {transform: translateY(-180vh);}
+}
+
+@keyframes timelineAviationAnimExhaustColour1 {
+    0% {box-shadow: 20vh 12.5vh 0px 12.5vh #f06f4f33;}
+    65% {box-shadow: 20vh 12.5vh 0px 12.5vh #f06f4f00;}
+    100% {box-shadow: 20vh 12.5vh 0px 12.5vh #f06f4f00;}
+}
+
+@keyframes timelineAviationAnimExhaustColour2 {
+    0% {box-shadow: -20vh 12.5vh 0px 12.5vh #f06f4f33;}
+    65% {box-shadow: -20vh 12.5vh 0px 12.5vh #f06f4f00;}
+    100% {box-shadow: -20vh 12.5vh 0px 12.5vh #f06f4f00;}
 }
