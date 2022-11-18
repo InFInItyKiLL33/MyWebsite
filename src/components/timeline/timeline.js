@@ -19,8 +19,8 @@ function Timeline(props) {
     const imageOptions = [backgroundImage0, backgroundImage1, backgroundImage2Alt, backgroundImage3];
     const imageInitialOptions = [backgroundImage0, backgroundImage1, backgroundImage2, backgroundImage3];
     const [typeVal, setTypeVal] = useState(initialTimeline); // 0 - 3
-    const [fadeOutTimelineImage, status] = useState("backgroundImage active")
-    const [imageType, changeImage] = useState(imageOptions[typeVal]);
+    const [fadeoutTimelineImage, setFadeoutTimelineImage] = useState("backgroundImage active")
+    const [imageType, changeImageType] = useState(imageOptions[typeVal]);
     const [timelineState, changeTimelineState] = useState(0); // 0 - Initial, 1 - Specific
     const [transitionAnimation, changeTransitionAnimationState] = useState(0); // 0 - Disable, 1 - Run animation for type 1, 2 - for 2, etc..
 
@@ -44,7 +44,7 @@ function Timeline(props) {
     };
 
     useEffect(function() {
-        changeTransitionAnimationState(4); // For testing
+        // changeTransitionAnimationState(4); // For testing
     }, []);
 
     return(
@@ -59,13 +59,13 @@ function Timeline(props) {
                     timelineState === 0 ? 
                         <>
                             <Navbar page={props.page} />
-                            <TimelineInitial types={types} imageOptions={imageOptions} imageInitialOptions={imageInitialOptions} setTypeVal={setTypeVal} changeTimelineState={changeTimelineState} changeImage={changeImage} changeTransitionAnimationState={changeTransitionAnimationState} /> 
+                            <TimelineInitial types={types} imageOptions={imageOptions} imageInitialOptions={imageInitialOptions} setTypeVal={setTypeVal} changeTimelineState={changeTimelineState} changeImage={changeImageType} changeTransitionAnimationState={changeTransitionAnimationState} /> 
                         </>
                     : 
                         <>
-                            <img src={imageType} className={"backgroundImage " + fadeOutTimelineImage} alt="background wing view"></img>
+                            <img src={imageType} className={"backgroundImage " + fadeoutTimelineImage} alt="background wing view"></img>
                             <Navbar page={props.page} />
-                            <TimelineSpecific type="Programming" changeImage={changeImage} fadeImage={status} imageOptions={imageOptions} initialTimeline={initialTimeline} typeVal={typeVal} setTypeVal={setTypeVal} types={types} />
+                            <TimelineSpecific type="Programming" changeImageType={changeImageType} fadeImage={setFadeoutTimelineImage} imageOptions={imageOptions} initialTimeline={initialTimeline} typeVal={typeVal} setTypeVal={setTypeVal} types={types} />
                         </>
                 }
                 
