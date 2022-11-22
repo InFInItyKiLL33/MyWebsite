@@ -15,7 +15,11 @@ function TimelineDesignAnimationBoxes(props) {
             textAlign: props.textAlign,
             paddingTop: props.pt,
             aspectRatio: props.ar,
-            overflow: props.overflow
+            overflow: props.overflow,
+            position: props.pos,
+            rotate: props.rotate,
+            zIndex: props.zindex,
+            animation: props.anim
         }}>
             {props.children}
         </div>
@@ -48,7 +52,8 @@ function TimelineDesignAnimation(props) {
 
     return(
         <div className="timelineDesignAnim">
-
+            
+            {/* Design Text itself animated */}
             <div className="timelineDesignAnimText flex-row" style={{scale: designTextScale}}>
                 <TimelineDesignSVGText classname="designSVGTextD" w="89" h="124" vbox="89" margin="-5px -10px 0px -10px">
                     <TimelineDesignSVGTextPath d="M12 12L12 112" animKeyframe="svgAnimateD1" />
@@ -84,6 +89,7 @@ function TimelineDesignAnimation(props) {
 
             <div className="timelineDesignAnimContentWrapper">
 
+                {/* Fake Searchbar */}
                 <div className="timelineDesignAnimContent1">
                     <div className="timelineDesignAnimSearchbar flex-row">
                         <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48" className="timelineDesignAnimSearchbarIcon">
@@ -91,7 +97,9 @@ function TimelineDesignAnimation(props) {
                         </svg>
                     </div>
                 </div>
-    
+
+                
+                {/* Other items */}
                 <div className="timelineDesignAnimContent2 flex-row">
     
                     <div className="timelineDesignAnimContent2Col1 flex-col"> 
@@ -129,10 +137,10 @@ function TimelineDesignAnimation(props) {
                                 <path d="M9.45 43.1q-1.85 0-3.2-1.35t-1.35-3.2V9.45q0-1.9 1.35-3.25t3.2-1.35h29.1q1.9 0 3.25 1.35t1.35 3.25v29.1q0 1.85-1.35 3.2t-3.25 1.35Zm1.8-8.6H36.8l-7.9-10.85-6.6 8.5-4.65-6.35Z"/>
                             </svg>
                         </TimelineDesignAnimationBoxes>
-                        <TimelineDesignAnimationBoxes width="max(50px, 15vw)" height="30px" ml="3.5vw" mt="2vh" br="20px" bgColour={colourPalette[5]} />
-                        <TimelineDesignAnimationBoxes width="max(50px, 14.5vw)" height="max(20px, 15vh)" ml="4vw" mt="2.5vh" br="20px" bgColour={colourPalette[2]} />
-                        <TimelineDesignAnimationBoxes width="max(50px, 15vw)" height="20px" ml="3.5vw" mt="2.5vh" br="20px" bgColour={colourPalette[3]} />
-                        <TimelineDesignAnimationBoxes width="max(50px, 13vw)" height="20px" ml="5.5vw" mt="1.5vh" br="20px" bgColour={colourPalette[5]} />
+                        <TimelineDesignAnimationBoxes width="max(50px, 15vw)" height="30px" ml="3.5vw" mt="2vh" br="20px" bgColour={colourPalette[5]} anim="0.9s col2box1Part1 ease 0s both, 0.75s col2box1Part2 ease 2.6s forwards" />
+                        <TimelineDesignAnimationBoxes width="max(50px, 14.5vw)" height="max(20px, 15vh)" ml="4vw" mt="2.5vh" br="20px" bgColour={colourPalette[2]} anim="0.9s col2box2Part1 ease 0.2s both, 0.8s col2box2Part2 ease 2.4s forwards" />
+                        <TimelineDesignAnimationBoxes width="max(50px, 15vw)" height="20px" ml="3.5vw" mt="2.5vh" br="20px" bgColour={colourPalette[3]} anim="0.8s col2box1Part1 ease 0.6s both, 0.8s col2box1Part2 ease 2.2s forwards" />
+                        <TimelineDesignAnimationBoxes width="max(50px, 13vw)" height="20px" ml="5.5vw" mt="1.5vh" br="20px" bgColour={colourPalette[5]} anim="0.8s col2box4Part1 ease 1s both, 0.8s col2box4Part2 ease 2s forwards" />
                         
                     </TimelineDesignAnimationBoxes>
 
@@ -163,6 +171,36 @@ function TimelineDesignAnimation(props) {
                                     <path d="M0 532L16.7 533.5C33.3 535 66.7 538 100 537.8C133.3 537.7 166.7 534.3 200 533.2C233.3 532 266.7 533 300 528.8C333.3 524.7 366.7 515.3 400 515.7C433.3 516 466.7 526 500 530.5C533.3 535 566.7 534 600 528.8C633.3 523.7 666.7 514.3 700 512.3C733.3 510.3 766.7 515.7 800 521.3C833.3 527 866.7 533 883.3 536L900 539L900 601L883.3 601C866.7 601 833.3 601 800 601C766.7 601 733.3 601 700 601C666.7 601 633.3 601 600 601C566.7 601 533.3 601 500 601C466.7 601 433.3 601 400 601C366.7 601 333.3 601 300 601C266.7 601 233.3 601 200 601C166.7 601 133.3 601 100 601C66.7 601 33.3 601 16.7 601L0 601Z" fill="#d23467"></path><path d="M0 550L16.7 551.7C33.3 553.3 66.7 556.7 100 559.5C133.3 562.3 166.7 564.7 200 564.5C233.3 564.3 266.7 561.7 300 560.7C333.3 559.7 366.7 560.3 400 562.7C433.3 565 466.7 569 500 565.7C533.3 562.3 566.7 551.7 600 551.3C633.3 551 666.7 561 700 562.8C733.3 564.7 766.7 558.3 800 558C833.3 557.7 866.7 563.3 883.3 566.2L900 569L900 601L883.3 601C866.7 601 833.3 601 800 601C766.7 601 733.3 601 700 601C666.7 601 633.3 601 600 601C566.7 601 533.3 601 500 601C466.7 601 433.3 601 400 601C366.7 601 333.3 601 300 601C266.7 601 233.3 601 200 601C166.7 601 133.3 601 100 601C66.7 601 33.3 601 16.7 601L0 601Z" fill="#c62368"></path>
                                 </svg>
                             </div>
+                        </TimelineDesignAnimationBoxes>
+
+                    </div>
+
+                    <div className="timelineDesignAnimContent2Col4 flex-col">
+
+                        {/* 20vw/7, 6vh = 54.85px, 64.8px tan-1(54.85/64.8) */}
+
+                        <TimelineDesignAnimationBoxes width="max(150px, 20vw)" height="40vh" ml="2.5vw" mt="0vh" br="10px" bgColour={colourPalette[0]} boxShadow="4px 4px 4px 2px rgba(60, 60, 60, 0.6)">
+
+                            <div className="pageDots" style={{marginTop: "7.5vh"}}>
+
+                                <div className="lineGraphSVG text-c" style={{scale: String(window.innerHeight/1440)}}>
+                                    <svg width="192" height="100" viewBox="0 0 192 100" fill="none" xmlns="http://www.w3.org/2000/svg" style={{scale: "1.5"}}>
+                                        <path d="M9 45L37 79L60 7L75 54L109 94L136 60L171 42" stroke={colourPalette[4]} stroke-width="4" stroke-linejoin="round" style={{animation: "2.5s lineGraph cubic-bezier(.5, 0, .5, 1) 0s both, 1s lineGraphDotPart1 cubic-bezier(.5, 0, .5, 1), 0.5s lineGraphDotPart2 cubic-bezier(.5, 0, .5, 1) 3.5s forwards"}}/>
+                                        <circle cx="9" cy="45" r="6" fill={colourPalette[5]} style={{animation: "0.5s lineGraphDotPart1 ease 0s both, 0.5s lineGraphDotPart2 ease 1.4s forwards"}}/>
+                                        <circle cx="37" cy="79" r="6" fill={colourPalette[5]} style={{animation: "0.5s lineGraphDotPart1 ease 0.2s both, 0.5s lineGraphDotPart2 ease 1.55s forwards"}}/>
+                                        <circle cx="60" cy="7" r="7" fill={colourPalette[5]} style={{animation: "0.5s lineGraphDotPart1 ease 0.35s both, 0.75s lineGraphDotPart2 ease 1.8s forwards"}}/>
+                                        <circle cx="75" cy="54" r="5" fill={colourPalette[5]} style={{animation: "0.5s lineGraphDotPart1 ease 0.45s both, 0.75s lineGraphDotPart2 ease 1.85s forwards"}}/>
+                                        <circle cx="109" cy="94" r="6" fill={colourPalette[5]} style={{animation: "0.5s lineGraphDotPart1 ease 0.5s both, 0.5s lineGraphDotPart2 ease 1.875s forwards"}}/>
+                                        <circle cx="136" cy="60" r="4" fill={colourPalette[5]} style={{animation: "0.5s lineGraphDotPart1 ease .625s both, 0.5s lineGraphDotPart2 ease 2s forwards"}}/>
+                                        <circle cx="171" cy="42" r="6" fill={colourPalette[5]} style={{animation: "0.5s lineGraphDotPart1 ease 0.825s both, 0.4s lineGraphDotPart2 ease 2.25s forwards"}}/>
+                                    </svg>
+                                </div>
+
+                                <TimelineDesignAnimationBoxes br="15px" height="3vh" width="60%" ml="20%" mt="7.5vh" bgColour={colourPalette[2]} anim="0.8s col4box1Part1 ease 0.2s both, 0.8s col4box1Part2 ease 2s forwards" />
+                                <TimelineDesignAnimationBoxes br="15px" height="1.5vh" width="30%" ml="35%" mt="2vh" bgColour={colourPalette[2]} anim="0.8s col4box2Part1 ease 0.5s both, 0.8s col4box2Part2 ease 1.7s forwards" />
+
+                            </div>
+
                         </TimelineDesignAnimationBoxes>
 
                     </div>

@@ -75,6 +75,15 @@
   justify-content: space-evenly;
 }
 
+.mlr-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-c {
+  text-align: center;
+}
+
 .fixed-display {
   display: fixed;
 }

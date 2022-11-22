@@ -81,7 +81,8 @@
     aspect-ratio: 1;
     background: conic-gradient(var(--orange) 70%, var(--orangeTranslucent) 70%);
     border-radius: 50%;
-    margin: 5vh auto 0px auto
+    margin: 5vh auto 0px auto;
+    animation: 2.75s pieChartAnim ease 0s both;
 }
 
 @keyframes designContentWrapperAnimation {
@@ -173,4 +174,91 @@
     30% {stroke-dasharray: 0 0 140 0 0 2000;}
     70% {stroke-dasharray: 0 0 140 0 0 2000;}
     100% {stroke-dasharray: 0 70 0 70 0 2000;}
+}
+
+@keyframes col2box1Part1 {
+    0% {width: 40px; opacity: 0.0;}
+    60% {opacity: 1.0;}
+    100% {width: max(30px, 15vw)}
+}
+
+@keyframes col2box1Part2 {
+    0% {width: max(30px, 15vw); margin-left: 3.5vw}
+    20% {opacity: 1.0;}
+    100% {width: 40px; margin-left: calc(18.5vw - 40px); opacity: 0.0;}
+}
+
+@keyframes col2box2Part1 {
+    0% {width: 40px; opacity: 0.0; height: 40px; margin-left: calc(18.5vw - 40px);}
+    /* 30% {height: 40px;} */
+    60% {opacity: 1.0;}
+    100% {width: max(30px, 14.5vw); height: max(20px, 15vh); margin-left: 4vw;}
+}
+
+@keyframes col2box2Part2 {
+    0% {width: max(30px, 14.5vw); margin-left: 4vw; height: max(20px, 15vh);}
+    20% {opacity: 1.0;}
+    /* 50% {width: 40px; margin-left: calc(18.5vw - 40px); height: max(20px, 15vh);} */
+    100% {height: 40px; opacity: 0.0; width: 40px; margin-left: calc(18.5vw - 40px);}
+}
+
+@keyframes col2box4Part1 {
+    0% {width: 40px; opacity: 0.0;}
+    60% {opacity: 1.0;}
+    100% {width: max(30px, 13vw)}
+}
+
+@keyframes col2box4Part2 {
+    0% {width: max(30px, 13vw); margin-left: 5.5vw}
+    20% {opacity: 1.0;}
+    100% {width: 40px; margin-left: calc(18.5vw - 40px); opacity: 0.0;}
+}
+
+@keyframes col4box1Part1 {
+    0% {width: 40px; opacity: 0.0; margin-left: calc(50% - 20px);}
+    60% {opacity: 1.0;}
+    100% {width: 60%; margin-left: 20%}
+}
+
+@keyframes col4box1Part2 {
+    0% {width: 60%; margin-left: 20%}
+    20% {opacity: 1.0;}
+    100% {width: 40px;  margin-left: calc(50% - 20px); opacity: 0.0;}
+}
+
+@keyframes col4box2Part1 {
+    0% {width: 40px; opacity: 0.0; margin-left: calc(50% - 20px);}
+    60% {opacity: 1.0;}
+    100% {width: 30%; margin-left: 35%}
+}
+
+@keyframes col4box2Part2 {
+    0% {width: 30%; margin-left: 35%}
+    20% {opacity: 1.0;}
+    100% {width: 40px;  margin-left: calc(50% - 20px); opacity: 0.0;}
+}
+
+@keyframes pieChartAnim {
+    0% {rotate: 0deg; opacity: 0.0;}
+    25% {rotate: -80deg; opacity: 1.0;}
+    50% {rotate: -4deg;}
+    75% {rotate: -130deg; opacity: 1.0;}
+    100% {rotate: 30deg; opacity: 0.0;}
+}
+
+@keyframes lineGraph {
+    0% {stroke-dasharray: 0 0 0 2000;}
+    40% {stroke-dasharray: 0 0 300 2000;}
+    60% {stroke-dasharray: 0 0 300 2000;}
+    100% {stroke-dasharray: 0 300 0 2000;}
+}
+
+@keyframes lineGraphDotPart1 {
+    0% {opacity: 0.0;}
+    100% {opacity: 1.0;}
+}
+
+@keyframes lineGraphDotPart2 {
+    0% {opacity: 1.0;}
+    100% {opacity: 0.0;}
 }
