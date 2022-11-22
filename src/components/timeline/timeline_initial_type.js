@@ -24,6 +24,7 @@ function TimelineInitialTypes(props) {
                 props.setTypeVal(parseInt(e.target.getAttribute("data-index")));
                 props.changeTimelineState(1);
                 props.changeImage(props.imageOptions[e.target.getAttribute("data-index")]);
+                console.log("a");
                 setTimeout(function() {
                     props.changeTransitionAnimationState(0);
                 }, 1000);

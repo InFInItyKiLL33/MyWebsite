@@ -10,9 +10,11 @@ function TimelineInitial(props) {
 
     function staggeredFadeout(timerIndex, finalDelay) {
         setTimeout(function() {
-            let timelineFadeoutSetter = timelineToFadeOut;
-            timelineFadeoutSetter[timerIndex] = "timelineFadeout " + (timerIndex % 2 === 0 ? "timelineUnloadTopDown" : "timelineUnloadBottomUp");
-            setToFadeOut(timelineFadeoutSetter);
+            setToFadeOut(function(prevTimelineFadeout) {
+                let timelineFadeoutSetter = prevTimelineFadeout;
+                timelineFadeoutSetter[timerIndex] = "timelineFadeout " + (timerIndex % 2 === 0 ? "timelineUnloadTopDown" : "timelineUnloadBottomUp");
+                return timelineFadeoutSetter;
+            });
             setDataState(timerIndex + 1);
         }, finalDelay);
     };
