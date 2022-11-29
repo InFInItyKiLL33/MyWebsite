@@ -1,0 +1,71 @@
+.timelineDesignAnim {
+    --timelineDesignAnimBG1: #111;
+    --timelineDesignAnimBG2: #666;
+    --timelineDesignAnimBG3: #777;
+    --timelineDesignAnimBG4: #222;
+    position: fixed;
+    overflow-y: hidden;
+    width: 100vw;
+}
+
+.timelineDesignAnimContent1 {
+    margin-left: 2.5vw;
+    margin-top: 15vh;
+}
+
+.timelineDesignAnimSearchbar {
+    width: 45vw;
+    height: max(48px, 3vh);
+    border-radius: 40px;
+    background-color: var(--timelineDesignAnimBG4);
+    justify-content: end;
+    box-shadow: 4px 4px 4px 2px rgba(60, 60, 60, 0.6);
+}
+
+.timelineDesignAnimSearchbarIcon {
+    fill: #fff;
+    scale: 0.4;
+    margin: auto 0 auto 0;
+}
+
+.timelineDesignAnimText {
+    position: absolute;
+    width: 100vw;
+    justify-content: center;
+    margin-top: 10vh;
+    margin-left: -12vw;
+    z-index: 2;
+    animation: 3.25s designContentTextAnimation linear both;
+    animation-fill-mode: forwards;
+}
+
+.timelineDesignAnimContent2Col1 {
+    border-radius: 10px;
+}
+
+.timelineDesignAnimContentWrapper {
+    rotate: 5deg;
+    opacity: 1;
+    animation-fill-mode: forwards;
+    animation: 3.25s designContentWrapperAnimation linear 0s both;
+}
+
+.timelineDesignAnimCircle1 {
+    margin-top: max(10px, 1.5vw);
+}
+
+.timelineDesignAnimPlaceholderImg {
+    margin-top: calc(12.5vh - 24px);
+    /* filter: invert(); */
+    fill: var(--timelineDesignAnimBG3);
+}
+
+.pieChart {
+    width: 20vh;
+    height: auto;
+    aspect-ratio: 1;
+    background: conic-gradient(var(--orange) 70%, var(--orangeTranslucent) 70%);
+    border-radius: 50%;
+    margin: 5vh auto 0px auto;
+    animation: 2.75s pieChartAnim ease 0s both;
+}

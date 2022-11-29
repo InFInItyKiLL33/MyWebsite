@@ -259,7 +259,7 @@
 }
 
 .fadeOutTimelineContent {
-    animation: 0.4s fadeOutContent ease;
+    animation: 0.4s fadeOut ease;
 }
 
 .disablePointer {
@@ -268,18 +268,4 @@
 
 .endSpace {
     height: 12.5vh;
-}
-
-/* Keyframes */
-
-@keyframes fadeOutImageKeyframe {
-    0% {filter: brightness(0.3);}
-    50% {filter: brightness(0.0);}
-    100% {filter: brightness(0.3);}
-}
-
-@keyframes fadeOutContent {
-    0% {opacity: 1;}
-    /* 50% {opacity: 0;} */
-    100% {opacity: 0;}
 }

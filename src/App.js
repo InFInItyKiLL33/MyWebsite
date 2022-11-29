@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import './components/keyframes.css';
 import Home from "./components/home/home";
 import Timeline from "./components/timeline/timeline";
 import About from "./components/about/about";

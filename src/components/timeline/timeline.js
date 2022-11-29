@@ -9,9 +9,9 @@ import './timeline.css';
 import Navbar from "../navbar";
 import TimelineInitial from "./timeline_initial";
 import TimelineSpecific from './timeline_specific';
-import TimelineProgrammingAnimation from "./animations/programming";
-import TimelineAviationAnimation from "./animations/aviation";
-import TimelineDesignAnimation from "./animations/design";
+import TimelineProgrammingAnimation from "./animations/programming/programming";
+import TimelineAviationAnimation from "./animations/aviation/aviation";
+import TimelineDesignAnimation from "./animations/design/design";
 
 function Timeline(props) {
     const initialTimeline = 0;
@@ -43,9 +43,9 @@ function Timeline(props) {
         }
     };
 
-    useEffect(function() {
-        // changeTransitionAnimationState(4); // For testing
-    }, []);
+    // useEffect(function() {
+    //     changeTransitionAnimationState(4); // For testing
+    // }, []);
 
     return(
 

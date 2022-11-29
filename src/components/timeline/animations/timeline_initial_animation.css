@@ -64,33 +64,3 @@
     animation: timelineUnloadBottomUp 1.25s ease;
     animation-fill-mode: forwards;
 }
-
-/* Keyframes */
-
-@keyframes timelineFadeout {
-    0% {pointer-events: none; box-shadow: inset 0 15px 40px 15px rgba(0, 0, 0, 0.75);}
-    100% {pointer-events: none; box-shadow: inset 0 15px 25vw 15px rgba(0, 0, 0, 1);}
-}
-
-@keyframes timelineUnloadTopDown {
-    0% {transform: translateY(0vh); opacity: 1.0; pointer-events: none; cursor: none;}
-    100% {transform: translateY(-2.5vh); opacity: 0.0;}
-}
-@keyframes timelineUnloadBottomUp {
-    0% {transform: translateY(0vh); opacity: 1.0; pointer-events: none; cursor: none;}
-    100% {transform: translateY(2.5vh); opacity: 0.0;}
-}
-
-@keyframes timelineLoadTopDown {
-    0% {transform: translateY(-2.5vh); opacity: 0.0; pointer-events: none; cursor: none;}
-    100% {transform: translateY(0vh); opacity: 1.0;}
-}
-@keyframes timelineLoadBottomUp {
-    0% {transform: translateY(2.5vh); opacity: 0.0; pointer-events: none; cursor: none;}
-    100% {transform: translateY(0vh); opacity: 1.0;}
-}
-
-@keyframes timelineLoadText {
-    0% {color: rgba(0, 0, 0, 0);}
-    100% {color: rgba(176, 176, 176, 0.3);}
-}
