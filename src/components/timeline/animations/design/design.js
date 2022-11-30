@@ -130,7 +130,7 @@ function TimelineDesignAnimation(props) {
 
                         {/* Pie Chart card */}
 
-                        <TimelineDesignAnimationBoxes width="max(150px, 20vw)" height="40vh" ml="3vw" mt="-15vh" br="10px" bgColour={colourPalette[0]} boxShadow="4px 4px 4px 2px rgba(60, 60, 60, 0.6)">
+                        <TimelineDesignAnimationBoxes width="max(150px, 20vw)" height="40vh" ml="4vw" mt="-15vh" br="10px" bgColour={colourPalette[0]} boxShadow="4px 4px 4px 2px rgba(60, 60, 60, 0.6)">
 
                             <div className="pieChart"></div>
 
@@ -146,7 +146,7 @@ function TimelineDesignAnimation(props) {
 
                         {/* Wave card */}
 
-                        <TimelineDesignAnimationBoxes width="max(150px, 20vw)" height="27.5vh" ml="3vw" mt="5vh" overflow="hidden" br="15px" boxShadow="4px 4px 4px 2px rgba(60, 60, 60, 0.6)">
+                        <TimelineDesignAnimationBoxes width="max(150px, 20vw)" height="27.5vh" ml="4vw" mt="5vh" overflow="hidden" br="15px" boxShadow="4px 4px 4px 2px rgba(60, 60, 60, 0.6)">
                             <div className="timelineDesignAnimContent2col3row2BG" style={{overflow: "hidden", transformOrigin: "0 0", scale: String(window.innerHeight/720)}}>
                                 <svg viewBox="0 0 900 600" width="900" height="600" xmlns="http://www.w3.org/2000/svg" style={{scale: "0.325", transformOrigin: "0 0"}}>
                                     <rect x="0" y="0" width="900" height="600" fill={colourPalette[0]}></rect>
@@ -160,13 +160,27 @@ function TimelineDesignAnimation(props) {
                             </div>
                         </TimelineDesignAnimationBoxes>
 
+                        {/* Empty card */}
+
+                        <TimelineDesignAnimationBoxes width="max(150px, 20vw)" height="40vh" ml="4vw" mt="5vh" br="20px" bgColour={colourPalette[0]} overflow="hidden" boxShadow="4px 4px 4px 2px rgba(60, 60, 60, 0.6)">
+
+                            <div style={{overflow: "hidden", transformOrigin: "0 0", scale: String(window.innerHeight/720)}}>
+                                <svg id="visual" viewBox="0 0 900 600" width="900" height="600" xmlns="http://www.w3.org/2000/svg" version="1.1" style={{scale: "0.3", transformOrigin: "0 0"}}>
+                                    <rect x="0" y="0" width="900" height="600" fill="#111"></rect>
+                                    <path d="M548 0L371 0L371 26L449 26L449 52L320 52L320 78L280 78L280 104L370 104L370 130L256 130L256 157L487 157L487 183L430 183L430 209L508 209L508 235L545 235L545 261L363 261L363 287L415 287L415 313L494 313L494 339L506 339L506 365L439 365L439 391L450 391L450 417L467 417L467 443L537 443L537 470L361 470L361 496L510 496L510 522L413 522L413 548L442 548L442 574L421 574L421 600L0 600L0 574L0 574L0 548L0 548L0 522L0 522L0 496L0 496L0 470L0 470L0 443L0 443L0 417L0 417L0 391L0 391L0 365L0 365L0 339L0 339L0 313L0 313L0 287L0 287L0 261L0 261L0 235L0 235L0 209L0 209L0 183L0 183L0 157L0 157L0 130L0 130L0 104L0 104L0 78L0 78L0 52L0 52L0 26L0 26L0 0L0 0Z" fill="#ff3d0dcc"></path>
+                                    <path d="M336 0L218 0L218 26L333 26L333 52L125 52L125 78L297 78L297 104L285 104L285 130L269 130L269 157L354 157L354 183L245 183L245 209L146 209L146 235L200 235L200 261L258 261L258 287L303 287L303 313L283 313L283 339L167 339L167 365L172 365L172 391L216 391L216 417L353 417L353 443L230 443L230 470L161 470L161 496L259 496L259 522L227 522L227 548L341 548L341 574L129 574L129 600L0 600L0 574L0 574L0 548L0 548L0 522L0 522L0 496L0 496L0 470L0 470L0 443L0 443L0 417L0 417L0 391L0 391L0 365L0 365L0 339L0 339L0 313L0 313L0 287L0 287L0 261L0 261L0 235L0 235L0 209L0 209L0 183L0 183L0 157L0 157L0 130L0 130L0 104L0 104L0 78L0 78L0 52L0 52L0 26L0 26L0 0L0 0Z" fill="#f06f4fcc"></path>
+                                </svg>
+                            </div>
+
+                        </TimelineDesignAnimationBoxes>
+
                     </div>
 
                     <div className="timelineDesignAnimContent2Col4 flex-col">
 
                         {/* Line Chart card */}
 
-                        <TimelineDesignAnimationBoxes width="max(150px, 20vw)" height="40vh" ml="2.5vw" mt="0vh" br="10px" bgColour={colourPalette[0]} boxShadow="4px 4px 4px 2px rgba(60, 60, 60, 0.6)">
+                        <TimelineDesignAnimationBoxes width="max(150px, 20vw)" height="40vh" ml="2.5vw" mt="-10vh" br="10px" bgColour={colourPalette[0]} boxShadow="4px 4px 4px 2px rgba(60, 60, 60, 0.6)">
 
                             <div className="pageDots" style={{marginTop: "7.5vh"}}>
 
@@ -190,9 +204,48 @@ function TimelineDesignAnimation(props) {
 
                         </TimelineDesignAnimationBoxes>
 
+                        {/* 3D cube card */}
+
+                        <TimelineDesignAnimationBoxes width="max(150px, 20vw)" height="30vh" ml="2.5vw" mt="5vh" br="10px" bgColour={colourPalette[0]} boxShadow="4px 4px 4px 2px rgba(60, 60, 60, 0.6)">
+
+                            <div className="cubeWrapper" style={{marginTop: "7.5vh"}}>
+
+                                <div className="cube">
+                                    <div className="cubeSide cubeFront"></div>
+                                    <div className="cubeSide cubeLeft"></div>
+                                    <div className="cubeSide cubeUp"></div>
+                                    <div className="cubeSide cubeRight"></div>
+                                    <div className="cubeSide cubeBottom"></div>
+                                    <div className="cubeSide cubeBack"></div>
+                                </div>
+
+                            </div>
+
+                        </TimelineDesignAnimationBoxes>
+
                     </div>
     
                 </div>
+
+            </div>
+
+            {/* Corner Design lines */}
+            <div className="timelineDesignAnimCorners absolutePos">
+
+                {/* Top left */}
+                <TimelineDesignAnimationBoxes height="2000px" width="45px" rotate="5deg" bgColour={colourPalette[5]} br="25px" pos="absolute" transformOrigin="0% 0%" anim="2.75s cornerDesignTopLeft1 linear both" />
+                <TimelineDesignAnimationBoxes height="1000px" width="25px" rotate="5deg" bgColour={colourPalette[5]} br="25px" pos="absolute" transformOrigin="0% 0%" anim="3s cornerDesignTopLeft2 linear both 0.2s" />
+                <TimelineDesignAnimationBoxes height="200px" width="20px" rotate="5deg" bgColour={colourPalette[5]} br="25px" pos="absolute" transformOrigin="0% 0%" anim="2.8s cornerDesignTopLeft3 linear both 0.4s" />
+                <TimelineDesignAnimationBoxes height="30px" width="200px" rotate="5deg" bgColour={colourPalette[5]} br="25px" pos="absolute" transformOrigin="0% 0%" anim="3s cornerDesignTopLeft4 linear both" transform="translate(0px, -50px)" />
+                <TimelineDesignAnimationBoxes height="10px" width="200px" rotate="5deg" bgColour={colourPalette[5]} br="25px" pos="absolute" transformOrigin="0% 0%" anim="2.8s cornerDesignTopLeft5 linear both" transform="translate(0px, -10px)" />
+
+                {/* Top Right */}
+                <TimelineDesignAnimationBoxes height="10px" width="200px" rotate="5deg" bgColour={colourPalette[5]} br="25px" pos="absolute" transformOrigin="0% 0%" anim="2.4s cornerDesignTopRight1 linear both 0.2s" transform="translate(0px, -10px)" />
+                <TimelineDesignAnimationBoxes height="30px" width="200px" rotate="5deg" bgColour={colourPalette[5]} br="25px" pos="absolute" transformOrigin="0% 0%" anim="2.8s cornerDesignTopRight2 linear both" transform="translate(0px, -10px)" />
+
+                {/* Bottom Right */}
+                <TimelineDesignAnimationBoxes height="30px" width="200px" rotate="5deg" bgColour={colourPalette[5]} br="25px" pos="absolute" transformOrigin="0% 0%" anim="2.7s cornerDesignBottomRight1 linear both 0.2s" transform="translate(0px, -10px)" />
+
             </div>
 
         </div>

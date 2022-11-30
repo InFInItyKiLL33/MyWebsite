@@ -3,7 +3,7 @@ import './timeline.css';
 
 function makeRandomChars(entryString) {
     let result = '';
-    let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789<>+-';
     let blacklist = [" ", "\n", "(", ")", ".", ","];
     for (let i = 0; i < entryString.length; i++) {
         if (blacklist.includes(entryString[i])) {
@@ -35,7 +35,7 @@ function TimelineSpecificContent(props) {
     const [indexOverlay, changeIndexOverlay] = useState("");
     const eachContentOriginalHeader = props.content[props.typeValue][props.index][1];
     const eachContentOriginalDesc = props.content[props.typeValue][props.index][3];
-    let reverseRow = Math.floor(props.index % 2) !== 0 ? "flex-reverse-row" : "flex-row";
+    const reverseRow = Math.floor(props.index % 2) !== 0 ? "flex-reverse-row" : "flex-row";
     // reverseRow = "flex-row";
     const reverseImage = reverseRow === "flex-reverse-row" ? " eachContentImageReverse" : "";
     const reverseText = reverseRow === "flex-reverse-row" ? " eachContentTextReverse" : "";
@@ -62,17 +62,17 @@ function TimelineSpecificContent(props) {
             let delay = [0, 15, 30, 45, 55, 65, 70, 75];
             let counter = 0;
             changeSlideEffect(reverseRow === "flex-reverse-row" ? " slideInInitial slideIn" : " slideInInitialR slideInR");
-            setTimeout(function() {
+            setTimeout(() => {
                 changeSlideEffect("")
             }, 1000)
             while (counter < delay.length) {
-                setTimeout(function() {
+                setTimeout(() => {
                     changeThisContentHeader(makeRandomChars(eachContentOriginalHeader));
                     changeThisContentDesc(makeRandomChars(eachContentOriginalDesc));
                 }, delay[counter] * counter);
                 counter++;
             };
-            setTimeout(function() {
+            setTimeout(() => {
                 changeThisContentHeader(eachContentOriginalHeader);
                 changeThisContentDesc(eachContentOriginalDesc);
             }, (counter + 0.5) * delay[counter - 1]);
@@ -121,7 +121,7 @@ function TimelineSpecificContent(props) {
         if (clickStatus === "" || clickStatus === "unclick") {
             changeClickStatus("clicked");
             changeIndexOverlay(" indexHigh");
-            setTimeout(function() {
+            setTimeout(() => {
                 changeClickStatus("clicked clicked-end");
             }, 250);
         } else {
@@ -131,7 +131,7 @@ function TimelineSpecificContent(props) {
 
         if (clickAnywhereStatus === "fadeInitialOpacity") {
             changeClickAnywhereStatus("fadeInitialOpacity disable-pointer");
-            setTimeout(function() {
+            setTimeout(() => {
                 changeClickAnywhereStatus("fadeOutInitialOpacity");
             }, 250);
         } else {

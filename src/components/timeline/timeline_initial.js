@@ -9,8 +9,8 @@ function TimelineInitial(props) {
     const [dataStateChanger, setDataState] = useState(0);
 
     function staggeredFadeout(timerIndex, finalDelay) {
-        setTimeout(function() {
-            setToFadeOut(function(prevTimelineFadeout) {
+        setTimeout(() => {
+            setToFadeOut((prevTimelineFadeout) => {
                 let timelineFadeoutSetter = prevTimelineFadeout;
                 timelineFadeoutSetter[timerIndex] = "timelineFadeout " + (timerIndex % 2 === 0 ? "timelineUnloadTopDown" : "timelineUnloadBottomUp");
                 return timelineFadeoutSetter;

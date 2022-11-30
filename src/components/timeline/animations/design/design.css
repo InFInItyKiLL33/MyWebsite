@@ -6,6 +6,9 @@
     position: fixed;
     overflow-y: hidden;
     width: 100vw;
+    background: black;
+    animation: 0.5s fadeIn linear both 0.5s, 0.5s fadeOut linear both 3s;
+    z-index: 20;
 }
 
 .timelineDesignAnimContent1 {
@@ -33,7 +36,7 @@
     width: 100vw;
     justify-content: center;
     margin-top: 10vh;
-    margin-left: -12vw;
+    margin-left: -12.5vw;
     z-index: 2;
     animation: 3.25s designContentTextAnimation linear both;
     animation-fill-mode: forwards;
@@ -47,7 +50,7 @@
     rotate: 5deg;
     opacity: 1;
     animation-fill-mode: forwards;
-    animation: 3.25s designContentWrapperAnimation linear 0s both;
+    animation: 2.75s designContentWrapperAnimation linear 0s both;
 }
 
 .timelineDesignAnimCircle1 {
@@ -68,4 +71,62 @@
     border-radius: 50%;
     margin: 5vh auto 0px auto;
     animation: 2.75s pieChartAnim ease 0s both;
+}
+
+.cubeWrapper {
+    width: 5vw;
+    height: 5vw;
+    margin-left: 7.5vw;
+    margin-top: 10vh;
+    animation: 1s fadeIn linear both 0.5s, 1s fadeOut linear both 2s;
+}
+
+.cube {
+    transform-style: preserve-3d;
+    transform: rotateX(-22.5deg) rotateY(-45deg) rotateZ(0deg);
+    position: relative;
+    animation: 3.5s cubeAnimation linear;
+}
+
+.cubeSide {
+    position: absolute;
+    background-color: var(--orangeTranslucent);
+    width: 5vw;
+    height: 5vw;
+    border: 1px solid var(--orange);
+}
+
+.cubeFront {
+    /* background-color: #fff; */
+    transform: rotateY(0deg) translateZ(2.5vw);
+}
+
+.cubeLeft {
+    /* background-color: #9a3; */
+    transform: rotateY(-90deg) translateZ(2.5vw);
+}
+
+.cubeUp {
+    /* background-color: #f4f; */
+    transform: rotateX(90deg) translateZ(2.5vw);
+}
+
+.cubeRight {
+    /* background-color: #3e3; */
+    transform: rotateY(90deg) translateZ(2.5vw);
+}
+
+.cubeBottom {
+    /* background-color: #3ee; */
+    transform: rotateX(-90deg) translateZ(2.5vw);
+}
+
+.cubeBack {
+    /* background-color: #fa1; */
+    transform: rotateY(180deg) translateZ(2.5vw);
+}
+
+.timelineDesignAnimCorners {
+    left: 0;
+    top: 0;
 }

@@ -24,7 +24,7 @@ function TypeButtons(props) {
     };
 
     function changeButtonActive(e) {
-        setTimeout(function() {
+        setTimeout(() => {
             let tempTypeImage = [...props.defaultIcons];
             tempTypeImage[e.target.getAttribute("data-index")] = props.activeIcons[e.target.getAttribute("data-index")];
             props.setTypeImage(tempTypeImage);

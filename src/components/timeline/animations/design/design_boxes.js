@@ -18,7 +18,11 @@ function TimelineDesignAnimationBoxes(props) {
             position: props.pos,
             rotate: props.rotate,
             zIndex: props.zindex,
-            animation: props.anim
+            animation: props.anim,
+            rotate: props.rotate,
+            opacity: props.opacity,
+            transform: props.transform,
+            transformOrigin: props.transformOrigin
         }}>
             {props.children}
         </div>

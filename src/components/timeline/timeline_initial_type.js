@@ -4,7 +4,8 @@ function TimelineInitialTypes(props) {
 
     const [initialTimelineAnimationDelay, setDelay] = useState(" timelineInitialTypesAnimationBefore");
     const [activeData, setActiveData] = useState("inactive");
-    const customAnimationDelay = [1600, 825, 2000, 3000];
+    const customAnimationLength = [1600, 825, 2000, 3100];
+    const customAnimationDelay = [600, 600, 600, 950];
     let alternateFit = props.index === 3 ? "timelineInitialTypesImgAlt" : "";
 
     function chooseType(e) {
@@ -12,33 +13,33 @@ function TimelineInitialTypes(props) {
         setActiveData("active");
 
         for (let i = 0; i < Object.keys(props.types).length; i++) {
-            if (i !== props.index) {
+            if (props.index === 3 || i !== props.index) {
                 let delay = (i < props.index ? 150 : 0) + i * 150;
                 props.staggeredFadeout(i, delay);
             };
         };
 
-        setTimeout(function() {
+        setTimeout(() => {
             props.changeTransitionAnimationState(parseInt(e.target.getAttribute("data-index")) + 1);
-            setTimeout(function() {
+            setTimeout(() => {
                 props.setTypeVal(parseInt(e.target.getAttribute("data-index")));
                 props.changeTimelineState(1);
                 props.changeImage(props.imageOptions[e.target.getAttribute("data-index")]);
                 console.log("a");
-                setTimeout(function() {
+                setTimeout(() => {
                     props.changeTransitionAnimationState(0);
                 }, 1000);
-            }, customAnimationDelay[props.index]);
-        }, 600);
+            }, customAnimationLength[props.index]);
+        }, customAnimationDelay[props.index]);
     };
 
     function initialTimelineAnimation(index) {
-        setTimeout(function() {
+        setTimeout(() => {
             setDelay(props.index % 2 === 0 ? " timelineInitialTypesAnimation" : " timelineInitialTypesAnimationReverse");
         }, index * 300);
     };
 
-    useEffect(function() {
+    useEffect(() => {
         initialTimelineAnimation(props.index);
     });
 

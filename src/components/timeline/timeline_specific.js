@@ -96,12 +96,12 @@ function TimelineSpecific(props) {
         let newType = parseInt(e.target.getAttribute("data-index"));
         props.fadeImage("fadeOutImage");
         status("disablePointer fadeOutTimelineContent");
-        setTimeout(function() {
+        setTimeout(() => {
             status("disablePointer fadeInitialOpacity"); // for smoother transition
             props.setTypeVal(newType);
             props.changeImage(props.imageOptions[newType]);
         }, 400);
-        setTimeout(function() {
+        setTimeout(() => {
             props.fadeImage("active");
             status("active");
         }, 800);

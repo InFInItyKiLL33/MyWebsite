@@ -28,7 +28,7 @@ function BreakLine(props) {
 
 function AboutMeContentWrappers(props) {
     const [fadeDelay, setFadeDelay] = useState("fadeInitialOpacity slideInInitial");
-    setTimeout(function() {
+    setTimeout(() => {
         setFadeDelay("fadeLong slideIn");
     }, (parseInt(props.type)) * 500);
     switch (props.type) {

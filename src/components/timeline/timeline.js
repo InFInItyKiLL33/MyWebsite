@@ -65,7 +65,7 @@ function Timeline(props) {
                         <>
                             <img src={imageType} className={"backgroundImage " + fadeoutTimelineImage} alt="background wing view"></img>
                             <Navbar page={props.page} />
-                            <TimelineSpecific type="Programming" changeImageType={changeImageType} fadeImage={setFadeoutTimelineImage} imageOptions={imageOptions} initialTimeline={initialTimeline} typeVal={typeVal} setTypeVal={setTypeVal} types={types} />
+                            <TimelineSpecific type="Programming" changeImage={changeImageType} fadeImage={setFadeoutTimelineImage} imageOptions={imageOptions} initialTimeline={initialTimeline} typeVal={typeVal} setTypeVal={setTypeVal} types={types} />
                         </>
                 }
                 
