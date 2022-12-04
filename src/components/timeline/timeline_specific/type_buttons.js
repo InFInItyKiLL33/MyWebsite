@@ -1,5 +1,5 @@
 import React from 'react';
-import './timeline.css';
+import '../timeline.css';
 
 function TypeButtons(props) {
 

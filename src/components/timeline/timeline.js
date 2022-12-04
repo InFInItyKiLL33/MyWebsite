@@ -7,11 +7,11 @@ import backgroundImage2Alt from "../../images/pcbuildingbg4.png";
 import backgroundImage3 from "../../images/designbg.png";
 import './timeline.css';
 import Navbar from "../navbar";
-import TimelineInitial from "./timeline_initial";
-import TimelineSpecific from './timeline_specific';
-import TimelineProgrammingAnimation from "./animations/programming/programming";
-import TimelineAviationAnimation from "./animations/aviation/aviation";
-import TimelineDesignAnimation from "./animations/design/design";
+import TimelineInitial from "./timeline_initial/timeline_initial";
+import TimelineSpecific from './timeline_specific/timeline_specific';
+import TimelineProgrammingAnimation from "./timeline_initial/animations/programming/programming";
+import TimelineAviationAnimation from "./timeline_initial/animations/aviation/aviation";
+import TimelineDesignAnimation from "./timeline_initial/animations/design/design";
 
 function Timeline(props) {
     const initialTimeline = 0;

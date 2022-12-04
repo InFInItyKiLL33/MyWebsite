@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef, use } from 'react';
-import './timeline.css';
+import React, { useState, useEffect, useRef } from 'react';
+import '../timeline.css';
 import TimelineHyperlink from './timeline_hyperlink';
 
 function makeRandomChars(entryString) {

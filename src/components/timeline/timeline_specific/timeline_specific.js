@@ -1,24 +1,24 @@
-import React, { useState, useEffect, useRef } from 'react';
-import MyWebsite from "../../images/mywebsite.png";
-import ReactImg from "../../images/react.png";
-import NHWSSImg1 from "../../images/nhwss1.png";
-import NHWSSImg2 from "../../images/nhwss2.png";
-import ThatAquariumImg from "../../images/thataquarium.png";
+import React, { useState, useEffect } from 'react';
+import MyWebsite from "../../../images/mywebsite.png";
+import ReactImg from "../../../images/react.png";
+import NHWSSImg1 from "../../../images/nhwss1.png";
+import NHWSSImg2 from "../../../images/nhwss2.png";
+import ThatAquariumImg from "../../../images/thataquarium.png";
 import TimelineSpecificContent from './timeline_specific_content';
 import TypeButtons from './type_buttons';
-import './timeline.css';
-import ProgrammingImgDefault from '../../images/programming_icon_default.png';
-import ProgrammingImgHover from '../../images/programming_icon_hover.png';
-import ProgrammingImgActive from '../../images/programming_icon_active.png';
-import AviationImgDefault from '../../images/aviation_icon_default.png';
-import AviationImgHover from '../../images/aviation_icon_hover.png';
-import AviationImgActive from '../../images/aviation_icon_active.png';
-import DesignImgDefault from '../../images/design_icon_default.png';
-import DesignImgHover from '../../images/design_icon_hover.png';
-import DesignImgActive from '../../images/design_icon_active.png';
-import PCBuildingImgDefault from '../../images/pc_building_icon_default.png';
-import PCBuildingImgHover from '../../images/pc_building_icon_hover.png';
-import PCBuildingImgActive from '../../images/pc_building_icon_active.png';
+import '../timeline.css';
+import ProgrammingImgDefault from '../../../images/programming_icon_default.png';
+import ProgrammingImgHover from '../../../images/programming_icon_hover.png';
+import ProgrammingImgActive from '../../../images/programming_icon_active.png';
+import AviationImgDefault from '../../../images/aviation_icon_default.png';
+import AviationImgHover from '../../../images/aviation_icon_hover.png';
+import AviationImgActive from '../../../images/aviation_icon_active.png';
+import DesignImgDefault from '../../../images/design_icon_default.png';
+import DesignImgHover from '../../../images/design_icon_hover.png';
+import DesignImgActive from '../../../images/design_icon_active.png';
+import PCBuildingImgDefault from '../../../images/pc_building_icon_default.png';
+import PCBuildingImgHover from '../../../images/pc_building_icon_hover.png';
+import PCBuildingImgActive from '../../../images/pc_building_icon_active.png';
 
 function TimelineSpecific(props) {
 
