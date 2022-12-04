@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, use } from 'react';
 import './timeline.css';
+import TimelineHyperlink from './timeline_hyperlink';
 
 function makeRandomChars(entryString) {
     let result = '';
@@ -15,50 +16,45 @@ function makeRandomChars(entryString) {
     return result;
 };
 
-function TimelineHyperlink(props) {
-    if (props.content.length === 5) {
-        return(
-            <a href={props.content[4]} className="hyperlink">{props.content[4]}</a>
-        )
-    } else {
-        return(<></>)
-    }
-};
-
 function TimelineSpecificContent(props) {
     
+    const reverseRow = Math.floor(props.index % 2) !== 0 ? "flex-reverse-row" : "flex-row";
+    // reverseRow = "flex-row"; // used for testing purposes
+    const reverseImage = reverseRow === "flex-reverse-row" ? " eachContentImageReverse" : "";
+    const reverseText = reverseRow === "flex-reverse-row" ? " eachContentTextReverse" : "";
+    const zoomRegion = 0.65; // 0.0 - 1.0
+    const maxZoomRegion = 0.5; // 0.0 - zoomRegion
+    const defaultZoom = 1.0; // default scale value
+    const zoom = 1.1; // scale value
+    const minOpacity = 0.15;
+    const maxOpacity = 1.0;
+    const screenHeight = window.innerHeight;
+    const eachContentOriginalHeader = props.content[props.typeValue][props.index][1];
+    const eachContentOriginalDesc = props.content[props.typeValue][props.index][3];
+
     const [clickStatus, changeClickStatus] = useState("");
     const [clickAnywhereStatus, changeClickAnywhereStatus] = useState("fadeInitialOpacity");
     const [thisContentHeader, changeThisContentHeader] = useState("");
     const [thisContentDesc, changeThisContentDesc] = useState("");
     const [slideEffect, changeSlideEffect] = useState("");
     const [indexOverlay, changeIndexOverlay] = useState("");
-    const eachContentOriginalHeader = props.content[props.typeValue][props.index][1];
-    const eachContentOriginalDesc = props.content[props.typeValue][props.index][3];
-    const reverseRow = Math.floor(props.index % 2) !== 0 ? "flex-reverse-row" : "flex-row";
-    // reverseRow = "flex-row";
-    const reverseImage = reverseRow === "flex-reverse-row" ? " eachContentImageReverse" : "";
-    const reverseText = reverseRow === "flex-reverse-row" ? " eachContentTextReverse" : "";
-    const reverseBlock = reverseRow === "flex-reverse-row" ? "R" : "L";
     const [imagePos, setImagePos] = useState(0);
-    const zoomRegion = 0.6; // 0.0 - 1.0
-    const maxZoomRegion = 0.45; // 0.0 - zoomRegion
-    const defaultZoom = 1.0; // default scale value
-    const zoom = 1.1; // scale value
-    const minOpacity = 0.15;
-    const maxOpacity = 1.0;
-    const screenHeight = window.innerHeight;
-    let finalOffset = 0;
-    let opacityOffset = 0;
-    
-    function scrollZoom() {
-        
-        const eachContentElem = document.getElementsByClassName("eachContent")[props.index];
-        const imgElem = eachContentElem.getElementsByClassName("eachContentImage")[0];
-        const backImgElem = eachContentElem.getElementsByClassName("eachContentImage2")[0];
-        const offset = 0.5 * eachContentElem.getBoundingClientRect().top + 0.5 * eachContentElem.getBoundingClientRect().bottom;
-        
-        if ((thisContentDesc.length === 0 && eachContentElem.getElementsByClassName("eachContentDescription")[0].innerHTML.length === 0) && eachContentElem.getBoundingClientRect().top < screenHeight * 0.875 && eachContentElem.getBoundingClientRect().bottom > 0.0) { // The first && to double check is dumb, without it the effect triggers twice on initial load
+    const [contentOpacity, setContentOpacity] = useState(String(minOpacity));
+    const [imageScale, setImageScale] = useState(defaultZoom);
+    const [secondaryImageScale, setSecondaryImageScale] = useState(defaultZoom);
+    const [hoveringStatus, setHoveringStatus] = useState(0); // 0 for no hover, any other value for hover additional zoom
+    const [rendered, setRendered] = useState(false);
+
+    const contentRef = useRef();
+
+    function scrollingEffects() {
+
+        window.removeEventListener('scroll', scrollingEffects);
+        let boundingBox = contentRef.current.getBoundingClientRect();
+        const offset = 0.5 * boundingBox.top + 0.5 * boundingBox.bottom;
+            
+        if (!rendered && boundingBox.top < screenHeight * 0.875 && boundingBox.bottom > 0.0) {
+            setRendered(true);
             let delay = [0, 15, 30, 45, 55, 65, 70, 75];
             let counter = 0;
             changeSlideEffect(reverseRow === "flex-reverse-row" ? " slideInInitial slideIn" : " slideInInitialR slideInR");
@@ -79,45 +75,43 @@ function TimelineSpecificContent(props) {
         }; // This part is to randomise the content for effect before displaying the actual one
 
         if (clickStatus === "clicked" || clickStatus === "clicked clicked-end") {
-            eachContentElem.style.opacity = 1;
+            setContentOpacity(1);
         } else {
             // Fade in fade out content when not in focus
             if (offset > (0.5 - 0.5 * zoomRegion) * screenHeight && offset < (0.5 + 0.5 * zoomRegion) * screenHeight) {
                 if (offset < (0.5 - 0.5 * maxZoomRegion) * screenHeight || offset > (0.5 + 0.5 * maxZoomRegion) * screenHeight) {
+                    // transition zoom region
                     let offsetScale = (Math.abs(offset - 0.5 * screenHeight) - maxZoomRegion * 0.5 * screenHeight) / ((0.5 * (zoomRegion - maxZoomRegion)) * screenHeight); // goes from 0.0 to 1.0 based on scroll position inside gradient range
-                    finalOffset = zoom - (zoom - defaultZoom) * (offsetScale);
-                    opacityOffset = maxOpacity - (maxOpacity - minOpacity) * (offsetScale);
+                    setImageScale(zoom - (zoom - defaultZoom) * (offsetScale));
+                    setSecondaryImageScale(zoom - (zoom - defaultZoom) * (offsetScale));
+                    setContentOpacity(maxOpacity - (maxOpacity - minOpacity) * (offsetScale));
                 } else {
-                    finalOffset = zoom;
-                    opacityOffset = maxOpacity;
+                    // max zoom region
+                    setImageScale(zoom);
+                    setSecondaryImageScale(zoom);
+                    setContentOpacity(maxOpacity);
                 };
             } else {
-                finalOffset = defaultZoom;
-                opacityOffset = minOpacity;
+                // min zoom region
+                setImageScale(defaultZoom);
+                setSecondaryImageScale(defaultZoom);
+                setContentOpacity(minOpacity);
             };
-            imgElem.style.transform = "scale(" + String(finalOffset) + ")";
-            backImgElem.style.transform = "scale(" + String(finalOffset) + ")";
-            eachContentElem.style.opacity = opacityOffset;
         };
-
+        
         setImagePos(offset);
     };
 
     function scrollEffect() {
-        const onScroll = () => {
-            window.removeEventListener('scroll', onScroll);
-            scrollZoom();
-        };
-        window.addEventListener('scroll', onScroll, { passive: true });
-        return () => window.removeEventListener('scroll', onScroll);
+        window.addEventListener('scroll', scrollingEffects, { passive: true });
+        return () => window.removeEventListener('scroll', scrollingEffects);
     };
 
     useEffect(() => {
-        scrollZoom();
-        return;
-    });
+        scrollingEffects();
+    }, []);
 
-    function handleClick(e) {
+    function handleClick(event) {
         if (clickStatus === "" || clickStatus === "unclick") {
             changeClickStatus("clicked");
             changeIndexOverlay(" indexHigh");
@@ -140,12 +134,12 @@ function TimelineSpecificContent(props) {
     };
 
     return(
-        <div className={"eachContent " + reverseRow + slideEffect + indexOverlay} key={props.index} onScroll={scrollEffect()}>
-            <div className={"arrowDecoration arrowDecoration" + reverseBlock}></div>
+        <div className={"eachContent " + reverseRow + slideEffect + indexOverlay} key={props.index} style={{"opacity": contentOpacity}} ref={contentRef} onScroll={scrollEffect()}>
+            <div className={"arrowDecoration arrowDecoration" + reverseRow === "flex-reverse-row" ? "R" : "L"}></div>
             <div className="eachContentLeftWrapper">
-                <div className="eachContentImageWrapper flex-row">
-                    <img src={props.content[props.typeValue][props.index][0]} className={"eachContentImage " + clickStatus + reverseImage} onClick={handleClick}alt={props.content[props.typeValue][props.index][1]}></img>
-                    <img src={props.content[props.typeValue][props.index][0]} className={"eachContentImage2" + reverseImage} alt={props.content[props.typeValue][props.index][1]}></img>
+                <div className="eachContentImageWrapper flex-row" onMouseOver={(event) => setHoveringStatus(0.05)} onMouseLeave={(event) => setHoveringStatus(0)}>
+                    <img src={props.content[props.typeValue][props.index][0]} className={"eachContentImage " + clickStatus + reverseImage} onClick={handleClick} alt={props.content[props.typeValue][props.index][1]} style={{"scale": String(imageScale + hoveringStatus)}}></img>
+                    <img src={props.content[props.typeValue][props.index][0]} className={"eachContentImage2" + reverseImage} alt={props.content[props.typeValue][props.index][1]} style={{"scale": String(secondaryImageScale + hoveringStatus)}}></img>
                 </div>
                 <p className="eachContentYear bolded">{props.content[props.typeValue][props.index][2]}</p>
             </div>

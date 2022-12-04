@@ -68,7 +68,6 @@
 
 .eachContentImageWrapper:hover > .eachContentImage {
     rotate: -1deg;
-    scale: 1.05;
     border-color: var(--orangeHover);
 }
 

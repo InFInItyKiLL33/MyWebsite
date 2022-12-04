@@ -19,13 +19,11 @@ function TimelineInitial(props) {
         }, finalDelay);
     };
 
-    let options = [];
-    
-    for (let i = 0; i < Object.keys(props.types).length; i++) {
-        options.push(
+    let options = Object.keys(props.types).map((thisKey, i) => {
+        return(
             <TimelineInitialTypes index={i} imageOptions={props.imageOptions} imageInitialOptions={props.imageInitialOptions} types={props.types} setTypeVal={props.setTypeVal} changeTimelineState={props.changeTimelineState} changeImage={props.changeImage} changeTransitionAnimationState={props.changeTransitionAnimationState} timelineToFadeOut={timelineToFadeOut} setToFadeOut={setToFadeOut} staggeredFadeout={staggeredFadeout} />
         );
-    };
+    });
 
     return(
         <div className="timelineInitialWrapper flex-row" data-state-changer={dataStateChanger}>

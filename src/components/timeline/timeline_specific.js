@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import MyWebsite from "../../images/mywebsite.png";
 import ReactImg from "../../images/react.png";
 import NHWSSImg1 from "../../images/nhwss1.png";
@@ -22,19 +22,13 @@ import PCBuildingImgActive from '../../images/pc_building_icon_active.png';
 
 function TimelineSpecific(props) {
 
-    
-    let currentContent = [];
-    let skillButtons = [];
-
-    const [fadeoutContent, status] = useState("active");
-    const [sortDirection, setSortDir] = useState("flex-col");
-    const [sortText, setSortText] = useState("Newest");
-    const orange = "#f06f4f";
     const defaultIcons = [ProgrammingImgDefault, AviationImgDefault, DesignImgDefault, PCBuildingImgDefault];
     const hoverIcons = [ProgrammingImgHover, AviationImgHover, DesignImgHover, PCBuildingImgHover];
     const activeIcons = [ProgrammingImgActive, AviationImgActive, DesignImgActive, PCBuildingImgActive];
-    const timelineChangerOrange = "timelineChangerOrange"
-    const content = {
+    const timelineChangerOrange = "timelineChangerOrange";
+    const infiniteScrollerInitialAmount = 3;
+    const infiniteScrollerLoadAmount = 2;
+    const [content, setContent] = useState({
         0: [
             [
                 MyWebsite, 
@@ -74,6 +68,50 @@ function TimelineSpecific(props) {
                 I would have definitely continued the internship with how heartwarming and welcome the management was, if it wasn't for the conscription into the Army in April. This would, however, not be the end of working with them as they hired me as a freelancer the next year.
                 \n
                 If you would like to check it out, and if it hasn't changed, you may view it live at`, "https://namhongwelfare.org.sg/get-involved/"
+            ], [
+                NHWSSImg1, 
+                "Nam Hong Welfare Service Society (NHWSS) Internship", 
+                "Dec 2020 - Mar 2021", 
+                `I had a classmate in Junior College who knew I was good at coding, and their family member, who's working at NHWSS, required an intern to maintain their website. I was recommended and join them as an intern for 4 Months, before my enlistment into the Army. This was a good opportunity for me to learn how to use a website building app, Wordpress in this case, instead of only knowing how to create websites with pure HTML/CSS/JS with jQuery.
+                \n
+                Through this internship, I realised how much easier and restrictive website building apps are, as they make elements super easy to create through the drag and drop experience. However, the ability to customise the styles and elements is quite limited, unless I decide to inject custom code into it. Most of the website was luckily, already done by the previous intern, which only gave me the chance to design and create a few pages (specifically the Get Involved page, picture beside, which does not show hover effects).
+                \n
+                I would have definitely continued the internship with how heartwarming and welcome the management was, if it wasn't for the conscription into the Army in April. This would, however, not be the end of working with them as they hired me as a freelancer the next year.
+                \n
+                If you would like to check it out, and if it hasn't changed, you may view it live at`, "https://namhongwelfare.org.sg/get-involved/"
+            ], [
+                NHWSSImg1, 
+                "Nam Hong Welfare Service Society (NHWSS) Internship", 
+                "Dec 2020 - Mar 2021", 
+                `I had a classmate in Junior College who knew I was good at coding, and their family member, who's working at NHWSS, required an intern to maintain their website. I was recommended and join them as an intern for 4 Months, before my enlistment into the Army. This was a good opportunity for me to learn how to use a website building app, Wordpress in this case, instead of only knowing how to create websites with pure HTML/CSS/JS with jQuery.
+                \n
+                Through this internship, I realised how much easier and restrictive website building apps are, as they make elements super easy to create through the drag and drop experience. However, the ability to customise the styles and elements is quite limited, unless I decide to inject custom code into it. Most of the website was luckily, already done by the previous intern, which only gave me the chance to design and create a few pages (specifically the Get Involved page, picture beside, which does not show hover effects).
+                \n
+                I would have definitely continued the internship with how heartwarming and welcome the management was, if it wasn't for the conscription into the Army in April. This would, however, not be the end of working with them as they hired me as a freelancer the next year.
+                \n
+                If you would like to check it out, and if it hasn't changed, you may view it live at`, "https://namhongwelfare.org.sg/get-involved/"
+            ], [
+                NHWSSImg1, 
+                "Nam Hong Welfare Service Society (NHWSS) Internship", 
+                "Dec 2020 - Mar 2021", 
+                `I had a classmate in Junior College who knew I was good at coding, and their family member, who's working at NHWSS, required an intern to maintain their website. I was recommended and join them as an intern for 4 Months, before my enlistment into the Army. This was a good opportunity for me to learn how to use a website building app, Wordpress in this case, instead of only knowing how to create websites with pure HTML/CSS/JS with jQuery.
+                \n
+                Through this internship, I realised how much easier and restrictive website building apps are, as they make elements super easy to create through the drag and drop experience. However, the ability to customise the styles and elements is quite limited, unless I decide to inject custom code into it. Most of the website was luckily, already done by the previous intern, which only gave me the chance to design and create a few pages (specifically the Get Involved page, picture beside, which does not show hover effects).
+                \n
+                I would have definitely continued the internship with how heartwarming and welcome the management was, if it wasn't for the conscription into the Army in April. This would, however, not be the end of working with them as they hired me as a freelancer the next year.
+                \n
+                If you would like to check it out, and if it hasn't changed, you may view it live at`, "https://namhongwelfare.org.sg/get-involved/"
+            ], [
+                NHWSSImg1, 
+                "Nam Hong Welfare Service Society (NHWSS) Internship", 
+                "Dec 2020 - Mar 2021", 
+                `I had a classmate in Junior College who knew I was good at coding, and their family member, who's working at NHWSS, required an intern to maintain their website. I was recommended and join them as an intern for 4 Months, before my enlistment into the Army. This was a good opportunity for me to learn how to use a website building app, Wordpress in this case, instead of only knowing how to create websites with pure HTML/CSS/JS with jQuery.
+                \n
+                Through this internship, I realised how much easier and restrictive website building apps are, as they make elements super easy to create through the drag and drop experience. However, the ability to customise the styles and elements is quite limited, unless I decide to inject custom code into it. Most of the website was luckily, already done by the previous intern, which only gave me the chance to design and create a few pages (specifically the Get Involved page, picture beside, which does not show hover effects).
+                \n
+                I would have definitely continued the internship with how heartwarming and welcome the management was, if it wasn't for the conscription into the Army in April. This would, however, not be the end of working with them as they hired me as a freelancer the next year.
+                \n
+                If you would like to check it out, and if it hasn't changed, you may view it live at`, "https://namhongwelfare.org.sg/get-involved/"
             ]
         ],
         1: [
@@ -85,12 +123,24 @@ function TimelineSpecific(props) {
         3: [
 
         ]
-    }; // For each content, 0 -> image file, 1 -> Title, 2 -> Date, 3 -> Description, 4 (Optional) -> Hyperlink
+    }); // For each content, the order is as such: 0 -> image file, 1 -> Title, 2 -> Date, 3 -> Description, 4 (Optional) -> Hyperlink
+    const [fadeoutContent, status] = useState("active");
+    const [sortText, setSortText] = useState("Newest");
+    const [loadedContent, setLoadedContent] = useState([]);
+    const [lastLoadedIndex, setLastLoadedIndex] = useState(infiniteScrollerInitialAmount - infiniteScrollerLoadAmount);
     
     // set whichever type value is active to the right image
     let tempTypeImage = [...defaultIcons];
     tempTypeImage[props.typeVal] = activeIcons[props.typeVal];
     const [typeImage, setTypeImage] = useState(tempTypeImage); // this needs to be here instead of TypeButtons component as I need to unactive the previous active type
+
+    // the header options for timeline
+    let skillButtons = Object.keys(props.types).map((currentKey, i) => {
+        let toOrange = props.typeVal === i ? timelineChangerOrange : "";
+        return(
+            <TypeButtons index={i} toOrange={toOrange} typeVal={props.typeVal} changeType={changeType} types={props.types} defaultIcons={defaultIcons} hoverIcons={hoverIcons} activeIcons={activeIcons} typeImage={typeImage} setTypeImage={setTypeImage} />
+        );
+    });
 
     function changeType(e) { // click on type header
         let newType = parseInt(e.target.getAttribute("data-index"));
@@ -100,6 +150,7 @@ function TimelineSpecific(props) {
             status("disablePointer fadeInitialOpacity"); // for smoother transition
             props.setTypeVal(newType);
             props.changeImage(props.imageOptions[newType]);
+            emptyLoadedContent();
         }, 400);
         setTimeout(() => {
             props.fadeImage("active");
@@ -107,32 +158,50 @@ function TimelineSpecific(props) {
         }, 800);
     };
 
-    function changeFlexDir() { // sort
-        if (sortDirection === "flex-col") {
-            setSortDir("flex-reverse-col");
-            setSortText("Oldest");
-        } else {
-            setSortDir("flex-col");
-            setSortText("Newest");
+    function changeSortDirection() { // sort
+
+        // changes display text of sort & rerenders content
+        sortText === "Newest" ? setSortText("Oldest") : setSortText("Newest");
+
+        // reverses content
+        let newContent = content;
+        Object.keys(newContent).forEach((key) => {
+            newContent[key].reverse();
+        });
+        setContent(newContent);
+
+        // empty current content
+        emptyLoadedContent();
+    };
+
+    function emptyLoadedContent() {
+        setLoadedContent([]);
+        setLastLoadedIndex(infiniteScrollerInitialAmount);
+    };
+    
+    function loadMoreContent() {
+        if (window.innerHeight + document.documentElement.scrollTop >= document.documentElement.scrollHeight - 300) {
+            
+            if (content[props.typeVal].length === loadedContent.length) return; // case if no more to load
+            
+            setLastLoadedIndex(prevIndex => Math.min(prevIndex + infiniteScrollerLoadAmount, content[props.typeVal].length));
         };
     };
 
-    for (let i = 0; i < (content[props.typeVal]).length; i++) { // generate content to display
-        currentContent.push(
-            <TimelineSpecificContent typeValue={props.typeVal} value={props.types[props.typeVal]} content={content} index={i} />
-        );
+    async function getNewContent() {
+        const newData = await content[props.typeVal].slice(loadedContent.length, lastLoadedIndex); // apparently async and await is needed even though it's not api, if not it doesn't work
+        setLoadedContent(prevLoadedContent => [...prevLoadedContent, ...newData]);
     };
 
-    for (let i = 0; i < Object.keys(props.types).length; i++) { // generate type headers
-        let toOrange = props.typeVal === i ? timelineChangerOrange : "";
-        skillButtons.push(
-            <TypeButtons index={i} toOrange={toOrange} typeVal={props.typeVal} changeType={changeType} types={props.types} defaultIcons={defaultIcons} hoverIcons={hoverIcons} activeIcons={activeIcons} typeImage={typeImage} setTypeImage={setTypeImage} />
-        );
-    };
+    useEffect(() => {
+        getNewContent();
+    }, [lastLoadedIndex, sortText, props.typeVal]);
 
-    // useEffect(() => {
-    // });
-
+    useEffect(() => {
+        window.addEventListener('scroll', loadMoreContent);
+        emptyLoadedContent();
+        return () => window.removeEventListener('scroll', loadMoreContent);
+    }, []);
     
     return(
 
@@ -140,7 +209,7 @@ function TimelineSpecific(props) {
             {/* <button onClick={changeType} className={"timelineChanger fade bolded " + fadeoutContent}>{type}</button> */}
             <div className={"skillsButtonNavbar flex-row fade " + fadeoutContent}>
                 {skillButtons}
-                <button onClick={changeFlexDir} className="timelineChanger timelineSorter slideInInitial slideIn flex-row">
+                <button onClick={changeSortDirection} className="timelineChanger timelineSorter slideInInitial slideIn flex-row">
                     <i className="center m-auto">
                         {sortText}
                     </i>
@@ -154,8 +223,13 @@ function TimelineSpecific(props) {
                     <div className="timelineLine"></div>
                 </div>
 
-                <div className={"timelineSpecificContent " + sortDirection}>
-                    {currentContent}
+                <div className={"timelineSpecificContent"}>
+                    {   
+                        loadedContent.length > 0 && loadedContent.map((thisContent, i) => (
+                            <TimelineSpecificContent typeValue={props.typeVal} value={props.types[props.typeVal]} content={content} index={i} />
+                        ))
+                        
+                    }
                 </div>
     
             </div>
