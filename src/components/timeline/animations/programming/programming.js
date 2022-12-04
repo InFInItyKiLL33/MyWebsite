@@ -3,26 +3,25 @@ import "./programming_animation.css"
 
 const TimelineProgrammingAnimation = (props) => {
 
-    const displayTextChoicesSpaceless = "ABCDEF12345678901234567890██";
-    const displayTextChoices = displayTextChoicesSpaceless + "            ";
-    const displayTextChoicesLength = displayTextChoices.length;
-    const displayTextChoicesSpacelessLength = displayTextChoicesSpaceless.length;
+    const displayTextCharsSpaceless = "ABCDEF12345678901234567890██";
+    const displayTextChars = displayTextCharsSpaceless + "            ";
+    const displayTextChoicesLength = displayTextChars.length;
+    const displayTextChoicesSpacelessLength = displayTextCharsSpaceless.length;
     const textLimit = randomInt(Math.max(35, parseInt(120 * (window.innerWidth / 2160))), Math.min(235, parseInt(120 * (window.innerWidth / 2160)))) + 15;
     const textSize = Math.max(20, parseInt(40 * ((window.innerWidth * window.innerHeight) / (2160 * 1440))));
-    let displayTexts = [];  
     const maxRecursionDepth = 20;
     const [randText, setRandomText] = useState(randomArray(false));
     const [randStyle, setRandomStyle] = useState(randomStyle());
     const [recursionDepth, setRecursionDepth] = useState(0);
 
-    function randomInt(min, max) {
+    function randomInt(min, max) { // inclusive of both min and max
         return Math.floor(Math.random() * (max - min + 1) + min);
     };
 
     function randomiseText() {
         let newRandomText = "";
         for (let j = 0; j < textLimit; j++) {
-            newRandomText += displayTextChoices[randomInt(0, displayTextChoicesLength - 1)];
+            newRandomText += displayTextChars[randomInt(0, displayTextChoicesLength - 1)];
         };
         return newRandomText;
     };
@@ -32,35 +31,27 @@ const TimelineProgrammingAnimation = (props) => {
         for (let j = 0; j < newRandomText.length; j++) {
             if (newRandomText[j] !== " ") {
                 if (randomInt(0, 4) === 0) {
-                    newRandomText = newRandomText.substring(0, j) + displayTextChoicesSpaceless[randomInt(0, displayTextChoicesSpacelessLength - 1)] + newRandomText.substring(j + 1);
+                    newRandomText = newRandomText.substring(0, j) + displayTextCharsSpaceless[randomInt(0, displayTextChoicesSpacelessLength - 1)] + newRandomText.substring(j + 1);
                 };
-            }
+            };
         };
         return newRandomText;
     };
 
     function randomArray(randomiseChangeSome) {
-        let finalArr = [];
-        if (randomiseChangeSome === true) {
-            for (let i = 0; i < textSize; i++) {
-                if (randomInt(0, 25) < 1) {
-                    finalArr.push(randText[i]);
-                } else {
-                    finalArr.push(randomiseExistingText(randText[i]));
-                };
+        return Array(textSize).fill("").map((eachPass, i) => {
+            switch (randomiseChangeSome) {
+                case true:
+                    return randomInt(0, 25) < 1 ? randText[i] : randomiseExistingText(randText[i]);
+                case false:
+                    return randomiseText();
             };
-        } else {
-            for (let i = 0; i < textSize; i++) {
-                finalArr.push(randomiseText());
-            };
-        };
-        return finalArr;
+        });
     };
 
     function randomStyle() {
-        let finalArr = [];
-        for (let i = 0; i < textSize; i++) {
-            finalArr.push({
+        return Array(textSize).fill("").map((eachPass, i) => {
+            return {
                 opacity: String(parseFloat(randomInt(0, 75)/100) + 0.25),
                 animation: 
                     (
@@ -72,24 +63,13 @@ const TimelineProgrammingAnimation = (props) => {
                 marginTop: String(randomInt(0, 1800)/10 - 90) + "vh",
                 marginLeft: String(randomInt(0, 1700)/10 - 85) + "vw",
                 color: randomInt(0, 1) === 0 ? "#f06f4fff" : "#f06f4f77"
-            })
-        };
-
-        return finalArr;
-        
+            };
+        });
     };
 
     function randomiseArray() {
         setRecursionDepth((prevRecursionDepth) => (prevRecursionDepth + 1));
         setRandomText(randomArray(true));
-    };
-    
-    for (let i = 0; i < textSize; i++) {
-        displayTexts.push(
-            <div className={"timelineProgrammingAnimTextWrapper "} style={randStyle[i]}>
-                <p className="timelineProgrammingAnimText">{randText[i]}</p>
-            </div>
-        );
     };
 
     useEffect(() => {
@@ -103,7 +83,15 @@ const TimelineProgrammingAnimation = (props) => {
 
     return(
         <div className="timelineProgrammingAnimWrapper">
-            {displayTexts}
+            {
+                Array(textSize).fill("").map((eachDisplayText, i) => {
+                    return (
+                        <div className={"timelineProgrammingAnimTextWrapper "} style={randStyle[i]} key={i} >
+                            <p className="timelineProgrammingAnimText">{randText[i]}</p>
+                        </div>
+                    );
+                })
+            }
         </div>
     )
 };

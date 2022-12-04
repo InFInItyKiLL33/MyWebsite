@@ -49,6 +49,12 @@ function TimelineSpecificContent(props) {
 
     function scrollingEffects() {
 
+        try {
+            contentRef.current.getBoundingClientRect();
+        } catch (e) {
+            return;
+        };
+
         window.removeEventListener('scroll', scrollingEffects);
         let boundingBox = contentRef.current.getBoundingClientRect();
         const offset = 0.5 * boundingBox.top + 0.5 * boundingBox.bottom;

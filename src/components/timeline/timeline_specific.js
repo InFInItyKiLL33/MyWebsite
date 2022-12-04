@@ -138,7 +138,7 @@ function TimelineSpecific(props) {
     let skillButtons = Object.keys(props.types).map((currentKey, i) => {
         let toOrange = props.typeVal === i ? timelineChangerOrange : "";
         return(
-            <TypeButtons index={i} toOrange={toOrange} typeVal={props.typeVal} changeType={changeType} types={props.types} defaultIcons={defaultIcons} hoverIcons={hoverIcons} activeIcons={activeIcons} typeImage={typeImage} setTypeImage={setTypeImage} />
+            <TypeButtons index={i} key={i} toOrange={toOrange} typeVal={props.typeVal} changeType={changeType} types={props.types} defaultIcons={defaultIcons} hoverIcons={hoverIcons} activeIcons={activeIcons} typeImage={typeImage} setTypeImage={setTypeImage} />
         );
     });
 
@@ -194,14 +194,10 @@ function TimelineSpecific(props) {
     };
 
     useEffect(() => {
-        getNewContent();
-    }, [lastLoadedIndex, sortText, props.typeVal]);
-
-    useEffect(() => {
         window.addEventListener('scroll', loadMoreContent);
-        emptyLoadedContent();
+        getNewContent();
         return () => window.removeEventListener('scroll', loadMoreContent);
-    }, []);
+    }, [lastLoadedIndex, sortText, props.typeVal]);
     
     return(
 
@@ -226,7 +222,7 @@ function TimelineSpecific(props) {
                 <div className={"timelineSpecificContent"}>
                     {   
                         loadedContent.length > 0 && loadedContent.map((thisContent, i) => (
-                            <TimelineSpecificContent typeValue={props.typeVal} value={props.types[props.typeVal]} content={content} index={i} />
+                            <TimelineSpecificContent typeValue={props.typeVal} value={props.types[props.typeVal]} content={content} index={i} key={i} />
                         ))
                         
                     }
