@@ -148,7 +148,7 @@ function TimelineDesignAnimation(props) {
 
                         <TimelineDesignAnimationBoxes width="max(150px, 20vw)" height="27.5vh" ml="4vw" mt="5vh" overflow="hidden" br="15px" boxShadow="4px 4px 4px 2px rgba(60, 60, 60, 0.6)">
                             <div className="timelineDesignAnimContent2col3row2BG" style={{overflow: "hidden", transformOrigin: "0 0", scale: String(window.innerHeight/720)}}>
-                                <svg viewBox="0 0 900 600" width="900" height="600" xmlns="http://www.w3.org/2000/svg" style={{scale: "0.325", transformOrigin: "0 0"}}>
+                                <svg viewBox="0 0 900 600" width="900" height="600" xmlns="http://www.w3.org/2000/svg" style={{scale: "0.4", transformOrigin: "0 0"}}>
                                     <rect x="0" y="0" width="900" height="600" fill={colourPalette[0]}></rect>
                                     <path d="M0 363L16.7 364C33.3 365 66.7 367 100 375.7C133.3 384.3 166.7 399.7 200 404.8C233.3 410 266.7 405 300 401.7C333.3 398.3 366.7 396.7 400 396.3C433.3 396 466.7 397 500 391.2C533.3 385.3 566.7 372.7 600 374C633.3 375.3 666.7 390.7 700 396C733.3 401.3 766.7 396.7 800 387.8C833.3 379 866.7 366 883.3 359.5L900 353L900 601L883.3 601C866.7 601 833.3 601 800 601C766.7 601 733.3 601 700 601C666.7 601 633.3 601 600 601C566.7 601 533.3 601 500 601C466.7 601 433.3 601 400 601C366.7 601 333.3 601 300 601C266.7 601 233.3 601 200 601C166.7 601 133.3 601 100 601C66.7 601 33.3 601 16.7 601L0 601Z" fill="#fa7268" style={{animation: "1.3s col3WavesPart1 linear 0s both, 1.3s col3WavesPart2 linear 1.3s forwards"}}></path>
                                     <path d="M0 424L16.7 426.5C33.3 429 66.7 434 100 435C133.3 436 166.7 433 200 430.7C233.3 428.3 266.7 426.7 300 423.8C333.3 421 366.7 417 400 411.3C433.3 405.7 466.7 398.3 500 398.2C533.3 398 566.7 405 600 407C633.3 409 666.7 406 700 410.3C733.3 414.7 766.7 426.3 800 429.8C833.3 433.3 866.7 428.7 883.3 426.3L900 424L900 601L883.3 601C866.7 601 833.3 601 800 601C766.7 601 733.3 601 700 601C666.7 601 633.3 601 600 601C566.7 601 533.3 601 500 601C466.7 601 433.3 601 400 601C366.7 601 333.3 601 300 601C266.7 601 233.3 601 200 601C166.7 601 133.3 601 100 601C66.7 601 33.3 601 16.7 601L0 601Z" fill="#f16367" style={{animation: "1.3s col3WavesPart3 linear 0s both, 1.3s col3WavesPart4 linear 1.3s forwards"}}></path>
@@ -160,7 +160,7 @@ function TimelineDesignAnimation(props) {
                             </div>
                         </TimelineDesignAnimationBoxes>
 
-                        {/* Empty card */}
+                        {/* Horizontal Rectagle Wave card */}
 
                         <TimelineDesignAnimationBoxes width="max(150px, 20vw)" height="40vh" ml="4vw" mt="5vh" br="20px" bgColour={colourPalette[0]} overflow="hidden" boxShadow="4px 4px 4px 2px rgba(60, 60, 60, 0.6)">
 

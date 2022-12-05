@@ -40,7 +40,7 @@ function Timeline(props) {
 
             default:
                 return <></>
-        }
+        };
     };
 
     // useEffect(function() {
