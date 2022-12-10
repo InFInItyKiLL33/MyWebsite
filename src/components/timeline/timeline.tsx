@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import backgroundImage from "../../images/background.png";
 import backgroundImage0 from "../../images/programmingbg.png";
 import backgroundImage1 from "../../images/aviationbg.png";
 import backgroundImage2 from "../../images/pcbuildingbg3.jpg";
 import backgroundImage2Alt from "../../images/pcbuildingbg4.png";
 import backgroundImage3 from "../../images/designbg.png";
 import './timeline.css';
-import Navbar from "../navbar";
+import Navbar from "../navbar/navbar";
 import TimelineInitial from "./timeline_initial/timeline_initial";
 import TimelineSpecific from './timeline_specific/timeline_specific';
 import TimelineProgrammingAnimation from "./timeline_initial/animations/programming/programming";
 import TimelineAviationAnimation from "./timeline_initial/animations/aviation/aviation";
 import TimelineDesignAnimation from "./timeline_initial/animations/design/design";
 import TimelinePCBuildingAnimation from './timeline_initial/animations/pc_building/pc_building';
+import {TimelineProps} from "../../declarations";
 
-function Timeline(props) {
+function Timeline(props: TimelineProps): JSX.Element {
     const initialTimeline = 0;
     const types = {0: "Programming", 1: "Aviation", 2: "PC Building", 3: "Design"};
     const imageOptions = [backgroundImage0, backgroundImage1, backgroundImage2Alt, backgroundImage3];
@@ -52,7 +52,7 @@ function Timeline(props) {
 
         <div className="App">
 
-            <div page={props.page}>
+            <div>
 
                 {renderAnimation()}
 

@@ -3,9 +3,10 @@ import backgroundImage from "../../images/background.png";
 import squigglyArrow from "../../images/arrow left custom.png";
 import './home.css';
 import BasicInfo from "./basic_info";
-import Navbar from "../navbar";
+import Navbar from "../navbar/navbar";
+import {HomeProps} from "../../declarations";
 
-function Home(props) {
+function Home(props: HomeProps): JSX.Element {
 
     return(
         <div className="homepage">

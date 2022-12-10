@@ -1,6 +1,7 @@
 import React from "react";
+import {TimelineDesignSVGTextPathProps} from "../../../../../declarations"
 
-function TimelineDesignSVGTextPath(props) {
+function TimelineDesignSVGTextPath(props: TimelineDesignSVGTextPathProps): JSX.Element {
     const strokeColour = "#f06f4f";
     const strokeW = "24";
     const animTime = props.animTime !== undefined ? props.animTime : "3s";

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import {TimelineInitialTypesProps} from "../../../declarations";
 
-function TimelineInitialTypes(props) {
+function TimelineInitialTypes(props: TimelineInitialTypesProps): JSX.Element {
 
     const [initialTimelineAnimationDelay, setDelay] = useState(" timelineInitialTypesAnimationBefore");
     const [activeData, setActiveData] = useState("inactive");
@@ -8,7 +9,7 @@ function TimelineInitialTypes(props) {
     const customAnimationDelay = [600, 600, 600, 950];
     let alternateFit = props.index === 3 ? "timelineInitialTypesImgAlt" : "";
 
-    function chooseType(e) {
+    function chooseType(e: any): void {
 
         setActiveData("active");
 
@@ -32,7 +33,7 @@ function TimelineInitialTypes(props) {
         }, customAnimationDelay[props.index]);
     };
 
-    function initialTimelineAnimation(index) {
+    function initialTimelineAnimation(index: number): void {
         setTimeout(() => {
             setDelay(props.index % 2 === 0 ? " timelineInitialTypesAnimation" : " timelineInitialTypesAnimationReverse");
         }, index * 300);

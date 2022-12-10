@@ -15,9 +15,9 @@ function App() {
             </head>
             <Router>
             <Routes>
-                <Route exact path="/" element={<Home page="1" />} />
-                <Route exact path="/timeline" element={<Timeline page="2" />} />
-                <Route exact path="/about" element={<About page="3" />} />
+                <Route path="/" element={<Home page="1" />} />
+                <Route path="/timeline" element={<Timeline page="2" />} />
+                <Route path="/about" element={<About page="3" />} />
             </Routes>
             </Router>
         </>

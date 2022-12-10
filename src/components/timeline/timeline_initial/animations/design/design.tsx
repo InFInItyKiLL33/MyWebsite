@@ -4,7 +4,7 @@ import TimelineDesignAnimationBoxes from "./design_boxes";
 import TimelineDesignSVGText from "./design_svg_text";
 import TimelineDesignSVGTextPath from "./design_svg_text_path";
 
-function TimelineDesignAnimation(props) {
+function TimelineDesignAnimation() {
 
     const colourPalette = ["#111", "#222", "#666", "#777", "#FFF", "#f06f4f", "#d64e2d"];
     const designTextScale = String((window.innerHeight) / (1080));
@@ -28,8 +28,8 @@ function TimelineDesignAnimation(props) {
                     <TimelineDesignSVGText classname="designSVGTextE" w="84" h="124" vbox="84" margin="-5px -10px 0px -10px">
                         <TimelineDesignSVGTextPath d="M12 12L12 112" animKeyframe="svgAnimateE1" />
                         <TimelineDesignSVGTextPath d="M12 12H72" animKeyframe="svgAnimateE2" />
-                        <TimelineDesignSVGTextPath d="M12 62H57" animKeyframe="svgAnimateE3" animDelay="0.1s" setOpacity="0" />
-                        <TimelineDesignSVGTextPath d="M12 112H72" animKeyframe="svgAnimateE2" animDelay="0.2s" setOpacity="0" />
+                        <TimelineDesignSVGTextPath d="M12 62H57" animKeyframe="svgAnimateE3" animDelay="0.1s" />
+                        <TimelineDesignSVGTextPath d="M12 112H72" animKeyframe="svgAnimateE2" animDelay="0.2s" />
                     </TimelineDesignSVGText>
     
                     {/* S */}

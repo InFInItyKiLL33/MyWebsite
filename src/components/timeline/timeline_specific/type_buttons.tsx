@@ -1,9 +1,10 @@
 import React from 'react';
 import '../timeline.css';
+import {TypeButtonsProps} from "../../../declarations";
 
-function TypeButtons(props) {
+function TypeButtons(props: TypeButtonsProps): JSX.Element {
 
-    function mouseHoverGeneral(e, hover) {
+    function mouseHoverGeneral(e: any, hover: boolean): void {
         if (e.target.getAttribute("data-index") !== String(props.typeVal)) {
             let tempTypeImage = [...props.typeImage];
             if (hover == true) {
@@ -15,15 +16,15 @@ function TypeButtons(props) {
         };
     };
     
-    function mouseHoverTypes(e) { // hover over type header
+    function mouseHoverTypes(e: any): void { // hover over type header
         mouseHoverGeneral(e, true);
     };
     
-    function mouseLeaveTypes(e) { // unhover over type header
+    function mouseLeaveTypes(e: any): void { // unhover over type header
         mouseHoverGeneral(e, false);
     };
 
-    function changeButtonActive(e) {
+    function changeButtonActive(e: any): void {
         setTimeout(() => {
             let tempTypeImage = [...props.defaultIcons];
             tempTypeImage[e.target.getAttribute("data-index")] = props.activeIcons[e.target.getAttribute("data-index")];

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './basic_info.css';
 
-function getAge() {
+function getAge(): number {
     let d = new Date();
     return Math.floor((d.getTime() - 1025712000000) / 31536000000);
 };
 
-function BasicInfo() {
+function BasicInfo(): JSX.Element {
     return(
         <div className="appBGOverlay">
             <div className="infoBackground flex-row slideInInitialR slideInR">

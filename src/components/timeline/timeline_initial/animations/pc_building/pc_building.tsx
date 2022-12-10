@@ -1,7 +1,7 @@
 import React from "react";
 import "./pc_building.css";
 
-function TimelinePCBuildingAnimation(props) {
+function TimelinePCBuildingAnimation() {
     return (
         <>
             <div className="motherboard">

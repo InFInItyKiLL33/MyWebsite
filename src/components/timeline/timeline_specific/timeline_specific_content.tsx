@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../timeline.css';
 import TimelineHyperlink from './timeline_hyperlink';
+import {TimelineSpecificContentProps} from "../../../declarations";
 
-function makeRandomChars(entryString) {
+function makeRandomChars(entryString: string): string {
     let result = '';
     let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789<>+-';
     let blacklist = [" ", "\n", "(", ")", ".", ","];
@@ -16,7 +17,7 @@ function makeRandomChars(entryString) {
     return result;
 };
 
-function TimelineSpecificContent(props) {
+function TimelineSpecificContent(props: TimelineSpecificContentProps): JSX.Element {
     
     const reverseRow = Math.floor(props.index % 2) !== 0 ? "flex-reverse-row" : "flex-row";
     // reverseRow = "flex-row"; // used for testing purposes
@@ -39,73 +40,71 @@ function TimelineSpecificContent(props) {
     const [slideEffect, changeSlideEffect] = useState("");
     const [indexOverlay, changeIndexOverlay] = useState("");
     const [imagePos, setImagePos] = useState(0);
-    const [contentOpacity, setContentOpacity] = useState(String(minOpacity));
+    const [contentOpacity, setContentOpacity] = useState(minOpacity);
     const [imageScale, setImageScale] = useState(defaultZoom);
     const [secondaryImageScale, setSecondaryImageScale] = useState(defaultZoom);
     const [hoveringStatus, setHoveringStatus] = useState(0); // 0 for no hover, any other value for hover additional zoom
     const [rendered, setRendered] = useState(false);
 
-    const contentRef = useRef();
+    const contentRef = useRef<HTMLInputElement>(null);
 
     function scrollingEffects() {
 
-        try {
-            contentRef.current.getBoundingClientRect();
-        } catch (e) {
-            return;
-        };
-
-        window.removeEventListener('scroll', scrollingEffects);
-        let boundingBox = contentRef.current.getBoundingClientRect();
-        const offset = 0.5 * boundingBox.top + 0.5 * boundingBox.bottom;
-            
-        if (!rendered && boundingBox.top < screenHeight * 0.875 && boundingBox.bottom > 0.0) {
-            setRendered(true);
-            let delay = [0, 15, 30, 45, 55, 65, 70, 75];
-            let counter = 0;
-            changeSlideEffect(reverseRow === "flex-reverse-row" ? " slideInInitial slideIn" : " slideInInitialR slideInR");
-            setTimeout(() => {
-                changeSlideEffect("")
-            }, 1000)
-            while (counter < delay.length) {
+        if (contentRef.current) {
+    
+            window.removeEventListener('scroll', scrollingEffects);
+            let boundingBox = contentRef?.current?.getBoundingClientRect();
+            const offset = 0.5 * boundingBox.top + 0.5 * boundingBox.bottom;
+                
+            if (!rendered && boundingBox.top < screenHeight * 0.875 && boundingBox.bottom > 0.0) {
+                setRendered(true);
+                let delay = [0, 15, 30, 45, 55, 65, 70, 75];
+                let counter = 0;
+                changeSlideEffect(reverseRow === "flex-reverse-row" ? " slideInInitial slideIn" : " slideInInitialR slideInR");
                 setTimeout(() => {
-                    changeThisContentHeader(makeRandomChars(eachContentOriginalHeader));
-                    changeThisContentDesc(makeRandomChars(eachContentOriginalDesc));
-                }, delay[counter] * counter);
-                counter++;
-            };
-            setTimeout(() => {
-                changeThisContentHeader(eachContentOriginalHeader);
-                changeThisContentDesc(eachContentOriginalDesc);
-            }, (counter + 0.5) * delay[counter - 1]);
-        }; // This part is to randomise the content for effect before displaying the actual one
-
-        if (clickStatus === "clicked" || clickStatus === "clicked clicked-end") {
-            setContentOpacity(1);
-        } else {
-            // Fade in fade out content when not in focus
-            if (offset > (0.5 - 0.5 * zoomRegion) * screenHeight && offset < (0.5 + 0.5 * zoomRegion) * screenHeight) {
-                if (offset < (0.5 - 0.5 * maxZoomRegion) * screenHeight || offset > (0.5 + 0.5 * maxZoomRegion) * screenHeight) {
-                    // transition zoom region
-                    let offsetScale = (Math.abs(offset - 0.5 * screenHeight) - maxZoomRegion * 0.5 * screenHeight) / ((0.5 * (zoomRegion - maxZoomRegion)) * screenHeight); // goes from 0.0 to 1.0 based on scroll position inside gradient range
-                    setImageScale(zoom - (zoom - defaultZoom) * (offsetScale));
-                    setSecondaryImageScale(zoom - (zoom - defaultZoom) * (offsetScale));
-                    setContentOpacity(maxOpacity - (maxOpacity - minOpacity) * (offsetScale));
-                } else {
-                    // max zoom region
-                    setImageScale(zoom);
-                    setSecondaryImageScale(zoom);
-                    setContentOpacity(maxOpacity);
+                    changeSlideEffect("")
+                }, 1000)
+                while (counter < delay.length) {
+                    setTimeout(() => {
+                        changeThisContentHeader(makeRandomChars(eachContentOriginalHeader));
+                        changeThisContentDesc(makeRandomChars(eachContentOriginalDesc));
+                    }, delay[counter] * counter);
+                    counter++;
                 };
+                setTimeout(() => {
+                    changeThisContentHeader(eachContentOriginalHeader);
+                    changeThisContentDesc(eachContentOriginalDesc);
+                }, (counter + 0.5) * delay[counter - 1]);
+            }; // This part is to randomise the content for effect before displaying the actual one
+    
+            if (clickStatus === "clicked" || clickStatus === "clicked clicked-end") {
+                setContentOpacity(1);
             } else {
-                // min zoom region
-                setImageScale(defaultZoom);
-                setSecondaryImageScale(defaultZoom);
-                setContentOpacity(minOpacity);
+                // Fade in fade out content when not in focus
+                if (offset > (0.5 - 0.5 * zoomRegion) * screenHeight && offset < (0.5 + 0.5 * zoomRegion) * screenHeight) {
+                    if (offset < (0.5 - 0.5 * maxZoomRegion) * screenHeight || offset > (0.5 + 0.5 * maxZoomRegion) * screenHeight) {
+                        // transition zoom region
+                        let offsetScale = (Math.abs(offset - 0.5 * screenHeight) - maxZoomRegion * 0.5 * screenHeight) / ((0.5 * (zoomRegion - maxZoomRegion)) * screenHeight); // goes from 0.0 to 1.0 based on scroll position inside gradient range
+                        setImageScale(zoom - (zoom - defaultZoom) * (offsetScale));
+                        setSecondaryImageScale(zoom - (zoom - defaultZoom) * (offsetScale));
+                        setContentOpacity(maxOpacity - (maxOpacity - minOpacity) * (offsetScale));
+                    } else {
+                        // max zoom region
+                        setImageScale(zoom);
+                        setSecondaryImageScale(zoom);
+                        setContentOpacity(maxOpacity);
+                    };
+                } else {
+                    // min zoom region
+                    setImageScale(defaultZoom);
+                    setSecondaryImageScale(defaultZoom);
+                    setContentOpacity(minOpacity);
+                };
             };
+            
+            setImagePos(offset);
         };
-        
-        setImagePos(offset);
+
     };
 
     function scrollEffect() {
@@ -117,7 +116,7 @@ function TimelineSpecificContent(props) {
         scrollingEffects();
     }, []);
 
-    function handleClick(event) {
+    function handleClick(event: any): void {
         if (clickStatus === "" || clickStatus === "unclick") {
             changeClickStatus("clicked");
             changeIndexOverlay(" indexHigh");
@@ -140,7 +139,7 @@ function TimelineSpecificContent(props) {
     };
 
     return(
-        <div className={"eachContent " + reverseRow + slideEffect + indexOverlay} key={props.index} style={{"opacity": contentOpacity}} ref={contentRef} onScroll={scrollEffect()}>
+        <div className={"eachContent " + reverseRow + slideEffect + indexOverlay} key={props.index} style={{"opacity": String(contentOpacity)}} ref={contentRef} onScroll={scrollEffect()}>
             <div className={"arrowDecoration arrowDecoration" + reverseRow === "flex-reverse-row" ? "R" : "L"}></div>
             <div className="eachContentLeftWrapper">
                 <div className="eachContentImageWrapper flex-row" onMouseOver={(event) => setHoveringStatus(0.05)} onMouseLeave={(event) => setHoveringStatus(0)}>
