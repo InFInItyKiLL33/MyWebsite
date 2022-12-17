@@ -42,9 +42,31 @@ function TimelinePCBuildingAnimation() {
         return false;
     };
 
+    const getPowerHoles = (width: number, height: number): JSX.Element => {
+        return(
+            <>
+                {
+                    Array(width).fill("").map((each1: string, index1: number): JSX.Element => {
+                        return (
+                            <div className="flex-col powerHolesCol">
+                                {
+                                    Array(height).fill("").map((each2: string, index2: number): JSX.Element => {
+                                        return(<div className="powerHolesRow">•</div>)
+                                    })
+                                }
+                            </div>
+                        );
+                    })
+                }
+            </>
+        );
+    };
+
     return (
         <>
             <div className="motherboard">
+
+                {/* Initial parts */}
 
                 <div className="heatsinks">
                     {/* Due to the way filter renders, 2 has to be before 1 to be under 1 */}
@@ -66,9 +88,20 @@ function TimelinePCBuildingAnimation() {
                         <div className="heatsink-3-streak-3 streaks"></div>
                         <div className="heatsink-3-streak-4 streaks"></div>
                     </div>
-                    <div className="heatsinkSSD-1"></div>
-                    <div className="heatsinkController"></div>
-                    <div className="heatsinkSSD-2"></div>
+                    <div className="heatsinkSSD-1">
+                        <div className="heatsinkSSD-1-streak-1 streaks"></div>
+                        <div className="heatsinkSSD-1-streak-2 streaks"></div>
+                        <div className="heatsinkSSD-1-streak-3 streaks"></div>
+                    </div>
+                    <div className="heatsinkSSD-2">
+                        <div className="heatsinkSSD-2-streak-1 streaks"></div>
+                        <div className="heatsinkSSD-2-streak-2 streaks"></div>
+                        <div className="heatsinkSSD-2-streak-3 streaks"></div>
+                    </div>
+                    <div className="heatsinkController">
+                        <div className="heatsinkController-streak-1 streaks"></div>
+                        <div className="heatsinkController-streak-2 streaks"></div>
+                    </div>
                 </div>
 
                 <div className="CPUSlot">
@@ -105,8 +138,187 @@ function TimelinePCBuildingAnimation() {
                 </div>
 
                 <div className="powerConnectors">
-                    <div className="CPUPower"></div>
-                    <div className="motherboardPower"></div>
+                    <div className="CPUPower flex-row">
+                        {getPowerHoles(4, 2)}
+                    </div>
+                    <div className="motherboardPower flex-row">
+                        {getPowerHoles(2, 12)}
+                    </div>
+                </div>
+
+                {/* Animated parts below */}
+
+                <div className="CPU"></div>
+
+                <div className="RAM flex-row">
+                    <div className="RAM-1 RAMS"></div>
+                    <div className="RAM-2 RAMS"></div>
+                    <div className="RAM-3 RAMS"></div>
+                    <div className="RAM-4 RAMS"></div>
+                </div>
+
+                <div className="CPU-Cooler">
+                    <svg width="250" height="250" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_d_0_1)">
+                        <path d="M146 32.5C146 47.5 135 68 125 75C148.5 79.5 164 94 164 94C181 81 184.5 62.5 184.5 51C170.833 36 146 32.5 146 32.5Z" fill="black"/>
+                        <path d="M146 32.5C146 47.5 135 68 125 75C148.5 79.5 164 94 164 94C181 81 184.5 62.5 184.5 51C170.833 36 146 32.5 146 32.5Z" stroke="black"/>
+                        </g>
+                        <g filter="url(#filter1_d_0_1)">
+                        <path d="M210.165 83.4119C198.442 92.7701 175.558 96.9629 163.849 93.5149C174.993 114.688 173.331 135.848 173.331 135.848C194.097 141.023 210.739 132.217 219.726 125.042C222.923 105.003 210.165 83.4119 210.165 83.4119Z" fill="black"/>
+                        <path d="M210.165 83.4119C198.442 92.7701 175.558 96.9629 163.849 93.5149C174.993 114.688 173.331 135.848 173.331 135.848C194.097 141.023 210.739 132.217 219.726 125.042C222.923 105.003 210.165 83.4119 210.165 83.4119Z" stroke="black"/>
+                        </g>
+                        <g filter="url(#filter2_d_0_1)">
+                        <path d="M210.501 166.103C195.874 162.78 178.321 147.512 173.71 136.209C164.115 158.128 146.542 170.031 146.542 170.031C155.452 189.488 172.717 197 183.931 199.548C201.586 189.544 210.501 166.103 210.501 166.103Z" fill="black"/>
+                        <path d="M210.501 166.103C195.874 162.78 178.321 147.512 173.71 136.209C164.115 158.128 146.542 170.031 146.542 170.031C155.452 189.488 172.717 197 183.931 199.548C201.586 189.544 210.501 166.103 210.501 166.103Z" stroke="black"/>
+                        </g>
+                        <g filter="url(#filter3_d_0_1)">
+                        <path d="M146.429 217.509C139.901 204.005 140.882 180.761 146.838 170.106C123.722 176.283 103.457 169.974 103.457 169.974C93.8091 189.077 98.7098 207.256 103.715 217.61C122.548 225.167 146.429 217.509 146.429 217.509Z" fill="black"/>
+                        <path d="M146.429 217.509C139.901 204.005 140.882 180.761 146.838 170.106C123.722 176.283 103.457 169.974 103.457 169.974C93.8091 189.077 98.7098 207.256 103.715 217.61C122.548 225.167 146.429 217.509 146.429 217.509Z" stroke="black"/>
+                        </g>
+                        <g filter="url(#filter4_d_0_1)">
+                        <path d="M65.6915 199.112C72.1964 185.596 90.9982 171.894 103.045 169.923C83.8208 155.677 76.1421 135.89 76.1421 135.89C55.1862 140.232 44.0098 155.384 39.0227 165.746C44.8325 185.189 65.6915 199.112 65.6915 199.112Z" fill="black"/>
+                        <path d="M65.6915 199.112C72.1964 185.596 90.9982 171.894 103.045 169.923C83.8208 155.677 76.1421 135.89 76.1421 135.89C55.1862 140.232 44.0098 155.384 39.0227 165.746C44.8325 185.189 65.6915 199.112 65.6915 199.112Z" stroke="black"/>
+                        </g>
+                        <g filter="url(#filter5_d_0_1)">
+                        <path d="M29.5951 125.258C44.2166 121.909 66.6549 128.055 75.7107 136.24C74.8508 112.329 85.5244 93.9826 85.5244 93.9826C69.0573 80.3139 50.2428 81.0324 39.0331 83.5998C27.4628 100.27 29.5951 125.258 29.5951 125.258Z" fill="black"/>
+                        <path d="M29.5951 125.258C44.2166 121.909 66.6549 128.055 75.7107 136.24C74.8508 112.329 85.5244 93.9826 85.5244 93.9826C69.0573 80.3139 50.2428 81.0324 39.0331 83.5998C27.4628 100.27 29.5951 125.258 29.5951 125.258Z" stroke="black"/>
+                        </g>
+                        <g filter="url(#filter6_d_0_1)">
+                        <path d="M65.1015 51.0885C76.8243 60.4467 85.9828 81.833 85.2146 94.0154C103.393 78.4571 124.395 75.3898 124.395 75.3898C124.841 53.9935 112.566 39.7164 103.579 32.5418C83.3298 33.8644 65.1015 51.0885 65.1015 51.0885Z" fill="black"/>
+                        <path d="M65.1015 51.0885C76.8243 60.4467 85.9828 81.833 85.2146 94.0154C103.393 78.4571 124.395 75.3898 124.395 75.3898C124.841 53.9935 112.566 39.7164 103.579 32.5418C83.3298 33.8644 65.1015 51.0885 65.1015 51.0885Z" stroke="black"/>
+                        </g>
+                        <circle cx="125" cy="125" r="50" fill="#303030"/>
+                        <path d="M105.79 130L110.425 119.5H113.35L118 130H114.91L111.28 120.955H112.45L108.82 130H105.79ZM108.325 127.96L109.09 125.77H114.22L114.985 127.96H108.325ZM118.842 130V119.5H121.287L125.637 126.64H124.347L128.577 119.5H131.022L131.052 130H128.322L128.292 123.655H128.757L125.592 128.965H124.272L121.017 123.655H121.587V130H118.842ZM133.154 130V119.5H138.119C139.279 119.5 140.299 119.715 141.179 120.145C142.059 120.575 142.744 121.18 143.234 121.96C143.734 122.74 143.984 123.67 143.984 124.75C143.984 125.82 143.734 126.75 143.234 127.54C142.744 128.32 142.059 128.925 141.179 129.355C140.299 129.785 139.279 130 138.119 130H133.154ZM136.124 127.63H137.999C138.599 127.63 139.119 127.52 139.559 127.3C140.009 127.07 140.359 126.74 140.609 126.31C140.859 125.87 140.984 125.35 140.984 124.75C140.984 124.14 140.859 123.62 140.609 123.19C140.359 122.76 140.009 122.435 139.559 122.215C139.119 121.985 138.599 121.87 137.999 121.87H136.124V127.63Z" fill="black"/>
+                        <g filter="url(#filter7_d_0_1)">
+                        <circle cx="125" cy="125" r="100" stroke="#0C0C0C" strokeWidth="10" shapeRendering="crispEdges"/>
+                        </g>
+                        <defs>
+                        <filter id="filter0_d_0_1" x="118" y="26.5" width="79.5" height="81.5" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="3" dy="4"/>
+                        <feGaussianBlur stdDeviation="5"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+                        </filter>
+                        <filter id="filter1_d_0_1" x="156.849" y="77.4119" width="76.3913" height="73.9913" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="3" dy="4"/>
+                        <feGaussianBlur stdDeviation="5"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+                        </filter>
+                        <filter id="filter2_d_0_1" x="139.542" y="130.209" width="83.9596" height="83.3386" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="3" dy="4"/>
+                        <feGaussianBlur stdDeviation="5"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+                        </filter>
+                        <filter id="filter3_d_0_1" x="90.9295" y="163.974" width="68.9089" height="70.9686" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="3" dy="4"/>
+                        <feGaussianBlur stdDeviation="5"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+                        </filter>
+                        <filter id="filter4_d_0_1" x="32.0227" y="129.89" width="84.0219" height="83.2221" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="3" dy="4"/>
+                        <feGaussianBlur stdDeviation="5"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+                        </filter>
+                        <filter id="filter5_d_0_1" x="22.4405" y="76.1126" width="76.084" height="74.1274" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="3" dy="4"/>
+                        <feGaussianBlur stdDeviation="5"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+                        </filter>
+                        <filter id="filter6_d_0_1" x="58.1015" y="26.5418" width="79.3052" height="81.4736" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="3" dy="4"/>
+                        <feGaussianBlur stdDeviation="5"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+                        </filter>
+                        <filter id="filter7_d_0_1" x="0" y="0" width="250" height="250" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset/>
+                        <feGaussianBlur stdDeviation="10"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+                        </filter>
+                        </defs>
+                    </svg>
+                </div>
+
+                <div className="GPU">
+                    <div className="GPUPCB"></div>
+                    <div className="GPUHeatsink flex-row">
+                        {
+                            Array(100).fill("").map((eachVal: string, eachIndex: number): JSX.Element => {
+                                return(<div className="GPUIndividualHeatsink"></div>);
+                            })
+                        }
+                    </div>
+                    <div className="GPUPowerConnectors flex-row">
+                        {
+                            Array(3).fill("").map((eachVal: string, eachIndex: number): JSX.Element => {
+                                return(
+                                    <div className="GPUPowerConnector flex-row">
+                                        {getPowerHoles(4, 2)}
+                                    </div>
+                                );
+                            })
+                        }
+                    </div>
+                    <div className="GPUDecorativeShell">
+                        <div className="GPUDecorativeShell1"></div> {/* behind PCB + bottom right of heatsink */}
+                        <div className="GPUDecorativeShell2"></div> {/* GeForce RTX BG */}
+                        <p className="GPUDecorativeShell2Text">GEFORCE RTX</p>
+                        <div className="GPUDecorativeShell3"></div>  {/* right of PCB to right of heatsink */}
+                        <div className="GPUDecorativeShell4"></div>  {/* crosses whole heatsink */}
+                        <div className="GPUDecorativeShell5"></div>  {/* left of heatsink */}
+                        <div className="GPUDecorativeShell6"></div>  {/* centre of heatsink to centre of lights */}
+                        <div className="GPUDecorativeShell7"></div>  {/* LED Area */}
+                        <div className="GPULEDs flex-row">
+                            {
+                                Array(30).fill("").map((eachVal: string, eachIndex: number): JSX.Element => {
+                                    return(
+                                        <div className="GPULED" style={{"animation": "0.3s GPU-Lightup ease both " + String(eachIndex * -0.005 + 2.55) + "s"}}></div>
+                                    );
+                                })
+                            }
+                        </div>
+                        <div className="GPULEDCover1"></div>
+                        <div className="GPULEDCover2"></div>
+                        <div className="GPUDecorativeShell8"></div>  {/* Metal Bracket */}
+                    </div>
                 </div>
 
             </div>

@@ -9,7 +9,7 @@
 }
 
 .heatsinks {
-    --heatsinkColour: #555;
+    --heatsinkColour: #bbb;
 }
 
 .streaks {
@@ -184,6 +184,155 @@
     margin: 25px 0px 0px -15px;
 }
 
+.heatsinkSSD-1::before {
+    content: "";
+    width: 10px;
+    height: 15px;
+    position: absolute;
+    border-top: 10px solid transparent;
+    margin-left: -20px;
+    border-right: 10px solid var(--heatsinkColour);
+    z-index: -1;
+}
+
+.heatsinkSSD-1 {
+    background-color: var(--heatsinkColour);
+    width: 100px;
+    height: 25px;
+    margin-top: 115px;
+    margin-left: 50px;
+    filter: drop-shadow(5px 5px 4px black);
+    overflow-y: clip;
+    position: absolute;
+}
+
+.heatsinkSSD-1::after {
+    content: "";
+    width: 10px;
+    height: 20px;
+    position: absolute;
+    border-bottom: 5px solid transparent;
+    margin-left: 100px;
+    border-left: 5px solid var(--heatsinkColour);
+    z-index: -1;
+}
+
+.heatsinkSSD-1-streak-1 {
+    height: 4px;
+    box-shadow: inset 2px 2px 15px black;
+    margin: 50px 0px 0px -15px;
+}
+
+.heatsinkSSD-1-streak-2 {
+    height: 2px;
+    box-shadow: inset 2px 2px 15px black;
+    margin: 5px 0px 0px -15px;
+}
+
+.heatsinkSSD-1-streak-3 {
+    height: 2px;
+    box-shadow: inset 2px 2px 15px black;
+    margin: 0px 0px 0px -15px;
+}
+
+.heatsinkSSD-2::before {
+    content: "";
+    width: 10px;
+    height: 15px;
+    position: absolute;
+    border-bottom: 10px solid transparent;
+    margin-left: -20px;
+    border-right: 10px solid var(--heatsinkColour);
+    z-index: -1;
+}
+
+.heatsinkSSD-2 {
+    background-color: var(--heatsinkColour);
+    width: 100px;
+    height: 25px;
+    margin-top: 235px;
+    margin-left: 120px;
+    filter: drop-shadow(5px 5px 4px black);
+    overflow-y: clip;
+    position: absolute;
+}
+
+.heatsinkSSD-2::after {
+    content: "";
+    width: 10px;
+    height: 25px;
+    position: absolute;
+    border-bottom: 0px solid transparent;
+    margin-left: 100px;
+    border-left: 5px solid var(--heatsinkColour);
+    z-index: -1;
+}
+
+.heatsinkSSD-2-streak-1 {
+    height: 3px;
+    box-shadow: inset 2px 2px 15px black;
+    margin: 30px 0px 0px -15px;
+}
+
+.heatsinkSSD-2-streak-2 {
+    height: 5px;
+    box-shadow: inset 2px 2px 15px black;
+    margin: 15px 0px 0px -15px;
+}
+
+.heatsinkSSD-2-streak-3 {
+    height: 4px;
+    box-shadow: inset 2px 2px 15px black;
+    margin: -10px 0px 0px -15px;
+}
+
+.heatsinkController::before {
+    content: "";
+    width: 10px;
+    height: 20px;
+    position: absolute;
+    border-bottom: 30px solid transparent;
+    margin-left: -40px;
+    border-right: 30px solid var(--heatsinkColour);
+    z-index: -1;
+}
+
+.heatsinkController {
+    background-color: var(--heatsinkColour);
+    width: 25px;
+    height: 50px;
+    margin-top: 180px;
+    margin-left: 170px;
+    filter: drop-shadow(5px 5px 4px black);
+    overflow-y: clip;
+    position: absolute;
+}
+
+.heatsinkController::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border-top: 30px solid transparent;
+    margin-left: 25px;
+    border-left: 30px solid var(--heatsinkColour);
+    z-index: -1;
+}
+
+.heatsinkController-streak-1 {
+    height: 15px;
+    width: 400%;
+    box-shadow: inset 2px 2px 55px black;
+    margin: 20px 0px 0px -40px;
+}
+
+.heatsinkController-streak-2 {
+    height: 3px;
+    width: 400%;
+    box-shadow: inset 2px 2px 15px black;
+    margin: 15px 0px 0px -30px;
+}
+
 .CPUSlot {
     width: 160px;
     height: 160px;
@@ -216,8 +365,10 @@
     margin-top: 5px;
     margin-left: -10px;
     border-radius: 2px;
-    background-color: #333;
+    background: linear-gradient(to right, #888 0%, #555 100%);
     box-shadow: 1px 1px 5px black;
+    transform-origin: 100% 50%;
+    animation: 0.25s CPUHandle ease 0.7s both;
 }
 
 .CPUHole {
@@ -284,11 +435,11 @@
 }
 
 .x16 {
-    width: 100px;
+    width: 90px;
 }
 
 .x1 {
-    width: 25px;
+    width: 20px;
 }
 
 .PCIESlot-2 {
@@ -297,4 +448,426 @@
 
 .PCIESlot-3, .PCIESlot-4, .PCIESlot-5 {
     margin-top: 15px;
+}
+
+.CPUPower {
+    position: absolute;
+    margin-top: -285px;
+    margin-left: 53px;
+    box-shadow: 0px 1px 5px black;
+}
+
+.motherboardPower {
+    position: absolute;
+    margin-top: -230px;
+    margin-left: 232px;
+    box-shadow: 0px 0px 5px black;
+}
+
+.powerHolesRow {
+    width: 3px;
+    height: 3px;
+    border: 1px solid #191919;
+    background-color: black;
+    font-size: 3px;
+    text-align: center;
+    color: #555;
+}
+
+.CPU::before {
+    content: "";
+    background-color: grey;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    border-radius: 3px;
+    margin-top: 1px;
+    margin-left: 1px;
+}
+
+.CPU {
+    width: 37px;
+    height: 37px;
+    background-color: #213647;
+    position: absolute;
+    margin-top: -228px;
+    margin-left: 110px;
+    animation: 0.25s CPU ease 0.5s both;
+}
+
+.CPU::after {
+    content: "AMD Ryzen 7 5800X3D";
+    font-size: 2px;
+    rotate: 90deg;
+    position: absolute;
+    margin-left: 15px;
+    margin-top: 19px;
+    width: 30px;
+}
+
+.RAM {
+    position: absolute;
+    margin-top: -263px;
+    margin-left: 175px;
+}
+
+.RAMS::before {
+    content: "";
+    background-color: black;
+    position: absolute;
+    width: 6px;
+    height: 7px;
+    margin-left: -1px;
+    margin-top: 15px;
+    box-shadow: 0px 0px 3px black;
+}
+
+.RAMS {
+    width: 4px;
+    height: 120px;
+    background-color: #333;
+    margin-left: 7px;
+    box-shadow: 0px 0px 0px black;
+    border-radius: 1px;
+}
+
+.RAMS::after {
+    content: "";
+    background-color: black;
+    position: absolute;
+    width: 6px;
+    height: 7px;
+    margin-left: -1px;
+    margin-top: 98px;
+    box-shadow: 0px 0px 3px black;
+}
+
+.RAM-1 {
+    animation: 0.4s CPU ease 0.7s both, 0.2s RAM-Lightup ease 2.5s both;
+}
+
+.RAM-2 {
+    animation: 0.4s CPU ease 0.8s both, 0.2s RAM-Lightup ease 2.63s both;
+}
+
+.RAM-3 {
+    animation: 0.4s CPU ease 0.9s both, 0.2s RAM-Lightup ease 2.55s both;
+}
+
+.RAM-4 {
+    animation: 0.4s CPU ease 1.0s both, 0.2s RAM-Lightup ease 2.7s both;
+}
+
+.CPU-Cooler {
+    background: radial-gradient(circle at center, rgba(30, 30, 30, 0.9) 60%, transparent 61%);
+    border-radius: 50%;
+    position: absolute;
+    margin-top: -338px;
+    margin-left: 3px;
+    scale: 0.3;
+    animation: 0.4s CPUCooler ease 1.5s both, 0.001s CPUCoolerRotate infinite linear both 2.6s;
+}
+
+.GPU {
+    position: absolute;
+    margin-top: -112px;
+    animation: 0.5s CPU ease 0.8s both;
+    box-shadow: 0px 32px 10px black;
+}
+
+.GPUPCB {
+    width: 245px;
+    height: 1px;
+    background-color: darkkhaki;
+    box-shadow: 0px 3px 3px 5px black;
+}
+
+.GPUHeatsink {
+    scale: 0.8;
+    margin-top: 2px;
+}
+
+.GPUIndividualHeatsink {
+    width: 1px;
+    height: 20px;
+    background-color: silver;
+    opacity: 0.7;
+    margin: 1px;
+}
+
+.GPUPowerConnectors {
+    position: absolute;
+    margin-left: 190px;
+    margin-top: -27px;
+    scale: 0.8;
+}
+
+.GPUPowerConnector {
+    margin: 1px;
+    box-shadow: 0px 3px 5px black;
+}
+
+.GPUDecorativeShell1::before {
+    content: "";
+    width: 15px;
+    height: 5px;
+    position: absolute;
+    margin-left: 275px;
+    margin-top: 23px;
+    background-color: white;
+}
+
+.GPUDecorativeShell1 {
+    width: 290px;
+    height: 3px;
+    background-color: #ddd;
+    position: absolute;
+    margin-top: -29px;
+}
+
+.GPUDecorativeShell1::after {
+    content: "";
+    width: 0px;
+    height: 5px;
+    position: absolute;
+    border-bottom: 5px solid transparent;
+    margin-left: 270px;
+    margin-top: 18px;
+    border-right: 5px solid white;
+}
+
+.GPUDecorativeShell2::before {
+    content: "";
+    width: 10px;
+    height: 5px;
+    position: absolute;
+    border-bottom: 15px solid transparent;
+    margin-left: -25px;
+    border-right: 15px solid white;
+}
+
+.GPUDecorativeShell2 {
+    width: 90px;
+    height: 20px;
+    background-color: white;
+    position: absolute;
+    margin-top: -35px;
+    margin-left: 90px;
+    box-shadow: 0px 3px 4px black;
+}
+
+.GPUDecorativeShell2Text {
+    color: #ddd;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Kanit', sans-serif;
+    margin: 0px;
+    margin-top: -39px;
+    margin-left: 85px;
+    position: absolute;
+}
+
+.GPUDecorativeShell2::after {
+    content: "";
+    width: 10px;
+    height: 5px;
+    position: absolute;
+    border-bottom: 15px solid transparent;
+    margin-left: 90px;
+    border-left: 15px solid white;
+}
+
+.GPUDecorativeShell3::before {
+    content: "";
+    width: 10px;
+    height: 7.5px;
+    position: absolute;
+    border-bottom: 5px solid transparent;
+    margin-left: -15px;
+    border-right: 5px solid white;
+}
+
+.GPUDecorativeShell3 {
+    width: 30px;
+    height: 12.5px;
+    background-color: white;
+    position: absolute;
+    margin-top: -29px;
+    margin-left: 260px;
+    box-shadow: 0px 3px 4px black;
+}
+
+.GPUDecorativeShell3::after {
+    content: "";
+    width: 10px;
+    height: 5px;
+    position: absolute;
+    border-top: 5px solid transparent;
+    margin-left: 15px;
+    margin-top: 12.5px;
+    border-right: 5px solid white;
+}
+
+.GPUDecorativeShell4::before {
+    content: "";
+    width: 40px;
+    height: 2.5px;
+    position: absolute;
+    border-right: 5px solid transparent;
+    margin-top: 4px;
+    border-top: 5px solid white;
+}
+
+.GPUDecorativeShell4 {
+    width: 290px;
+    height: 5px;
+    background-color: white;
+    position: absolute;
+    margin-top: -11px;
+    margin-left: 0px;
+    box-shadow: 0px 3px 4px black;
+}
+
+.GPUDecorativeShell4::after {
+    content: "";
+    width: 10px;
+    height: 5px;
+    position: absolute;
+    border-top: 5px solid transparent;
+    margin-left: 15px;
+    margin-top: -5px;
+    border-left: 5px solid white;
+}
+
+.GPUDecorativeShell5::before {
+    content: "";
+    width: 5px;
+    height: 12px;
+    background-color: white;
+    position: absolute;
+    margin-left: 50px;
+}
+
+.GPUDecorativeShell5 {
+    width: 15px;
+    height: 20px;
+    background-color: white;
+    position: absolute;
+    margin-top: -23px;
+    margin-left: 0px;
+}
+
+.GPUDecorativeShell5::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    position: absolute;
+    margin-left: 170px;
+    margin-top: 5px;
+}
+
+.GPUDecorativeShell6::before  {
+    content: "";
+    width: 2.5px;
+    height: 2.5px;
+    position: absolute;
+    border-left: 5px solid transparent;
+    margin-left: -7px;
+    margin-top: 3px;
+    border-top: 5px solid white;
+}
+
+.GPUDecorativeShell6 {
+    width: 40px;
+    height: 7.5px;
+    background-color: white;
+    position: absolute;
+    margin-top: -10px;
+    margin-left: 120px;
+}
+
+.GPUDecorativeShell6::after  {
+    content: "";
+    width: 2.5px;
+    height: 2.5px;
+    position: absolute;
+    border-right: 5px solid transparent;
+    margin-left: 40px;
+    margin-top: 3px;
+    border-top: 5px solid white;
+}
+
+
+.GPUDecorativeShell7::before  {
+    content: "";
+    width: 280px;
+    position: absolute;
+    border-left: 5px solid transparent;
+    margin-left: 0px;
+    margin-top: 20px;
+    border-top: 5px solid white;
+}
+
+.GPUDecorativeShell7 {
+    width: 290px;
+    height: 20px;
+    background-color: white;
+    position: absolute;
+    margin-top: -2px;
+}
+
+.GPUDecorativeShell7::after  {
+    content: "";
+    position: absolute;
+    border-right: 5px solid transparent;
+    margin-left: 285px;
+    margin-top: 20px;
+    border-top: 5px solid white;
+}
+
+.GPULEDs {
+    margin-left: 10px;
+    margin-top: -5px;
+    position: absolute;
+}
+
+.GPULED {
+    z-index: 1;
+    background-color: #333;
+    border: 1px solid #ddd;
+    width: 3px;
+    height: 25px;
+    margin: 2px;
+    rotate: -45deg;
+}
+
+.GPULEDCover1, .GPULEDCover2 {
+    width: 275px;
+    background-color: white;
+    position: absolute;
+    z-index: 2;
+}
+
+.GPULEDCover1 {
+    margin-top: -1px;
+    height: 3px;
+}
+
+.GPULEDCover2 {
+    margin-top: 18px;
+    margin-left: 11px;
+    height: 4px;
+}
+
+.GPUDecorativeShell8 {
+    width: 10px;
+    height: 40px;
+    background-color: silver;
+    position: absolute;
+    margin-left: -10px;
+    margin-top: -29px;
+    box-shadow: -3px 3px 3px black;
+    border-bottom-left-radius: 1px;
+    border-top-left-radius: 1px;
 }

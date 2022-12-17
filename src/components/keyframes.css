@@ -537,3 +537,40 @@
     75% {width: 40vw; opacity: 0.7; transform: translate(calc(82.5vw + 40px), 80vh);}
     100% {width: 0px; opacity: 0.0; transform: translate(120vw, 80vh);}
 }
+
+
+/* . */
+/* PC Building Animations */
+/* . */
+
+@keyframes CPU {
+    0% {opacity: 0.0; scale: 1.15;}
+    80% {opacity: 1.0;}
+    100% {scale: 1.0;}
+}
+
+@keyframes CPUHandle {
+    0% {transform: rotateY(-90deg);}
+    100% {transform: rotateY(0deg);}
+}
+
+@keyframes RAM-Lightup {
+    0% {background-color: #333; box-shadow: 0px 0px 0px black;}
+    100% {background-color: #ccc; box-shadow: 0px 0px 3px grey;}
+}
+
+@keyframes CPUCooler {
+    0% {opacity: 0.0; scale: 0.35;}
+    80% {opacity: 1.0;}
+    100% {scale: 0.3;}
+}
+
+@keyframes CPUCoolerRotate {
+    0% {rotate: 0deg;}
+    100% {rotate: -360deg;}
+}
+
+@keyframes GPU-Lightup {
+    0% {background-color: #333;}
+    100% {background-color: #eee;}
+}
