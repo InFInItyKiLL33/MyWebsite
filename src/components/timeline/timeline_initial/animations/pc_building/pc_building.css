@@ -1,12 +1,19 @@
+.wholePC {
+    scale: 0.5;
+    margin-top: 10vh;
+    margin-left: 10vw;
+    position: absolute;
+}
+
 .motherboard {
     position: absolute;
     width: 244px;
     height: 305px;
-    background-color: #222;
+    background-color: #333;
     border-radius: 5px;
     transform: translate(120px, 120px);
     scale: 3;
-    margin-top: 50px;
+    margin-top: 60px;
 }
 
 .heatsinks {
@@ -871,6 +878,7 @@
     box-shadow: -3px 3px 3px black;
     border-bottom-left-radius: 1px;
     border-top-left-radius: 1px;
+    z-index: 6;
 }
 
 .rotatableFan {
@@ -919,7 +927,7 @@
 
 .caseFansTop {
     position: absolute;
-    margin-top: -100px;
+    margin-top: -70px;
     z-index: 3;
     margin-left: 120px;
 }
@@ -927,7 +935,7 @@
 .caseFansRight {
     position: absolute;
     margin-left: 900px;
-    margin-top: 75px;
+    margin-top: 105px;
     z-index: 3;
 }
 
@@ -953,4 +961,77 @@
 
 .fan-6 {
     animation: 0.9s CaseFansRight ease 1.0s both;
+}
+
+.caseTop, .caseBottom {
+    height: 20px;
+    width: 1050px;
+    background-color: #aaa;
+    position: absolute;
+    margin-left: 75px;
+    box-shadow: 0px 10px 20px black;
+    z-index: 5;
+}
+
+.caseTop::after {
+    content: "";
+    position: absolute;
+    width: 75px;
+    height: 90px;
+    background-color: #999;
+    margin-left: 950px;
+    margin-top: 20px;
+    z-index: 4;
+    box-shadow: inset 0px 10px 20px black, -20px 10px 20px #222;
+}
+
+.caseBottom {
+    margin-top: 1300px;
+}
+
+.caseLeft, .caseRight {
+    height: 1300px;
+    width: 40px;
+    background-color: #aaa;
+    position: absolute;
+    margin-left: 75px;
+    margin-top: 20px;
+    box-shadow: 0px 10px 20px black;
+    z-index: 3;
+}
+
+.caseRight {
+    margin-left: 1100px;
+    width: 25px;
+}
+
+.caseRightSide {
+    width: 70px;
+    height: 940px;
+    position: absolute;
+    z-index: 0;
+    border-right: 70px solid #aaa;
+    border-top: 70px solid transparent;
+    border-bottom: 70px solid transparent;
+    margin: 20px 0px 0px 960px;
+    opacity: 0.25;
+}
+
+.caseAccessoryShroud::before {
+    content: "";
+    width: 1030px;
+    height: 70px;
+    margin-top: -70px;
+    background-color: #aaa;
+    position: absolute;
+    box-shadow: inset 0px 12px 20px black;
+}
+
+.caseAccessoryShroud {
+    width: 1030px;
+    height: 200px;
+    margin-top: 1100px;
+    background-color: #aaa;
+    position: absolute;
+    margin-left: 75px;
 }

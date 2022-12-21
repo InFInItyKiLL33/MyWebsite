@@ -63,8 +63,7 @@ function TimelinePCBuildingAnimation() {
     };
 
     return (
-        <>
-
+        <div className="wholePC">
             <div className="case">
 
                 <div className="caseFansTop flex-row">
@@ -887,6 +886,13 @@ function TimelinePCBuildingAnimation() {
                     </div>
                 </div>
 
+                <div className="caseAccessoryShroud"></div>
+                <div className="caseTop"></div>
+                <div className="caseLeft"></div>
+                <div className="caseRight"></div>
+                <div className="caseRightSide"></div>
+                <div className="caseBottom"></div>
+
             </div>
 
             <div className="motherboard">
@@ -1147,7 +1153,7 @@ function TimelinePCBuildingAnimation() {
                 </div>
 
             </div>
-        </>
+        </div>
     );
 };
 
