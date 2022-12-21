@@ -6,6 +6,7 @@
     border-radius: 5px;
     transform: translate(120px, 120px);
     scale: 3;
+    margin-top: 50px;
 }
 
 .heatsinks {
@@ -565,7 +566,7 @@
     margin-top: -338px;
     margin-left: 3px;
     scale: 0.3;
-    animation: 0.4s CPUCooler ease 1.5s both, 0.001s CPUCoolerRotate infinite linear both 2.6s;
+    animation: 0.4s CPUCooler ease 1.5s both, 0.001s FanRotate infinite linear both 2.6s;
 }
 
 .GPU {
@@ -870,4 +871,86 @@
     box-shadow: -3px 3px 3px black;
     border-bottom-left-radius: 1px;
     border-top-left-radius: 1px;
+}
+
+.rotatableFan {
+    animation: 0.01s FanRotate linear infinite 2.5s;
+    transform-origin: 50% 50%;
+}
+
+.caseFanTop {
+    transform-style: preserve-3d;
+    transform: rotateX(-80deg);
+}
+
+.caseFanRight {
+    transform-style: preserve-3d;
+    transform: rotateY(-80deg);
+}
+
+.caseFanTopSides {
+    width: 238px;
+    height: 20px;
+    background-color: rgba(98, 98, 98, 0.6);
+    position: absolute;
+    margin: 107px 0px 0px 31px;
+    border: 1px solid #222;
+    box-shadow: inset 0px 10px 10px 0px #222;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.caseFanRightSides {
+    width: 20px;
+    height: 238px;
+    background-color: rgba(98, 98, 98, 0.6);
+    position: absolute;
+    margin: 30px 0px 0px 170px;
+    border: 1px solid #222;
+    box-shadow: inset 0px 10px 10px 0px #222;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.caseFans {
+    width: 300px;
+    scale: 1.25;
+}
+
+.caseFansTop {
+    position: absolute;
+    margin-top: -100px;
+    z-index: 3;
+    margin-left: 120px;
+}
+
+.caseFansRight {
+    position: absolute;
+    margin-left: 900px;
+    margin-top: 75px;
+    z-index: 3;
+}
+
+.fan-1 {
+    animation: 0.9s CaseFansTop ease 0s both;
+}
+
+.fan-2 {
+    animation: 0.9s CaseFansTop ease 0.2s both;
+}
+
+.fan-3 {
+    animation: 0.9s CaseFansTop ease 0.4s both;
+}
+
+.fan-4 {
+    animation: 0.9s CaseFansRight ease 0.6s both;
+}
+
+.fan-5 {
+    animation: 0.9s CaseFansRight ease 0.8s both;
+}
+
+.fan-6 {
+    animation: 0.9s CaseFansRight ease 1.0s both;
 }

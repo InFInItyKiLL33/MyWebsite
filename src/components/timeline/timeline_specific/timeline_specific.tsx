@@ -92,7 +92,7 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
 
     async function getNewContent() {
         const newData = await content[props.typeVal].slice(loadedContent.length, lastLoadedIndex); // apparently async and await is needed even though it's not api, if not it doesn't work
-        setLoadedContent((prevLoadedContent: any): any => {[...prevLoadedContent, ...newData]});
+        setLoadedContent((prevLoadedContent: any): any => [...prevLoadedContent, ...newData]);
     };
 
     useEffect(() => {

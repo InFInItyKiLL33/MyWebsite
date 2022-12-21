@@ -565,7 +565,7 @@
     100% {scale: 0.3;}
 }
 
-@keyframes CPUCoolerRotate {
+@keyframes FanRotate {
     0% {rotate: 0deg;}
     100% {rotate: -360deg;}
 }
@@ -573,4 +573,14 @@
 @keyframes GPU-Lightup {
     0% {background-color: #333;}
     100% {background-color: #eee;}
+}
+
+@keyframes CaseFansTop {
+    0% {transform: translateY(60px); opacity: 0.0;}
+    100% {transform: translateY(0px); opacity: 1.0;}
+}
+
+@keyframes CaseFansRight {
+    0% {transform: translateX(-40px); opacity: 0.0;}
+    100% {transform: translateX(0px); opacity: 1.0;}
 }
