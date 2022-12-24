@@ -482,6 +482,70 @@
     color: #555;
 }
 
+.MoboPowerCablingHole {
+    position: absolute;
+    background-color: #000;
+    width: 10px;
+    height: 63px;
+    border-radius: 3px;
+    margin-top: -232px;
+    margin-left: 256px;
+}
+
+.GPUPowerCablingHole {
+    position: absolute;
+    background-color: #000;
+    width: 65px;
+    height: 7px;
+    border-radius: 2px;
+    margin-top: 28px;
+    margin-left: 191px;
+}
+
+.powerCablePin {
+    width: 3px;
+    height: 3px;
+    border: 1px solid black;
+    background-color: #333;
+}
+
+.powerCable {
+    background-color: #ddd;
+    /* border: 1px solid rgba(0, 0, 0, 1); */
+    position: absolute;
+    margin-left: 2px;
+    background: radial-gradient(#fff 10%, #000 100%);
+}
+
+.powerCableLong {
+    background: radial-gradient(at 50% 75px, #eee 45%, #222 80%);
+}
+
+.CPUPowerCable, .MoboPowerCable, .GPUPowerCable {
+    animation: 0.2s CPU linear 1.25s both;
+    position: absolute;
+}
+
+.CPUPowerCable {
+    margin-top: -285px;
+    margin-left: 53px;
+}
+
+.MoboPowerCable {
+    margin-top: -230px;
+    margin-left: 232px;
+}
+
+.GPUPowerCable {
+    margin-top: -116px;
+    margin-left: 187px;
+    transform: scale(0.75);
+}
+
+.GPUPowerCableEach {
+    padding: 2px;
+}
+
 .CPU::before {
     content: "";
     background-color: grey;
@@ -886,6 +950,14 @@
     transform-origin: 50% 50%;
 }
 
+.caseBack {
+    width: 1000px;
+    height: 1050px;
+    background: linear-gradient(#1b1b1b 80%, #0c0c0c 100%);
+    position: absolute;
+    margin-left: 100px;
+}
+
 .caseFanTop {
     transform-style: preserve-3d;
     transform: rotateX(-80deg);
@@ -893,7 +965,8 @@
 
 .caseFanRight {
     transform-style: preserve-3d;
-    transform: rotateY(-80deg);
+    transform: rotateY(-80deg) rotateZ(7.5deg);
+    margin-top: 10px;
 }
 
 .caseFanTopSides {
@@ -1010,11 +1083,11 @@
     height: 940px;
     position: absolute;
     z-index: 0;
-    border-right: 70px solid #aaa;
+    border-right: 70px solid #000;
     border-top: 70px solid transparent;
     border-bottom: 70px solid transparent;
     margin: 20px 0px 0px 960px;
-    opacity: 0.25;
+    opacity: 0.6;
 }
 
 .caseAccessoryShroud::before {
@@ -1022,9 +1095,9 @@
     width: 1030px;
     height: 70px;
     margin-top: -70px;
-    background-color: #aaa;
+    background-color: #5a5a5a;
     position: absolute;
-    box-shadow: inset 0px 12px 20px black;
+    box-shadow: inset 0px 7px 20px black;
 }
 
 .caseAccessoryShroud {
@@ -1034,4 +1107,15 @@
     background-color: #aaa;
     position: absolute;
     margin-left: 75px;
+}
+
+.caseGlassCover {
+    width: 1050px;
+    height: 1280px;
+    background-color: rgba(0, 0, 0, 0.35);
+    position: absolute;
+    z-index: 10;
+    margin: 20px 0px 0px 75px;
+    backdrop-filter: blur(2px);
+    animation: 0.25s CPU linear 1.8s both;
 }
