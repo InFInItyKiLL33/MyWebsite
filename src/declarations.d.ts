@@ -104,6 +104,19 @@ export declare interface TypeButtonsProps {
     toOrange: any;
 }
 
+//Timeline Initial
+export declare interface PowerCablesProps {
+    height: number;
+    width: number;
+    marginTop: number;
+    marginLeft: number;
+}
+
+export declare interface PowerHolesProps {
+    height: number;
+    width: number;
+}
+
 
 
 //Timeline Animations

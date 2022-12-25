@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import PowerCables from "./power_cables";
+import PowerHoles from "./power_holes";
 import "./pc_building.css";
 
 function TimelinePCBuildingAnimation() {
@@ -33,44 +35,26 @@ function TimelinePCBuildingAnimation() {
 
     const checkCPUEmptyHole = (index1: number, index2: number): boolean => {
         // center holes
-        if (index1 >= 13 && index2 >= 13 && index1 <= 25 && index2 <= 25) {
-            return true;
-        };
+        if (index1 >= 13 && index2 >= 13 && index1 <= 25 && index2 <= 25) return true;
         // other holes
         for (let i = 0; i < ignoredCPUHoles.length; i++) {
-            if (index1 === ignoredCPUHoles[i][0] && index2 === ignoredCPUHoles[i][1]) {
-                return true;
-            };
+            if (index1 === ignoredCPUHoles[i][0] && index2 === ignoredCPUHoles[i][1]) return true;
         };
+
         return false;
     };
 
-    const getPowerHoles = (width: number, height: number): JSX.Element => {
+    const getPowerCable = (quantity:number, width: number, height: number, marginTop: number, marginLeft: number): JSX.Element => {
         return(
             <>
                 {
-                    Array(width).fill("").map((each1: string, index1: number): JSX.Element => {
-                        return (
-                            <div className="flex-col powerHolesCol">
-                                {
-                                    Array(height).fill("").map((each2: string, index2: number): JSX.Element => {
-                                        return(<div className="powerHolesRow">•</div>)
-                                    })
-                                }
-                            </div>
+                    Array(quantity).fill("").map((each2: string, index2: number): JSX.Element => {
+                        return(
+                            <PowerCables width={width} height={height} marginTop={marginTop} marginLeft={marginLeft}></PowerCables>
                         );
                     })
                 }
             </>
-        );
-    };
-
-    const getPowerCable = (width: number, height: number, marginTop: number, marginLeft: number): JSX.Element => {
-        return(
-            <div className="powerCableEach">
-                <div className="powerCablePin"></div>
-                <div className={"powerCable " + (width > 100 || height > 100 ? "powerCableLong" : "")} style={{"marginTop": marginTop, "marginLeft": marginLeft, "width": width, "height": height}}></div>
-            </div>
         );
     };
 
@@ -927,7 +911,7 @@ function TimelinePCBuildingAnimation() {
                     {/* Initial parts */}
     
                     <div className="heatsinks">
-                        {/* Due to the way filter renders, 2 has to be before 1 to be under 1 */}
+                        {/* Due to the way filter in css renders, 2 has to be before 1 to be under 1 */}
                         <div className="heatsink-2">
                             <div className="heatsink-2-streak-1 streaks"></div>
                             <div className="heatsink-2-streak-2 streaks"></div>
@@ -999,10 +983,10 @@ function TimelinePCBuildingAnimation() {
                         
                         {/* Power Holes */}
                         <div className="CPUPower flex-row">
-                            {getPowerHoles(4, 2)}
+                            <PowerHoles width={4} height={2} />
                         </div>
                         <div className="motherboardPower flex-row">
-                            {getPowerHoles(2, 12)}
+                            <PowerHoles width={2} height={12} />
                         </div>
     
                         {/* Power Cabling Holes for cables to go through */}
@@ -1012,48 +996,20 @@ function TimelinePCBuildingAnimation() {
                         {/* Power Cables */}
                         <div className="CPUPowerCable">
                             <div className="flex-row">
-                                {getPowerCable(3, 20, -21, 1)}
-                                {getPowerCable(3, 20, -21, 1)}
-                                {getPowerCable(3, 20, -21, 1)}
-                                {getPowerCable(3, 20, -21, 1)}
+                                {getPowerCable(4, 3, 20, -21, 1)}
                             </div>
                             <div className="flex-row">
-                                {getPowerCable(3, 20, -21, 1)}
-                                {getPowerCable(3, 20, -21, 1)}
-                                {getPowerCable(3, 20, -21, 1)}
-                                {getPowerCable(3, 20, -21, 1)}
+                                {getPowerCable(4, 3, 20, -21, 1)}
                             </div>
                         </div>
     
                         <div className="MoboPowerCable">
                             <div className="flex-row">
                                 <div className="flex-col index3">
-                                    {getPowerCable(30, 3, -4, 1)}
-                                    {getPowerCable(30, 3, -4, 1)}
-                                    {getPowerCable(30, 3, -4, 1)}
-                                    {getPowerCable(30, 3, -4, 1)}
-                                    {getPowerCable(30, 3, -4, 1)}
-                                    {getPowerCable(30, 3, -4, 1)}
-                                    {getPowerCable(30, 3, -4, 1)}
-                                    {getPowerCable(30, 3, -4, 1)}
-                                    {getPowerCable(30, 3, -4, 1)}
-                                    {getPowerCable(30, 3, -4, 1)}
-                                    {getPowerCable(30, 3, -4, 1)}
-                                    {getPowerCable(30, 3, -4, 1)}
+                                    {getPowerCable(12, 30, 3, -4, 1)}
                                 </div>
                                 <div className="flex-col index2">
-                                    {getPowerCable(20, 3, -4, 1)}
-                                    {getPowerCable(20, 3, -4, 1)}
-                                    {getPowerCable(20, 3, -4, 1)}
-                                    {getPowerCable(20, 3, -4, 1)}
-                                    {getPowerCable(20, 3, -4, 1)}
-                                    {getPowerCable(20, 3, -4, 1)}
-                                    {getPowerCable(20, 3, -4, 1)}
-                                    {getPowerCable(20, 3, -4, 1)}
-                                    {getPowerCable(20, 3, -4, 1)}
-                                    {getPowerCable(20, 3, -4, 1)}
-                                    {getPowerCable(20, 3, -4, 1)}
-                                    {getPowerCable(20, 3, -4, 1)}
+                                    {getPowerCable(12, 20, 3, -4, 1)}
                                 </div>
                             </div>
                         </div>
@@ -1061,44 +1017,26 @@ function TimelinePCBuildingAnimation() {
                         <div className="GPUPowerCable index5 flex-row">
                             <div className="flex-col GPUPowerCableEach">
                                 <div className="flex-row">
-                                    {getPowerCable(3, 170, -4, 1)}
-                                    {getPowerCable(3, 170, -4, 1)}
-                                    {getPowerCable(3, 170, -4, 1)}
-                                    {getPowerCable(3, 170, -4, 1)}
+                                    {getPowerCable(4, 3, 170, -4, 1)}
                                 </div>
                                 <div className="flex-row">
-                                    {getPowerCable(3, 190, -4, 1)}
-                                    {getPowerCable(3, 190, -4, 1)}
-                                    {getPowerCable(3, 190, -4, 1)}
-                                    {getPowerCable(3, 190, -4, 1)}
+                                    {getPowerCable(4, 3, 190, -4, 1)}
                                 </div>
                             </div>
                             <div className="flex-col GPUPowerCableEach">
                                 <div className="flex-row">
-                                    {getPowerCable(3, 170, -4, 1)}
-                                    {getPowerCable(3, 170, -4, 1)}
-                                    {getPowerCable(3, 170, -4, 1)}
-                                    {getPowerCable(3, 170, -4, 1)}
+                                    {getPowerCable(4, 3, 170, -4, 1)}
                                 </div>
                                 <div className="flex-row">
-                                    {getPowerCable(3, 190, -4, 1)}
-                                    {getPowerCable(3, 190, -4, 1)}
-                                    {getPowerCable(3, 190, -4, 1)}
-                                    {getPowerCable(3, 190, -4, 1)}
+                                    {getPowerCable(4, 3, 190, -4, 1)}
                                 </div>
                             </div>
                             <div className="flex-col GPUPowerCableEach">
                                 <div className="flex-row">
-                                    {getPowerCable(3, 170, -4, 1)}
-                                    {getPowerCable(3, 170, -4, 1)}
-                                    {getPowerCable(3, 170, -4, 1)}
-                                    {getPowerCable(3, 170, -4, 1)}
+                                    {getPowerCable(4, 3, 170, -4, 1)}
                                 </div>
                                 <div className="flex-row">
-                                    {getPowerCable(3, 190, -4, 1)}
-                                    {getPowerCable(3, 190, -4, 1)}
-                                    {getPowerCable(3, 190, -4, 1)}
-                                    {getPowerCable(3, 190, -4, 1)}
+                                    {getPowerCable(4, 3, 190, -4, 1)}
                                 </div>
                             </div>
                         </div>
@@ -1250,7 +1188,7 @@ function TimelinePCBuildingAnimation() {
                                 Array(3).fill("").map((eachVal: string, eachIndex: number): JSX.Element => {
                                     return(
                                         <div className="GPUPowerConnector flex-row">
-                                            {getPowerHoles(4, 2)}
+                                            <PowerHoles width={4} height={2} />
                                         </div>
                                     );
                                 })

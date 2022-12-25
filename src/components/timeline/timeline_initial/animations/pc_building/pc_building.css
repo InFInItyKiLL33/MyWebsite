@@ -5,8 +5,7 @@
 }
 
 .wholePC {
-    margin-left: calc(430px + 340px);
-    margin-top: -100px;
+    margin: -100px 0px 0px calc(430px + 340px);
     position: absolute;
     animation: 0.2s PC linear 0.4s both;
     transform-origin: bottom right;
@@ -85,9 +84,8 @@
     width: 35px;
     height: 10px;
     position: absolute;
-    margin-top: -20px;
+    margin: -20px 0px 0px -20px;
     border-bottom: 10px solid var(--heatsinkColour);
-    margin-left: -20px;
     border-right: 10px solid transparent;
     z-index: -1;
 }
@@ -96,8 +94,7 @@
     background-color: var(--heatsinkColour);
     width: 25px;
     height: 80px;
-    margin-top: 25px;
-    margin-left: 55px;
+    margin: 25px 0px 0px 55px;
     filter: drop-shadow(5px 5px 4px black);
 }
 
@@ -106,40 +103,34 @@
     width: 25px;
     height: 10px;
     position: absolute;
-    margin-top: 80px;
+    margin: 80px 0px 0px -10px;
     border-top: 10px solid var(--heatsinkColour);
     border-right: 10px solid transparent;
-    margin-left: -10px;
     z-index: -1;
 }
 
-.heatsink-2-streak-1 {
-    height: 4px;
+.heatsink-2-streak-1, .heatsink-2-streak-2, .heatsink-2-streak-3, .heatsink-2-streak-4, .heatsink-2-streak-5 {
     box-shadow: inset 2px 2px 15px black;
+    height: 4px;
+}
+
+.heatsink-2-streak-1 {
     margin: 15px 0px 0px -5px;
 }
 
 .heatsink-2-streak-2 {
-    height: 4px;
-    box-shadow: inset 2px 2px 15px black;
     margin: 23px 0px 0px -5px;
 }
 
 .heatsink-2-streak-4 {
-    height: 4px;
-    box-shadow: inset 2px 2px 15px black;
     margin: 46px 0px 0px -5px;
 }
 
 .heatsink-2-streak-3 {
-    height: 4px;
-    box-shadow: inset 2px 2px 15px black;
     margin: 54px 0px 0px -5px;
 }
 
 .heatsink-2-streak-5 {
-    height: 4px;
-    box-shadow: inset 2px 2px 15px black;
     margin: 63px 0px 0px -5px;
 }
 
@@ -158,8 +149,7 @@
     background-color: var(--heatsinkColour);
     width: 50px;
     height: 25px;
-    margin-top: -125px;
-    margin-left: 85px;
+    margin: -125px 0px 0px 85px;
     filter: drop-shadow(5px 5px 4px black);
     overflow-y: clip;
 }
@@ -175,27 +165,27 @@
     z-index: -1;
 }
 
+.heatsink-3-streak-1, .heatsink-3-streak-2, .heatsink-3-streak-3, .heatsink-3-streak-4 {
+    box-shadow: inset 2px 2px 15px black;
+}
+
 .heatsink-3-streak-1 {
     height: 3px;
-    box-shadow: inset 2px 2px 15px black;
     margin: 6px 0px 0px -5px;
 }
 
 .heatsink-3-streak-2 {
     height: 2px;
-    box-shadow: inset 2px 2px 15px black;
     margin: 12px 0px 0px -5px;
 }
 
 .heatsink-3-streak-3 {
     height: 3px;
-    box-shadow: inset 2px 2px 15px black;
     margin: 18px 0px 0px -15px;
 }
 
 .heatsink-3-streak-4 {
     height: 4px;
-    box-shadow: inset 2px 2px 15px black;
     margin: 25px 0px 0px -15px;
 }
 
@@ -214,8 +204,7 @@
     background-color: var(--heatsinkColour);
     width: 100px;
     height: 25px;
-    margin-top: 115px;
-    margin-left: 50px;
+    margin: 115px 0px 0px 50px;
     filter: drop-shadow(5px 5px 4px black);
     overflow-y: clip;
     position: absolute;
@@ -232,21 +221,22 @@
     z-index: -1;
 }
 
+.heatsinkSSD-1-streak-1, .heatsinkSSD-1-streak-2, .heatsinkSSD-1-streak-3 {
+    box-shadow: inset 2px 2px 15px black;
+}
+
 .heatsinkSSD-1-streak-1 {
     height: 4px;
-    box-shadow: inset 2px 2px 15px black;
     margin: 50px 0px 0px -15px;
 }
 
 .heatsinkSSD-1-streak-2 {
     height: 2px;
-    box-shadow: inset 2px 2px 15px black;
     margin: 5px 0px 0px -15px;
 }
 
 .heatsinkSSD-1-streak-3 {
     height: 2px;
-    box-shadow: inset 2px 2px 15px black;
     margin: 0px 0px 0px -15px;
 }
 
@@ -265,8 +255,7 @@
     background-color: var(--heatsinkColour);
     width: 100px;
     height: 25px;
-    margin-top: 235px;
-    margin-left: 120px;
+    margin: 235px 0px 0px 120px;
     filter: drop-shadow(5px 5px 4px black);
     overflow-y: clip;
     position: absolute;
@@ -283,21 +272,22 @@
     z-index: -1;
 }
 
+.heatsinkSSD-2-streak-1, .heatsinkSSD-2-streak-2, .heatsinkSSD-2-streak-3 {
+    box-shadow: inset 2px 2px 15px black;
+}
+
 .heatsinkSSD-2-streak-1 {
     height: 3px;
-    box-shadow: inset 2px 2px 15px black;
     margin: 30px 0px 0px -15px;
 }
 
 .heatsinkSSD-2-streak-2 {
     height: 5px;
-    box-shadow: inset 2px 2px 15px black;
     margin: 15px 0px 0px -15px;
 }
 
 .heatsinkSSD-2-streak-3 {
     height: 4px;
-    box-shadow: inset 2px 2px 15px black;
     margin: -10px 0px 0px -15px;
 }
 
@@ -316,8 +306,7 @@
     background-color: var(--heatsinkColour);
     width: 25px;
     height: 50px;
-    margin-top: 180px;
-    margin-left: 170px;
+    margin: 180px 0px 0px 170px;
     filter: drop-shadow(5px 5px 4px black);
     overflow-y: clip;
     position: absolute;
@@ -351,8 +340,7 @@
 .CPUSlot {
     width: 160px;
     height: 160px;
-    margin-left: 110px;
-    margin-top: 35px;
+    margin: 35px 0px 0px 110px;
     background-color: #333;
     border: 1px solid #333;
     scale: 0.225;
@@ -365,8 +353,7 @@
     width: 25px;
     height: 175px;
     position: absolute;
-    margin-top: -10px;
-    margin-left: 160px;
+    margin: -10px 0px 0px 160px;
     border-radius: 2px;
     background-color: #333;
     box-shadow: 1px 1px 5px black;
@@ -377,8 +364,7 @@
     width: 180px;
     height: 3px;
     position: absolute;
-    margin-top: 5px;
-    margin-left: -10px;
+    margin: 5px 0px 0px -10px;
     border-radius: 2px;
     background: linear-gradient(to right, #888 0%, #555 100%);
     box-shadow: 1px 1px 5px black;
@@ -406,9 +392,8 @@
     height: 120px;
     width: 2px;
     background-color: black;
-    margin-top: -200px;
+    margin: -200px 0px 0px 3px;
     border: 3px solid #191919;
-    margin-left: 3px;
 }
 
 .RAMSlot::before {
@@ -417,8 +402,7 @@
     width: 9px;
     background-color: var(--heatsinkColour);
     position: absolute;
-    margin-top: -5px;
-    margin-left: -3px;
+    margin: -5px 0px 0px -3px;
     box-shadow: 0px 2px 5px black;
 }
 
@@ -428,8 +412,7 @@
     width: 9px;
     background-color: var(--heatsinkColour);
     position: absolute;
-    margin-top: 115px;
-    margin-left: -3px;
+    margin: 115px 0px 0px -3px;
     box-shadow: 0px -2px 5px black;
 }
 
@@ -444,7 +427,6 @@
 .PCIESlot {
     height: 2px;
     background-color: black;
-    margin-top: 0px;
     border: 3px solid #191919;
     margin: 0px 0px 0px 45px;
 }
@@ -467,15 +449,13 @@
 
 .CPUPower {
     position: absolute;
-    margin-top: -285px;
-    margin-left: 53px;
+    margin: -285px 0px 0px 53px;
     box-shadow: 0px 1px 5px black;
 }
 
 .motherboardPower {
     position: absolute;
-    margin-top: -230px;
-    margin-left: 232px;
+    margin: -230px 0px 0px 232px;
     box-shadow: 0px 0px 5px black;
 }
 
@@ -495,8 +475,7 @@
     width: 10px;
     height: 63px;
     border-radius: 3px;
-    margin-top: -232px;
-    margin-left: 256px;
+    margin: -232px 0px 0px 256px;
 }
 
 .GPUPowerCablingHole {
@@ -505,8 +484,7 @@
     width: 65px;
     height: 7px;
     border-radius: 2px;
-    margin-top: 28px;
-    margin-left: 191px;
+    margin: 28px 0px 0px 191px;
 }
 
 .powerCablePin {
@@ -518,7 +496,6 @@
 
 .powerCable {
     background-color: #ddd;
-    /* border: 1px solid rgba(0, 0, 0, 1); */
     position: absolute;
     margin-left: 2px;
     background: radial-gradient(#fff 10%, #000 100%);
@@ -534,18 +511,15 @@
 }
 
 .CPUPowerCable {
-    margin-top: -285px;
-    margin-left: 53px;
+    margin: -285px 0px 0px 53px;
 }
 
 .MoboPowerCable {
-    margin-top: -230px;
-    margin-left: 232px;
+    margin: -230px 0px 0px 232px;
 }
 
 .GPUPowerCable {
-    margin-top: -116px;
-    margin-left: 187px;
+    margin: -116px 0px 0px 187px;
     transform: scale(0.75);
 }
 
@@ -560,8 +534,7 @@
     height: 35px;
     position: absolute;
     border-radius: 3px;
-    margin-top: 1px;
-    margin-left: 1px;
+    margin: 1px 0px 0px 1px;
 }
 
 .CPU {
@@ -569,8 +542,7 @@
     height: 37px;
     background-color: #213647;
     position: absolute;
-    margin-top: -228px;
-    margin-left: 110px;
+    margin: -228px 0px 0px 110px;
     animation: 0.25s CPU ease 0.7s both;
 }
 
@@ -579,15 +551,13 @@
     font-size: 2px;
     rotate: 90deg;
     position: absolute;
-    margin-left: 15px;
-    margin-top: 19px;
+    margin: 19px 0px 0px 15px;
     width: 30px;
 }
 
 .RAM {
     position: absolute;
-    margin-top: -263px;
-    margin-left: 175px;
+    margin: -263px 0px 0px 175px;
 }
 
 .RAMS::before {
@@ -596,8 +566,7 @@
     position: absolute;
     width: 6px;
     height: 7px;
-    margin-left: -1px;
-    margin-top: 15px;
+    margin: 15px 0px 0px 1px;
     box-shadow: 0px 0px 3px black;
 }
 
@@ -616,8 +585,7 @@
     position: absolute;
     width: 6px;
     height: 7px;
-    margin-left: -1px;
-    margin-top: 98px;
+    margin: 98px 0px 0px 1px;
     box-shadow: 0px 0px 3px black;
 }
 
@@ -641,8 +609,7 @@
     background: radial-gradient(circle at center, rgba(30, 30, 30, 0.9) 60%, transparent 61%);
     border-radius: 50%;
     position: absolute;
-    margin-top: -338px;
-    margin-left: 3px;
+    margin: -338px 0px 0px 3px;
     scale: 0.3;
     animation: 0.4s CPUCooler ease 1.7s both, 0.001s FanRotate infinite linear both 2.8s;
 }
@@ -676,8 +643,7 @@
 
 .GPUPowerConnectors {
     position: absolute;
-    margin-left: 190px;
-    margin-top: -27px;
+    margin: 27px 0px 0px 190px;
     scale: 0.8;
 }
 
@@ -691,8 +657,7 @@
     width: 15px;
     height: 5px;
     position: absolute;
-    margin-left: 275px;
-    margin-top: 23px;
+    margin: 23px 0px 0px 275px;
     background-color: white;
 }
 
@@ -710,8 +675,7 @@
     height: 5px;
     position: absolute;
     border-bottom: 5px solid transparent;
-    margin-left: 270px;
-    margin-top: 18px;
+    margin: 18px 0px 0px 270px;
     border-right: 5px solid white;
 }
 
@@ -730,8 +694,7 @@
     height: 20px;
     background-color: white;
     position: absolute;
-    margin-top: -35px;
-    margin-left: 90px;
+    margin: -35px 0px 0px 90px;
     box-shadow: 0px 3px 4px black;
 }
 
@@ -740,9 +703,7 @@
     font-size: 16px;
     font-weight: 500;
     font-family: 'Kanit', sans-serif;
-    margin: 0px;
-    margin-top: -39px;
-    margin-left: 85px;
+    margin: -39px 0px 0px 85px;
     position: absolute;
 }
 
@@ -771,8 +732,7 @@
     height: 12.5px;
     background-color: white;
     position: absolute;
-    margin-top: -29px;
-    margin-left: 260px;
+    margin: -29px 0px 0px 260px;
     box-shadow: 0px 3px 4px black;
 }
 
@@ -782,8 +742,7 @@
     height: 5px;
     position: absolute;
     border-top: 5px solid transparent;
-    margin-left: 15px;
-    margin-top: 12.5px;
+    margin: 12.5px 0px 0px 15px;
     border-right: 5px solid white;
 }
 
@@ -802,8 +761,7 @@
     height: 5px;
     background-color: white;
     position: absolute;
-    margin-top: -11px;
-    margin-left: 0px;
+    margin: -11px 0px 0px 0px;
     box-shadow: 0px 3px 4px black;
 }
 
@@ -813,8 +771,7 @@
     height: 5px;
     position: absolute;
     border-top: 5px solid transparent;
-    margin-left: 15px;
-    margin-top: -5px;
+    margin: -5px 0px 0px 15px;
     border-left: 5px solid white;
 }
 
@@ -832,8 +789,7 @@
     height: 20px;
     background-color: white;
     position: absolute;
-    margin-top: -23px;
-    margin-left: 0px;
+    margin: -23px 0px 0px 0px;
 }
 
 .GPUDecorativeShell5::after {
@@ -842,8 +798,7 @@
     height: 10px;
     background-color: white;
     position: absolute;
-    margin-left: 170px;
-    margin-top: 5px;
+    margin: 5px 0px 0px 170px;
 }
 
 .GPUDecorativeShell6::before  {
@@ -852,8 +807,7 @@
     height: 2.5px;
     position: absolute;
     border-left: 5px solid transparent;
-    margin-left: -7px;
-    margin-top: 3px;
+    margin: 3px 0px 0px -7px;
     border-top: 5px solid white;
 }
 
@@ -862,8 +816,7 @@
     height: 7.5px;
     background-color: white;
     position: absolute;
-    margin-top: -10px;
-    margin-left: 120px;
+    margin: -10px 0px 0px 120px;
 }
 
 .GPUDecorativeShell6::after  {
@@ -872,8 +825,7 @@
     height: 2.5px;
     position: absolute;
     border-right: 5px solid transparent;
-    margin-left: 40px;
-    margin-top: 3px;
+    margin: 3px 0px 0px 40px;
     border-top: 5px solid white;
 }
 
@@ -883,8 +835,7 @@
     width: 280px;
     position: absolute;
     border-left: 5px solid transparent;
-    margin-left: 0px;
-    margin-top: 20px;
+    margin: 20px 0px 0px 0px;
     border-top: 5px solid white;
 }
 
@@ -900,14 +851,12 @@
     content: "";
     position: absolute;
     border-right: 5px solid transparent;
-    margin-left: 285px;
-    margin-top: 20px;
+    margin: 20px 0px 0px 285px;
     border-top: 5px solid white;
 }
 
 .GPULEDs {
-    margin-left: 10px;
-    margin-top: -5px;
+    margin: -5px 0px 0px 10px;
     position: absolute;
 }
 
@@ -934,8 +883,7 @@
 }
 
 .GPULEDCover2 {
-    margin-top: 18px;
-    margin-left: 11px;
+    margin: 18px 0px 0px 11px;
     height: 4px;
 }
 
@@ -944,8 +892,7 @@
     height: 40px;
     background-color: silver;
     position: absolute;
-    margin-left: -10px;
-    margin-top: -29px;
+    margin: -29px 0px 0px -10px;
     box-shadow: -3px 3px 3px black;
     border-bottom-left-radius: 1px;
     border-top-left-radius: 1px;
@@ -1007,15 +954,13 @@
 
 .caseFansTop {
     position: absolute;
-    margin-top: -70px;
+    margin: -70px 0px 0px 120px;
     z-index: 3;
-    margin-left: 120px;
 }
 
 .caseFansRight {
     position: absolute;
-    margin-left: 900px;
-    margin-top: 105px;
+    margin: 105px 0px 0px 900px;
     z-index: 3;
 }
 
@@ -1059,8 +1004,7 @@
     width: 75px;
     height: 90px;
     background-color: #999;
-    margin-left: 950px;
-    margin-top: 20px;
+    margin: 20px 0px 0px 950px;
     z-index: 4;
     box-shadow: inset 0px 10px 20px black, -20px 10px 20px #222;
 }
@@ -1074,8 +1018,7 @@
     width: 40px;
     background-color: #ccc;
     position: absolute;
-    margin-left: 75px;
-    margin-top: 20px;
+    margin: 20px 0px 0px 75px;
     box-shadow: 0px 10px 20px black;
     z-index: 3;
 }
@@ -1110,10 +1053,9 @@
 .caseAccessoryShroud {
     width: 1030px;
     height: 200px;
-    margin-top: 1100px;
+    margin: 1100px 0px 0px 75px;
     background-color: #ccc;
     position: absolute;
-    margin-left: 75px;
 }
 
 .caseGlassCover {
@@ -1176,8 +1118,7 @@
     height: 12.5px;
     background-color: #aaa;
     position: absolute;
-    margin-top: 417.5px;
-    margin-left: 143.75px;
+    margin: 417.5px 0px 0px 143.75px;
     box-shadow: 0px 0px 10px black;
 }
 
@@ -1229,8 +1170,7 @@
 
 .table {
     position: absolute;
-    margin-left: 450px;
-    margin-top: 600px;
+    margin: 600px 0px 0px 450px;
     z-index: -1;
     animation: 0.3s Table 0.1s linear both;
 }
