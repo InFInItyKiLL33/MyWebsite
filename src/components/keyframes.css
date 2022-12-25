@@ -543,6 +543,18 @@
 /* PC Building Animations */
 /* . */
 
+@keyframes PC {
+    0% {opacity: 0.0; transform: scale(0.575);}
+    80% {opacity: 1.0;}
+    100% {transform: scale(0.5);}
+}
+
+@keyframes Table {
+    0% {opacity: 0.0; transform: scale(6.5);}
+    80% {opacity: 1.0;}
+    100% {transform: scale(6);}
+}
+
 @keyframes CPU {
     0% {opacity: 0.0; scale: 1.15;}
     80% {opacity: 1.0;}
@@ -570,6 +582,11 @@
     100% {rotate: -360deg;}
 }
 
+@keyframes FanRotateCW {
+    0% {rotate: 0deg;}
+    100% {rotate: 360deg;}
+}
+
 @keyframes GPU-Lightup {
     0% {background-color: #333;}
     100% {background-color: #eee;}
@@ -583,4 +600,21 @@
 @keyframes CaseFansRight {
     0% {transform: translateX(-40px); opacity: 0.0;}
     100% {transform: translateX(0px); opacity: 1.0;}
+}
+
+@keyframes Monitor {
+    0% {opacity: 0.0; transform: scale(1.1);}
+    80% {opacity: 1.0;}
+    100% {transform: scale(1);}
+}
+
+@keyframes MonitorCable {
+    0% {opacity: 0.0; transform: scale(1.1);}
+    80% {opacity: 1.0;}
+    100% {transform: scale(1);}
+}
+
+@keyframes MonitorCableConnect {
+    0% {transform: translateX(-15px);}
+    100% {transform: translateX(1px);}
 }

@@ -5,7 +5,7 @@ function TimelineInitialTypes(props: TimelineInitialTypesProps): JSX.Element {
 
     const [initialTimelineAnimationDelay, setDelay] = useState(" timelineInitialTypesAnimationBefore");
     const [activeData, setActiveData] = useState("inactive");
-    const customAnimationLength = [1600, 825, 2000, 3100];
+    const customAnimationLength = [1600, 825, 4500, 3100];
     const customAnimationDelay = [600, 600, 600, 950];
     let alternateFit = props.index === 3 ? "timelineInitialTypesImgAlt" : "";
 
@@ -14,7 +14,7 @@ function TimelineInitialTypes(props: TimelineInitialTypesProps): JSX.Element {
         setActiveData("active");
 
         for (let i = 0; i < Object.keys(props.types).length; i++) {
-            if (props.index === 3 || i !== props.index) {
+            if (props.index === 3 || props.index === 2 || i !== props.index) {
                 let delay = (i < props.index ? 150 : 0) + i * 150;
                 props.staggeredFadeout(i, delay);
             };
