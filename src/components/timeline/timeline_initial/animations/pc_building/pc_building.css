@@ -1174,3 +1174,21 @@
     z-index: -1;
     animation: 0.3s Table 0.1s linear both;
 }
+
+.mousepad {
+    position: absolute;
+    margin: 600px 0px 0px 150px;
+    animation: 0.3s Mousepad ease 1.1s both;
+}
+
+.keyboard {
+    position: absolute;
+    margin: 585px 0px 0px 30px;
+    animation: 0.3s Keyboard ease 1.4s both;
+}
+
+.mouse {
+    position: absolute;
+    margin: 575px 0px 0px 520px;
+    animation: 0.3s Mouse ease 1.6s both;
+}

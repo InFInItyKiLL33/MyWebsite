@@ -1242,6 +1242,145 @@ function TimelinePCBuildingAnimation() {
                 </svg>
             </div>
 
+            <div className="mousepad">
+                <svg width="362" height="45" viewBox="0 0 362 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3.87917 38.9502C4.32284 39.3061 4.87458 39.5 5.44332 39.5H354.557C355.125 39.5 355.677 39.3061 356.121 38.9502C356.802 38.4039 357.255 37.6782 357.425 36.8586C357.584 36.0928 357.462 35.4193 357.318 34.9561C357.172 34.4891 356.967 34.1163 356.819 33.8775C356.741 33.7523 356.668 33.6487 356.61 33.5703C356.581 33.5308 356.555 33.4968 356.533 33.4688C356.522 33.4547 356.512 33.4421 356.503 33.431L356.49 33.4154L356.485 33.4084L356.482 33.4051L356.481 33.4035C356.48 33.4028 356.479 33.402 354.557 35L356.479 33.402C356.004 32.8305 355.3 32.5 354.557 32.5H5.44332C4.70028 32.5 3.99574 32.8305 3.52077 33.4019L5.44332 35C3.52077 33.4019 3.52013 33.4027 3.51948 33.4035L3.51816 33.4051L3.51544 33.4084L3.5097 33.4153L3.49699 33.431C3.48798 33.4421 3.47791 33.4547 3.46688 33.4687C3.44487 33.4967 3.41881 33.5307 3.38969 33.5702C3.33192 33.6486 3.25955 33.7523 3.18155 33.8774C3.03268 34.1162 2.82811 34.489 2.68253 34.956C2.53813 35.4193 2.41565 36.0928 2.5748 36.8586C2.74513 37.6783 3.19803 38.4039 3.87917 38.9502Z" stroke="#CCCCCC" stroke-width="5" stroke-linejoin="round"/>
+                    <path d="M3.07945 33.3995C2.45844 34.1447 2.32458 35.1819 2.73603 36.0604C3.14748 36.9389 4.02996 37.5 5 37.5H355C355.97 37.5 356.853 36.9389 357.264 36.0604C357.675 35.1819 357.542 34.1447 356.921 33.3995L331.921 3.39954C331.446 2.82956 330.742 2.5 330 2.5H30C29.2581 2.5 28.5544 2.82956 28.0794 3.39954L3.07945 33.3995Z" fill="#AAAAAA" stroke="#AAAAAA" stroke-width="5" stroke-linejoin="round"/>
+                </svg>
+            </div>
+
+            <div className="keyboard">
+
+                <svg width="360" height="60" viewBox="0 0 360 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3.20612 56.1158C3.62915 56.964 4.49548 57.5 5.44332 57.5H354.557C355.505 57.5 356.371 56.9639 356.794 56.1157C357.627 54.4447 357.555 52.5887 357.412 51.4407C357.334 50.8183 357.219 50.2797 357.123 49.8951C357.074 49.7012 357.03 49.5421 356.996 49.4261C356.979 49.368 356.964 49.3204 356.953 49.2844L356.938 49.2389L356.933 49.2228L356.931 49.2165L356.93 49.2137L356.929 49.2125C356.929 49.2119 356.929 49.2113 354.557 50L356.929 49.2113C356.589 48.1895 355.634 47.5 354.557 47.5H5.44332C4.36654 47.5 3.41074 48.1895 3.07101 49.2112L5.44332 50C3.07101 49.2112 3.07081 49.2118 3.07061 49.2124L3.07019 49.2137L3.06929 49.2164L3.0672 49.2228L3.06196 49.2389L3.04747 49.2843C3.03612 49.3204 3.0215 49.368 3.00438 49.4261C2.97019 49.5421 2.92569 49.7012 2.87733 49.8951C2.78144 50.2796 2.66609 50.8182 2.58848 51.4407C2.44534 52.5887 2.37274 54.4448 3.20612 56.1158Z" stroke="white" stroke-width="5" stroke-linejoin="round"/>
+                    <path d="M30 2.5C29.0921 2.5 28.2555 2.99223 27.8146 3.78589L2.81461 48.7859C2.38442 49.5602 2.39611 50.5044 2.84532 51.2678C3.29454 52.0313 4.1142 52.5 5 52.5H355C355.886 52.5 356.705 52.0313 357.155 51.2678C357.604 50.5044 357.616 49.5602 357.185 48.7859L332.185 3.78589C331.744 2.99223 330.908 2.5 330 2.5H30Z" fill="#D9D9D9" stroke="#D9D9D9" stroke-width="5" stroke-linejoin="round"/>
+                    <g filter="url(#filter0_d_110_8)">
+                    <path d="M41 49H23L23.5 48H40.5L41 49Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M66 49H54L54.5 48H65.5L66 49Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M97 49H79L79.5 48H96.5L97 49Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M250 49H110L110.5 48H249.5L250 49Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M275 49H263L263.5 48H274.5L275 49Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M296 49H288L288.5 48H295.5L296 49Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M317 49H309L309.5 48H316.5L317 49Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M342 49H330L330.5 48H341.5L342 49Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M46 41H26L26.5 40H45.5L46 41Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M74 41H62L62.5 40H73.5L74 41Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M99 41H87L87.5 40H98.5L99 41Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M124 41H112L112.5 40H123.5L124 41Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M149 41H137L137.5 40H148.5L149 41Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M174 41H162L162.5 40H173.5L174 41Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M199 41H187L187.5 40H198.5L199 41Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M224 41H212L212.5 40H223.5L224 41Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M249 41H237L237.5 40H248.5L249 41Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M274 41H262L262.5 40H273.5L274 41Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M299 41H287L287.5 40H298.5L299 41Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M337 41H311L311.5 40H336.5L337 41Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M49 33H29L29.5 32H48.5L49 33Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M72 33H60L60.5 32H71.5L72 33Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M93 33H81L81.5 32H92.5L93 33Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M114 33H102L102.5 32H113.5L114 33Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M135 33H123L123.5 32H134.5L135 33Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M156 33H144L144.5 32H155.5L156 33Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M179 33H167L167.5 32H178.5L179 33Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M202 33H190L190.5 32H201.5L202 33Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M225 33H213L213.5 32H224.5L225 33Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M248 33H236L236.5 32H247.5L248 33Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M271 33H259L259.5 32H270.5L271 33Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M294 33H282L282.5 32H293.5L294 33Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M333 33H309L309.5 32H332.5L333 33Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M47 25H33L33.5 24H46.5L47 25Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M70 25H58L58.5 24H69.5L70 25Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M90 25H78L78.5 24H89.5L90 25Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M110 25H98L98.5 24H109.5L110 25Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M130 25H118L118.5 24H129.5L130 25Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M150 25H138L138.5 24H149.5L150 25Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M170 25H158L158.5 24H169.5L170 25Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M190 25H178L178.5 24H189.5L190 25Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M210 25H198L198.5 24H209.5L210 25Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M230 25H218L218.5 24H229.5L230 25Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M250 25H238L238.5 24H249.5L250 25Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M270 25H258L258.5 24H269.5L270 25Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M290 25H278L278.5 24H289.5L290 25Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M329 25H309L309.5 24H328.5L329 25Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M47 17H37L37.5 16H46.5L47 17Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M70 17H58L58.5 16H69.5L70 17Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M90 17H78L78.5 16H89.5L90 17Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M110 17H98L98.5 16H109.5L110 17Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M130 17H118L118.5 16H129.5L130 17Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M150 17H138L138.5 16H149.5L150 17Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M170 17H158L158.5 16H169.5L170 17Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M190 17H178L178.5 16H189.5L190 17Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M210 17H198L198.5 16H209.5L210 17Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M230 17H218L218.5 16H229.5L230 17Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M250 17H238L238.5 16H249.5L250 17Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M270 17H258L258.5 16H269.5L270 17Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M290 17H278L278.5 16H289.5L290 17Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M325 17H303L303.5 16H324.5L325 17Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M49 7H39L39.5 6H48.5L49 7Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M75 7H63L63.5 6H74.5L75 7Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M95 7H83L83.5 6H94.5L95 7Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M115 7H103L103.5 6H114.5L115 7Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M135 7H123L123.5 6H134.5L135 7Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M167 7H155L155.5 6H166.5L167 7Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M187 7H175L175.5 6H186.5L187 7Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M207 7H195L195.5 6H206.5L207 7Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M227 7H215L215.5 6H226.5L227 7Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M259 7H247L247.5 6H258.5L259 7Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M279 7H267L267.5 6H278.5L279 7Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M299 7H287L287.5 6H298.5L299 7Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M319 7H307L307.5 6H318.5L319 7Z" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+                    </g>
+                    <defs>
+                    <filter id="filter0_d_110_8" x="20" y="4" width="325" height="49" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                    <feOffset dy="1"/>
+                    <feGaussianBlur stdDeviation="0.5"/>
+                    <feComposite in2="hardAlpha" operator="out"/>
+                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.75 0"/>
+                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_110_8"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_110_8" result="shape"/>
+                    </filter>
+                    </defs>
+                </svg>
+
+            </div>
+
+            <div className="mouse">
+                <svg width="63" height="80" viewBox="0 0 63 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M31 9V5H33V9H31Z" stroke="white" stroke-width="5" stroke-linejoin="round"/>
+                    <g filter="url(#filter0_d_114_100)">
+                    <path d="M43 7.5C38 8 35.9999 4 35.9999 4V13C35.9999 15 31.9999 15 31.9999 15C31.9999 15 27.9999 15 27.9999 13V4C27.9999 4 24.4999 6 21.9999 6C19.4999 6 18.9999 4 14.9999 4C8.80391 4 5.49987 8 5.5 9C5.50046 12.5 5 17 5 17C5 17 6.49973 22 6.99986 32C7.49999 42 3.5 54 8 63C10 66.5 14 73.5 31.9999 74C58.5 71.5 57 58.5 57 56.5C57 50 53 37.5 53.5 26C54 14.5 54.5 12.5 55 11C54.5 8.5 53 8 43 7.5Z" fill="#999999"/>
+                    </g>
+                    <g filter="url(#filter1_d_114_100)">
+                    <path d="M28 10V4C28 4 24.5 6 22 6C19.5 6 19 4 14.5 4C7 4 5.5 9 5.5 9C5.5 9 11 13 11 17.5C11 22 9.5 23.5 8.5 35C7.5 46.5 6.5 57.5 9 62C10.5 63.8 12 70.5 30 72C56.5 72 56.5 58.5 56.5 57.5C56.5 48.5 53 43 53 29C53 15 55 9.5 55 9.5C55 9.5 51.5 7 43 7.5C39.5 7.5 36 4 36 4V10C36 10 35.5 12 32 12C28.5 12 28 10 28 10Z" fill="#EEEEEE"/>
+                    </g>
+                    <path d="M32 12V24" stroke="#333333" stroke-linejoin="round"/>
+                    <defs>
+                    <filter id="filter0_d_114_100" x="0" y="0" width="62.0155" height="80" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                    <feOffset dy="1"/>
+                    <feGaussianBlur stdDeviation="2.5"/>
+                    <feComposite in2="hardAlpha" operator="out"/>
+                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"/>
+                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_114_30"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_114_100" result="shape"/>
+                    </filter>
+                    <filter id="filter1_d_114_100" x="3.5" y="3" width="55" height="72" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                    <feOffset dy="1"/>
+                    <feGaussianBlur stdDeviation="1"/>
+                    <feComposite in2="hardAlpha" operator="out"/>
+                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.7 0"/>
+                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_114_100"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_114_100" result="shape"/>
+                    </filter>
+                    </defs>
+                </svg>
+            </div>
+
         </div>
     );
 };
