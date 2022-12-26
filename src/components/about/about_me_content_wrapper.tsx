@@ -6,10 +6,11 @@ import {AboutMeContentWrappersProps} from "../../declarations";
 
 function getYears(year: number): number | string {
     let d = new Date();
-    if (Math.floor((d.getTime() - 31536000000 * (year - 1970)) / 31536000000) < 1) {
-        return ("<1");
-    };
-    return Math.floor((d.getTime() - 31536000000 * (year - 1970)) / 31536000000);
+    return d.getFullYear() - year;
+    // if (Math.floor((d.getTime() - 31536000000 * (year - 1970)) / 31536000000) < 1) {
+    //     return ("<1");
+    // };
+    // return Math.floor((d.getTime() - 31536000000 * (year - 1970)) / 31536000000);
 };
 
 function AboutMeContentWrappers(props: AboutMeContentWrappersProps): JSX.Element {
