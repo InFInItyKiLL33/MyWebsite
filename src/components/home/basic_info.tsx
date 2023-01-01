@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './basic_info.css';
 
-function getAge(): number {
+export function getAge(): number {
     let d = new Date();
     return Math.floor((d.getTime() - 1025712000000) / 31536000000);
 };

@@ -3,6 +3,7 @@ import './about.css';
 import BreakLine from './break_line';
 import OrangeSpan from './orange_span';
 import {AboutMeContentWrappersProps} from "../../declarations";
+import {getAge} from "../home/basic_info";
 
 function getYears(year: number): number | string {
     let d = new Date();
@@ -14,10 +15,13 @@ function getYears(year: number): number | string {
 };
 
 function AboutMeContentWrappers(props: AboutMeContentWrappersProps): JSX.Element {
+
     const [fadeDelay, setFadeDelay] = useState("fadeInitialOpacity slideInInitial");
+
     setTimeout(() => {
         setFadeDelay("fadeLong slideIn");
     }, (parseInt(props.type)) * 500);
+
     switch (props.type) {
         case "1":
             return(
@@ -27,7 +31,7 @@ function AboutMeContentWrappers(props: AboutMeContentWrappersProps): JSX.Element
                     <div className="aboutMeTextsWrappers">
                             
                         <p className="aboutMeTexts">
-                            I'm <OrangeSpan text="Poh Jun Kang" />, and I'm {getYears(2002)} this year! I'm based in Singapore and my skills are in <OrangeSpan text="Programming, Designing, Flying" /> and <OrangeSpan text="PC Building" />. My main goal in life is to become a commercial Airline Pilot, or a Full Stack Web Developer otherwise. In my free time, I find passion not only playing games and programming, but also simulators to keep my interest alive!
+                            I'm <OrangeSpan text="Poh Jun Kang" />, and I'm {getAge()}! I'm based in Singapore and my skills are in <OrangeSpan text="Programming, Designing, Flying" /> and <OrangeSpan text="PC Building" />. My main goal in life is to become a commercial Airline Pilot, or a Full Stack Web Developer otherwise. In my free time, I find passion not only playing games and programming, but also simulators to keep my interest alive!
                         </p>
                     
                     </div>
