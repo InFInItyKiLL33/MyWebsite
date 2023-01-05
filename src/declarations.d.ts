@@ -5,6 +5,7 @@
 //   TimelineInitial
 //   TimelineAnimations
 //   TimelineSpecific
+//   ImageCarousel
 // About Me
 // Contact
 
@@ -89,6 +90,9 @@ export declare interface TimelineSpecificContentProps {
     typeValue: number;
     index: number;
     content: any;
+    showHideCarousel: any;
+    carouselState: boolean;
+    setCarouselCurrentImages: any;
 }
 
 export declare interface TypeButtonsProps {
@@ -154,6 +158,12 @@ export declare interface CustomRectStyle {
     transform?: string | undefined;
     transformOrigin?: string | undefined;
 };
+
+// ImageCarousel
+export declare interface ImageCarouselProps {
+    images: any;
+    exitHandler: any;
+}
 
 // About Me
 export declare interface AboutMeProps {

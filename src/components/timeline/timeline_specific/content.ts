@@ -396,7 +396,7 @@ export let displayableContent: any = {
             "Dec 2022",
             `At the end of 2022, during the Black Friday period, I saw a 5800X3D deal for around $400, which was out of the world as even used ones cost high $400. I took the chance to buy it and sell my 5900X, to recoup my 5900X losses and gain a large improvement on gaming performance due to the 3D Cache. Although the productivity performance dropped, I wasn't really using much of it anyways. At the same time, I bought a copy of the RAM I already had, but in white form to replace it just for the looks. It's the Corsair White RGB Pro SL, with it's specs at 32GB (2x16) 3600MHz CL18.`
         ], [
-            PC8Img1, 
+            [PC8Img1, PC8Img2], 
             "8th PC Build",
             "Nov 2022",
             `This build was quite out of the blue as a family member wanted a Gaming PC coming from their Macbook gaming days. I took this opportunity to clean my 3rd PC up and build a setup from it with other parts to give a new life to it. Some parts may be questionable but it was because it came from my mining PC, and they were completely fine with it. The final build was this:
@@ -426,7 +426,7 @@ export let displayableContent: any = {
             \n
             I also managed to switch my RAM from 4x 8GB D60G DDR4 3200MHz CL16 to 2x 16GB Corsair Vengeance RGB Pro SL 3600MHz CL18 as one of my RAM sticks failed.`
         ], [
-            G14Img2, 
+            [G14Img2, G14Img1], 
             "New Laptop",
             "Aug 2022",
             `G14 2022`
@@ -447,7 +447,7 @@ export let displayableContent: any = {
             \n
             Unfortunately as they were building it theirselves, I have no pictures from them.`
         ], [
-            PC6Img2, 
+            [PC6Img2, PC6Img1], 
             "6th PC Build",
             "Apr 2022",
             `With my PC building skills now, I had a friend who was into PC building as well and we got commissioned to build a PC. This was about $3500. As they didn't care about visuals, we decided to cramp a few budget oriented and slightly questionable parts for better overall performance. The build was as such:
@@ -463,7 +463,7 @@ export let displayableContent: any = {
             \nPeripherals: Armageddon XF24HD Super Monitor, Razer Blackwidow Chroma TE
             `
         ], [
-            PC5Img1, 
+            [PC5Img1, PC5Img2], 
             "5th PC Build",
             "Dec 2021",
             `At the same time on building my 4th PC build, I had another friend in the Army who really wanted an RTX 3070 build. Amazingly, I managed to find an RTX 3070 at this time for MSRP so it meant that they were getting a build. It was also the time Intel 12th Gen came out, so it was a good time to build a PC for them. In the end, for about $2900, this was the build:
@@ -534,7 +534,7 @@ export let displayableContent: any = {
             \n
             Incredibly in Jan 2021, I managed to find an RTX 3080 for about $1020, which was only $20 more than what I sold my 2080 Ti for. Without hesitation, I bought it, although it was the worst model as it was an MSI Ventus 3X OC. I say incredible because that was right before the US Tariff hikes on semiconductors that also raised the price of RTX 3000 series GPU across the board. In addition, I found it during an extremely high demand for RTX 3000 series GPU due to it's value where prices of a 3080 went up to over $2000. Not only that, although I manage to find it a few times before that, I didn't had the money to buy due to investments, and that this was actually the last time I manage to find the 3080 at all throughout the sky high prices that lasted until 2023. In fact, even after the RTX 4000 series cards got released, the prices of new RTX 3080 still hadn't drop to the price I bought this 3080 for.`
         ], [
-            MSISHX2080TiImg, 
+            [MSISHX2080TiImg, Z390FImg], 
             "First Desktop Refresh", 
             "1H 2019", 
             `Throughout early 2019, many of my parts for my Desktop was changed. It started with the i7-7700K randomly shutting down the PC at the start of the year, so Aftershock replaced the Motherboard and CPU from a Asus Z270F Strix and i7-7700K to an Asus Z390F Strix and i5-9600K. At that time, I changed my cooler as well with them to a Corsair H100i V2 from their own in house Aftershock cooler.
@@ -640,7 +640,7 @@ export let displayableContent: any = {
             "December 2019 - Q1 2020",
             ``
         ], [
-            JPMUNImg8, 
+            [JPMUNImg8, JPMUNImg7, JPMUNImg6, JPMUNImg5, JPMUNImg4, JPMUNImg3, JPMUNImg2, JPMUNImg1], 
             "High School/Junior College Model United Nations", 
             "Q4 2019 - Q1 2020", 
             ``
@@ -655,12 +655,12 @@ export let displayableContent: any = {
             "Jul 2019", 
             ``
         ], [
-            JPJCInfocommImg1, 
+            [JPJCInfocommImg1, JPJCInfocommImg2, JPJCInfocommImg3, JPJCInfocommImg4, JPJCInfocommImg5], 
             "High School/Junior College CCA - Infocomm", 
             "2019 - 2020", 
             ``
         ], [
-            PWImg1, 
+            [PWImg1, PWImg2, PWImg3, PWImg4, PWImg5, PWImg6, PWImg7, PWImg8, PWImg9, PWImg10, PWImg11], 
             "A Levels Project Work", 
             "2019", 
             ``

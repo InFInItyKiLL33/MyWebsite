@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TimelineSpecificContent from './timeline_specific_content';
 import TypeButtons from './type_buttons';
+import ImageCarousel from '../image_carousel/image_carousel';
 import '../timeline.css';
 import ProgrammingImgDefault from '../../../images/programming_icon_default.png';
 import ProgrammingImgHover from '../../../images/programming_icon_hover.png';
@@ -30,6 +31,8 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
     const [sortText, setSortText] = useState("Newest");
     const [loadedContent, setLoadedContent] = useState([]);
     const [lastLoadedIndex, setLastLoadedIndex] = useState(infiniteScrollerInitialAmount - infiniteScrollerLoadAmount);
+    const [carouselState, setCarouselState] = useState(false); // false for hide, true for show
+    const [carouselCurrentImages, setCarouselCurrentImages] = useState([]);
     
     // set whichever type value is active to the right image
     let tempTypeImage = [...defaultIcons];
@@ -95,6 +98,10 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
         setLoadedContent((prevLoadedContent: any): any => [...prevLoadedContent, ...newData]);
     };
 
+    function showHideCarousel() {
+        setCarouselState((prevState: boolean): boolean => {return !prevState})
+    };
+
     useEffect(() => {
         window.addEventListener('scroll', loadMoreContent);
         getNewContent();
@@ -121,10 +128,17 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
                     <div className="timelineLine"></div>
                 </div>
 
+                {
+                    carouselState ? 
+                        <ImageCarousel images={carouselCurrentImages} exitHandler={showHideCarousel} />
+                    :
+                        <></>
+                }
+
                 <div className={"timelineSpecificContent"}>
                     {   
                         loadedContent.length > 0 && loadedContent.map((thisContent: string, i: number): JSX.Element => (
-                            <TimelineSpecificContent typeValue={props.typeVal} content={content} index={i} key={i} />
+                            <TimelineSpecificContent typeValue={props.typeVal} content={content} index={i} key={i} showHideCarousel={showHideCarousel} carouselState={carouselState} setCarouselCurrentImages={setCarouselCurrentImages}/>
                         ))
                         
                     }

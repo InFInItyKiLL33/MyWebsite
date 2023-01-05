@@ -38,15 +38,23 @@ function TimelineSpecificContent(props: TimelineSpecificContentProps): JSX.Eleme
     const [thisContentHeader, changeThisContentHeader] = useState("");
     const [thisContentDesc, changeThisContentDesc] = useState("");
     const [slideEffect, changeSlideEffect] = useState("");
-    const [indexOverlay, changeIndexOverlay] = useState("");
     const [imagePos, setImagePos] = useState(0);
     const [contentOpacity, setContentOpacity] = useState(minOpacity);
     const [imageScale, setImageScale] = useState(defaultZoom);
     const [secondaryImageScale, setSecondaryImageScale] = useState(defaultZoom);
     const [hoveringStatus, setHoveringStatus] = useState(0); // 0 for no hover, any other value for hover additional zoom
     const [rendered, setRendered] = useState(false);
+    const [currentThumbnail, setCurrentThumbnail] = useState(getThumbnail);
 
     const contentRef = useRef<HTMLInputElement>(null);
+
+    function getThumbnail() {
+        if (typeof(props.content[props.typeValue][props.index][0]) === "string") {
+            return props.content[props.typeValue][props.index][0];
+        } else {
+            return props.content[props.typeValue][props.index][0][0];
+        };
+    };
 
     function scrollingEffects() {
 
@@ -112,39 +120,52 @@ function TimelineSpecificContent(props: TimelineSpecificContentProps): JSX.Eleme
         return () => window.removeEventListener('scroll', scrollingEffects);
     };
 
+    function clickEvent() {
+        try {
+            if (!props.carouselState) {
+                changeClickStatus("unclick");
+                changeClickAnywhereStatus("fadeInitialOpacity");
+            };
+        } catch (error) {
+        }
+    };
+
     useEffect(() => {
         scrollingEffects();
     }, []);
 
+    useEffect(() => {
+        console.log(props.carouselState);
+        clickEvent();
+    }, [props.carouselState])
+
     function handleClick(event: any): void {
-        if (clickStatus === "" || clickStatus === "unclick") {
-            changeClickStatus("clicked");
-            changeIndexOverlay(" indexHigh");
-            setTimeout(() => {
-                changeClickStatus("clicked clicked-end");
-            }, 250);
+
+        changeClickStatus("clicked");
+        changeClickAnywhereStatus("fadeInitialOpacity disable-pointer");
+
+        if (typeof(props.content[props.typeValue][props.index][0]) === "string") {
+            props.setCarouselCurrentImages([props.content[props.typeValue][props.index][0]]);
         } else {
-            changeClickStatus("unclick");
-            changeIndexOverlay("");
+            props.setCarouselCurrentImages(props.content[props.typeValue][props.index][0]);
         };
 
-        if (clickAnywhereStatus === "fadeInitialOpacity") {
-            changeClickAnywhereStatus("fadeInitialOpacity disable-pointer");
-            setTimeout(() => {
-                changeClickAnywhereStatus("fadeOutInitialOpacity");
-            }, 250);
-        } else {
-            changeClickAnywhereStatus("fadeInitialOpacity");
-        };
+        setTimeout(() => {
+            changeClickStatus("clicked clicked-end");
+            changeClickAnywhereStatus("fadeOutInitialOpacity");
+        }, 250);
+        setTimeout(() => {
+            props.showHideCarousel();
+        }, 125);
     };
 
     return(
-        <div className={"eachContent " + reverseRow + slideEffect + indexOverlay} key={props.index} style={{"opacity": String(contentOpacity)}} ref={contentRef} onScroll={scrollEffect()}>
+        <div className={"eachContent " + reverseRow + slideEffect} key={props.index} style={{"opacity": String(contentOpacity)}} ref={contentRef} onScroll={scrollEffect()}>
             <div className={"arrowDecoration arrowDecoration" + reverseRow === "flex-reverse-row" ? "R" : "L"}></div>
             <div className="eachContentLeftWrapper">
                 <div className="eachContentImageWrapper flex-row" onMouseOver={(event) => setHoveringStatus(0.05)} onMouseLeave={(event) => setHoveringStatus(0)}>
-                    <img src={props.content[props.typeValue][props.index][0]} className={"eachContentImage " + clickStatus + reverseImage} onClick={handleClick} alt={props.content[props.typeValue][props.index][1]} style={{"scale": String(imageScale + hoveringStatus)}}></img>
-                    <img src={props.content[props.typeValue][props.index][0]} className={"eachContentImage2" + reverseImage} alt={props.content[props.typeValue][props.index][1]} style={{"scale": String(secondaryImageScale + hoveringStatus)}}></img>
+                    <img src={currentThumbnail} className={"eachContentImage " + clickStatus + reverseImage} onClick={handleClick} alt={props.content[props.typeValue][props.index][1]} style={{"scale": String(imageScale + hoveringStatus)}}></img>
+                    <img src={currentThumbnail} className={"eachContentImage2" + reverseImage} alt={props.content[props.typeValue][props.index][1]} style={{"scale": String(secondaryImageScale + hoveringStatus)}}></img>
                 </div>
                 <p className="eachContentYear bolded">{props.content[props.typeValue][props.index][2]}</p>
             </div>

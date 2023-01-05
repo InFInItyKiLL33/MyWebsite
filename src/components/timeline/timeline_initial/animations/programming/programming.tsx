@@ -51,6 +51,7 @@ const TimelineProgrammingAnimation = () => {
 
     function randomStyle(): any {
         return Array(textSize).fill("").map((eachPass: string, i: number): any => {
+            let randomFontAndBlurVal = randomInt(0, 20)/10;
             return {
                 opacity: String(randomInt(0, 75)/100 + 0.25),
                 animation: 
@@ -58,7 +59,8 @@ const TimelineProgrammingAnimation = () => {
                         "programmingAnimAppear " + String(randomInt(0,75)/100 + 0.75) + "s ease " + String(randomInt(0, 10)/10) + "s, " 
                         + "programmingAnim" + (randomInt(0, 1) === 0 ? "LeftRight" : "RightLeft") + String(randomInt(0, 3) + 1) + " " + String(randomInt(0, 20)/10 + 7.0) + "s linear"
                     ),
-                fontSize: String(randomInt(0, 20)/10 + 0.5) + "em",
+                fontSize: String(randomFontAndBlurVal + 0.6) + "em",
+                filter: "blur(" + 1.5 * (2.0 - randomFontAndBlurVal) + "px)",
                 fontWeight: String(randomInt(0, 600) + 300),
                 marginTop: String(randomInt(0, 1800)/10 - 90) + "vh",
                 marginLeft: String(randomInt(0, 1700)/10 - 85) + "vw",
