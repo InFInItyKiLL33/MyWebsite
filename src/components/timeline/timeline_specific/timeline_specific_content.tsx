@@ -38,7 +38,7 @@ function TimelineSpecificContent(props: TimelineSpecificContentProps): JSX.Eleme
     const [thisContentHeader, changeThisContentHeader] = useState("");
     const [thisContentDesc, changeThisContentDesc] = useState("");
     const [slideEffect, changeSlideEffect] = useState("");
-    const [imagePos, setImagePos] = useState(0);
+    const [imagePos, setImagePos] = useState(0); // this is needed for the effect to work, don't know why
     const [contentOpacity, setContentOpacity] = useState(minOpacity);
     const [imageScale, setImageScale] = useState(defaultZoom);
     const [secondaryImageScale, setSecondaryImageScale] = useState(defaultZoom);
@@ -120,7 +120,13 @@ function TimelineSpecificContent(props: TimelineSpecificContentProps): JSX.Eleme
         return () => window.removeEventListener('scroll', scrollingEffects);
     };
 
-    function clickEvent() {
+    useEffect(() => {
+        scrollingEffects();
+    }, []);
+
+    useEffect(() => {
+
+        //click event
         try {
             if (!props.carouselState) {
                 changeClickStatus("unclick");
@@ -128,15 +134,7 @@ function TimelineSpecificContent(props: TimelineSpecificContentProps): JSX.Eleme
             };
         } catch (error) {
         }
-    };
 
-    useEffect(() => {
-        scrollingEffects();
-    }, []);
-
-    useEffect(() => {
-        console.log(props.carouselState);
-        clickEvent();
     }, [props.carouselState])
 
     function handleClick(event: any): void {

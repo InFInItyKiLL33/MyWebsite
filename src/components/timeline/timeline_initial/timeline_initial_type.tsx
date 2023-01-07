@@ -45,7 +45,7 @@ function TimelineInitialTypes(props: TimelineInitialTypesProps): JSX.Element {
 
     return(
         <button className={"timelineInitialTypes " + props.timelineToFadeOut[props.index] + initialTimelineAnimationDelay} key={props.index} data-index={props.index} data-selection={activeData} onClick={chooseType}>
-            <img src={props.imageInitialOptions[props.index]} data-index={props.index} className={"timelineInitialTypesImg " + alternateFit}></img>
+            <img src={props.imageInitialOptions[props.index]} alt="bg img for each type" data-index={props.index} className={"timelineInitialTypesImg " + alternateFit}></img>
             <p className="timelineInitialTypesText" data-index={props.index}>{props.types[props.index]}</p>
         </button>
     );

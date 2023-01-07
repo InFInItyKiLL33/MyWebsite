@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './basic_info.css';
 
 export function getAge(): number {

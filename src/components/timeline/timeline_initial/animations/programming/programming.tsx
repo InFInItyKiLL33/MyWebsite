@@ -69,14 +69,12 @@ const TimelineProgrammingAnimation = () => {
         });
     };
 
-    function randomiseArray(): void {
-        setRecursionDepth((prevRecursionDepth: number): number => (prevRecursionDepth + 1));
-        setRandomText(randomArray(true));
-    };
 
     useEffect(() => {
         let loopRandomiser = setTimeout(() => {
-            randomiseArray();
+            // randomises array
+            setRecursionDepth((prevRecursionDepth: number): number => (prevRecursionDepth + 1));
+            setRandomText(randomArray(true));
         }, randomInt(0, 125) + 100);
         if (recursionDepth > maxRecursionDepth) {
             clearTimeout(loopRandomiser);

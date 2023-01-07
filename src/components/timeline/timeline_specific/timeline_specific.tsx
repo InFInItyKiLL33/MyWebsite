@@ -83,29 +83,32 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
         setLoadedContent([]);
         setLastLoadedIndex(infiniteScrollerInitialAmount);
     };
-    
-    function loadMoreContent(): void {
-        if (window.innerHeight + document.documentElement.scrollTop >= document.documentElement.scrollHeight - 300) {
-            
-            if (content[props.typeVal].length === loadedContent.length) return; // case if no more to load
-            
-            setLastLoadedIndex(prevIndex => Math.min(prevIndex + infiniteScrollerLoadAmount, content[props.typeVal].length));
-        };
-    };
-
-    async function getNewContent() {
-        const newData = await content[props.typeVal].slice(loadedContent.length, lastLoadedIndex); // apparently async and await is needed even though it's not api, if not it doesn't work
-        setLoadedContent((prevLoadedContent: any): any => [...prevLoadedContent, ...newData]);
-    };
 
     function showHideCarousel() {
         setCarouselState((prevState: boolean): boolean => {return !prevState})
     };
 
     useEffect(() => {
+    
+        function loadMoreContent(): void {
+            if (window.innerHeight + document.documentElement.scrollTop >= document.documentElement.scrollHeight - 300) {
+                
+                if (content[props.typeVal].length === loadedContent.length) return; // case if no more to load
+                
+                setLastLoadedIndex(prevIndex => Math.min(prevIndex + infiniteScrollerLoadAmount, content[props.typeVal].length));
+            };
+        };
+
         window.addEventListener('scroll', loadMoreContent);
-        getNewContent();
+        
+        // gets new content
+        (async () => {
+            const newData = await content[props.typeVal].slice(loadedContent.length, lastLoadedIndex); // apparently async and await is needed even though it's not api, if not it doesn't work
+            setLoadedContent((prevLoadedContent: any): any => [...prevLoadedContent, ...newData]);
+        })()
+
         return () => window.removeEventListener('scroll', loadMoreContent);
+
     }, [lastLoadedIndex, sortText, props.typeVal]);
     
     return(

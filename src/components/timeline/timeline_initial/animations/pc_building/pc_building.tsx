@@ -62,7 +62,7 @@ function TimelinePCBuildingAnimation() {
         window.scrollTo(0, 0);
         const rescaleTimeout = setTimeout(() => {
             setMarginValues(["-710.4px", "0px"]);
-            setRescaleValue(rescaleValue * 5.12);
+            setRescaleValue((rescaleValue: number): number => {return rescaleValue * 5.12});
             clearTimeout(rescaleTimeout);
         }, 3050)
     }, []);
