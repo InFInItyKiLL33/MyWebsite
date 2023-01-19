@@ -1,6 +1,6 @@
 body {
     max-width: 100%;
-    height: 420vh;
+    height: 720vh;
     /* max-height: 100%; */
 }
 
@@ -23,40 +23,58 @@ body {
 }
 
 .backgroundImage2Wrapper {
-    box-shadow: inset 0px 0px 100px 50px black;
+    /* box-shadow: inset 0px 0px 100px 50px black; */
     width: 100vw;
     height: 100vh;
     /* transform: translateY(50vh); */
     /* padding-top: 50vh; */
 }
 
-.checkOutText {
+.scrollCheckOutText {
     margin: calc(-50vh - min(25px, 5vh)) 0px 0px 0px;
-}
-
-.showcaseImageButtons {
-    /* margin-top: calc(-50vh - min(25px, 5vh)); */
-    position: sticky;
-    margin-top: 190vh;
-}
-
-.showcaseImageButton, .showcaseImageButton:active, .showcaseImageButton:focus {
-    width: 100%;
-    height: max(150px, 30vh);
-    font-size: 2em;
-    transition: 0.2s ease;
-    background-color: #00000033;
-    font-family: 'Work Sans', sans-serif;
+    color: var(--orange);
     font-weight: 700;
-    cursor: pointer;
-    border-top: 0px;
-    border-bottom: 0px;
-    outline: none;
-    margin: 2.5%;
+    position: absolute;
+    margin: 100vh auto 0px auto;
+    left: 0;
+    right: 0;
+    font-size: 3em;
 }
 
-.lastShowcaseImageButton {
-    border-right: none;
+.programmingIcon, .aviationIcon, .pcIcon, .designIcon {
+    fill: var(--orange);
+    margin-right: 20px;
+}
+
+.showcaseImageText {
+    color: var(--orange);
+    font-size: 2.5em;
+    font-weight: 600;
+    position: absolute;
+    margin: 180vh 0px 0px 0px;
+    width: 100vw;
+    height: 100vh;
+    font-family: var(--globalFont2), sans-serif;
+    /* background: linear-gradient(#f06f4f00 0%, #f06f4f88 30%, #f06f4f88 70%, #f06f4f00 100%); */
+}
+
+.showcaseImageText2 {
+    margin: -40vh 0px 0px 0px;
+    z-index: 12;
+}
+
+.showcaseImageText3 {
+    margin: 30vh 0px 0px 0px;
+    z-index: 12;
+}
+
+.showcaseImageText4 {
+    margin: 120vh 0px 0px 0px;
+    z-index: 12;
+}
+
+.backgroundImage3 {
+    margin-top: 10vh;
 }
 
 .spacer {
