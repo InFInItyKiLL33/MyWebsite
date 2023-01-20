@@ -1,11 +1,11 @@
 body {
     max-width: 100%;
-    height: 625vh;
     /* max-height: 100%; */
 }
 
 .homepage {
     margin: 0;
+    height: 625vh;
 }
 
 .backgroundImage {
@@ -14,18 +14,24 @@ body {
     min-height: 100%;
     object-fit: cover;
     filter: brightness(0.3);
+}
+
+.backgroundImageHome {
     position: absolute;
 }
 
 .backgroundImage2 {
     /* margin-top: 50vh; */
-    transition: 0.25s ease filter;
+    /* transition: 0.25s ease filter; */
+    width: 100vw;
+    height: 100vh;
 }
 
 .backgroundImage2Wrapper {
     /* box-shadow: inset 0px 0px 100px 50px black; */
     width: 100vw;
     height: 100vh;
+    pointer-events: none;
     /* transform: translateY(50vh); */
     /* padding-top: 50vh; */
 }
@@ -78,25 +84,30 @@ body {
     font-size: 2.5em;
     font-weight: 600;
     position: absolute;
-    margin: 180vh 0px 0px 0px;
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
     font-family: var(--globalFont2), sans-serif;
+    /* pointer-events: none; */
     /* background: linear-gradient(#f06f4f00 0%, #f06f4f88 30%, #f06f4f88 70%, #f06f4f00 100%); */
 }
 
+.showcaseImageText1 {
+    margin: 190vh 0px 0px 0px;
+}
+
 .showcaseImageText2 {
-    margin: -40vh 0px 0px 0px;
+    margin: 275vh 0px 0px 0px;
+    height: 75vh;
     z-index: 12;
 }
 
 .showcaseImageText3 {
-    margin: 30vh 0px 0px 0px;
+    margin: 340vh 0px 0px 0px;
     z-index: 12;
 }
 
 .showcaseImageText4 {
-    margin: 120vh 0px 0px 0px;
+    margin: 415vh 0px 0px 0px;
     z-index: 12;
 }
 
@@ -112,7 +123,7 @@ body {
 
 .contactMeEndPage {
     position: absolute;
-    margin: 230vh 0px 0px 0px;
+    margin: 530vh 0px 0px 0px;
     width: 100vw;
     font-size: 2em;
 }
@@ -141,8 +152,8 @@ body {
 
 .backgroundImageLast {
     position: absolute;
-    margin: 190vh 0px 0px 0px;
-    filter: brightness(0.5);
+    margin: 490vh 0px 0px 0px;
+    filter: brightness(0.25);
 }
 
 .links-home {
@@ -153,6 +164,28 @@ body {
     height: 100%!important;
     margin: auto!important;
     text-align: center!important;
+}
+
+.backToTop {
+    position: absolute;
+    color: var(--orange);
+    margin: 585vh auto 0px auto;
+    left: 0;
+    right: 0;
+    height: 5vh;
+    background: transparent;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 0.6em;
+    font-weight: 500;
+    font-family: var(--globalFont2), sans-serif;
+    transition: 0.3s ease;
+}
+
+.backToTop:hover {
+    color: var(--orangeHover);
 }
 
 @media (min-width: 1666px) {

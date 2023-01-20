@@ -138,7 +138,7 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
                         <></>
                 }
 
-                <div className={"timelineSpecificContent"}>
+                <div className="timelineSpecificContent">
                     {   
                         loadedContent.length > 0 && loadedContent.map((thisContent: string, i: number): JSX.Element => (
                             <TimelineSpecificContent typeValue={props.typeVal} content={content} index={i} key={i} showHideCarousel={showHideCarousel} carouselState={carouselState} setCarouselCurrentImages={setCarouselCurrentImages}/>

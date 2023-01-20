@@ -9,28 +9,35 @@ function TimelineInitialTypes(props: TimelineInitialTypesProps): JSX.Element {
     const customAnimationDelay = [600, 600, 600, 950];
     let alternateFit = props.index === 3 ? "timelineInitialTypesImgAlt" : "";
 
-    function chooseType(e: any): void {
+    function setType(currIndex: number): void {
 
         setActiveData("active");
 
         for (let i = 0; i < Object.keys(props.types).length; i++) {
-            if (props.index === 3 || props.index === 2 || i !== props.index) {
-                let delay = (i < props.index ? 150 : 0) + i * 150;
+            if (currIndex === 3 || currIndex === 2 || i !== currIndex) {
+                let delay = (i < currIndex ? 150 : 0) + i * 150;
                 props.staggeredFadeout(i, delay);
             };
         };
 
         setTimeout(() => {
-            props.changeTransitionAnimationState(parseInt(e.target.getAttribute("data-index")) + 1);
+            props.changeTransitionAnimationState((currIndex) + 1);
             setTimeout(() => {
-                props.setTypeVal(parseInt(e.target.getAttribute("data-index")));
-                props.changeImage(props.imageOptions[e.target.getAttribute("data-index")]);
+                props.setTypeVal(currIndex);
+                props.changeImage(props.imageOptions[currIndex]);
                 props.changeTimelineState(1);
                 setTimeout(() => {
                     props.changeTransitionAnimationState(0);
                 }, 1000);
-            }, customAnimationLength[props.index]);
-        }, customAnimationDelay[props.index]);
+            }, customAnimationLength[currIndex]);
+        }, customAnimationDelay[currIndex]);
+
+    };
+
+    function chooseType(e: any): void {
+
+        setType(parseInt(e.target.getAttribute("data-index")));
+
     };
 
     function initialTimelineAnimation(index: number): void {
@@ -40,8 +47,22 @@ function TimelineInitialTypes(props: TimelineInitialTypesProps): JSX.Element {
     };
 
     useEffect(() => {
-        initialTimelineAnimation(props.index);
-    });
+        
+        const urlParams = new URLSearchParams(window.location.search);
+
+        if (urlParams.get('type') === "0" || urlParams.get('type') === "1" || urlParams.get('type') === "2" || urlParams.get('type') === "3") {
+
+            let currType: any = urlParams.get('type');
+            currType = parseInt(currType);
+            setType(currType);
+            
+        } else {
+
+            initialTimelineAnimation(props.index);
+
+        };
+
+    }, []);
 
     return(
         <button className={"timelineInitialTypes " + props.timelineToFadeOut[props.index] + initialTimelineAnimationDelay} key={props.index} data-index={props.index} data-selection={activeData} onClick={chooseType}>
