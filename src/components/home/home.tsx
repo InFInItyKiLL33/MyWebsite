@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { NavLink as Link } from "react-router-dom";
 import backgroundImage from "../../images/background.png"; // this is Image2
 import backgroundImage1 from "../../images/programming-vignette.png";
 import backgroundImage2 from "../../images/aviation-vignette.png";
 import backgroundImage3 from "../../images/mypc-vignette.png";
 import backgroundImage4 from "../../images/jpmun5.png";
+import backgroundImage5 from "../../images/background-fade.png";
 import squigglyArrow from "../../images/arrow left custom.png";
 import './home.css';
+import '../navbar/navbar.css';
 import BasicInfo from "./basic_info";
 import Navbar from "../navbar/navbar";
 import {HomeProps} from "../../declarations";
@@ -26,6 +29,7 @@ function Home(props: HomeProps): JSX.Element {
     const [img4OpacityOffset, setImg4OpacityOffset] = useState(0);
     const [img5ScrollOffset, setImg5ScrollOffset] = useState(0);
     const [img5OpacityOffset, setImg5OpacityOffset] = useState(0);
+    const [img6OpacityOffset, setImg6OpacityOffset] = useState(0);
     
     useEffect(() => {
     
@@ -88,17 +92,25 @@ function Home(props: HomeProps): JSX.Element {
                                 0
                     );
                     
-                    case document.documentElement.scrollTop >= window.innerHeight * 4.1 && document.documentElement.scrollTop < window.innerHeight * 6:
-                        setImg5ScrollOffset(window.innerHeight * 1.9 - Math.min((document.documentElement.scrollTop - window.innerHeight * 2.5) / 3, window.innerHeight * 2));
-                        setImg5OpacityOffset(
-                            document.documentElement.scrollTop > window.innerHeight * 5 ? 
-                                1 - (((document.documentElement.scrollTop - window.innerHeight * 5) / window.innerHeight) / 0.35)
+                case document.documentElement.scrollTop >= window.innerHeight * 4.1 && document.documentElement.scrollTop < window.innerHeight * 6:
+                    setImg5ScrollOffset(window.innerHeight * 1.9 - Math.min((document.documentElement.scrollTop - window.innerHeight * 2.5) / 3, window.innerHeight * 2));
+                    setImg5OpacityOffset(
+                        document.documentElement.scrollTop > window.innerHeight * 5 ? 
+                            1 - (((document.documentElement.scrollTop - window.innerHeight * 5) / window.innerHeight) / 0.35)
+                        : 
+                            document.documentElement.scrollTop > window.innerHeight * 4.1 ? 
+                                ((document.documentElement.scrollTop - window.innerHeight * 4.1) / window.innerHeight) / 0.4
                             : 
-                                document.documentElement.scrollTop > window.innerHeight * 4.1 ? 
-                                    ((document.documentElement.scrollTop - window.innerHeight * 4.1) / window.innerHeight) / 0.4
-                                : 
-                                    0
-                        );
+                                0
+                    );
+                    
+                case document.documentElement.scrollTop >= window.innerHeight * 5.1:
+                    setImg6OpacityOffset(
+                        document.documentElement.scrollTop > window.innerHeight * 5.1 ? 
+                            ((document.documentElement.scrollTop - window.innerHeight * 5.1) / window.innerHeight) / 0.2
+                        : 
+                            0
+                    );
 
             }
         };
@@ -124,9 +136,6 @@ function Home(props: HomeProps): JSX.Element {
             </div>
 
             <p className="scrollCheckOutText" style={{"opacity": scrollTextOpacity}}>{scrollText}</p>
-
-
-            <button>About Me</button>
 
             <div className="spacer"></div>
 
@@ -160,8 +169,16 @@ function Home(props: HomeProps): JSX.Element {
 
             <img src={backgroundImage4} className="backgroundImage backgroundImage5" alt="design pic" style={{"marginTop": img5ScrollOffset, "opacity": img5OpacityOffset, "rotate": "0deg"}}></img>
 
-            <p>Interested in contacting me?</p>
-            <button>Click Me</button>
+            <div className="contactMeEndPage flex-col" style={{"opacity": img6OpacityOffset}}>
+                <p className="contactMeEndPageText">Interested in contacting me?</p>
+                <button className="contactMeEndPageButton">
+                    <Link to={"/contact"} className="links links-home semi-bold flex-col flex-jc-center">
+                        Click Here
+                    </Link>
+                </button>
+            </div>
+
+            <img src={backgroundImage5} alt="end page image" className="backgroundImage backgroundImageLast" style={{"opacity": img6OpacityOffset}}></img>
 
         </div>
     )
