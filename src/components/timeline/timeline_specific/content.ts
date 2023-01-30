@@ -129,7 +129,9 @@ export let displayableContent: any = {
             WebsiteV1Img, 
             "Personal Website (v1)", 
             "Jun 2021", 
-            ``
+            `Before making v2 of my website, I've tried making a previous version but wasn't feeling it after trying for a bit. It didn't feel like I had a plan beyond the home page to be creative, which was why I dropped that version and only restart it when I was ready for a second version.
+            \n
+            This version did give the original inspiration for the second version of my website with better choices all around.`
         ], [
             DiscordTechImg, 
             "Personal Tech Products Bot",
@@ -166,7 +168,7 @@ export let displayableContent: any = {
             "University Applications", 
             "Q4 2020 - Q1 2021", 
             `I was initially torned between deciding on a Computer Science (CS) course or an Aviation related course. Eventually I settled on CS due to my results and application outcomes. Initially, with my prelim results for Junior College (82.5RP, max 90RP; RP stands for Rank Point), I tried applying for early admission for Nanyang Technological University (NTU) CS Course. I was surprised to find out that I was offered an early spot around my 'A' levels. Although I managed to get a spot, it wasn't what I wanted, so I still did my best for 'A' levels and to my shock during the results date, I managed to score 87.5RP, basically highest in my class. \n
-            From there, I tried applying for National University of Singapore (NUS) CS Course with just my results and I was elated to find out that I was offered an invitation letter at the end of Q1 2021, for after my National Service. I quickly accepted it, securing my prestigious spot that many dream to enter in my class.
+            From there, I tried applying for National University of Singapore (NUS) CS Course with just my results and I was elated to find out that I was offered an invitation letter at the end of Q1 2021, for after my National Service. I quickly accepted it, securing my prestigious spot that many dream to enter in my class. In addition, I applied and was offered a spot in NUS USP (University Scholars Programme), an amazing offer that can't be looked over.
             \n
             Although there are other options overseas for more competitive universities, I believe that due to my circumstance and preference, entering a local university, the best one in fact locally, is more than sufficient for me from my humble beginnings at neighbourhood schools.`
         ], [

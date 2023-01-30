@@ -57,7 +57,7 @@
   justify-content: start;
 }
 
-.flex-jc-center {
+.flex-jc-center, .flex-jc-centre {
   justify-content: center;
 }
 

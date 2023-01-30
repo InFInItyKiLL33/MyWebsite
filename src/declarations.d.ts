@@ -184,3 +184,7 @@ export declare interface LineBreakProps {
     className?: string;
 };
 
+// Contact
+export declare interface ContactProps {
+    page: string;
+}

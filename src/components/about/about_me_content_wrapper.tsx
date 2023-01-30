@@ -52,7 +52,7 @@ function AboutMeContentWrappers(props: AboutMeContentWrappersProps): JSX.Element
                             <BreakLine count="2" />
                             Beyond that, I'm also very interested in tech related stuff, especially PCs. I've built a few of them so far, including my own personal and favourite PC that is fully white themed! If you would like to see it, you can always head over to the Timeline page to explore :)
                             <BreakLine count="2" />
-                            Studies wise, I came from a neighbourhood school and worked my way up slowly over the years, eventually being able to join NUS in their Degree for Computer Science with just my academic results. Here's a history of where I studied at:
+                            Studies wise, I came from neighbourhood schools and worked my way up slowly over the years, eventually being able to join NUS in their Degree for Computer Science with just my academic results. Here's a history of where I'm studying/studied at:
                             <BreakLine count="2" />
                             <OrangeSpan text="National University of Singapore (NUS)" className="bolded" /> - 2023 onwards
                             <BreakLine count="1" />
@@ -69,6 +69,8 @@ function AboutMeContentWrappers(props: AboutMeContentWrappersProps): JSX.Element
                             <OrangeSpan text="Beacon Primary School" /> - 2009-2014
                             <BreakLine count="1" />
                             PSLE T-Score - 217
+                            <BreakLine count="2" />
+                            The reason for the break between 2020 and 2023 was due to National Service from 2021 to 2023. It was the time for me to build my portfolio on the side whilst serving my nation. Although I wasn't a commander, my highlight during my time there was achieving the best crew award.
                         </p>
                     
                     </div>

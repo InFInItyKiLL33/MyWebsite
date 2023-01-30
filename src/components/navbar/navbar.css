@@ -17,6 +17,7 @@
     padding: 30px 25px 30px 25px;
     font-size: 1em;
     animation: 0.25s fade ease-in;
+    z-index: 100;
 }
 
 .links:hover > p, .linksText:hover {

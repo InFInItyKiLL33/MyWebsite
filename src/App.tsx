@@ -5,6 +5,7 @@ import './components/keyframes.css';
 import Home from "./components/home/home";
 import Timeline from "./components/timeline/timeline";
 import About from "./components/about/about";
+import ContactMe from "./components/contact/contact";
 import "./components/material_icons.css"
 
 function App() {
@@ -15,11 +16,12 @@ function App() {
                 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet"></link>
             </head>
             <Router>
-            <Routes>
-                <Route path="/" element={<Home page="1" />} />
-                <Route path="/timeline" element={<Timeline page="2" />} />
-                <Route path="/about" element={<About page="3" />} />
-            </Routes>
+                <Routes>
+                    <Route path="/" element={<Home page="1" />} />
+                    <Route path="/timeline" element={<Timeline page="2" />} />
+                    <Route path="/about" element={<About page="3" />} />
+                    <Route path="/contact" element={<ContactMe page="4" />} />
+                </Routes>
             </Router>
         </>
     );
