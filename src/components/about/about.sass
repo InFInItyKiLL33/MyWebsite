@@ -1,0 +1,174 @@
+@use "../../indexCompile" as *
+
+body 
+    max-width: 100%
+    max-height: 100%
+
+
+.myPicture 
+    width: 20vw
+    height: 20vw
+    min-height: 200px
+    min-width: 200px
+    max-width: 400px
+    max-height: 400px
+    position: fixed
+    margin: calc(250px - 12.5vw) 0px 0px 7.5vw
+    border-radius: 50%
+    background-color: rgba($grey1, 0.5)
+    border: 5px solid $orange
+    box-shadow: 5vw 2vw 0px 0px rgba($grey3, 0.4)
+    transition: 0.25s ease
+    z-index: 2
+    animation: 1s slideIn ease, 2s fade ease
+
+
+.myPicture:hover 
+    transform: translateY(-5px)
+    border-color: $orangeHover
+    box-shadow: 5vw calc(2vw + 10px) 0px 0px rgba($grey3, 0.4)
+
+
+.myPicture:hover ~ p 
+    color: $orangeHover
+
+
+.aboutMeText 
+    margin-left: calc(40vw + 50px)
+    text-align: left
+    color: white
+    font-size: 1.75em
+    margin-top: 25px
+    margin-bottom: 15px
+
+
+.aboutMeText::after 
+    content: ""
+    width: 60px
+    height: 3px
+    border-radius: 5px
+    background-color: $white
+    margin-top: 15px
+    margin-bottom: 40px
+    background-color: $orange
+    display: block
+    
+
+
+.footnoteForeword 
+    margin-bottom: 0px
+
+
+.aboutMeTexts 
+    color: white
+    font-size: 1.05em
+    text-align: left
+    margin-top: 0px
+    padding: 10px 40px 10px 0px
+    line-height: 1.5em
+
+
+.footnotes 
+    font-size: 0.7em
+    color: lightgray
+    margin-top: 0px
+    margin-bottom: 0px
+    padding: 10px 0px 0px 10px
+
+
+.aboutMeTextsWrappers 
+    background-color: rgba($grey2, 0.6)
+    border: 2px solid $orange
+    width: calc(55vw - 200px)
+    margin: 0px 0px 100px calc(35vw + 100px)
+    border-radius: 10px
+    padding: 50px
+    box-shadow: 40px 40px 1px 1px rgba($grey3, 0.4)
+    transition: 0.25s ease
+
+
+.aboutMeTextsWrappers:hover 
+    transform: translateY(-5px)
+    border-color: $orangeHover
+    box-shadow: 40px 50px 1px 1px rgba($grey3, 0.4)
+
+
+.aboutMeTextsWrappers:hover > p > span[class~="orangeText"], .aboutMeTextsWrappers:hover > p > i > span[class~="orangeText"]
+    color: $orangeHover!important
+
+
+.name 
+    margin-top: 500px
+    position: fixed
+    width: 400px
+    margin-left: 7.5vw
+    font-size: 2em
+    color: $orange
+    transition: 0.25s ease
+    animation: 1s slideIn ease, 2s fade ease
+
+
+/* Mobile Responsive */
+@media (max-width: 1000px) 
+
+    .myPicture 
+        margin-top: 125px
+        box-shadow: 50px 20px 0px 0px rgba($grey3, 0.4)
+    
+
+    .myPicture:hover 
+        box-shadow: 50px 30px 0px 0px rgba($grey3, 0.4)
+    
+        
+    .aboutMeText 
+        font-size: 2em
+        margin-left: calc(15vw + 325px + 37.5vw - 150px - 75px)
+    
+
+    .aboutMeText::after 
+        width: 0px
+    
+        
+    .aboutMeTextsWrappers 
+        margin-left: calc(15vw + 300px)
+        width: calc(75vw - 400px)
+        padding: 50px
+    
+
+
+/* High Res Responsive */
+@media (min-width: 2000px) 
+
+    .aboutMeText 
+        margin-left: calc(15vw + 550px)
+    
+
+    .myPicture 
+        margin-top: 0px
+        box-shadow: 100px 40px 0px 0px rgba($grey3, 0.4)
+    
+
+    .myPicture:hover 
+        box-shadow: 100px 50px 0px 0px rgba($grey3, 0.4)
+    
+
+    .aboutMeTextsWrappers 
+        margin-left: calc(15vw + 500px)
+        width: calc(75vw - 600px)
+    
+
+
+.boxShadowSlideInInitial 
+    box-shadow: 60px 40px 1px 1px rgba($grey3, 0.4)!important
+
+
+.boxShadowSlideIn 
+    animation: 2s boxShadowSlideIn ease
+    animation-fill-mode: forwards
+
+
+@keyframes boxShadowSlideIn 
+    0%
+        box-shadow: 60px 40px 1px 1px rgba($grey3, 0.4)!important
+    100% 
+        box-shadow: 40px 40px 1px 1px rgba($grey3, 0.4)!important

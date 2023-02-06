@@ -1,0 +1,241 @@
+@use "fonts" as *
+@use "colours" as *
+
+::-webkit-scrollbar-track 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+    background-color: transparent
+    border-radius: 10px
+
+
+::-webkit-scrollbar 
+    width: 2px
+    background-color: transparent
+
+
+::-webkit-scrollbar-thumb 
+    background-color: $orange
+    transition: 0.5s ease
+    border-radius: 10px
+    width: 2px
+
+
+::-webkit-scrollbar-thumb:hover 
+    background-color: $orangeHover
+    
+body 
+    max-width: 100%
+    max-height: 100%
+    font-family: $globalFont1
+    background: black
+    overflow-x: hidden
+
+
+.App 
+    margin: 0
+    /* background-image: url("./images/background.png") */
+    /* min-height: 100vh */
+
+
+.backgroundImage 
+    width: 100%
+    height: 100%
+    min-height: 100%
+    object-fit: cover
+    filter: brightness(0.3)
+    position: fixed
+    z-index: -1
+
+
+/* Generic Styling */
+.orangeText 
+    color: $orange
+    font-weight: 600
+    transition: 0.25s ease
+
+
+.indented 
+    padding-left: 25px!important
+
+
+.semi-bold 
+    font-weight: 500
+
+
+.bolded 
+    font-weight: 700
+
+
+.aboutpage 
+    margin-top: 25px
+
+
+.disable-pointer 
+    pointer-events: none
+
+
+.center 
+    text-align: center
+
+
+.m-auto 
+    margin: auto
+
+
+.indexNegative
+    z-index: -1
+
+
+.index1 
+    z-index: 1
+
+
+.index2 
+    z-index: 2
+
+
+.index3 
+    z-index: 3
+
+
+.index4 
+    z-index: 4
+
+
+.index5 
+    z-index: 5
+
+
+.indexHigh 
+    z-index: 100
+
+
+.absolutePos 
+    position: absolute
+
+
+.relativePos 
+    position: relative
+
+
+/* Animations */
+.fade 
+    animation: 0.75s fade ease
+    transition: 0.75s ease
+
+
+.fadeLong 
+    animation: 1s fade ease
+    transition: 1s ease
+
+
+.fadeInitialOpacity 
+  opacity: 0.0
+
+
+.fadeTransition 
+    opacity: 1.0!important
+    transition: 0.75s ease
+
+
+.fadeOut 
+    animation: 0.75s fadeOut ease
+
+
+.fadeOutInitialOpacity 
+  opacity: 1.0
+
+
+.fadeOutTransition 
+    opacity: 0.0!important
+    transition: 0.75s ease
+
+
+.slideInInitial 
+    transform: translate(-10px, 0px)
+    transition: 1s ease
+
+
+.slideInInitialR 
+    transform: translate(10px, 0px)
+    transition: 1s ease
+
+
+.slideIn 
+    animation: 1s slideIn ease
+    animation-fill-mode: forwards
+
+
+.slideInR 
+    animation: 1s slideInR ease
+    animation-fill-mode: forwards
+
+
+.slideInRDelayed 
+    animation: 2s slideInR ease
+    animation-fill-mode: forwards
+
+    
+.flex-row 
+    display: flex
+    flex-direction: row
+
+
+.flex-reverse-row 
+    display: flex
+    flex-direction: row-reverse
+
+
+.flex-col 
+    display: flex
+    flex-direction: column
+
+
+.flex-reverse-col 
+    display: flex
+    flex-direction: column-reverse
+
+
+.flex-jc-start 
+    justify-content: start
+
+
+.flex-jc-center, .flex-jc-centre
+    justify-content: center
+
+
+.flex-jc-end 
+    justify-content: end
+
+
+.flex-jc-space-a 
+    justify-content: space-around
+
+
+.flex-jc-space-b 
+    justify-content: space-between
+
+
+.flex-jc-space-e 
+    justify-content: space-evenly
+
+
+.mlr-auto, .mx-auto
+    margin-left: auto
+    margin-right: auto
+
+.my-auto
+    margin-top: auto
+    margin-bottom: auto
+
+.text-c 
+    text-align: center
+
+
+.fixed-display 
+    display: fixed
+
+
+.hyperlink 
+    color: $orange
+

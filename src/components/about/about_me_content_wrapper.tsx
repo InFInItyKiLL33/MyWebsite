@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './about.css';
+import './about.sass';
 import BreakLine from './break_line';
 import OrangeSpan from './orange_span';
 import {AboutMeContentWrappersProps} from "../../declarations";
@@ -70,7 +70,9 @@ function AboutMeContentWrappers(props: AboutMeContentWrappersProps): JSX.Element
                             <BreakLine count="1" />
                             PSLE T-Score - 217
                             <BreakLine count="2" />
-                            The reason for the break between 2020 and 2023 was due to National Service from 2021 to 2023. It was the time for me to build my portfolio on the side whilst serving my nation. Although I wasn't a commander, my highlight during my time there was achieving the best crew award.
+                            The reason for the break between 2020 and 2023 was due to National Service from 2021 to 2023. It was the time for me to build my portfolio on the side whilst serving my nation. Although I wasn't a commander, I was given commander roles like being the Company Orderly Sergeant (COS), and Duty Sergeant (DS) for a few months there, on top of my regular men duties. 
+                            <BreakLine count="2" />
+                            That said, my highlight during my service was achieving the best crew award by my Battery Commander (BC) and Battery Sergeant Major (BSM), as well as achieving the Regimental Sergeant Major (RSM) coin, which was only awarded to outstanding NSFs/crews during Exercise Daring Warrior.
                         </p>
                     
                     </div>

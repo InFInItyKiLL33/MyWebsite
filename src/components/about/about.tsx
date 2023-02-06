@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import backgroundImage from "../../images/background.png";
 import MyPicture from "../../images/me filter.png";
-import './about.css';
+import './about.sass';
 import Navbar from "../navbar/navbar";
 import AboutMeContentWrappers from './about_me_content_wrapper';
 import {AboutMeProps} from "../../declarations"
@@ -15,7 +15,7 @@ function About(props: AboutMeProps): JSX.Element {
     return(
         <div className="App AboutApp">
 
-            <img src={backgroundImage} className="backgroundImage" alt="background wing view"></img>
+            <img src={backgroundImage} className="backgroundImage backgroundImageHome" alt="background wing view"></img>
 
             <Navbar page={props.page} />
 

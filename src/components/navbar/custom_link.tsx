@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink as Link } from "react-router-dom";
-import './navbar.css';
+import './navbar.sass';
 import {LinkCustomProps} from '../../declarations'
 
 function LinkCustom(props: LinkCustomProps): JSX.Element {

@@ -1,4 +1,4 @@
-import './navbar.css';
+import './navbar.sass';
 import LinkCustom from './custom_link';
 import {NavbarProps} from '../../declarations'
 

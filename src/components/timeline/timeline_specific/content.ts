@@ -585,107 +585,131 @@ export let displayableContent: any = {
             MyWebsite, 
             "Personal Website (v2)", 
             "Q4 2022 - Q1 2023", 
-            ``
+            `This was my second iteration on desgining my website. It is way better than the first one in my opinion as it looks more clean than before, with better quality pictures as well. The design however, was not a predesigned webpage, meaning no wireframe or mockup was done beforehand and everything was made on the go. As such, there may be some slight mismatch in quality here and there as I'm not following a specific design. Most of the design just comes on the spot on how I felt it looked.
+            \n
+            Although it's not a good way to approach a project, I feel that due to the amount of time I would need to just design it was not worth it, especially when I've stopped my Photoshop subscription awhile back and the other alternatives are either too troublesome or that I'm not used to it.`
         ], [
             AlphaLogoImg, 
             "National Service Unit Logo", 
             "Dec 2021", 
-            ``
+            `I was tasked to design a logo for my unit in National Service since I mentioned here and there that I could design with some skill. I took inspiration here and there and managed to come up with this minimalistic logo. The process was that I used paint to design it in camp following a few designs I found on Google. However, that was extremely troublesome and I just remade it at home with Photoshop from scratch with a vague idea on how it looked like in camp, but this time without any references. As I didn't explain this to them, I just submitted my artwork to them.
+            \n
+            Fast forward a few months, they suddenly said they wanted to make a new design for the unit, but in my mind I was wondering why they didn't get back to me on my artwork. This time round I thought maybe they wanted more options and that they still had my artwork. In the end, during the voting phase, it was nowhere to be found. I showed it to my commanders and all of them who weren't involved thought it was better than any of the given options, but I also found out that the commander in charge thought it was fully stolen and copied artwork, and hence didn't include it.
+            \n
+            It was a little annoying at the end after the hard work I put in, but I shouldn't be that angry as the final logo was comissioned to one of my friend in the same unit with a small price tag, but he was never paid at the end.`
         ], [
             WebsiteV1Img, 
             "Personal Website (v1)", 
             "Jun 2021", 
-            ``
+            `This was my first iteration of designing my website, and it was more or less done in a few minutes. It was more or less slightly rushed without much goals in mind. Though it was still somewhat nicely developed, it just didn't feel right and I felt I could do much better than that. As such, after awhile, I decided that it would be much better for me to come back another time when I have a better vision for it.`
         ], [
             IndiaC19Img, 
             "India Covid-19 Project", 
             "Jun 2021", 
-            ``
+            `A small little project that my friend wanted to work on, and required my help for a quick design of the webpage. This was near the start of the virus and my friend wanted to help their origin country with the virus. I'm not sure where the project went afterwards but hey, I did manage to design a quick static page for them.`
         ], [
             NHWSSImg1, 
             "Nam Hong Welfare Service Society Page", 
-            "Q1 2021", 
-            ``
+            "Dec 2020 - Mar 2021", 
+            `Before I enlisted into the army, I had an internship with Nam Hong to maintain their website. One of my given task was to create multiple pages under the 'Get Involved' part. Some of these pages were uniquely designed whilst some kept a standard style. Although it wasn't required to design it similar to how the website looked like, I decided that going above and beyond would make the site feel more refreshing. As for how the programming went, you can refer to the programming tab.`
         ], [
             ThatAquariumImg, 
             "That Aquarium Website", 
             "Dec 2020 - Jan 2021", 
-            ``
+            `This project was a collaboration with my friend in trying to build our portfolio by developing a website for a company that didn't had one. Unfortunately, I was too excited and had designed just about every page before we secured the deal. This was because their response rate was at least 2 weeks when we wanted to get a feedback on our work. Eventually it got so bad that we decided to just drop the project as it seemed as if they lacked interest in our work. Although the design felt a little bubbly or inmature by my standards, I wasn't fully motivated as well at the time as their estimated pay for the freelance project felt quite low.`
         ], [
             TeachersDayImg, 
             "High School/Junior College Teachers' Day Appreciation", 
             "Aug 2020", 
-            ``
+            `This was actually a video made solely by myself before Teachers Day in 2020. It was to thank my teachers for their work and although not much design was needed since the basis was made in Minecraft, there were still some design on making it fit the theme as the location was based on the school's hall. It was still a cool little clip for them as it made use of a few knowledge here and there to make it, including command blocks as well.`
         ], [
             CAQGameShowImg, 
             "High School/Junior College Current Affairs Game Show", 
             "Aug 2020", 
-            ``
+            `This project was made for my school's International Current Affairs Society (ICAS) Co-Cirricular Activity (CCA). Although I wasn't a member of the CCA, I still helped them quite a bit throughout their CCA as an extra effort to build up my portfolio. This was a game show for one of their events, and although the design looks plain, I didn't feel the need to design it nicely as they didn't require it, nor did I have much time to make it as well. The design was quickly made up in a short amount of time to make it as least work with what I had in mind.`
         ], [
             PairProjectSalonImg, 
             "High School/Junior College Pair Project", 
             "Apr 2020", 
-            ``
+            `The pair project was actually a homework given by my Computing teacher as a means for us to use our programming knowledge to build a small full stack webpage. We were supposed to design and give a wireframe (which only my pair did), and develop a page for admins in a salon shop. It's quite straightforward but many people weren't able to do it. I was lucky to be able to pair with a friend that understood programming quite well so I didn't have to do all the work and I could focus mainly on the frontend whilst he focused on the backend.
+            \n
+            At the end of the day, we weren't given first place as it would be unfair for the rest of the pairs that did the work since ours was so outstanding. We were given a special mention for our work instead to keep a fair playing ground.`
         ], [
             CryphexImg, 
             "Cryphex", 
             "Jan 2020", 
-            ``
+            `After the NTU SCSE x Amazon course, I had a friend who wanted to use it as a baseline for his new idea, Cryphex, which was for cryptocurrency trading during it's boom around this period. I don't think it went anywhere after the design phase at that time as he lacked programmers that had the same vision as him. I tried to at least make a a home page for him, which he liked and appreciated very well, but there was no news from him after.`
         ], [
             NTUSCSEAmazonImg, 
             "NTU School of Computer Science and Engineering x Amazon Course", 
             "Jan 2020", 
-            ``
+            `This was a course a group of friends and myself signed up for to learn more about web development. They taught a few programming language here, and required us to develop a webpage at the end of the course based on any ideas you had. I would say that most of the design here was actually quite awesome as it felt modern and simple. Though we didn't get any award at the end of the day, I was still proud that I made the project whole in just 1.5 days.`
         ], [
             InfinityPlannerImg,
             "Infinity Flight Planner",
             "December 2019 - Q1 2020",
-            ``
+            `One of my early projects and idea I had was to keep an personally created online logbooks for my flight simulator. It was inspired by other applications in the flight sim space like projectFLY that got me hyped up into making it. I did design a few pages for myself to use but because of various reasons explained in the programming tab, I dropped the project.
+            \n
+            The design itself, I am still quite proud of most of it as it still looks pretty good even after a few years. It could definitely be improved here and there but for something made when I was 18, it's quite good.`
         ], [
             [JPMUNImg8, JPMUNImg7, JPMUNImg6, JPMUNImg5, JPMUNImg4, JPMUNImg3, JPMUNImg2, JPMUNImg1], 
             "High School/Junior College Model United Nations", 
             "Q4 2019 - Q1 2020", 
-            ``
+            `This big event, Model United Nations (JPMUN), was for my school's International Current Affairs Society (ICAS) Co-Cirricular Activity (CCA), and they had me as their lead designer. The event was like how United Nations conducted their meetings for global events, but just a model version here. 
+            \n
+            It was a great honour to be their main designer as I could create many nice designs for their event, even though I wasn't a member of their CCA. I would say the designs here were my best in my time at my school back then as most of the designs felt elegant and exclusive. Although there are some that could be better, it was overall a great time to practice and use my designing skills.`
         ], [
             JPJCStemDayImg, 
             "High School/Junior College STEM Day", 
             "Jul 2019", 
-            ``
+            `STEM Day was a one day event for students to explore the STEM areas subjects. My role was to design and create banners and such to advertise it for the Computing booth. Although I feel that I didn't do as great of a job as I could have with the colours, the design looked great on my monitor then as it showed the image darker. After it was sent for printing did I finally realise the importance of double checking with different screens to see how it really looks like, especially when I was developing on poorly calibrated monitors.`
         ], [
             GoogleCSSIImg, 
             "SUTD x Google - Computer Science Summer Institute (CSSI)", 
             "Jul 2019", 
-            ``
+            `CSSI was a prestigious event for me, as it seemed to be hosted once only, although they had thoughts on hosting it again yearly. It was a enriching experience at Google and SUTD to feel how being a Googler was like. For the progamming stories, you can go to the programmng tab to have a look, but as for the design part, I feel that it was underwhelming. It doesn't look good at all but that's because in my group of 3, only I could code and design, whilst the other two basically had nothing skillful, so they were given the job for ideation. At the end of the day, although we had like 3 days to create our app, we ended up only having one as they couldn't decide on something until nearly the end.
+            \n
+            This basically affected my motivation, plus I had to use a laptop I wasn't used to using, so my creativity hit rock bottom and affected all my skills. I had to basically develop just about all the parts of the app, including design as all they would do was do their own thing. As much as it sucked, the everything else there was balanced out by the environment we worked at.
+            \n
+            Although the experience doesn't sound like a good one, sharing it here is necessary to show the ups and downs of my history as it's not always all good to get to where I'm at today.`
         ], [
             [JPJCInfocommImg1, JPJCInfocommImg2, JPJCInfocommImg3, JPJCInfocommImg4, JPJCInfocommImg5], 
             "High School/Junior College CCA - Infocomm", 
             "2019 - 2020", 
-            ``
+            `In the two years at my CCA in college, I helped design a few things here and there for my CCA. As they didn't have huge events like the other CCA I helped at ICAS, in the times I could help, I tried to give it my best effort to design some nice designs. It was mostly just a banner design for the CCA, Open House, as well as the CCA Fair for the batch next year.`
         ], [
             [PWImg1, PWImg2, PWImg3, PWImg4, PWImg5, PWImg6, PWImg7, PWImg8, PWImg9, PWImg10, PWImg11], 
             "A Levels Project Work", 
             "2019", 
-            ``
+            `Throughout my first year in college, there's a subject called Project Work whereby we had to make a Written Report for what we are doing. Although designing it wasn't necessary, I felt that I wanted to make the assessors felt wowed by our report and feel more inclined to grade us better. As such, I decided to make the cover page and content pages to make it better. It feels quite well designed, although a little cartoony, it's way better than having no design.
+            \n
+            Surprisingly, many of my friends found it good and even wanted to pay me to design for their groups. They continuously requested for me to help them as they wanted to spice thier projects up as well. However, I was sufficiently busy with my own group's design and so I didn't accept their request and it didn't feel right to do so as I wasn't part of their groups.`
         ], [
             LeagueMasteryImg, 
             "League of Legends - Mastery Tracker", 
             "2018 - 2020", 
-            ``
+            `This was my second ever personal python project in which I wanted to make an app to keep track of a game I played (League of Legends), on how well I scored. It was kinda a statistic app but I was very bad at programming at the time. It was as such, very tedious to develop but fun to design as I could easily get inspiration from the game's UI to design.
+            \n
+            The design was pretty good for my skill at the time but I was constantly limited by python's tkinter limitations so I couldn't make it better with things like animation. As for further explanation, you can refer to the programming tab as I delve deeper into how development went and why I dropped the project after 2 years.`
         ], [
             XCinematicImg, 
             "X-Cinematic", 
             "2017", 
-            ``
+            `This was my first time touching programming really. I didn't actually pre-design the app but did it on the go which was honestly a bad idea as it just looks plain bad. However, it was my stepping stone in learning that I should design things first before coding it out as on the fly designs usually turn out bad.`
         ], [
             PlaceholderImg, 
             "Various YouTube Videos", 
             "2016 - 2019", 
-            ``
+            `During this time, I was trying out YouTube to see if it was a thing for me. Although at the end of the day I stopped, I realise now how much of a potential I could have if I took more seriously. Most of my designs here are just very bubbly and/or childish for things like thumnails and mid video animations.
+            \n
+            As much as I want to continue YouTube, I've decided that getting popular wasn't really my thing. Although financially it may be viable, the other things that come with it might not be for me, as I prefer a life without much fame and more privacy. Besides, it felt like more of a joke than a serious potential at the time.`
         ], [
             PlaceholderImg, 
             "Secondary School Co-Curricular Activity (CCA) - Infocomm", 
             "2015 - 2018", 
-            ``
+            `The four years here in secondary school was how I got into designing. My CCA here was quite enriching as I had a trainer that taught a lot of Photoshop. Although back then I didn't realise the usefulness of it, I managed to learn a lot of things from it that I still use today whenever I design with Photoshop or other Adobe products like Illustrator and After Effects. Many of the designs here are lost as my personal thumbdrive back then, with all my designs, went lost when it was used to distribute files to other CCA members.
+            \n
+            I was considered the best among the students from my year in using Photoshop, and would often help others when they needed it. I frequently finished the tasks faster than everyone else and was basially one of the few that could keep up with the trainer. Eventually I became the vice-president of the CCA due to my skills. Although I was a candidate for president, they felt that my friend had better socialising skills and gave him the presidency instead.`
         ]
     ]
 }; // For each content, the order is as such: 0 -> image file, 1 -> Title, 2 -> Date, 3 -> Description, 4 (Optional) -> Hyperlink
