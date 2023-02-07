@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TimelineInitialTypes from "./timeline_initial_type";
-import "./animations/timeline_initial_animation.css";
-import "./timeline_initial.css"
+import "./animations/timeline_initial_animation.sass";
+import "./timeline_initial.sass"
 import {TimelineInitialProps} from "../../../declarations";
 
 function TimelineInitial(props: TimelineInitialProps): JSX.Element {

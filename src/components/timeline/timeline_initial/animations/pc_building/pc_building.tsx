@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PowerCables from "./power_cables";
 import PowerHoles from "./power_holes";
-import "./pc_building.css";
+import "./pc_building.sass";
 
 function TimelinePCBuildingAnimation() {
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import TimelineSpecificContent from './timeline_specific_content';
 import TypeButtons from './type_buttons';
 import ImageCarousel from '../image_carousel/image_carousel';
-import '../timeline.css';
+import '../timeline.sass';
 import ProgrammingImgDefault from '../../../images/programming_icon_default.png';
 import ProgrammingImgHover from '../../../images/programming_icon_hover.png';
 import ProgrammingImgActive from '../../../images/programming_icon_active.png';
@@ -118,10 +118,10 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
             <div className={"skillsButtonNavbar flex-row fade " + fadeoutContent}>
                 {skillButtons}
                 <button onClick={changeSortDirection} className="timelineChanger timelineSorter slideInInitial slideIn flex-row">
+                    <span className="material-symbols-outlined m-auto">Sort by -</span>
                     <i className="center m-auto">
                         {sortText}
                     </i>
-                    <span className="material-symbols-outlined m-auto">sort</span>
                 </button>
             </div>
             

@@ -4,7 +4,7 @@ import backgroundImage1 from "../../images/aviationbg.png";
 import backgroundImage2 from "../../images/pcbuildingbg3.jpg";
 import backgroundImage2Alt from "../../images/pcbuildingbg4.png";
 import backgroundImage3 from "../../images/designbg.png";
-import './timeline.css';
+import './timeline.sass';
 import Navbar from "../navbar/navbar";
 import TimelineInitial from "./timeline_initial/timeline_initial";
 import TimelineSpecific from './timeline_specific/timeline_specific';

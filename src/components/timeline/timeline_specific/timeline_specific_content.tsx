@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import '../timeline.css';
+import '../timeline.sass';
 import TimelineHyperlink from './timeline_hyperlink';
 import {TimelineSpecificContentProps} from "../../../declarations";
 

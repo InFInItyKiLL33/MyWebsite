@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./design.css";
+import "./design.sass";
 import TimelineDesignAnimationBoxes from "./design_boxes";
 import TimelineDesignSVGText from "./design_svg_text";
 import TimelineDesignSVGTextPath from "./design_svg_text_path";

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./aviation_animation.css";
+import "./aviation_animation.sass";
 import AviationAnimationImg from "../../../../../images/aviation.svg";
 
 function TimelineAviationAnimation() {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import "./image_carousel.css";
+import "./image_carousel.sass";
 import {ImageCarouselProps} from "../../../declarations";
 
 function ImageCarousel(props: ImageCarouselProps): JSX.Element {

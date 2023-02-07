@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./programming_animation.css"
+import "./programming_animation.sass"
 
 const TimelineProgrammingAnimation = () => {
 

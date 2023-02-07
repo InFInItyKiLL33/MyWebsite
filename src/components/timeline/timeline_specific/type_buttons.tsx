@@ -1,5 +1,5 @@
 import React from 'react';
-import '../timeline.css';
+import '../timeline.sass';
 import {TypeButtonsProps} from "../../../declarations";
 
 function TypeButtons(props: TypeButtonsProps): JSX.Element {

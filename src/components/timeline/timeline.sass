@@ -1,0 +1,212 @@
+/* This file will contain all keyframes for the entire website for reuse */
+@use "../../indexCompile" as *
+
+.timeline 
+    padding: 0px 10vw 50px 10vw
+    justify-content: center
+    margin-left: 3vw
+    margin-right: 3vw
+
+
+.skillsButtonNavbar 
+    justify-content: left
+    margin: 0px 10vw 50px 10vw
+    padding-bottom: 7.5px
+    border-bottom: 1px solid rgba($white, 0.25)
+
+
+.timelineChanger, .timelineSorter 
+    background-color: transparent
+    border: none
+    cursor: pointer
+    transition: 0.2s ease
+    font-size: 1.2em
+    font-weight: 600
+    font-family: 'Work Sans', sans-serif
+    text-align: center
+    z-index: 2
+
+
+.timelineChanger 
+    color: $greyb
+    margin: 0px 1vw 0px 1vw
+
+
+.timelineIcons 
+    width: 23px
+    height: 23px
+
+
+.timelineOptionsText 
+    margin: 0px 0px 0px 10px
+
+
+.timelineSorter 
+    font-size: 0.75em
+    height: auto
+    color: rgba($greyb, 0.5)
+    margin: 0px 0px 0px auto
+    padding-top: 10px
+
+
+.timelineChanger:hover, .timelineSorter:hover 
+    scale: 1.05
+    color: white
+
+
+.timelineChangerOrange 
+    color: $orange!important
+
+
+.timelineSpecificContent 
+    width: 100%
+    opacity: 1.0
+    transition: 0.5s ease
+
+
+.eachContentImageWrapper 
+    margin: auto 0px auto 0px
+    cursor: pointer
+
+
+.eachContentImageWrapper:hover > .eachContentImage 
+    rotate: -1deg
+    border-color: $orangeHover
+
+
+.eachContentImageWrapper:hover > .eachContentImage2 
+    rotate: 7deg
+    border-color: $orangeHover
+
+
+.clicked 
+    width: 100vw!important
+    transform: scale(0.8)!important
+    scale: 0.8!important
+    box-shadow: 0px 0px 0px 100vw rgba($black, 0.7)!important
+    rotate: 0deg!important
+    top: 0!important
+    right: 0%!important
+    bottom: 0!important
+    left: 0%!important
+    margin: auto!important
+    transform-origin: 50% 50%
+    pointer-events: none
+    position: fixed!important
+    opacity: 1.0!important
+
+
+.clicked-end 
+    pointer-events: all
+    opacity: 0!important
+
+
+.eachContentImage, .eachContentImage2 
+    width: 20vw
+    height: auto
+    top: auto
+    bottom: auto
+    object-fit: contain
+    border: 3px solid $orange
+    margin: -75px 0px auto 0px
+    rotate: -2.5deg
+    transition: 0.25s ease
+    position: absolute
+
+
+.eachContentImage2 
+    position: absolute
+    rotate: 5deg
+    filter: brightness(0.3)
+    z-index: -1
+
+
+.closeAnywhere 
+    position: fixed
+    color: rgba($white, 0.7)
+    background: rgba($black, 0.3)
+    border-radius: 20px
+    width: fit-content
+    bottom: 0
+    left: 0
+    right: 0
+    margin: 0px auto 50px auto
+    padding: 20px
+    text-align: center
+    font-style: italic
+    z-index: 101
+
+
+.eachContentLeftWrapper 
+    display: flex
+    flex-direction: row
+    justify-content: center
+
+
+.eachContent 
+    transition: 0.75s ease
+    padding: 6vh 0px 15vh 0px
+
+
+.eachContentDecorationDot 
+    width: 5px
+    min-width: 5px
+    height: auto
+    aspect-ratio: 1
+    rotate: 45deg
+    background-color: transparent
+    border: 5px solid $orange
+    border: 0px transparent
+    margin: auto 75px auto 75px
+    border-radius: 50%
+
+
+.eachContentHeader, .eachContentYear, .eachContentDescription 
+    color: white
+    text-align: left
+    padding: 10px 0px 10px 0px
+    white-space: pre-line
+    line-height: 1.6em
+    overflow-wrap: break-word!important
+    max-width: 50vw
+    font-family: $globalFont1
+    font-weight: 400
+    word-spacing: 1.5px
+
+
+.eachContentHeader, .eachContentYear 
+    color: $orange
+    font-weight: 800
+    word-spacing: 2.5px
+
+
+.eachContentTextReverse 
+    text-align: right
+
+
+.eachContentYear 
+    width: 20vw
+    min-width: 20vw
+    margin: -250px 0px 0px 0px
+    text-align: center
+    padding: 0
+    display: flex
+    flex-direction: column
+    justify-content: center
+    margin-top: -250px
+
+
+.fadeOutImage 
+    animation: 0.8s fadeOutImageKeyframe ease
+
+
+.fadeOutTimelineContent 
+    animation: 0.4s fadeOut ease
+
+
+.disablePointer 
+    pointer-events: none
+
+
+.endSpace 
+    height: 12.5vh

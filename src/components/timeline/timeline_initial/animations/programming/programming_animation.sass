@@ -1,0 +1,56 @@
+@use "../../../../../indexCompile" as *
+
+.timelineProgrammingAnimWrapper 
+    position: absolute
+    height: 100vh
+    width: 100vw
+    text-align: center
+    display: flex
+    flex-direction: column
+    justify-content: space-evenly
+    animation-fill-mode: both!important
+    background-color: rgba($black, 0)
+    animation: programmingBGAnimAppear 2.2s linear
+    z-index: 2
+
+
+.timelineProgrammingAnimTextWrapper 
+    white-space: nowrap
+    animation-fill-mode: both!important
+    width: fit-content
+    height: fit-content
+    position: absolute
+
+
+.timelineProgrammingAnimText 
+    /* color: var(--orangeTranslucent) */
+    font-size: 1.6em
+    margin: 5px 0px 5px 0px
+    animation-fill-mode: both!important
+    border-radius: 20px
+    padding: 10px
+    font-family:'Courier New', Courier, monospace
+
+
+.programmingAnimLeftRight1 
+    animation: 2s programmingAnimLeftRight1 linear
+
+
+.programmingAnimLeftRight2 
+    animation: 2s programmingAnimLeftRight2 linear
+
+
+.programmingAnimLeftRight3 
+    animation: 2s programmingAnimLeftRight3 linear
+
+
+.programmingAnimRightLeft1 
+    animation: 2s programmingAnimRightLeft1 linear
+
+
+.programmingAnimRightLeft2 
+    animation: 2s programmingAnimRightLeft2 linear
+
+
+.programmingAnimRightLeft3 
+    animation: 2s programmingAnimRightLeft3 linear
