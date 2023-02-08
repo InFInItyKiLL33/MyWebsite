@@ -15,7 +15,7 @@ function About(props: AboutMeProps): JSX.Element {
     return(
         <div className="App AboutApp">
 
-            <img src={backgroundImage} className="backgroundImage backgroundImageHome" alt="background wing view"></img>
+            <img src={backgroundImage} className="backgroundImage backgroundImageAbout" alt="background wing view"></img>
 
             <Navbar page={props.page} />
 

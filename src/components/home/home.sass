@@ -4,6 +4,10 @@ body
     max-width: 100%
     /* max-height: 100% */
 
+.navbarBG[data-index="1"]
+    animation: 1.75s fadeIn ease 3s both
+
+
 %fill-screen
     width: 100vw
     height: 100vh
@@ -15,9 +19,10 @@ body
 
 .backgroundImageHome 
     position: absolute!important
-    animation: 1.25s backgroundImageAnimation ease 0s both
     scale: 1.01
 
+.backgroundImageHomeTop
+    animation: 1.75s backgroundImageAnimation ease 3s both
 
 .backgroundImage 
     @extend %fill-screen
@@ -48,7 +53,7 @@ body
     opacity: 0.4
     z-index: -1
     position: absolute
-    animation: 1.5s fadeDelayed2 ease-in, bounceText 3.6s infinite
+    animation: 1.5s fadeDelayed2 ease-in both 3s, bounceText 3.6s infinite
 
 
 .squigglyArrow 
@@ -59,7 +64,7 @@ body
     margin: -250px calc(2.5vw + 145px) 0px 72.5vw
     opacity: 0.4
     z-index: -1
-    animation: 1.5s fadeDelayed2 ease-in, bounceArrow 3.6s infinite
+    animation: 1.5s fadeDelayed2 ease-in both 3s, bounceArrow 3.6s infinite
 
 
 .scrollCheckOutText 
@@ -131,12 +136,13 @@ body
 .contactMeEndPageText 
     color: $orange
     font-weight: 500
+    margin: 2em
 
 
 .contactMeEndPageButton 
-    width: max(200px, 10vw)
+    width: max(150px, 10vw)
     margin: auto
-    height: max(70px, 2.5vh)
+    height: max(60px, 2.5vh)
     font-size: 0.6em
     background-color: $orange
     color: white
@@ -195,3 +201,19 @@ body
     .pastExperience 
         margin-right: calc(((30vw - 450px)*3/5) + 2.5vw + 240px) !important
     
+
+    
+@media (max-width: 768px)
+    .divider
+        width: 72vw!important
+
+    .scrollCheckOutText
+        font-size: 1.5em
+
+    .contactMeEndPageText, .programmingText, .aviationText, .pcText, .designText
+        font-size: 0.6em
+
+
+@media (max-width: 475px) 
+    .appMain
+        padding-top: 0vh!important

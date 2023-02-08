@@ -10,7 +10,7 @@ function ContactMe(props: ContactProps): JSX.Element {
     return(
         <div className="contact">
 
-            <img src={backgroundImage} className="backgroundImage backgroundImageHome" alt="background wing view"></img>
+            <img src={backgroundImage} className="backgroundImage backgroundImageHome backgroundImageContact" alt="background wing view"></img>
 
             <Navbar page={props.page} />
 

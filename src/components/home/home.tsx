@@ -143,7 +143,7 @@ function Home(props: HomeProps): JSX.Element {
     return(
         <div className="homepage">
 
-            <img src={backgroundImage} className="backgroundImage backgroundImageHome" alt="background wing view" style={{"marginTop": img1ScrollOffset, "opacity": img1OpacityOffset}}></img>
+            <img src={backgroundImage} className="backgroundImage backgroundImageHome backgroundImageHomeTop" alt="background wing view" style={{"marginTop": img1ScrollOffset, "opacity": img1OpacityOffset}}></img>
 
             <Navbar page={props.page} />
 
