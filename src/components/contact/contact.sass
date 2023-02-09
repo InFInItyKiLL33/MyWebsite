@@ -24,7 +24,7 @@
     transform: translateY(-3px)
 
 
-.contactContent:hover > .contactDesc > .contactDescText 
+.contactContent:hover > .contactDesc > .contactDescText
     transform: translateY(-3px)
 
 
@@ -132,14 +132,16 @@
 
 
 .contactInfoEach:hover > div > .contactInfoEachText 
-    transform: translateY(-0.6vh)
+    @media (min-width: 650px)
+        transform: translateY(-0.6vh)
 
 
 .contactInfoEach:hover > div > .contactLinks 
-    margin-top: 2.25vh
-    opacity: 1
-    transition-delay: 0s, 0.1s
-    transition-property: margin, opacity
+    @media (min-width: 650px)
+        margin-top: 2.25vh
+        opacity: 1
+        transition-delay: 0s, 0.1s
+        transition-property: margin, opacity
 
 
 .contactInfoEach1 
@@ -185,3 +187,75 @@
     font-size: 0.6em
     text-decoration: underline
 
+
+@media (max-width: 900px)
+    .contactContent
+        width: 70%
+
+    .contactDesc
+        flex-direction: column
+
+    .meImage
+        width: 35vw!important
+        transform: translateY(10px)
+
+    .meImageWrapper
+        margin-left: auto
+        margin-right: auto
+        margin-bottom: 2vh
+
+    .meImageWrapper::before
+        margin-left: 20vw
+
+    .meImageWrapper::after
+        margin-left: 60vw
+        top: 150%
+
+    .contactDescText
+        padding: 0px 40px 25px 40px
+
+    .contactInfo
+        width: 70%
+        margin-top: 40px
+
+    .contactInfoEach
+        text-align: center
+        justify-content: center
+        display: flex
+        width: calc(100%/3)
+
+    .contactInfoTextWrapper
+        width: fit-content
+
+    .contactDescTextHeader
+        font-size: 1.25em
+
+    .contactDescTextPara
+        font-size: 0.6em
+
+    h6
+        font-size: 0.5em
+
+    .contactInfoEachText
+        font-size: 0.8em
+
+@media (max-width: 650px)
+
+    .contactInfo
+        flex-direction: column
+        height: fit-content
+        width: 70%
+        margin-bottom: 50px
+
+    .contactInfoEach
+        width: 90%
+
+    .contactInfoEach1
+        padding-top: 20px
+
+    .contactInfoEach3
+        padding-bottom: 20px
+
+@media (max-width: 475px)
+    .navbarBG
+        height: 75px
