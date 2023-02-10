@@ -20,9 +20,9 @@ import {TimelineSpecificProps} from "../../../declarations";
 
 function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
 
-    const defaultIcons = [ProgrammingImgDefault, AviationImgDefault, DesignImgDefault, PCBuildingImgDefault];
-    const hoverIcons = [ProgrammingImgHover, AviationImgHover, DesignImgHover, PCBuildingImgHover];
-    const activeIcons = [ProgrammingImgActive, AviationImgActive, DesignImgActive, PCBuildingImgActive];
+    const defaultIcons = [ProgrammingImgDefault, AviationImgDefault, PCBuildingImgDefault, DesignImgDefault];
+    const hoverIcons = [ProgrammingImgHover, AviationImgHover, PCBuildingImgHover, DesignImgHover];
+    const activeIcons = [ProgrammingImgActive, AviationImgActive, PCBuildingImgActive, DesignImgActive];
     const timelineChangerOrange = "timelineChangerOrange";
     const infiniteScrollerInitialAmount = 3;
     const infiniteScrollerLoadAmount = 2;

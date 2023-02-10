@@ -193,7 +193,7 @@ body
     color: $orangeHover
 
 
-@media (min-width: 1666px) 
+@media (min-width: $breakpoint_extra_large) 
     .squigglyArrow 
         margin-right: calc(((30vw - 450px)*3/5) + 2.5vw + 115px) !important
     
@@ -203,7 +203,7 @@ body
     
 
     
-@media (max-width: 768px)
+@media (max-width: $breakpoint_medium)
     .divider
         width: 72vw!important
 
@@ -214,6 +214,6 @@ body
         font-size: 0.6em
 
 
-@media (max-width: 475px) 
+@media (max-width: $breakpoint_small) 
     .appMain
         padding-top: 0vh!important

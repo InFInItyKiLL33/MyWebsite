@@ -3,7 +3,7 @@ import { NavLink as Link } from "react-router-dom";
 import backgroundImage from "../../images/background-main.png"; // this is Image2
 import backgroundImage1 from "../../images/programming2-vignette.png";
 import backgroundImage2 from "../../images/aviation-vignette.png";
-import backgroundImage3 from "../../images/pcbuildingbg4.png";
+import backgroundImage3 from "../../images/pcbuildingbg4.jpg";
 import backgroundImage4 from "../../images/jpmun5-black-vignette.png";
 import backgroundImage5 from "../../images/background-fade.png";
 import squigglyArrow from "../../images/arrow left custom.png";

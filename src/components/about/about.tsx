@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import backgroundImage from "../../images/background.png";
+import backgroundImage from "../../images/background-about.jpg";
 import MyPicture from "../../images/me filter.png";
 import './about.sass';
 import Navbar from "../navbar/navbar";
@@ -19,18 +19,20 @@ function About(props: AboutMeProps): JSX.Element {
 
             <Navbar page={props.page} />
 
-            <div className="aboutpage fade">
+            <div className="aboutpage fade flex-row">
                 
-                <div>
+                <div className="myPictureWrapper">
                     <img src={MyPicture} className="myPicture" alt="my face"></img>
                     <p className="name bolded">Poh Jun Kang</p>
                 </div>
 
-                <AboutMeContentWrappers type="1" />
-
-                <AboutMeContentWrappers type="2" />
-                
-                <AboutMeContentWrappers type="3" />
+                <div className='flex-col'>
+                    <AboutMeContentWrappers type="1" />
+    
+                    <AboutMeContentWrappers type="2" />
+                    
+                    <AboutMeContentWrappers type="3" />
+                </div >
 
             </div>
 

@@ -1,9 +1,9 @@
 import PlaceholderImg from "../../../images/programming_icon_hover.png";
 
-import MyWebsite from "../../../images/mywebsite.png";
+import MyWebsite from "../../../images/mywebsite.jpg";
 import ReactImg from "../../../images/react.png";
-import NHWSSImg1 from "../../../images/nhwss1.png";
-import NHWSSImg2 from "../../../images/nhwss2.png";
+import NHWSSImg1 from "../../../images/nhwss1.jpg";
+import NHWSSImg2 from "../../../images/nhwss2.jpg";
 import NUSImg from "../../../images/nus.png";
 import DiscordStatusImg from "../../../images/statusbot.png";
 import DiscordReminderImg from "../../../images/reminderbot.png";
@@ -14,14 +14,15 @@ import PairProjectSalonImg from "../../../images/pairsalon.png";
 import NTUSCSEAmazonImg from "../../../images/ntuscseamazon.png";
 import InfinityPlannerImg from "../../../images/infinityplanner.png";
 import GoogleCSSIImg from "../../../images/googlecssi.png";
-import ColoursAwardImg from "../../../images/coloursaward.png";
+import ColoursAwardImg from "../../../images/coloursaward.jpg";
 import LeagueMasteryImg from "../../../images/leaguemastery.png";
 import XCinematicImg from "../../../images/x-cinematic.png";
 
-import MyPCImg from "../../../images/mypc.png";
+import MyPCImg from "../../../images/mypc.jpg";
+import dec2022ChangesImg from "../../../images/dec2022changes.jpg";
 import PC8Img1 from "../../../images/PC8_1.jpg";
 import PC8Img2 from "../../../images/PC8_2.jpg";
-import StrixWhite3080Img from "../../../images/pcbuildingbg3.png";
+import StrixWhite3080Img from "../../../images/pcbuildingbg3content.jpg";
 import G14Img1 from "../../../images/g142022.jpg";
 import G14Img2 from "../../../images/g14_2022.jpg";
 import PC7Img from "../../../images/tuf3080ti.jpg";
@@ -35,43 +36,43 @@ import MiningImg from "../../../images/mining.jpg";
 import PC5600XImg from "../../../images/5600x.png";
 import Ventus3080Img from "../../../images/ventus3080.jpg";
 import MSISHX2080TiImg from "../../../images/2080tishx.jpg";
-import Z390FImg from "../../../images/z390f.png";
+import Z390FImg from "../../../images/z390f.jpg";
 import SM15Img from "../../../images/sm15.jpg";
 import UltracoreImg from "../../../images/ultracore.jpg";
-import ToshibaGenericImg2 from "../../../images/toshibageneric1.png";
-import ToshibaGenericImg1 from "../../../images/toshibageneric2.png";
-import ToshibaPortegeM800Img from "../../../images/toshibaportegem800.png";
+import ToshibaGenericImg2 from "../../../images/toshibageneric1.jpg";
+import ToshibaGenericImg1 from "../../../images/toshibageneric2.jpg";
+import ToshibaPortegeM800Img from "../../../images/toshibaportegem800.jpg";
 
-import AviationStatsImg from "../../../images/aviationstats.png";
+import AviationStatsImg from "../../../images/aviationstats.jpg";
 import Airshow2022Img from "../../../images/airshow2022.jpg";
-import Aviation2021SummaryImg from "../../../images/2021summary.png";
+import Aviation2021SummaryImg from "../../../images/2021summary.jpg";
 import MSFSImg from "../../../images/msfs.png";
 import Airshow2020Img from "../../../images/airshow2020.jpg";
-import SYFCImg from "../../../images/syfc.png";
+import SYFCImg from "../../../images/syfc.jpg";
 import VATSIMImg from "../../../images/vatsim.png";
 import XPlaneWSSSImg from "../../../images/xplanewsss.jpg";
-import FlightExperienceImg from  "../../../images/flightexperience.png";
+import FlightExperienceImg from  "../../../images/flightexperience.jpg";
 import XPlane11Img from  "../../../images/xp11.png";
 
 import AlphaLogoImg from "../../../images/alpha.png";
 import WebsiteV1Img from "../../../images/websitev1.png";
-import IndiaC19Img from "../../../images/indiacovid19.png";
-import TeachersDayImg from "../../../images/teachersday.png";
+import IndiaC19Img from "../../../images/indiacovid19.jpg";
+import TeachersDayImg from "../../../images/teachersday.jpg";
 import CryphexImg from "../../../images/cryphex.png";
 import JPMUNImg1 from "../../../images/jpmun1.png";
 import JPMUNImg2 from "../../../images/jpmun2.png";
 import JPMUNImg3 from "../../../images/jpmun3.png";
 import JPMUNImg4 from "../../../images/jpmun4.png";
-import JPMUNImg5 from "../../../images/jpmun5.png";
-import JPMUNImg6 from "../../../images/jpmun6.png";
-import JPMUNImg7 from "../../../images/jpmun7.png";
-import JPMUNImg8 from "../../../images/jpmun8.png";
-import JPJCInfocommImg1 from "../../../images/jpjcinfocomm1.png";
-import JPJCInfocommImg2 from "../../../images/jpjcinfocomm2.png";
-import JPJCInfocommImg3 from "../../../images/jpjcinfocomm3.png";
-import JPJCInfocommImg4 from "../../../images/jpjcinfocomm4.png";
-import JPJCInfocommImg5 from "../../../images/jpjcinfocomm5.png";
-import PWImg1 from "../../../images/pw1.png";
+import JPMUNImg5 from "../../../images/jpmun5.jpg";
+import JPMUNImg6 from "../../../images/jpmun6.jpg";
+import JPMUNImg7 from "../../../images/jpmun7.jpg";
+import JPMUNImg8 from "../../../images/jpmun8.jpg";
+import JPJCInfocommImg1 from "../../../images/jpjcinfocomm1.jpg";
+import JPJCInfocommImg2 from "../../../images/jpjcinfocomm2.jpg";
+import JPJCInfocommImg3 from "../../../images/jpjcinfocomm3.jpg";
+import JPJCInfocommImg4 from "../../../images/jpjcinfocomm4.jpg";
+import JPJCInfocommImg5 from "../../../images/jpjcinfocomm5.jpg";
+import PWImg1 from "../../../images/pw1.jpg";
 import PWImg2 from "../../../images/pw2.png";
 import PWImg3 from "../../../images/pw3.png";
 import PWImg4 from "../../../images/pw4.png";
@@ -82,7 +83,9 @@ import PWImg8 from "../../../images/pw8.png";
 import PWImg9 from "../../../images/pw9.png";
 import PWImg10 from "../../../images/pw10.png";
 import PWImg11 from "../../../images/pw11.png";
-import JPJCStemDayImg from "../../../images/stemday.png";
+import JPJCStemDayImg from "../../../images/stemday.jpg";
+import youtubeImg from "../../../images/youtubeChannel.jpg";
+import infocommZHSSImg from "../../../images/infocommZHSS.jpg";
 
 export let displayableContent: any = {
     0: [
@@ -393,7 +396,7 @@ export let displayableContent: any = {
             \nKeyboard: Razer Hunstman Mecury White
             \nOther Peripherals: Thrustmaster T16000M, Thrustmaster TFRP, Logitech G Pro Flight Throttle, Logitech G29 Steering Wheel, Blue Yeti Whiteout`
         ], [
-            PlaceholderImg, 
+            dec2022ChangesImg, 
             "Personal PC CPU & RAM Changes",
             "Dec 2022",
             `At the end of 2022, during the Black Friday period, I saw a 5800X3D deal for around $400, which was out of the world as even used ones cost high $400. I took the chance to buy it and sell my 5900X, to recoup my 5900X losses and gain a large improvement on gaming performance due to the 3D Cache. Although the productivity performance dropped, I wasn't really using much of it anyways. At the same time, I bought a copy of the RAM I already had, but in white form to replace it just for the looks. It's the Corsair White RGB Pro SL, with it's specs at 32GB (2x16) 3600MHz CL18.`
@@ -430,8 +433,10 @@ export let displayableContent: any = {
         ], [
             [G14Img2, G14Img1], 
             "New Laptop",
-            "Aug 2022",
-            `G14 2022`
+            "Sep 2022",
+            `As my time in the army got more free, especially after I finished my final outfield, I could focus more on my projects and interests. As such, to invest in a better laptop for my remaining time there, and university, I got this laptop for a great deal that I'd been eyeing for a few months as I absolutely loved the look of it.
+            \n
+            It was the G14 2022, which the exact variant I chosed had a Ryzen 9 6900HS, Radeon RX 6700S, 16GB DDR5 4800MHz RAM and 1TB Gen 4 SSD. It was quite a game changing upgrade from my previous laptop, since I even skipped one entire generation of RAM. Although it's subpar compared to my desktop, it still offered great performance for whatever I wanted to do.`
         ], [
             PC7Img, 
             "7th PC Build",
@@ -697,14 +702,14 @@ export let displayableContent: any = {
             "2017", 
             `This was my first time touching programming really. I didn't actually pre-design the app but did it on the go which was honestly a bad idea as it just looks plain bad. However, it was my stepping stone in learning that I should design things first before coding it out as on the fly designs usually turn out bad.`
         ], [
-            PlaceholderImg, 
+            youtubeImg, 
             "Various YouTube Videos", 
             "2016 - 2019", 
             `During this time, I was trying out YouTube to see if it was a thing for me. Although at the end of the day I stopped, I realise now how much of a potential I could have if I took more seriously. Most of my designs here are just very bubbly and/or childish for things like thumnails and mid video animations.
             \n
             As much as I want to continue YouTube, I've decided that getting popular wasn't really my thing. Although financially it may be viable, the other things that come with it might not be for me, as I prefer a life without much fame and more privacy. Besides, it felt like more of a joke than a serious potential at the time.`
         ], [
-            PlaceholderImg, 
+            infocommZHSSImg, 
             "Secondary School Co-Curricular Activity (CCA) - Infocomm", 
             "2015 - 2018", 
             `The four years here in secondary school was how I got into designing. My CCA here was quite enriching as I had a trainer that taught a lot of Photoshop. Although back then I didn't realise the usefulness of it, I managed to learn a lot of things from it that I still use today whenever I design with Photoshop or other Adobe products like Illustrator and After Effects. Many of the designs here are lost as my personal thumbdrive back then, with all my designs, went lost when it was used to distribute files to other CCA members.

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './contact.sass';
 import { ContactProps } from '../../declarations';
-import backgroundImage from "../../images/background-main.png";
+import backgroundImage from "../../images/background-contact.jpg";
 import meImage from "../../images/me 2.png";
 import Navbar from "../navbar/navbar";
 
@@ -10,7 +10,7 @@ function ContactMe(props: ContactProps): JSX.Element {
     return(
         <div className="contact">
 
-            <img src={backgroundImage} className="backgroundImage backgroundImageHome backgroundImageContact" alt="background wing view"></img>
+            <img src={backgroundImage} className="backgroundImage backgroundImageContact" alt="background wing view"></img>
 
             <Navbar page={props.page} />
 

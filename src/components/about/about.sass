@@ -10,21 +10,23 @@ body
     animation: 1.5s backgroundImageAnimation ease
 
 
+.myPictureWrapper
+    position: fixed
+    width: fit-content
+    z-index: 2
+
+
 .myPicture 
     width: 20vw
-    height: 20vw
-    min-height: 200px
     min-width: 200px
     max-width: 400px
-    max-height: 400px
-    position: fixed
+    aspect-ratio: 1
     margin: calc(250px - 12.5vw) 0px 0px 7.5vw
     border-radius: 50%
     background-color: rgba($grey1, 0.5)
     border: 5px solid $orange
     box-shadow: 5vw 2vw 0px 0px rgba($grey3, 0.4)
     transition: 0.25s ease
-    z-index: 2
     animation: 1s slideIn ease, 2s fade ease
 
 
@@ -103,46 +105,85 @@ body
 
 
 .name 
-    margin-top: 500px
-    position: fixed
-    width: 400px
+    margin-top: 50px
+    width: 20vw
+    min-width: 200px
+    max-width: 400px
     margin-left: 7.5vw
-    font-size: 2em
+    font-size: 1.75em
     color: $orange
     transition: 0.25s ease
     animation: 1s slideIn ease, 2s fade ease
+    
+
+.boxShadowSlideInInitial 
+    box-shadow: 60px 40px 1px 1px rgba($grey3, 0.4)!important
 
 
-/* Mobile Responsive */
-@media (max-width: 1000px) 
+.boxShadowSlideIn 
+    animation: 2s boxShadowSlideIn ease
+    animation-fill-mode: forwards
+
+
+/* Responsive */
+@media (max-width: $breakpoint_large) 
+
+    .aboutpage
+        display: flex!important
+        flex-direction: column!important
+        margin-top: 0px!important
+
+
+    .myPictureWrapper
+        position: relative!important
+        margin-top: 10px!important
+
+
 
     .myPicture 
-        margin-top: 125px
+        margin: 0px 25vw 0px 25vw!important
         box-shadow: 50px 20px 0px 0px rgba($grey3, 0.4)
+        width: 50vw
+        min-width: 100px
+        max-width: 800px
+        box-shadow: 4vw 4vw 0px 0px rgba($grey3, 0.4)
     
 
     .myPicture:hover 
-        box-shadow: 50px 30px 0px 0px rgba($grey3, 0.4)
+        box-shadow: 4vw calc(4vw + 10px) 0px 0px rgba($grey3, 0.4)!important
+
+
+    .name
+        margin: 7.5vw auto 15vw auto!important
+        font-size: 1.6em
     
         
-    .aboutMeText 
-        font-size: 2em
-        margin-left: calc(15vw + 325px + 37.5vw - 150px - 75px)
+    .aboutMeText
+        font-size: 1.3em
+        margin: 0px 70px 0px 70px!important
     
+        
+    .aboutMeText::after
+        width: 10vw
 
-    .aboutMeText::after 
-        width: 0px
+
+    .aboutMeTexts
+        padding-right: 0px!important
+        font-size: 0.75em
     
         
     .aboutMeTextsWrappers 
-        margin-left: calc(15vw + 300px)
-        width: calc(75vw - 400px)
-        padding: 50px
-    
+        margin: 0px min(12.5vw, 60px) 100px min(12.5vw, 60px)!important
+        width: calc(100vw - 50px - min(25vw, 120px))!important
+        padding: 25px
+        box-shadow: 20px 20px 1px 1px rgba($grey3, 0.4)
 
 
-/* High Res Responsive */
-@media (min-width: 2000px) 
+    .aboutMeTextsWrappers:hover 
+        box-shadow: 20px 30px 1px 1px rgba($grey3, 0.4)!important
+
+
+@media (min-width: $breakpoint_ultra_large) 
 
     .aboutMeText 
         margin-left: calc(15vw + 550px)
@@ -161,16 +202,6 @@ body
         margin-left: calc(15vw + 500px)
         width: calc(75vw - 600px)
     
-
-
-.boxShadowSlideInInitial 
-    box-shadow: 60px 40px 1px 1px rgba($grey3, 0.4)!important
-
-
-.boxShadowSlideIn 
-    animation: 2s boxShadowSlideIn ease
-    animation-fill-mode: forwards
-
 
 @keyframes boxShadowSlideIn 
     0%
