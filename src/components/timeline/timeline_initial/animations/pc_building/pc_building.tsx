@@ -61,10 +61,24 @@ function TimelinePCBuildingAnimation() {
     useEffect(() => {
         window.scrollTo(0, 0);
         const rescaleTimeout = setTimeout(() => {
-            setMarginValues(["-710.4px", "0px"]);
-            setRescaleValue((rescaleValue: number): number => {return rescaleValue * 5.12});
+            let marginXOffset = -20;
+            let marginYOffset = 0;
+            let scaleValue = 1;
+            if (window.innerWidth / window.innerHeight < 16 / 9) {
+                scaleValue = (window.innerHeight * 5.12) / 1440
+                marginXOffset -= ((((16 / 9) - (window.innerWidth / window.innerHeight)) / 2) / (16 / 9)) * 500 * scaleValue;
+                marginYOffset = window.innerHeight * -710.4 / 1440;
+            } else {
+                scaleValue = (window.innerWidth * 5.12) / 2560;
+                marginYOffset = (window.innerWidth * -710.4 / 2560) + (((((16 / 9) - (window.innerWidth / window.innerHeight)) / 2) / (16 / 9)) * 281.25 * scaleValue);
+            };
+            setMarginValues([
+                String(marginYOffset) + "px",
+                String(marginXOffset) + "px"
+            ]);
+            setRescaleValue(scaleValue);
             clearTimeout(rescaleTimeout);
-        }, 3050)
+        }, 3250)
     }, []);
 
     return (

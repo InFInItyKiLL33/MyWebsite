@@ -17,6 +17,8 @@ function Home(props: HomeProps): JSX.Element {
 
     const [pointerEvents, setPointerEvents] = useState([0, 0, 0, 0]);
 
+    const [scollPromptOpacity, setScollPromptOpacity] = useState(1);
+
     const [scrollText, setScrollText] = useState("Scroll");
     const [scrollTextOpacity, setScrollTextOpacity] = useState(0);
 
@@ -35,6 +37,12 @@ function Home(props: HomeProps): JSX.Element {
     useEffect(() => {
     
         function scrollEffect(): void {
+
+            if (document.documentElement.scrollTop >= 1) {
+                setScollPromptOpacity(0);
+            } else {
+                setScollPromptOpacity(1);
+            };
 
             // Scroll to view my interests and skillsets... animated text
             if (document.documentElement.scrollTop >= window.innerHeight * 0.6 && document.documentElement.scrollTop < window.innerHeight * 1.7) {
@@ -152,6 +160,11 @@ function Home(props: HomeProps): JSX.Element {
 
             <div className="appMain">
                 <BasicInfo />
+            </div>
+
+            <div className="flex-col scrollPrompt" style={{"filter": "brightness(" + scollPromptOpacity + ")"}}>
+                <p>Scroll</p>
+                <p className="scrollPromptArrow">⌄</p>
             </div>
 
             <p className="scrollCheckOutText" style={{"opacity": scrollTextOpacity}}>{scrollText}</p>

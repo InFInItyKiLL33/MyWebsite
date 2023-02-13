@@ -1,8 +1,9 @@
 @use "../../indexCompile" as * 
 
+
 body 
     max-width: 100%
-    /* max-height: 100% */
+
 
 .navbarBG[data-index="1"]
     animation: 1.75s fadeIn ease 3s both
@@ -11,6 +12,7 @@ body
 %fill-screen
     width: 100vw
     height: 100vh
+
 
 .homepage 
     margin: 0
@@ -21,8 +23,10 @@ body
     position: absolute!important
     scale: 1.01
 
+
 .backgroundImageHomeTop
     animation: 1.75s backgroundImageAnimation ease 3s both
+
 
 .backgroundImage 
     @extend %fill-screen
@@ -53,7 +57,7 @@ body
     opacity: 0.4
     z-index: -1
     position: absolute
-    animation: 1.5s fadeDelayed2 ease-in both 3s, bounceText 3.6s infinite
+    animation: 1.5s fadeDelayed2 ease-in both 3s, 3.6s bounceText infinite
 
 
 .squigglyArrow 
@@ -64,7 +68,28 @@ body
     margin: -250px calc(2.5vw + 145px) 0px 72.5vw
     opacity: 0.4
     z-index: -1
-    animation: 1.5s fadeDelayed2 ease-in both 3s, bounceArrow 3.6s infinite
+    animation: 1.5s fadeDelayed2 ease-in both 3s, 3.6s bounceArrow infinite
+
+
+.scrollPrompt 
+    position: absolute
+    color: $white
+    bottom: 0
+    left: 0
+    right: 0
+    transition: 0.5s ease
+    animation: 1.5s fadeDelayed2 ease-in both 3s, 3.6s bounceScrollPrompt infinite
+    pointer-events: none
+
+
+.scrollPrompt > p
+    margin: 0
+    font-weight: 600
+    font-size: 0.75em
+
+
+.scrollPromptArrow
+    padding-bottom: 20px
 
 
 .scrollCheckOutText 
@@ -90,30 +115,33 @@ body
     position: absolute
     width: 100vw
     height: 90vh
-    /* pointer-events: none */
-    /* background: linear-gradient(#f06f4f00 0%, #f06f4f88 30%, #f06f4f88 70%, #f06f4f00 100%) */
+
 
 %showcaseImageTexts
     z-index: 12
 
+
+@mixin showcaseImageTextGroup($mt, $extendZIndex)
+    margin: $mt 0px 0px 0px
+    @if $extendZIndex
+        @extend %showcaseImageTexts
+
+
 .showcaseImageText1 
-    margin: 190vh 0px 0px 0px
+    @include showcaseImageTextGroup(190vh, false)
 
 
 .showcaseImageText2 
-    margin: 275vh 0px 0px 0px
     height: 75vh
-    @extend %showcaseImageTexts
+    @include showcaseImageTextGroup(275vh, true)
 
 
 .showcaseImageText3 
-    margin: 340vh 0px 0px 0px
-    @extend %showcaseImageTexts
+    @include showcaseImageTextGroup(340vh, true)
 
 
 .showcaseImageText4 
-    margin: 415vh 0px 0px 0px
-    @extend %showcaseImageTexts
+    @include showcaseImageTextGroup(415vh, true)
 
 
 .backgroundImage3 
@@ -194,6 +222,7 @@ body
 
 
 @media (min-width: $breakpoint_extra_large) 
+    
     .squigglyArrow 
         margin-right: calc(((30vw - 450px)*3/5) + 2.5vw + 115px) !important
     
@@ -204,16 +233,21 @@ body
 
     
 @media (max-width: $breakpoint_medium)
+
     .divider
         width: 72vw!important
 
+
     .scrollCheckOutText
         font-size: 1.5em
+
 
     .contactMeEndPageText, .programmingText, .aviationText, .pcText, .designText
         font-size: 0.6em
 
 
+
 @media (max-width: $breakpoint_small) 
+
     .appMain
         padding-top: 0vh!important

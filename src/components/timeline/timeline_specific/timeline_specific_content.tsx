@@ -34,7 +34,6 @@ function TimelineSpecificContent(props: TimelineSpecificContentProps): JSX.Eleme
     const eachContentOriginalDesc = props.content[props.typeValue][props.index][3];
 
     const [clickStatus, changeClickStatus] = useState("");
-    const [clickAnywhereStatus, changeClickAnywhereStatus] = useState("fadeInitialOpacity");
     const [thisContentHeader, changeThisContentHeader] = useState("");
     const [thisContentDesc, changeThisContentDesc] = useState("");
     const [slideEffect, changeSlideEffect] = useState("");
@@ -130,7 +129,7 @@ function TimelineSpecificContent(props: TimelineSpecificContentProps): JSX.Eleme
         try {
             if (!props.carouselState) {
                 changeClickStatus("unclick");
-                changeClickAnywhereStatus("fadeInitialOpacity");
+                props.changeClickAnywhereStatus("fadeInitialOpacity");
             };
         } catch (error) {
         }
@@ -139,22 +138,16 @@ function TimelineSpecificContent(props: TimelineSpecificContentProps): JSX.Eleme
 
     function handleClick(event: any): void {
 
-        changeClickStatus("clicked");
-        changeClickAnywhereStatus("fadeInitialOpacity disable-pointer");
-
+        changeClickStatus("clicked disable-pointer");
         if (typeof(props.content[props.typeValue][props.index][0]) === "string") {
             props.setCarouselCurrentImages([props.content[props.typeValue][props.index][0]]);
         } else {
             props.setCarouselCurrentImages(props.content[props.typeValue][props.index][0]);
         };
-
+        props.showHideCarousel();
         setTimeout(() => {
             changeClickStatus("clicked clicked-end");
-            changeClickAnywhereStatus("fadeOutInitialOpacity");
-        }, 250);
-        setTimeout(() => {
-            props.showHideCarousel();
-        }, 125);
+        }, 300)
     };
 
     return(
@@ -162,12 +155,12 @@ function TimelineSpecificContent(props: TimelineSpecificContentProps): JSX.Eleme
             <div className={"arrowDecoration arrowDecoration" + reverseRow === "flex-reverse-row" ? "R" : "L"}></div>
             <div className="eachContentLeftWrapper">
                 <div className="eachContentImageWrapper flex-row" onMouseOver={(event) => setHoveringStatus(0.05)} onMouseLeave={(event) => setHoveringStatus(0)}>
-                    <img src={currentThumbnail} className={"eachContentImage " + clickStatus + reverseImage} onClick={handleClick} alt={props.content[props.typeValue][props.index][1]} style={{"scale": String(imageScale + hoveringStatus)}}></img>
+                    <img src={currentThumbnail} className={"eachContentImage " + clickStatus + reverseImage + (props.carouselState ? " disable-pointer" : "")} onClick={handleClick} alt={props.content[props.typeValue][props.index][1]} style={{"scale": String(imageScale + hoveringStatus)}}></img>
                     <img src={currentThumbnail} className={"eachContentImage2" + reverseImage} alt={props.content[props.typeValue][props.index][1]} style={{"scale": String(secondaryImageScale + hoveringStatus)}}></img>
                 </div>
                 <p className="eachContentYear bolded">{props.content[props.typeValue][props.index][2]}</p>
             </div>
-            <p className={"closeAnywhere " + clickAnywhereStatus}>Click on the image to close</p>
+            <p className={"closeAnywhere " + props.clickAnywhereStatus}>Click on the image to close</p>
             <div className="eachContentDecorationDot"></div>
             <div className="eachContentRightWrapper">
                 <h1 className={"eachContentHeader" + reverseText}>{thisContentHeader}</h1>

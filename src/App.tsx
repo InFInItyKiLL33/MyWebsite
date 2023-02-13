@@ -1,12 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.sass';
-import './components/keyframes.sass';
 import Home from "./components/home/home";
 import Timeline from "./components/timeline/timeline";
 import About from "./components/about/about";
 import ContactMe from "./components/contact/contact";
-import "./components/material_icons.css"
 
 function App() {
     return (

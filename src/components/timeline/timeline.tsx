@@ -47,7 +47,7 @@ function Timeline(props: TimelineProps): JSX.Element {
     };
 
     useEffect(function() {
-        // changeTransitionAnimationState(3); // For testing
+        // changeTransitionAnimationState(4); // For testing
     }, []);
 
     return(

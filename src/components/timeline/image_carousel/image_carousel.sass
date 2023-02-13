@@ -3,8 +3,10 @@
 .imageCarousel 
     position: fixed
     z-index: 10
-    transition: 0.2s ease
+    transition: .3s ease
     opacity: 0
+    cursor: pointer
+    top: 0
 
 
 .carouselButtons[data-pages="1"] 
@@ -13,7 +15,6 @@
 
 
 .carouselButtons 
-    margin: -295px 0px 0px 0px
     height: 100vh
     background-color: rgba($black, 0.7)
 
@@ -42,16 +43,16 @@
     transition: 0.15s ease
     background-color: rgba($black, 0.6)
     margin-top: -100vh
-    height: 70vh
-    padding: 15vh 0px 15vh 0px
+    height: 100vh
     z-index: 9
 
 
 .carouselImagesDirectWrapper 
+    height: fit-content
     width: 75vw
     max-width: 75vw
     max-height: 70vh
-    margin: 0vh 12.5vw 0px 12.5vw
+    margin: auto 12.5vw auto 12.5vw
 
 
 .carouselImages 
@@ -59,6 +60,11 @@
     max-height: 70vh
     position: sticky
     z-index: 10
-    object-fit: contain
+    object-fit: cover
     border: 3px solid $orange
 
+
+@media (max-width: $breakpoint_large)
+
+    .carouselButtons
+        font-size: 0.6em

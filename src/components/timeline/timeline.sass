@@ -10,8 +10,8 @@
 
 .skillsButtonNavbar 
     justify-content: left
-    margin: 25px 10vw 50px 10vw
-    padding-bottom: 7.5px
+    margin: 25px 10vw 25px 10vw
+    padding-bottom: 20px
     border-bottom: 1px solid rgba($white, 0.25)
 
 
@@ -19,7 +19,7 @@
     background-color: transparent
     border: none
     cursor: pointer
-    transition: 0.2s ease
+    transition: 0.2s ease!important
     font-size: 1.2em
     font-weight: 600
     font-family: 'Work Sans', sans-serif
@@ -38,7 +38,7 @@
 
 
 .timelineOptionsText 
-    margin: 0px 0px 0px 10px
+    margin: auto 0px auto 10px
 
 
 .timelineSorter 
@@ -80,38 +80,25 @@
 
 
 .clicked 
-    width: 100vw!important
-    transform: scale(0.8)!important
-    scale: 0.8!important
-    box-shadow: 0px 0px 0px 100vw rgba($black, 0.7)!important
-    rotate: 0deg!important
-    top: 0!important
-    right: 0%!important
-    bottom: 0!important
-    left: 0%!important
-    margin: auto!important
-    transform-origin: 50% 50%
     pointer-events: none
-    position: fixed!important
-    opacity: 1.0!important
 
 
 .clicked-end 
     pointer-events: all
-    opacity: 0!important
+    transition: 1s!important
 
 
 .eachContentImage, .eachContentImage2 
     width: 20vw
     height: auto
-    top: auto
-    bottom: auto
     object-fit: contain
     border: 3px solid $orange
     margin: -75px 0px auto 0px
     rotate: -2.5deg
-    transition: 0.25s ease
+    transition: .25s ease
     position: absolute
+    max-width: 75vw
+    max-height: 70vh
 
 
 .eachContentImage2 
@@ -135,6 +122,7 @@
     text-align: center
     font-style: italic
     z-index: 101
+    transition: 0.2s ease
 
 
 .eachContentLeftWrapper 
@@ -210,3 +198,168 @@
 
 .endSpace 
     height: 12.5vh
+
+
+@media (max-width: $breakpoint_larger)
+
+    .timelineOptionsText
+        font-size: 0.75em
+
+
+    .eachContentHeader
+        font-size: 1.5em
+
+
+    .eachContentDescription
+        font-size: 0.75em
+
+    
+    .eachContentDecorationDot
+        margin: auto 40px auto 40px
+
+
+    .eachContentYear, .eachContentImage
+        width: 25vw
+
+
+@media (max-width: $breakpoint_large)
+
+    .linksText
+        font-size: 0.75em
+
+
+    .skillsButtonNavbar 
+        margin-bottom: -1px
+        padding-bottom: 10px
+
+
+    .timelineChanger
+        margin: 0
+
+
+    .timelineIcons
+        width: 16px
+        height: 16px
+        margin: auto
+
+
+    .timelineSorter
+        font-size: 0.5em
+        margin-left: auto
+        padding: 10px 0 0 0
+        flex-direction: column!important
+
+
+    .eachContentHeader
+        font-size: 1em
+
+
+    .eachContentDescription
+        font-size: 0.6em
+
+
+    .timelineOptionsText
+        text-align: center
+        font-size: 0.5em
+        margin: auto 0 auto 1vw
+
+
+    .timeline
+        margin: 0
+
+
+    .eachContent
+        flex-direction: column!important
+        padding: 0vh
+
+
+    .eachContent::before
+        content: ""
+        width: 100%
+        height: 1px
+        background-color: rgba($orange, 0.5)
+        border-radius: 50%
+        margin-bottom: 15vh
+
+
+    .eachContent::after
+        content: ""
+        width: 100%
+        height: 1px
+        background-color: rgba($orange, 0.5)
+        border-radius: 50%
+        margin-top: 5vh
+
+
+    .eachContentLeftWrapper
+        flex-direction: column-reverse!important
+        height: 25vh
+        margin-top: 10vh
+
+
+    .eachContentImage, .eachContentImage2
+        width: auto
+        max-width: 75vw
+        min-width: 20vw
+        height: 20vh
+
+    
+    .eachContentImage
+        position: relative
+
+
+    .eachContentYear
+        width: 100%
+        max-width: 100%
+        margin-top: -15vh
+
+    
+    .eachContentImageWrapper
+        width: 80w
+        justify-content: center
+
+
+    .eachContentHeader
+        text-align: center
+        margin-top: -5vh
+
+
+    .eachContentHeader, .eachContentYear, .eachContentDescription
+        max-width: 100%
+
+
+    .eachContentDescription
+        text-align: left
+
+
+    .closeAnywhere
+        font-size: 0.6em
+
+
+@media (max-width: $breakpoint_small)
+
+    .timelineOptionsText
+        display: none
+
+
+    .eachContentImage, .eachContentImage2
+        max-width: 60vw
+        min-width: 0vw
+        height: 12.5vh
+
+    
+    .eachContentDescription, .eachContentHeader
+        padding-left: 5vw
+        padding-right: 5vw
+
+
+    .eachContentHeader
+        margin-top: -10vh
+
+
+    .eachContentYear
+        margin-top: -10vh
+
+
+    .eachContent::before
+        margin-bottom: 7.5vh

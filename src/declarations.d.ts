@@ -93,6 +93,8 @@ export declare interface TimelineSpecificContentProps {
     showHideCarousel: any;
     carouselState: boolean;
     setCarouselCurrentImages: any;
+    clickAnywhereStatus: any;
+    changeClickAnywhereStatus: any;
 }
 
 export declare interface TypeButtonsProps {

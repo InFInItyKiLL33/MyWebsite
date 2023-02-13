@@ -1,9 +1,58 @@
+@use "fonts" as *
+@use "colours" as *
+@use "classes" as *
+
 /* This file will contain all keyframes for the entire website for reuse */
-@use "../indexCompile" as *
 
 /* . */
 /* Global */
 /* . */
+
+@keyframes fade 
+    0%
+        opacity: 0.0
+    100%
+        opacity: 1.0
+
+
+@keyframes fadeOut 
+  0%
+      opacity: 1.0
+  100%
+      opacity: 0.0
+
+
+@keyframes fadeDelayed 
+    0% 
+        opacity: 0.0
+    50% 
+        opacity: 0.0
+    100% 
+        opacity: 1.0
+
+
+@keyframes fadeDelayed2 
+    0% 
+        opacity: 0.0
+    50% 
+        opacity: 0.0
+    100% 
+        opacity: 0.4
+
+
+@keyframes slideIn 
+    0% 
+        transform: translate(-10px, 0px)
+    100% 
+        transform: translate(0px, 0px)
+
+
+@keyframes slideInR 
+    0% 
+        transform: translate(10px, 0px)
+    100% 
+        transform: translate(0px, 0px)
+
 
 @keyframes fadeIn 
 
@@ -165,6 +214,56 @@
     100% 
         margin-top: -35px
         
+
+@keyframes bounceScrollPrompt
+
+    0% 
+        margin-bottom: 0px
+        
+    5% 
+        margin-bottom: 3px
+        
+    10% 
+        margin-bottom: 5px
+        
+    15% 
+        margin-bottom: 3px
+        
+    20% 
+        margin-bottom: 0px
+        
+    25% 
+        margin-bottom: 0px
+        
+    30% 
+        margin-bottom: 3px
+        
+    35% 
+        margin-bottom: 5px
+        
+    40% 
+        margin-bottom: 3px
+        
+    45% 
+        margin-bottom: 0px
+        
+    50% 
+        margin-bottom: 0px
+        
+    55% 
+        margin-bottom: 3px
+        
+    60% 
+        margin-bottom: 5px
+        
+    65% 
+        margin-bottom: 3px
+        
+    70% 
+        margin-bottom: 0px
+        
+    100% 
+        margin-bottom: 0px
 
     
 
@@ -428,7 +527,7 @@
 @keyframes designContentWrapperAnimation 
 
     0% 
-        transform: translateX(2vw) 
+        transform: translateX(53px) 
         opacity: 0.0
         
     40% 
@@ -438,7 +537,7 @@
         opacity: 1.0
         
     100% 
-        transform: translateX(6vw) 
+        transform: translateX(160px) 
         opacity: 0.0
         
 
@@ -464,10 +563,10 @@
 @keyframes designContentTextAnimation2 
 
     0% 
-        transform: translateX(-8.5vw)
+        transform: translateX(-218px)
         
     100% 
-        transform: translateX(-4.5vw)
+        transform: translateX(-115px)
         
 
     
@@ -664,15 +763,15 @@
 @keyframes col1box1Part1 
 
     0% 
-        width: 0vw 
-        height: 0vw 
-        margin-left: calc(max(10px, 1.5vw) + max(15px, 1.25vw)) 
-        margin-top: max(15px, 1.25vw)
+        width: 0px
+        height: 0px 
+        margin-left: 70px
+        margin-top: 32px
         
     100% 
-        width: max(30px, 2.5vw) 
-        height: max(30px, 2.5vw) 
-        margin-left: max(10px, 1.5vw) 
+        width: 64px
+        height: 64px
+        margin-left: 38px
         margin-top: 0px
         
 
@@ -681,16 +780,16 @@
 @keyframes col1box1Part2 
 
     0% 
-        width: max(30px, 2.5vw) 
-        height: max(30px, 2.5vw) 
-        margin-left: max(10px, 1.5vw) 
+        width: 64px
+        height: 64px
+        margin-left: 38px
         margin-top: 0px
         
     100% 
-        width: 0vw 
-        height: 0vw 
-        margin-left: calc(max(10px, 1.5vw) + max(15px, 1.25vw)) 
-        margin-top: max(15px, 1.25vw)
+        width: 0px 
+        height: 0px 
+        margin-left: 70px
+        margin-top: 32px
         
 
     
@@ -698,17 +797,17 @@
 @keyframes col1box2Part1 
 
     0% 
-        width: 1vw 
+        width: 26px 
         opacity: 0 
-        margin-left: calc(max(calc(10px + 11.5vw), 13vw) + max(10px, 1.5vw))
+        margin-left: 371px
         
     30% 
         opacity: 1
         
     100% 
-        width: 12.5vw 
+        width: 320px
         opacity: 1 
-        margin-left: max(calc(10px), 1.5vw)
+        margin-left: 38px
         
 
     
@@ -716,17 +815,17 @@
 @keyframes col1box2Part2 
 
     0% 
-        width: 12.5vw 
+        width: 320px
         opacity: 1 
-        margin-left: max(calc(10px), 1.5vw)
+        margin-left: 38px
         
     30% 
         opacity: 1
         
     100% 
-        width: 1vw 
+        width: 26px 
         opacity: 0 
-        margin-left: calc(max(calc(10px + 11.5vw), 13vw) + max(10px, 1.5vw))
+        margin-left: 371px
         
 
     
@@ -734,17 +833,17 @@
 @keyframes col1box3Part1 
 
     0% 
-        height: 0vh 
+        height: 0px
         opacity: 0 
-        margin-top: calc(21vh + max(10px, 1.5vw))
+        margin-top: 324px
         
     30% 
         opacity: 1
         
     100% 
-        height: 5vh 
+        height: 72px
         opacity: 1 
-        margin-top: calc(16vh + max(10px, 1.5vw))
+        margin-top: 252px
         
 
     
@@ -752,17 +851,17 @@
 @keyframes col1box3Part2 
 
     0% 
-        height: 5vh 
+        height: 72px
         opacity: 1 
-        margin-top: calc(16vh + max(10px, 1.5vw))
+        margin-top: 252px
         
     70% 
         opacity: 1
         
     100% 
-        height: 0vh 
+        height: 0px 
         opacity: 0 
-        margin-top: calc(21vh + max(10px, 1.5vw))
+        margin-top: 324px
         
 
     
@@ -770,12 +869,12 @@
 @keyframes col1box4Part1 
 
     0% 
-        height: 50vh 
-        margin-top: 0vh
+        height: 720px
+        margin-top: 0px
         
     100% 
-        height: 42.5vh 
-        margin-top: 7.5vh
+        height: 612px
+        margin-top: 108px
         
 
     
@@ -783,12 +882,12 @@
 @keyframes col1box4Part2 
 
     0% 
-        height: 42.5vh 
-        margin-top: 7.5vh
+        height: 612px
+        margin-top: 108px
         
     100% 
-        height: 50vh 
-        margin-top: 0vh
+        height: 720px
+        margin-top: 0px
         
 
     
@@ -797,11 +896,11 @@
 
     0% 
         width: 0% 
-        height: 0vh
+        height: 0px
         
     100% 
         width: 50% 
-        height: 10vh
+        height: 144px
         
 
     
@@ -810,11 +909,11 @@
 
     0% 
         width: 50% 
-        height: 10vh
+        height: 144px
         
     100% 
         width: 0% 
-        height: 0vh
+        height: 0px
         
 
     
@@ -823,15 +922,15 @@
 
     0% 
         width: 0% 
-        height: 0vh 
+        height: 0px
         margin-left: 83% 
-        margin-top: 13vh
+        margin-top: 187px
         
     100% 
         width: 25% 
-        height: 10vh 
+        height: 144px 
         margin-left: 8% 
-        margin-top: 3vh
+        margin-top: 43px
         
 
     
@@ -840,15 +939,15 @@
 
     0% 
         width: 25%
-        height: 10vh 
+        height: 144px 
         margin-left: 8% 
-        margin-top: 3vh
+        margin-top: 43px
         
     100% 
         width: 0% 
-        height: 0vh 
+        height: 0px
         margin-left: 83% 
-        margin-top: 13vh
+        margin-top: 187px
         
 
     
@@ -857,12 +956,12 @@
 
     0% 
         width: 0% 
-        height: 0vh 
+        height: 0px 
         margin-left: 90%
         
     100% 
         width: 80% 
-        height: 7vh 
+        height: 101px 
         margin-left: 10%
         
 
@@ -872,12 +971,12 @@
 
     0% 
         width: 80% 
-        height: 7vh 
+        height: 101px 
         margin-left: 10%
         
     100% 
         width: 0% 
-        height: 0vh 
+        height: 0px
         margin-left: 90%
         
 
@@ -887,13 +986,13 @@
 
     0% 
         width: 0% 
-        height: 0vh 
-        margin-top: 6vh
+        height: 0px 
+        margin-top: 86px
         
     100% 
         width: 30% 
-        height: 3vh 
-        margin-top: 3vh
+        height: 43px 
+        margin-top: 43px
         
 
     
@@ -902,13 +1001,13 @@
 
     0% 
         width: 30% 
-        height: 3vh 
-        margin-top: 3vh
+        height: 43px 
+        margin-top: 43px
         
     100% 
         width: 0% 
-        height: 0vh 
-        margin-top: 6vh
+        height: 0px 
+        margin-top: 86px
         
 
     
@@ -923,7 +1022,7 @@
         opacity: 1.0
         
     100% 
-        width: max(30px, 15vw)
+        width: 384px
         
 
     
@@ -931,15 +1030,15 @@
 @keyframes col2box1Part2 
 
     0% 
-        width: max(30px, 15vw) 
-        margin-left: 3.5vw
+        width: 384px 
+        margin-left: 90px
         
     20% 
         opacity: 1.0
         
     100% 
         width: 40px 
-        margin-left: calc(18.5vw - 40px) 
+        margin-left: 434px 
         opacity: 0.0
         
 
@@ -951,15 +1050,15 @@
         width: 40px 
         opacity: 0.0 
         height: 40px 
-        margin-left: calc(18.5vw - 40px)
+        margin-left: 434px
         
     60% 
         opacity: 1.0
         
     100% 
-        width: max(30px, 14.5vw) 
-        height: max(20px, 15vh) 
-        margin-left: 4vw
+        width: 371px 
+        height: 216px 
+        margin-left: 102px
         
 
     
@@ -967,9 +1066,9 @@
 @keyframes col2box2Part2 
 
     0% 
-        width: max(30px, 14.5vw) 
-        margin-left: 4vw 
-        height: max(20px, 15vh)
+        width: 371px 
+        margin-left: 102px 
+        height: 216px
         
     20% 
         opacity: 1.0
@@ -978,7 +1077,7 @@
         height: 40px 
         opacity: 0.0 
         width: 40px 
-        margin-left: calc(18.5vw - 40px)
+        margin-left: 434px
         
 
     
@@ -993,7 +1092,7 @@
         opacity: 1.0
         
     100% 
-        width: max(30px, 13vw)
+        width: 333px
         
 
     
@@ -1001,15 +1100,15 @@
 @keyframes col2box4Part2 
 
     0% 
-        width: max(30px, 13vw) 
-        margin-left: 5.5vw
+        width: 333px 
+        margin-left: 141px
         
     20% 
         opacity: 1.0
         
     100% 
         width: 40px 
-        margin-left: calc(18.5vw - 40px)
+        margin-left: 434px
         opacity: 0.0
         
 
@@ -1245,17 +1344,17 @@
 @keyframes cornerDesignTopLeft1 
 
     0% 
-        height: 120vh
-        transform: translate(10px, 120vh)
+        height: 1728px
+        transform: translate(10px, 1728px)
         opacity: 0.0
         
     20% 
-        height: 120vh
+        height: 1728px
         transform: translate(20px, -100px)
         opacity: 0.6
         
     80% 
-        height: 120vh
+        height: 1728px
         opacity: 0.6
         
     100% 
@@ -1269,17 +1368,17 @@
 @keyframes cornerDesignTopLeft2 
 
     0% 
-        height: 70vh
-        transform: translate(43px, 120vh)
+        height: 1008px
+        transform: translate(43px, 1728px)
         opacity: 0.0
         
     20% 
-        height: 70vh
+        height: 1008px
         transform: translate(53px, 300px)
         opacity: 0.4
         
     80% 
-        height: 70vh
+        height: 1008px
         opacity: 0.4
         
     100% 
@@ -1294,21 +1393,21 @@
 
     0% 
         height: 0px
-        transform: translate(80px, -50vh)
+        transform: translate(80px, -720px)
         opacity: 0.0
         
     20% 
-        height: 120vh
+        height: 1728px
         opacity: 0.2
         
     80% 
-        height: 120vh
-        transform: translate(120px, -50vh)
+        height: 1728px
+        transform: translate(120px, -720px)
         opacity: 0.2
         
     100% 
-        height: 120vh
-        transform: translate(130px, 120vh)
+        height: 1728px
+        transform: translate(130px, 1728px)
         opacity: 0.0
         
 
@@ -1321,11 +1420,11 @@
         opacity: 0.0
         
     20% 
-        width: 52.5vw
+        width: 1344px
         opacity: 0.6
         
     80% 
-        width: calc(52.5vw + 50px)
+        width: 1394px
         opacity: 0.6
         
     100% 
@@ -1342,7 +1441,7 @@
         opacity: 0.0
         
     25% 
-        width: 42.5vw
+        width: 1088px
         opacity: 0.4
         transform: translate(0px, -10px)
         
@@ -1352,14 +1451,14 @@
         transform: translate(0px, -10px)
         
     75% 
-        width: 52.5vw
+        width: 1394px
         opacity: 0.4
-        transform: translate(37.5px, -10px)
+        transform: translate(960px, -10px)
         
     100% 
         width: 0px
         opacity: 0.0
-        transform: translate(calc(52.5vw + 50px), -10px)
+        transform: translate(1444px, -10px)
         
 
     
@@ -1369,22 +1468,22 @@
     0% 
         width: 0px
         opacity: 0.0
-        transform: translate(130vw, -130px)
+        transform: translate(3328px, -130px)
         
     25% 
         width: 40vw
         opacity: 0.7
-        transform: translate(90vw, -130px)
+        transform: translate(2304px, -130px)
         
     75% 
         width: 40vw
         opacity: 0.7
-        transform: translate(calc(90vw + 40px), -130px)
+        transform: translate(2344px, -130px)
         
     100% 
         width: 0px
         opacity: 0.0
-        transform: translate(130vw, -130px)
+        transform: translate(3328px, -130px)
         
 
     
@@ -1394,22 +1493,22 @@
     0% 
         width: 0px
         opacity: 0.0
-        transform: translate(115vw, -110px)
+        transform: translate(2944px, -110px)
         
     25% 
         width: 40vw
         opacity: 0.7
-        transform: translate(75vw, -110px)
+        transform: translate(1920px, -110px)
         
     75% 
         width: 40vw
         opacity: 0.7
-        transform: translate(calc(75vw + 40px), -110px)
+        transform: translate(1960px, -110px)
         
     100% 
         width: 0px
         opacity: 0.0
-        transform: translate(115vw, -110px)
+        transform: translate(2944px, -110px)
         
 
     
@@ -1419,22 +1518,22 @@
     0% 
         width: 0px
         opacity: 0.0
-        transform: translate(120vw, 80vh)
+        transform: translate(3072px, 1152px)
         
     25% 
         width: 40vw
         opacity: 0.7
-        transform: translate(82.5vw, 80vh)
+        transform: translate(2112px, 1152px)
         
     75% 
         width: 40vw
         opacity: 0.7
-        transform: translate(calc(82.5vw + 40px), 80vh)
+        transform: translate(2152px, 1152px)
         
     100% 
         width: 0px
         opacity: 0.0
-        transform: translate(120vw, 80vh)
+        transform: translate(3072px, 1152px)
         
 
     

@@ -9,6 +9,7 @@ function ImageCarousel(props: ImageCarouselProps): JSX.Element {
     // const [pageNumber, setPageNumber] = useState(0); // 0 based index
     const [translateCarousel, setTranslateCarousel] = useState(50 * (pageCount - 1)); // 0 based index
     const [fadeInOpacity, setFadeInOpacity] = useState(0);
+    const [clickable, setClickable] = useState(0);
     const translateCarouselEnds = [-50 * (pageCount - 1), 50 * (pageCount - 1)];
 
     let imageContent = Array(pageCount).fill("").map((eachImage: any, eachIndex: number): JSX.Element => {
@@ -33,9 +34,8 @@ function ImageCarousel(props: ImageCarouselProps): JSX.Element {
 
     function clickExit() {
         setFadeInOpacity(0);
-        setTimeout(() => {
-            props.exitHandler();
-        }, 50)
+        setClickable(0);
+        props.exitHandler();
     };
 
     useEffect(() => {
@@ -43,11 +43,15 @@ function ImageCarousel(props: ImageCarouselProps): JSX.Element {
         let fadeIn = setTimeout(() => {
             setFadeInOpacity(1);
             clearTimeout(fadeIn);
-        }, 1)
+        }, 10);
+        let clickableInitial = setTimeout(() => {
+            setClickable(1);
+            clearTimeout(clickableInitial);
+        }, 300);
     }, []);
 
     return(
-        <div className="imageCarousel" style={{"opacity": String(fadeInOpacity)}}>
+        <div className="imageCarousel" style={{"opacity": String(fadeInOpacity), "pointerEvents": clickable ? "initial" : "none"}}>
 
             <div className='carouselButtons flex-row flex-jc-center' data-pages={pageCount}>
                 <button className="carouselPreviousButton" onMouseUp={leftRight}>&lt;</button> 

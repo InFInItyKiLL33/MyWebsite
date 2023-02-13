@@ -33,6 +33,7 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
     const [lastLoadedIndex, setLastLoadedIndex] = useState(infiniteScrollerInitialAmount - infiniteScrollerLoadAmount);
     const [carouselState, setCarouselState] = useState(false); // false for hide, true for show
     const [carouselCurrentImages, setCarouselCurrentImages] = useState([]);
+    const [clickAnywhereStatus, changeClickAnywhereStatus] = useState("fadeInitialOpacity");
     
     // set whichever type value is active to the right image
     let tempTypeImage = [...defaultIcons];
@@ -85,7 +86,10 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
     };
 
     function showHideCarousel() {
-        setCarouselState((prevState: boolean): boolean => {return !prevState})
+        changeClickAnywhereStatus(carouselState ? "fadeInitialOpacity" : "fadeOutInitialOpacity");
+        setTimeout(() => {
+            setCarouselState((prevState: boolean): boolean => {return !prevState})
+        }, carouselState ? 300 : 0);
     };
 
     useEffect(() => {
@@ -118,7 +122,7 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
             <div className={"skillsButtonNavbar flex-row fade " + fadeoutContent}>
                 {skillButtons}
                 <button onClick={changeSortDirection} className="timelineChanger timelineSorter slideInInitial slideIn flex-row">
-                    <span className="material-symbols-outlined m-auto">Sort by -</span>
+                    <span className="material-symbols-outlined m-auto">Sort by:&nbsp;</span>
                     <i className="center m-auto">
                         {sortText}
                     </i>
@@ -133,7 +137,7 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
 
                 {
                     carouselState ? 
-                        <ImageCarousel images={carouselCurrentImages} exitHandler={showHideCarousel} />
+                        <ImageCarousel images={carouselCurrentImages} exitHandler={showHideCarousel}/>
                     :
                         <></>
                 }
@@ -141,7 +145,7 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
                 <div className="timelineSpecificContent">
                     {   
                         loadedContent.length > 0 && loadedContent.map((thisContent: string, i: number): JSX.Element => (
-                            <TimelineSpecificContent typeValue={props.typeVal} content={content} index={i} key={i} showHideCarousel={showHideCarousel} carouselState={carouselState} setCarouselCurrentImages={setCarouselCurrentImages}/>
+                            <TimelineSpecificContent typeValue={props.typeVal} content={content} index={i} key={i} showHideCarousel={showHideCarousel} carouselState={carouselState} setCarouselCurrentImages={setCarouselCurrentImages} clickAnywhereStatus={clickAnywhereStatus} changeClickAnywhereStatus={changeClickAnywhereStatus} />
                         ))
                         
                     }
