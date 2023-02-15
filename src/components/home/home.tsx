@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink as Link } from "react-router-dom";
 // import backgroundImage from "../../images/background-main.png"; // this is Image2
-import backgroundImage from "public/background-main.png"; // this is Image2
+// import backgroundImage from "/background-main.png"; // this is Image2
 import backgroundImage1 from "../../images/programming2-vignette.png";
 import backgroundImage2 from "../../images/aviation-vignette.png";
 import backgroundImage3 from "../../images/pcbuildingbg4.jpg";
@@ -152,7 +152,7 @@ function Home(props: HomeProps): JSX.Element {
     return(
         <div className="homepage">
 
-            <img src={process.env.PUBLIC_URL + backgroundImage} className="backgroundImage backgroundImageHome backgroundImageHomeTop" alt="background wing view" style={{"marginTop": img1ScrollOffset, "opacity": img1OpacityOffset}}></img>
+            <img src={process.env.PUBLIC_URL + "/background-main.png"} className="backgroundImage backgroundImageHome backgroundImageHomeTop" alt="background wing view" style={{"marginTop": img1ScrollOffset, "opacity": img1OpacityOffset}}></img>
 
             <Navbar page={props.page} />
 
