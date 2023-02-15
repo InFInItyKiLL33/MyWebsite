@@ -48,19 +48,28 @@ function TimelineInitialTypes(props: TimelineInitialTypesProps): JSX.Element {
 
     useEffect(() => {
         
-        const urlParams = new URLSearchParams(window.location.search);
+        const urlParams = window.location.href.split("?");
+        const params: any = {};
+        urlParams.forEach((curr: string): void => {
+            const thisParam: any = curr.split("=");
+            params[thisParam[0]] = thisParam[1];
+        });
 
-        if (urlParams.get('type') === "0" || urlParams.get('type') === "1" || urlParams.get('type') === "2" || urlParams.get('type') === "3") {
-
-            let currType: any = urlParams.get('type');
-            currType = parseInt(currType);
-            setType(currType);
-            
-        } else {
-
-            initialTimelineAnimation(props.index);
-
+        if ("type" in params) {
+            if (params["type"] === "0" || params["type"] === "1" || params["type"] === "2" || params["type"] === "3") {
+    
+                let currType: any = params["type"];
+                currType = parseInt(currType);
+                setType(currType);
+                
+            } else {
+    
+                initialTimelineAnimation(props.index);
+    
+            };
         };
+
+
 
     }, []);
 
