@@ -9,7 +9,7 @@ import ContactMe from "./components/contact/contact";
 function App() {
     return (
         <>
-            <Router>
+            <Router basename={process.env.PUBLIC_URL}>
                 <Routes>
                     <Route path="/" element={<Home page="1" />} />
                     <Route path="/timeline" element={<Timeline page="2" />} />
