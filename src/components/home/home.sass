@@ -55,7 +55,6 @@ body
     margin: -35px calc(2.5vw + 270px) 0px 0px
     color: $white
     opacity: 0.4
-    z-index: -1
     position: absolute
     animation: 1.5s fadeDelayed2 ease-in both 3s, 3.6s bounceText infinite
 
@@ -67,7 +66,6 @@ body
     right: 0
     margin: -250px calc(2.5vw + 145px) 0px 72.5vw
     opacity: 0.4
-    z-index: -1
     animation: 1.5s fadeDelayed2 ease-in both 3s, 3.6s bounceArrow infinite
 
 
@@ -128,7 +126,7 @@ body
 
 
 .showcaseImageText1 
-    @include showcaseImageTextGroup(190vh, false)
+    @include showcaseImageTextGroup(190vh, true)
 
 
 .showcaseImageText2 

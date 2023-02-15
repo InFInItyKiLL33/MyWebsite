@@ -24,7 +24,7 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
     const hoverIcons = [ProgrammingImgHover, AviationImgHover, PCBuildingImgHover, DesignImgHover];
     const activeIcons = [ProgrammingImgActive, AviationImgActive, PCBuildingImgActive, DesignImgActive];
     const timelineChangerOrange = "timelineChangerOrange";
-    const infiniteScrollerInitialAmount = 3;
+    const infiniteScrollerInitialAmount = 5;
     const infiniteScrollerLoadAmount = 2;
     const [content, setContent] = useState(displayableContent); // For each content, the order is as such: 0 -> image file, 1 -> Title, 2 -> Date, 3 -> Description, 4 (Optional) -> Hyperlink
     const [fadeoutContent, status] = useState("active");
@@ -119,7 +119,7 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
 
         <>
             {/* <button onClick={changeType} className={"timelineChanger fade bolded " + fadeoutContent}>{type}</button> */}
-            <div className={"skillsButtonNavbar flex-row fade " + fadeoutContent}>
+            <div className={"skillsButtonNavbar flex-row " + fadeoutContent}>
                 {skillButtons}
                 <button onClick={changeSortDirection} className="timelineChanger timelineSorter slideInInitial slideIn flex-row">
                     <span className="material-symbols-outlined m-auto">Sort by:&nbsp;</span>
