@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink as Link } from "react-router-dom";
-import backgroundImage from "../../images/background-main.png"; // this is Image2
+// import backgroundImage from "../../images/background-main.png"; // this is Image2
+import backgroundImage from "./MyWebsite/src/images/background-main.png"; // this is Image2
 import backgroundImage1 from "../../images/programming2-vignette.png";
 import backgroundImage2 from "../../images/aviation-vignette.png";
 import backgroundImage3 from "../../images/pcbuildingbg4.jpg";
