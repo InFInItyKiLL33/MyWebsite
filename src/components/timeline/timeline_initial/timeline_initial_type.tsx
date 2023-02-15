@@ -61,12 +61,13 @@ function TimelineInitialTypes(props: TimelineInitialTypesProps): JSX.Element {
                 let currType: any = params["type"];
                 currType = parseInt(currType);
                 setType(currType);
-                
-            } else {
-    
-                initialTimelineAnimation(props.index);
-    
+
             };
+                
+        } else {
+
+            initialTimelineAnimation(props.index);
+
         };
 
 
