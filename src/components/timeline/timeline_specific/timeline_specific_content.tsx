@@ -94,12 +94,12 @@ function TimelineSpecificContent(props: TimelineSpecificContentProps): JSX.Eleme
                         let offsetScale = (Math.abs(offset - 0.5 * screenHeight) - maxZoomRegion * 0.5 * screenHeight) / ((0.5 * (zoomRegion - maxZoomRegion)) * screenHeight); // goes from 0.0 to 1.0 based on scroll position inside gradient range
                         setImageScale(zoom - (zoom - defaultZoom) * (offsetScale));
                         setSecondaryImageScale(zoom - (zoom - defaultZoom) * (offsetScale));
-                        setContentOpacity(maxOpacity - (maxOpacity - minOpacity) * (offsetScale));
+                        setContentOpacity(Math.min(0.99, maxOpacity - (maxOpacity - minOpacity) * (offsetScale)));
                     } else {
                         // max zoom region
                         setImageScale(zoom);
                         setSecondaryImageScale(zoom);
-                        setContentOpacity(maxOpacity);
+                        setContentOpacity(Math.min(0.99, maxOpacity)); // 0.99 is dumb cause github has display issues with 1.0
                     };
                 } else {
                     // min zoom region
