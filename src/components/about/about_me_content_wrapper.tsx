@@ -100,6 +100,8 @@ function AboutMeContentWrappers(props: AboutMeContentWrappersProps): JSX.Element
                             <i><OrangeSpan text=" jQuery" /></i> ({getYears(2019)}), 
                             <i><OrangeSpan text=" Wordpress" /></i> ({getYears(2021)}), 
                             <i><OrangeSpan text=" React" /></i> ({getYears(2022)}),
+                            <i><OrangeSpan text=" Typescript" /></i> ({getYears(2022)}),
+                            <i><OrangeSpan text=" SASS" /></i> ({getYears(2022)}),
                             <i><OrangeSpan text=" Flask" /></i> (2),
                             <i><OrangeSpan text=" Django" /></i> (&#60;1),
                             <i><OrangeSpan text=" Git" /> ({getYears(2019)})</i>, and

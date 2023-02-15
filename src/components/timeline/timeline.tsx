@@ -56,14 +56,16 @@ function Timeline(props: TimelineProps): JSX.Element {
 
             <div>
 
-                {renderAnimation()}
+                <div className="timelineAnimationWrapper">
+                    {renderAnimation()}
+                </div>
 
                 {
                     timelineState === 0 ? 
-                        <>
+                        <div className="timelineInitialWrapper">
                             <Navbar page={props.page} />
                             <TimelineInitial types={types} imageOptions={imageOptions} imageInitialOptions={imageInitialOptions} setTypeVal={setTypeVal} changeTimelineState={changeTimelineState} changeImage={changeImageType} changeTransitionAnimationState={changeTransitionAnimationState} /> 
-                        </>
+                        </div>
                     : 
                         <>
                             <img src={imageType} className={"backgroundImage " + fadeoutTimelineImage} alt="timeline bg img" style={{"objectFit": typeVal === 3 ? "contain" : "cover"}}></img>

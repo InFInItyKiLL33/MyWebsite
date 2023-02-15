@@ -93,14 +93,14 @@ export let displayableContent: any = {
             MyWebsite, 
             "My Personal Website (v2)", 
             "Q4 2022 - Q1 2023", 
-            `After coming back from my trip to the USA, I had a lot of free time in the Army before I finish my service. That's where I decided to make use of my newly learnt knowledge on React to rebuild a second version of my website. This website uses ReactJS (with HTML, CSS, and JS), in conjunction with Typescript to be fully built.
+            `After coming back from my trip to the USA, I had a lot of free time in the Army before I finish my service. That's where I decided to make use of my newly learnt knowledge on React to rebuild a second version of my website. This website uses ReactJS, with Typescript and SASS to be fully built.
             \n
             Do note that all graphic design are either self illustrated/coded personally or sourced from open source sites (mainly icons). Trademarked names/logos in design such as 'AMD' and 'GeForce RTX' are used editorially only as this website is not for commercial purposes.`
         ], [
             ReactImg, 
             "Learning React", 
             "Sep 2022", 
-            "During my National Service trip to the USA, I decided to learn React, specifically ReactJS, to further expand my Web Programming knowledge."
+            "During my National Service trip to the USA, I decided to learn React, specifically ReactJS, to further expand my Web Programming knowledge. I also took the time to understand more about frameworks and other complimenting languages for web development like Typescript, Tailwind CSS, and SASS."
         ], [
             NHWSSImg2, 
             "NHWSS Rebuild", 

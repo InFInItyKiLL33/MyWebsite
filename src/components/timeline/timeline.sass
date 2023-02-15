@@ -1,6 +1,14 @@
 /* This file will contain all keyframes for the entire website for reuse */
 @use "../../indexCompile" as *
 
+
+.timelineAnimationWrapper, .timelineInitialWrapper
+    overflow: hidden
+    position: absolute
+    width: 100vw
+    height: 100vh
+
+
 .timeline 
     padding: 0px 10vw 50px 10vw
     justify-content: center
@@ -111,7 +119,7 @@
 
 .closeAnywhere 
     position: fixed
-    color: rgba($white, 0.7)
+    color: $white
     background: rgba($black, 0.3)
     border-radius: 20px
     width: fit-content
@@ -122,7 +130,7 @@
     padding: 20px
     text-align: center
     font-style: italic
-    z-index: 101
+    z-index: 10
     transition: 0.2s ease
 
 

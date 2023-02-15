@@ -54,11 +54,11 @@ function ImageCarousel(props: ImageCarouselProps): JSX.Element {
         <div className="imageCarousel" style={{"opacity": String(fadeInOpacity), "pointerEvents": clickable ? "initial" : "none"}}>
 
             <div className='carouselButtons flex-row flex-jc-center' data-pages={pageCount}>
-                <button className="carouselPreviousButton" onMouseUp={leftRight}>&lt;</button> 
-                <button className="carouselNextButton" onMouseUp={rightLeft}>&gt;</button> 
+                <button className="carouselPreviousButton" onClick={leftRight}>&lt;</button> 
+                <button className="carouselNextButton" onClick={rightLeft}>&gt;</button> 
             </div>
 
-            <div className="carouselImagesWrapper flex-row" style={{"transform": "translateX(" + String(translateCarousel) + "vw)"}} onMouseUp={clickExit}>
+            <div className="carouselImagesWrapper flex-row" style={{"transform": "translateX(" + String(translateCarousel) + "vw)"}} onClick={clickExit}>
                 {imageContent}
             </div>
 

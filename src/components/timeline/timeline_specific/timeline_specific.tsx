@@ -52,16 +52,23 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
         let newType = parseInt(e.target.getAttribute("data-index"));
         props.fadeImage("fadeOutImage");
         status("disablePointer fadeOutTimelineContent");
+
         setTimeout(() => {
-            status("disablePointer fadeInitialOpacity"); // for smoother transition
-            props.setTypeVal(newType);
             props.changeImage(props.imageOptions[newType]);
-            emptyLoadedContent();
-        }, 400);
-        setTimeout(() => {
-            props.fadeImage("active");
-            status("active");
-        }, 800);
+
+            setTimeout(() => {
+                status("disablePointer fadeInitialOpacity"); // for smoother transition
+                props.setTypeVal(newType);
+                emptyLoadedContent();
+
+                setTimeout(() => {
+                    props.fadeImage("active");
+                    status("active");
+                }, 400);
+
+            }, 200);
+            
+        }, 200)
     };
 
     function changeSortDirection(): void { // sort
