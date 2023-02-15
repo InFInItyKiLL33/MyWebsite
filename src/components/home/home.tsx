@@ -80,63 +80,73 @@ function Home(props: HomeProps): JSX.Element {
 
                 case document.documentElement.scrollTop < window.innerHeight * 1:
                     setImg1ScrollOffset(document.documentElement.scrollTop / 3);
-                    setImg1OpacityOffset(1.25 - document.documentElement.scrollTop / (window.innerHeight * 0.6));
+                    setImg1OpacityOffset(Math.min(0.99, 1.25 - document.documentElement.scrollTop / (window.innerHeight * 0.6)));
 
 
                 case document.documentElement.scrollTop >= window.innerHeight * 1.5 && document.documentElement.scrollTop < window.innerHeight * 3:
                     setImg2ScrollOffset(window.innerHeight * 1.4 + Math.min((document.documentElement.scrollTop - window.innerHeight) / 3, window.innerHeight * 2));
                     setImg2OpacityOffset(
-                        document.documentElement.scrollTop > window.innerHeight * 2.5 ? 
-                            1 - (((document.documentElement.scrollTop - window.innerHeight * 2.5) / window.innerHeight) / 0.35)
-                        : 
-                            document.documentElement.scrollTop > window.innerHeight * 1.5 ? 
-                                ((document.documentElement.scrollTop - window.innerHeight * 1.5) / window.innerHeight) / 0.4
+                        Math.min(0.99,
+                            document.documentElement.scrollTop > window.innerHeight * 2.5 ? 
+                                1 - (((document.documentElement.scrollTop - window.innerHeight * 2.5) / window.innerHeight) / 0.35)
                             : 
-                                0
+                                document.documentElement.scrollTop > window.innerHeight * 1.5 ? 
+                                    ((document.documentElement.scrollTop - window.innerHeight * 1.5) / window.innerHeight) / 0.4
+                                : 
+                                    0
+                        )
                     );
 
                 case document.documentElement.scrollTop >= window.innerHeight * 2.5 && document.documentElement.scrollTop < window.innerHeight * 4:
                     setImg3ScrollOffset(window.innerHeight * 2.8 - Math.min((document.documentElement.scrollTop - window.innerHeight * 2.5) / 3, window.innerHeight * 2));
                     setImg3OpacityOffset(
-                        document.documentElement.scrollTop > window.innerHeight * 3.3 ? 
-                            1 - (((document.documentElement.scrollTop - window.innerHeight * 3.3) / window.innerHeight) / 0.35)
-                        : 
-                            document.documentElement.scrollTop > window.innerHeight * 2.5 ? 
-                                ((document.documentElement.scrollTop - window.innerHeight * 2.5) / window.innerHeight) / 0.4
+                        Math.min(0.99,
+                            document.documentElement.scrollTop > window.innerHeight * 3.3 ? 
+                                1 - (((document.documentElement.scrollTop - window.innerHeight * 3.3) / window.innerHeight) / 0.35)
                             : 
-                                0
+                                document.documentElement.scrollTop > window.innerHeight * 2.5 ? 
+                                    ((document.documentElement.scrollTop - window.innerHeight * 2.5) / window.innerHeight) / 0.4
+                                : 
+                                    0
+                        )
                     );
                     
                 case document.documentElement.scrollTop >= window.innerHeight * 3.5 && document.documentElement.scrollTop < window.innerHeight * 5:
                     setImg4ScrollOffset(window.innerHeight * 3.8 - Math.min((document.documentElement.scrollTop - window.innerHeight * 2.5) / 3, window.innerHeight * 2));
                     setImg4OpacityOffset(
-                        document.documentElement.scrollTop > window.innerHeight * 4.1 ? 
-                            1 - (((document.documentElement.scrollTop - window.innerHeight * 4.1) / window.innerHeight) / 0.35)
-                        : 
-                            document.documentElement.scrollTop > window.innerHeight * 3.5 ? 
-                                ((document.documentElement.scrollTop - window.innerHeight * 3.5) / window.innerHeight) / 0.4
+                        Math.min(0.99,
+                            document.documentElement.scrollTop > window.innerHeight * 4.1 ? 
+                                1 - (((document.documentElement.scrollTop - window.innerHeight * 4.1) / window.innerHeight) / 0.35)
                             : 
-                                0
+                                document.documentElement.scrollTop > window.innerHeight * 3.5 ? 
+                                    ((document.documentElement.scrollTop - window.innerHeight * 3.5) / window.innerHeight) / 0.4
+                                : 
+                                    0
+                        )
                     );
                     
                 case document.documentElement.scrollTop >= window.innerHeight * 4.1 && document.documentElement.scrollTop < window.innerHeight * 6:
                     setImg5ScrollOffset(window.innerHeight * 4.7 - Math.min((document.documentElement.scrollTop - window.innerHeight * 2.5) / 3, window.innerHeight * 2));
                     setImg5OpacityOffset(
-                        document.documentElement.scrollTop > window.innerHeight * 5 ? 
-                            1 - (((document.documentElement.scrollTop - window.innerHeight * 5) / window.innerHeight) / 0.35)
-                        : 
-                            document.documentElement.scrollTop > window.innerHeight * 4.1 ? 
-                                ((document.documentElement.scrollTop - window.innerHeight * 4.1) / window.innerHeight) / 0.4
+                        Math.min(0.99,
+                            document.documentElement.scrollTop > window.innerHeight * 5 ? 
+                                1 - (((document.documentElement.scrollTop - window.innerHeight * 5) / window.innerHeight) / 0.35)
                             : 
-                                0
+                                document.documentElement.scrollTop > window.innerHeight * 4.1 ? 
+                                    ((document.documentElement.scrollTop - window.innerHeight * 4.1) / window.innerHeight) / 0.4
+                                : 
+                                    0
+                        )
                     );
                     
                 case document.documentElement.scrollTop >= window.innerHeight * 5.1:
                     setImg6OpacityOffset(
-                        document.documentElement.scrollTop > window.innerHeight * 5.1 ? 
-                            ((document.documentElement.scrollTop - window.innerHeight * 5.1) / window.innerHeight) / 0.2
-                        : 
-                            0
+                        Math.min(0.99,
+                            document.documentElement.scrollTop > window.innerHeight * 5.1 ? 
+                                ((document.documentElement.scrollTop - window.innerHeight * 5.1) / window.innerHeight) / 0.2
+                            : 
+                                0
+                        )
                     );
 
             }
