@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/MyWebsite/static/css/main.358822c8.css",
-    "main.js": "/MyWebsite/static/js/main.1c4cb358.js",
+    "main.js": "/MyWebsite/static/js/main.065ba187.js",
     "static/media/aviationbg2.png": "/MyWebsite/static/media/aviationbg2.0281852de8f72a69a40b.png",
     "static/media/background-fade.png": "/MyWebsite/static/media/background-fade.93ee0cf40cc4bffa532f.png",
     "static/media/aviation-vignette.png": "/MyWebsite/static/media/aviation-vignette.efc44ce92cb9108303bc.png",
@@ -106,10 +106,10 @@
     "index.html": "/MyWebsite/index.html",
     "static/media/aviation.svg": "/MyWebsite/static/media/aviation.f91606aa80e8fdd904b1dbe59caad5ed.svg",
     "main.358822c8.css.map": "/MyWebsite/static/css/main.358822c8.css.map",
-    "main.1c4cb358.js.map": "/MyWebsite/static/js/main.1c4cb358.js.map"
+    "main.065ba187.js.map": "/MyWebsite/static/js/main.065ba187.js.map"
   },
   "entrypoints": [
     "static/css/main.358822c8.css",
-    "static/js/main.1c4cb358.js"
+    "static/js/main.065ba187.js"
   ]
 }
