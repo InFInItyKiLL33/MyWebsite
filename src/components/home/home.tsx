@@ -218,7 +218,7 @@ function Home(props: HomeProps): JSX.Element {
 
             <img src={backgroundImage5} alt="end page image" className="backgroundImage backgroundImageHome backgroundImageLast" style={{"opacity": img6OpacityOffset}}></img>
 
-            <button className="backToTop" onMouseUp={() => {window.scrollTo({top: 0, behavior: 'smooth'})}}>Back to Top</button>
+            <button className="backToTop" onClick={() => {window.scrollTo({top: 0, behavior: 'smooth'})}}>Back to Top</button>
 
         </div>
     )
