@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.9bc37921.css",
-    "main.js": "./static/js/main.22285efb.js",
+    "main.js": "./static/js/main.fab21913.js",
     "static/media/aviationbg2.png": "./static/media/aviationbg2.0281852de8f72a69a40b.png",
     "static/media/background-fade.png": "./static/media/background-fade.93ee0cf40cc4bffa532f.png",
     "static/media/aviation-vignette.png": "./static/media/aviation-vignette.efc44ce92cb9108303bc.png",
@@ -9,7 +9,6 @@
     "static/media/PC8_1.jpg": "./static/media/PC8_1.7920a3bea01ea6b71c76.jpg",
     "static/media/jpmun5-black-vignette.png": "./static/media/jpmun5-black-vignette.72da5c876e37de0b7835.png",
     "static/media/dec2022changes.jpg": "./static/media/dec2022changes.88ac1bf141ae871f40a7.jpg",
-    "static/media/background-main.png": "./static/media/background-main.779119e20015503ad64e.png",
     "static/media/msfs.png": "./static/media/msfs.601d70687ca1db78da7c.png",
     "static/media/me filter.png": "./static/media/me filter.facb4990be6707405ff7.png",
     "static/media/vatsim.png": "./static/media/vatsim.545fe7cd5e0fe801a1b9.png",
@@ -106,10 +105,10 @@
     "index.html": "./index.html",
     "static/media/aviation.svg": "./static/media/aviation.f91606aa80e8fdd904b1dbe59caad5ed.svg",
     "main.9bc37921.css.map": "./static/css/main.9bc37921.css.map",
-    "main.22285efb.js.map": "./static/js/main.22285efb.js.map"
+    "main.fab21913.js.map": "./static/js/main.fab21913.js.map"
   },
   "entrypoints": [
     "static/css/main.9bc37921.css",
-    "static/js/main.22285efb.js"
+    "static/js/main.fab21913.js"
   ]
 }
