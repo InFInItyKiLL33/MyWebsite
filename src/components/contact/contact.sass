@@ -227,6 +227,20 @@
         font-size: 0.8em
 
 
+@media (min-width: $breakpoint_medium + 1)
+    
+    .contactInfoEach:hover > div > .contactInfoEachText 
+        transform: translateY(-0.6vh)
+
+
+    .contactInfoEach:hover > div > .contactLinks 
+        margin-top: 2.25vh
+        opacity: 1
+        transition-delay: 0s, 0.1s
+        transition-property: margin, opacity
+
+
+
 @media (max-width: $breakpoint_medium)
 
     .contactInfo

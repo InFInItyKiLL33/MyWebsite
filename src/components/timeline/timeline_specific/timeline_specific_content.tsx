@@ -23,11 +23,11 @@ function TimelineSpecificContent(props: TimelineSpecificContentProps): JSX.Eleme
     // reverseRow = "flex-row"; // used for testing purposes
     const reverseImage = reverseRow === "flex-reverse-row" ? " eachContentImageReverse" : "";
     const reverseText = reverseRow === "flex-reverse-row" ? " eachContentTextReverse" : "";
-    const zoomRegion = 0.65; // 0.0 - 1.0
-    const maxZoomRegion = 0.5; // 0.0 - zoomRegion
+    const zoomRegion = 0.85; // 0.0 - 1.0
+    const maxZoomRegion = 0.75; // 0.0 - zoomRegion
     const defaultZoom = 1.0; // default scale value
     const zoom = 1.1; // scale value
-    const minOpacity = 0.15;
+    const minOpacity = 0.2;
     const maxOpacity = 1.0;
     const screenHeight = window.innerHeight;
     const eachContentOriginalHeader = props.content[props.typeValue][props.index][1];
