@@ -39,7 +39,7 @@ function TimelineInitial(props: TimelineInitialProps): JSX.Element {
                 <></> 
             :
                 <div className="enableHWA">
-                    <p>Slow hardware detected. For the best experience, do enable Hardware Acceleration</p>
+                    <p>For the best experience, enable Hardware Acceleration and use a Laptop/Desktop</p>
                 </div>
             }
             <div className="timelineInitialWrapper flex-row" data-state-changer={dataStateChanger}>

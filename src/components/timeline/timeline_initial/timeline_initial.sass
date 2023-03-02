@@ -4,7 +4,7 @@
 .enableHWA
     position: absolute
     width: 100vw
-    color: rgba($white, 0.5)
+    color: rgba($white, 0.7)
     z-index: 100
     font-size: 0.6em
     bottom: 0
@@ -79,6 +79,12 @@
 
     .timelineInitialTypesImg
         filter: brightness(0.3) grayscale(0.75) blur(0.5px)!important
+
+
+@media (max-width: $breakpoint_medium)
+
+    .enableHWA
+        font-size: 0.5em
 
 
 @media (max-width: $breakpoint_small)
