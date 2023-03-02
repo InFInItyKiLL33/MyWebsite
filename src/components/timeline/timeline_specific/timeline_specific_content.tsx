@@ -37,15 +37,20 @@ function TimelineSpecificContent(props: TimelineSpecificContentProps): JSX.Eleme
     const [thisContentHeader, changeThisContentHeader] = useState("");
     const [thisContentDesc, changeThisContentDesc] = useState("");
     const [slideEffect, changeSlideEffect] = useState("");
+    // eslint-disable-next-line
     const [imagePos, setImagePos] = useState(0); // this is needed for the effect to work, don't know why
     const [contentOpacity, setContentOpacity] = useState(minOpacity);
     const [imageScale, setImageScale] = useState(defaultZoom);
     const [secondaryImageScale, setSecondaryImageScale] = useState(defaultZoom);
     const [hoveringStatus, setHoveringStatus] = useState(0); // 0 for no hover, any other value for hover additional zoom
     const [rendered, setRendered] = useState(false);
-    const [currentThumbnail, setCurrentThumbnail] = useState(getThumbnail);
-
+    
+    const currentThumbnail = getThumbnail();
     const contentRef = useRef<HTMLInputElement>(null);
+
+    const {
+        carouselState, changeClickAnywhereStatus
+    } = props; // this is just to avoid eslint error for useeffect
 
     function getThumbnail() {
         if (typeof(props.content[props.typeValue][props.index][0]) === "string") {
@@ -121,20 +126,20 @@ function TimelineSpecificContent(props: TimelineSpecificContentProps): JSX.Eleme
 
     useEffect(() => {
         scrollingEffects();
-    }, []);
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
 
         //click event
         try {
-            if (!props.carouselState) {
+            if (!carouselState) {
                 changeClickStatus("unclick");
-                props.changeClickAnywhereStatus("fadeInitialOpacity");
+                changeClickAnywhereStatus("fadeInitialOpacity");
             };
         } catch (error) {
         }
 
-    }, [props.carouselState])
+    }, [carouselState, changeClickAnywhereStatus])
 
     function handleClick(event: any): void {
 

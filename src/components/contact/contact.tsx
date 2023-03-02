@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './contact.sass';
 import { ContactProps } from '../../declarations';
 import backgroundImage from "../../images/background-contact.jpg";
@@ -19,7 +19,7 @@ function ContactMe(props: ContactProps): JSX.Element {
                 <div className="flex-row contactDesc">
 
                     <div className='meImageWrapper flex-row flex-jc-center'>
-                        <img src={meImage} className="meImage" alt="image of myself" style={{"scale": String(0.925), "width": String((350 * window.innerWidth / 2560)) + "px"}}></img>
+                        <img src={meImage} className="meImage" alt="myself" style={{"scale": String(0.925), "width": String((350 * window.innerWidth / 2560)) + "px"}}></img>
                     </div>
 
                     <div className="flex-col contactDescText">

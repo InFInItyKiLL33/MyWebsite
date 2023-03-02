@@ -81,6 +81,7 @@ function Home(props: HomeProps): JSX.Element {
                 case document.documentElement.scrollTop < window.innerHeight * 1:
                     setImg1ScrollOffset(document.documentElement.scrollTop / 3);
                     setImg1OpacityOffset(Math.min(0.99, 1.25 - document.documentElement.scrollTop / (window.innerHeight * 0.6)));
+                    /* falls through */
 
 
                 case document.documentElement.scrollTop >= window.innerHeight * 1.5 && document.documentElement.scrollTop < window.innerHeight * 3:
@@ -96,6 +97,7 @@ function Home(props: HomeProps): JSX.Element {
                                     0
                         )
                     );
+                    /* falls through */
 
                 case document.documentElement.scrollTop >= window.innerHeight * 2.5 && document.documentElement.scrollTop < window.innerHeight * 4:
                     setImg3ScrollOffset(window.innerHeight * 2.8 - Math.min((document.documentElement.scrollTop - window.innerHeight * 2.5) / 3, window.innerHeight * 2));
@@ -110,6 +112,7 @@ function Home(props: HomeProps): JSX.Element {
                                     0
                         )
                     );
+                    /* falls through */
                     
                 case document.documentElement.scrollTop >= window.innerHeight * 3.5 && document.documentElement.scrollTop < window.innerHeight * 5:
                     setImg4ScrollOffset(window.innerHeight * 3.8 - Math.min((document.documentElement.scrollTop - window.innerHeight * 2.5) / 3, window.innerHeight * 2));
@@ -124,6 +127,7 @@ function Home(props: HomeProps): JSX.Element {
                                     0
                         )
                     );
+                    /* falls through */
                     
                 case document.documentElement.scrollTop >= window.innerHeight * 4.1 && document.documentElement.scrollTop < window.innerHeight * 6:
                     setImg5ScrollOffset(window.innerHeight * 4.7 - Math.min((document.documentElement.scrollTop - window.innerHeight * 2.5) / 3, window.innerHeight * 2));
@@ -138,6 +142,7 @@ function Home(props: HomeProps): JSX.Element {
                                     0
                         )
                     );
+                    /* falls through */
                     
                 case document.documentElement.scrollTop >= window.innerHeight * 5.1:
                     setImg6OpacityOffset(
@@ -148,6 +153,7 @@ function Home(props: HomeProps): JSX.Element {
                                 0
                         )
                     );
+                    break;
 
             }
         };
@@ -226,7 +232,7 @@ function Home(props: HomeProps): JSX.Element {
                 </button>
             </div>
 
-            <img src={backgroundImage5} alt="end page image" className="backgroundImage backgroundImageHome backgroundImageLast" style={{"opacity": img6OpacityOffset}}></img>
+            <img src={backgroundImage5} alt="end page bg" className="backgroundImage backgroundImageHome backgroundImageLast" style={{"opacity": img6OpacityOffset}}></img>
 
             <button className="backToTop" onClick={() => {window.scrollTo({top: 0, behavior: 'smooth'})}}>Back to Top</button>
 

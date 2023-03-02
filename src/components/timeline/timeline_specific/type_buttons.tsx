@@ -7,7 +7,7 @@ function TypeButtons(props: TypeButtonsProps): JSX.Element {
     function mouseHoverGeneral(e: any, hover: boolean): void {
         if (e.target.getAttribute("data-index") !== String(props.typeVal)) {
             let tempTypeImage = [...props.typeImage];
-            if (hover == true) {
+            if (hover === true) {
                 tempTypeImage[e.target.getAttribute("data-index")] = props.hoverIcons[e.target.getAttribute("data-index")];
             } else {
                 tempTypeImage[e.target.getAttribute("data-index")] = props.defaultIcons[e.target.getAttribute("data-index")];
@@ -35,7 +35,7 @@ function TypeButtons(props: TypeButtonsProps): JSX.Element {
 
     return(
         <button onClick={changeButtonActive} key={props.index} data-index={props.index} className={"timelineChanger fade slideInInitialR slideInR bolded flex-row " + props.toOrange + " "} onMouseEnter={mouseHoverTypes} onMouseLeave={mouseLeaveTypes}>
-            <img src={props.typeImage[props.index]} className="timelineIcons" data-index={props.index}></img>
+            <img src={props.typeImage[props.index]} className="timelineIcons" data-index={props.index} alt="icons"></img>
             <p className="timelineOptionsText" data-index={props.index}>{props.types[props.index]}</p>
         </button>
     )

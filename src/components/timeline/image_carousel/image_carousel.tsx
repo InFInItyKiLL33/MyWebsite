@@ -15,7 +15,7 @@ function ImageCarousel(props: ImageCarouselProps): JSX.Element {
     let imageContent = Array(pageCount).fill("").map((eachImage: any, eachIndex: number): JSX.Element => {
         return(
             <div className="carouselImagesDirectWrapper flex-row flex-jc-center">
-                <img src={props.images[eachIndex]} alt="carousel image" className="carouselImages"></img>
+                <img src={props.images[eachIndex]} alt="carousel content" className="carouselImages"></img>
             </div>
         );
     })

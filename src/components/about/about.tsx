@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import backgroundImage from "../../images/background-about.jpg";
 import MyPicture from "../../images/me filter.png";
 import './about.sass';

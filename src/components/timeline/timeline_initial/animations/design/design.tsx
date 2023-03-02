@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./design.sass";
 import TimelineDesignAnimationBoxes from "./design_boxes";
 import TimelineDesignSVGText from "./design_svg_text";

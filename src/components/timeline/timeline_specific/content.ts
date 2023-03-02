@@ -1,4 +1,4 @@
-import PlaceholderImg from "../../../images/programming_icon_hover.png";
+// import PlaceholderImg from "../../../images/programming_icon_hover.png";
 
 import MyWebsite from "../../../images/mywebsite.jpg";
 import ReactImg from "../../../images/react.png";

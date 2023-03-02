@@ -120,7 +120,7 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
 
         return () => window.removeEventListener('scroll', loadMoreContent);
 
-    }, [lastLoadedIndex, sortText, props.typeVal]);
+    }, [lastLoadedIndex, sortText, props.typeVal]);  // eslint-disable-line react-hooks/exhaustive-deps
     
     return(
 

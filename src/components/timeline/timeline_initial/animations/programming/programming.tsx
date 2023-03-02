@@ -11,9 +11,10 @@ const TimelineProgrammingAnimation = () => {
     const textSize = Math.max(20, Math.round(40 * ((window.innerWidth * window.innerHeight) / (2160 * 1440))));
     const maxRecursionDepth = 20;
     const [randText, setRandomText] = useState(randomArray(false));
-    const [randStyle, setRandomStyle] = useState(randomStyle());
+    // eslint-disable-next-line
+    const [randStyle, setRandomStyle] = useState(randomStyle()); // required to be a state for the animation to work properly
     const [recursionDepth, setRecursionDepth] = useState(0);
-
+    
     function randomInt(min: number, max: number): number { // inclusive of both min and max
         return Math.floor(Math.random() * (max - min + 1) + min);
     };
@@ -40,12 +41,7 @@ const TimelineProgrammingAnimation = () => {
 
     function randomArray(randomiseChangeSome: boolean): any {
         return Array(textSize).fill("").map((eachPass: string, i: number): string => {
-            switch (randomiseChangeSome) {
-                case true:
-                    return randomInt(0, 25) < 1 ? randText[i] : randomiseExistingText(randText[i]);
-                case false:
-                    return randomiseText();
-            };
+            return randomiseChangeSome ? (randomInt(0, 25) < 1 ? randText[i] : randomiseExistingText(randText[i])) : randomiseText();
         });
     };
 
@@ -71,15 +67,18 @@ const TimelineProgrammingAnimation = () => {
 
 
     useEffect(() => {
+        
         let loopRandomiser = setTimeout(() => {
             // randomises array
             setRecursionDepth((prevRecursionDepth: number): number => (prevRecursionDepth + 1));
-            setRandomText(randomArray(true));
+            setRandomText(randomArray(true)); 
         }, randomInt(0, 125) + 100);
+
         if (recursionDepth > maxRecursionDepth) {
             clearTimeout(loopRandomiser);
         };
-    }, [recursionDepth]);
+        
+    }, [recursionDepth]); // eslint-disable-line react-hooks/exhaustive-deps
 
     return(
         <div className="timelineProgrammingAnimWrapper">

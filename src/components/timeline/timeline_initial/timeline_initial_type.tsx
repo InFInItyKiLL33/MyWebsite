@@ -56,6 +56,7 @@ function TimelineInitialTypes(props: TimelineInitialTypesProps): JSX.Element {
         });
 
         if ("type" in params) {
+            
             if (params["type"] === "0" || params["type"] === "1" || params["type"] === "2" || params["type"] === "3") {
     
                 let currType: any = params["type"];
@@ -70,9 +71,7 @@ function TimelineInitialTypes(props: TimelineInitialTypesProps): JSX.Element {
 
         };
 
-
-
-    }, []);
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     return(
         <button className={"timelineInitialTypes " + props.timelineToFadeOut[props.index] + initialTimelineAnimationDelay} key={props.index} data-index={props.index} data-selection={activeData} onClick={chooseType}>
