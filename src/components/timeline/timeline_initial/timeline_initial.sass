@@ -1,5 +1,16 @@
 @use "../../../indexCompile" as *
 
+
+.enableHWA
+    position: absolute
+    width: 100vw
+    color: rgba($white, 0.5)
+    z-index: 100
+    font-size: 0.6em
+    bottom: 0
+    pointer-events: none
+
+
 .timelineInitialWrapper 
     width: 100vw
     height: 100vh
@@ -73,7 +84,7 @@
 @media (max-width: $breakpoint_small)
 
     .timelineInitialWrapper
-        height: calc(100vh - 70px)
+        height: calc(100vh - 0px)
         margin-top: 0px
 
     

@@ -98,7 +98,7 @@ export let displayableContent: any = {
             Do note that all graphic design are either self illustrated/coded personally or sourced from open source sites (mainly icons). Trademarked names/logos in design such as 'AMD' and 'GeForce RTX' are used editorially only as this website is not for commercial purposes.`
         ], [
             ReactImg, 
-            "Learning React", 
+            "Learning New Frameworks and Language", 
             "Sep 2022", 
             "During my National Service trip to the USA, I decided to learn React, specifically ReactJS, to further expand my Web Programming knowledge. I also took the time to understand more about frameworks and other complimenting languages for web development like Typescript, Tailwind CSS, and SASS."
         ], [
@@ -441,7 +441,7 @@ export let displayableContent: any = {
             PC7Img, 
             "7th PC Build",
             "Aug 2022",
-            `With my PC building knowledge, I had another friend who wanted to build theirselves. I was request to purchase and come up with a build for about $3000. As they didn't care about visuals, I decided to cramp a few budget oriented parts for better overall performance. The build was as such:
+            `With my PC building knowledge, I had another friend who wanted to build themselves. I was request to purchase and come up with a build for about $3000. As they didn't care about visuals, I decided to cramp a few budget oriented parts for better overall performance. The build was as such:
             \n
             \nCase: Lian Li Lancool II Mesh
             \nPSU: Corsair RM1000x 2021 Gold
@@ -452,7 +452,7 @@ export let displayableContent: any = {
             \nCooler: Arctic Liquid Freezer II 360mm
             \nDrives: T-Force Cardea Z44Q 2TB Gen 4
             \n
-            Unfortunately as they were building it theirselves, I have no pictures from them.`
+            Unfortunately as they were building it themselves, I have no pictures from them.`
         ], [
             [PC6Img2, PC6Img1], 
             "6th PC Build",
