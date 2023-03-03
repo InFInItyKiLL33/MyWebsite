@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.a82b3d85.css",
-    "main.js": "./static/js/main.f5f1623f.js",
+    "main.js": "./static/js/main.6d98f1a5.js",
     "static/media/aviationbg2.png": "./static/media/aviationbg2.0281852de8f72a69a40b.png",
     "static/media/background-fade.png": "./static/media/background-fade.93ee0cf40cc4bffa532f.png",
     "static/media/thataquarium2.png": "./static/media/thataquarium2.ee29b10350126225f186.png",
@@ -132,6 +132,7 @@
     "static/media/infinityplanner.png": "./static/media/infinityplanner.f9aa69c94d7174eebdab.png",
     "static/media/infinityplanner3.png": "./static/media/infinityplanner3.f9aa69c94d7174eebdab.png",
     "static/media/cryphex.png": "./static/media/cryphex.1f38b0bac0a85bc725a7.png",
+    "static/media/chatbot6.jpg": "./static/media/chatbot6.a79fdd0b90a0af33e2b7.jpg",
     "static/media/offerntu.jpg": "./static/media/offerntu.5d37332b2e4e7a0305eb.jpg",
     "static/media/infinityplanner2.png": "./static/media/infinityplanner2.99979eb403262108e805.png",
     "static/media/pairsalon5.png": "./static/media/pairsalon5.bf43cc10a68737c3fc82.png",
@@ -145,12 +146,18 @@
     "static/media/thataquarium10.png": "./static/media/thataquarium10.93680222bfd1a8f7e1e3.png",
     "static/media/xp11.png": "./static/media/xp11.6d911411c9547991a227.png",
     "static/media/aviationbg.jpg": "./static/media/aviationbg.d6b4ceec4e6574e18a95.jpg",
+    "static/media/chatbot5.jpg": "./static/media/chatbot5.a8e0d3a6f6bd0aac69cd.jpg",
     "static/media/thataquarium12.png": "./static/media/thataquarium12.ae85f7cd2ad533a58ac8.png",
     "static/media/thataquarium13.png": "./static/media/thataquarium13.edc6a57f52decf8d5649.png",
+    "static/media/chatbot2.jpg": "./static/media/chatbot2.274146dcd41b2fc7de78.jpg",
     "static/media/background-about.jpg": "./static/media/background-about.aa333973e68455950586.jpg",
+    "static/media/chatbot1.jpg": "./static/media/chatbot1.249f8a7a5a43a6f98dd4.jpg",
     "static/media/thataquarium18.png": "./static/media/thataquarium18.4d1859972d0661ee49e3.png",
+    "static/media/chatbot3.jpg": "./static/media/chatbot3.cc8a8d2cbd42dbadd7b3.jpg",
+    "static/media/chatbot4.jpg": "./static/media/chatbot4.c36a741be41f7048b2e7.jpg",
     "static/media/googlecssi2.png": "./static/media/googlecssi2.4c5389aa1fd101095d9f.png",
     "static/media/leaguemastery3.png": "./static/media/leaguemastery3.d260c4c2a8bcf7eeff0c.png",
+    "static/media/chatbot7.jpg": "./static/media/chatbot7.5350d5aef1b04cb450a7.jpg",
     "static/media/caqgameshow5.png": "./static/media/caqgameshow5.20b6bdc9132a48c8327b.png",
     "static/media/mywebsite.jpg": "./static/media/mywebsite.753e0f062a5d138ad70e.jpg",
     "static/media/awards5.jpg": "./static/media/awards5.02cde65a3860c7f57063.jpg",
@@ -182,10 +189,10 @@
     "index.html": "./index.html",
     "static/media/aviation.svg": "./static/media/aviation.f91606aa80e8fdd904b1dbe59caad5ed.svg",
     "main.a82b3d85.css.map": "./static/css/main.a82b3d85.css.map",
-    "main.f5f1623f.js.map": "./static/js/main.f5f1623f.js.map"
+    "main.6d98f1a5.js.map": "./static/js/main.6d98f1a5.js.map"
   },
   "entrypoints": [
     "static/css/main.a82b3d85.css",
-    "static/js/main.f5f1623f.js"
+    "static/js/main.6d98f1a5.js"
   ]
 }
