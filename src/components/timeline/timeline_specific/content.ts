@@ -9,14 +9,58 @@ import DiscordStatusImg from "../../../images/statusbot.png";
 import DiscordReminderImg from "../../../images/reminderbot.png";
 import DiscordTechImg from "../../../images/techbot.png";
 import ThatAquariumImg from "../../../images/thataquarium.png";
+import ThatAquariumImg2 from "../../../images/thataquarium2.png";
+import ThatAquariumImg3 from "../../../images/thataquarium3.png";
+import ThatAquariumImg4 from "../../../images/thataquarium4.png";
+import ThatAquariumImg5 from "../../../images/thataquarium5.png";
+import ThatAquariumImg6 from "../../../images/thataquarium6.png";
+import ThatAquariumImg7 from "../../../images/thataquarium7.png";
+import ThatAquariumImg8 from "../../../images/thataquarium8.png";
+import ThatAquariumImg9 from "../../../images/thataquarium9.png";
+import ThatAquariumImg10 from "../../../images/thataquarium10.png";
+import ThatAquariumImg11 from "../../../images/thataquarium11.png";
+import ThatAquariumImg12 from "../../../images/thataquarium12.png";
+import ThatAquariumImg13 from "../../../images/thataquarium13.png";
+import ThatAquariumImg14 from "../../../images/thataquarium14.png";
+import ThatAquariumImg15 from "../../../images/thataquarium15.png";
+import ThatAquariumImg16 from "../../../images/thataquarium16.png";
+import ThatAquariumImg17 from "../../../images/thataquarium17.png";
+import ThatAquariumImg18 from "../../../images/thataquarium18.png";
+import ThatAquariumImg19 from "../../../images/thataquarium19.png";
 import CAQGameShowImg from "../../../images/caqgameshow.png";
+import CAQGameShowImg2 from "../../../images/caqgameshow2.png";
+import CAQGameShowImg3 from "../../../images/caqgameshow3.png";
+import CAQGameShowImg4 from "../../../images/caqgameshow4.png";
+import CAQGameShowImg5 from "../../../images/caqgameshow5.png";
 import PairProjectSalonImg from "../../../images/pairsalon.png";
+import PairProjectSalonImg2 from "../../../images/pairsalon2.png";
+import PairProjectSalonImg3 from "../../../images/pairsalon3.png";
+import PairProjectSalonImg4 from "../../../images/pairsalon4.png";
+import PairProjectSalonImg5 from "../../../images/pairsalon5.png";
+import PairProjectSalonImg6 from "../../../images/pairsalon6.png";
 import NTUSCSEAmazonImg from "../../../images/ntuscseamazon.png";
+import NTUSCSEAmazonImg2 from "../../../images/ntuscseamazon2.jpg";
+import NTUSCSEAmazonImg3 from "../../../images/ntuscseamazon3.png";
+import NTUSCSEAmazonImg4 from "../../../images/ntuscseamazon4.png";
+import NTUSCSEAmazonImg5 from "../../../images/ntuscseamazon5.png";
 import InfinityPlannerImg from "../../../images/infinityplanner.png";
+import InfinityPlannerImg2 from "../../../images/infinityplanner2.png";
+import InfinityPlannerImg3 from "../../../images/infinityplanner3.png";
+import InfinityPlannerImg4 from "../../../images/infinityplanner4.png";
 import GoogleCSSIImg from "../../../images/googlecssi.png";
+import GoogleCSSIImg2 from "../../../images/googlecssi2.png";
+import GoogleCSSIImg3 from "../../../images/googlecssi3.png";
+import GoogleCSSIImg4 from "../../../images/googlecssi4.jpg";
+import GoogleCSSIImg5 from "../../../images/googlecssi5.jpg";
 import ColoursAwardImg from "../../../images/coloursaward.jpg";
 import LeagueMasteryImg from "../../../images/leaguemastery.png";
+import LeagueMasteryImg2 from "../../../images/leaguemastery2.png";
+import LeagueMasteryImg3 from "../../../images/leaguemastery3.png";
+import LeagueMasteryImg4 from "../../../images/leaguemastery4.png";
+import LeagueMasteryImg5 from "../../../images/leaguemastery5.png";
+import LeagueMasteryImg6 from "../../../images/leaguemastery6.png";
 import XCinematicImg from "../../../images/x-cinematic.png";
+import XCinematicImg2 from "../../../images/x-cinematic2.png";
 
 import MyPCImg from "../../../images/mypc.jpg";
 import dec2022ChangesImg from "../../../images/dec2022changes.jpg";
@@ -51,6 +95,14 @@ import Airshow2020Img from "../../../images/airshow2020.jpg";
 import SYFCImg from "../../../images/syfc.jpg";
 import VATSIMImg from "../../../images/vatsim.png";
 import XPlaneWSSSImg from "../../../images/xplanewsss.jpg";
+import XPlaneWSSSImg2 from "../../../images/xplanewsss2.jpg";
+import XPlaneWSSSImg3 from "../../../images/xplanewsss3.jpg";
+import XPlaneWSSSImg4 from "../../../images/xplanewsss4.jpg";
+import XPlaneWSSSImg5 from "../../../images/xplanewsss5.jpg";
+import XPlaneWSSSImg6 from "../../../images/xplanewsss6.jpg";
+import XPlaneWSSSImg7 from "../../../images/xplanewsss7.jpg";
+import XPlaneWSSSImg8 from "../../../images/xplanewsss8.jpg";
+import XPlaneWSSSImg9 from "../../../images/xplanewsss9.jpg";
 import FlightExperienceImg from  "../../../images/flightexperience.jpg";
 import XPlane11Img from  "../../../images/xp11.png";
 
@@ -145,7 +197,7 @@ export let displayableContent: any = {
             \n
             On the bright side, it did teach me on how to web scrape with Python, but it also made me realise how inefficient my methods were and that there are always better ways to code things out.`
         ], [
-            ThatAquariumImg, 
+            [ThatAquariumImg, ThatAquariumImg2, ThatAquariumImg3, ThatAquariumImg4, ThatAquariumImg5, ThatAquariumImg6, ThatAquariumImg7, ThatAquariumImg8, ThatAquariumImg9, ThatAquariumImg10, ThatAquariumImg11, ThatAquariumImg12, ThatAquariumImg13, ThatAquariumImg14, ThatAquariumImg15, ThatAquariumImg16, ThatAquariumImg17, ThatAquariumImg18, ThatAquariumImg19], 
             "That Aquarium Website", 
             "Dec 2020 - Jan 2021", 
             `My friend and I wanted to use our web building skill to not only build our portfolio, but to earn money as well. We then found a company called That Aquarium to build their website. However, to be upfront, this was ultimately a failure. Fortunately, it gave me a large insight on how to outside world works and what I should expect in the future.
@@ -175,12 +227,12 @@ export let displayableContent: any = {
             \n
             Although there are other options overseas for more competitive universities, I believe that due to my circumstance and preference, entering a local university, the best one in fact locally, is more than sufficient for me from my humble beginnings at neighbourhood schools.`
         ], [
-            CAQGameShowImg,
+            [CAQGameShowImg, CAQGameShowImg2, CAQGameShowImg3, CAQGameShowImg4, CAQGameShowImg5],
             "High School/Junior College Current Affairs Game Show",
             "Aug 2020",
             `Although I was in Infocomm for my CCA, I was reached out by another CCA, the International Current Affairs Society (ICAS), to make a game show for them. It took me a few weeks to design and program everything out and although I wanted to host on AWS to avoid any issues (which I did), it turned out that we had no internet connection on that day so the programme was hosted locally. It felt a bit heartbreaking as I wasted so much time trying to set it up on AWS but in the end, they had to host an older build locally, meaning there were bugs. It was however, a fun time trying to make it with just HTML, CSS, and JS (along with jQuery for most of the animiations).`
         ], [
-            PairProjectSalonImg,
+            [PairProjectSalonImg, PairProjectSalonImg2, PairProjectSalonImg3, PairProjectSalonImg4, PairProjectSalonImg5, PairProjectSalonImg6],
             "High School/Junior College Pair Project",
             "Apr 2020",
             `This was meant to be a simple one week homework for us to use what we have learned in school thus far, with the combination of web development (HTML/CSS) and databases (SQL/NoSQL). However, I decided to take things to a whole new level and exceeded the expectations of the teachers.
@@ -189,7 +241,7 @@ export let displayableContent: any = {
             \n
             Overall, I probably took the most time out of everyone in the class to finish the project as the design and backend were all functional with animations like bootstrap. It was quite worth it as we were considered unfair to the competition with other groups that we were placed under Special Mention. Fun fact, although the requirement was to submit a wireframe of the design, only my group did as everyone else just had a barebones HTML page without much or even any desingn.`
         ], [
-            NTUSCSEAmazonImg,
+            [NTUSCSEAmazonImg, NTUSCSEAmazonImg3, NTUSCSEAmazonImg4, NTUSCSEAmazonImg5, NTUSCSEAmazonImg2],
             "NTU School of Computer Science and Engineering x Amazon Course",
             "Dec 2019 - Jan 2020",
             `In this course, I was supposed to learn React Native and apply them to either a web development project or a mobile application and run it on an AWS server. However, as I found React Native very hard to understand and actually got lost, I decided to focus on my time learning the AWS part at my own pace. Since I was still quite a novice at programming, I decided to just use my basic HTML, CSS and JS knowledge with jQuery to make out a web application.
@@ -200,7 +252,7 @@ export let displayableContent: any = {
             \n
             Although I didn't win anything at the end of the day, I was proud of what I have done, given the handicap on both manpower and time. From this event, I actually learnt not only how to host things on AWS, I learned how to use APIs as well.`
         ], [
-            InfinityPlannerImg,
+            [InfinityPlannerImg, InfinityPlannerImg2, InfinityPlannerImg3, InfinityPlannerImg4],
             "Infinity Flight Planner",
             "Dec 2019 - Q1 2020",
             `At this point in life, I was both interested in Aviation and Web development. As my flights in flight simulations were still high, I wanted to migrate my logbook from text files to a web based environment. I thought I had the skills to do so at that time, and so I made a few pages to do so. 
@@ -211,14 +263,14 @@ export let displayableContent: any = {
             \n
             Although the project might seem abandoned, it still has been in the back of my mind and I'm planning on reviving it in the future with more features and when I'm more knowledgeable.`
         ], [
-            GoogleCSSIImg,
+            [GoogleCSSIImg4, GoogleCSSIImg5, GoogleCSSIImg, GoogleCSSIImg2, GoogleCSSIImg3],
             "SUTD x Google - Computer Science Summer Institute (CSSI)",
             "Jul 2019",
             `If there was one course I wish to go again, this would be it (not only for the way they teach, but the food as well. Let me tell you, man was it goooood). I believe it was only hosted once and I was extremely lucky to be able to join since the entry was based on lottery. The event was held over three weeks, with the first half in SUTD, and the second half in Google's own HQ in Singapore. It was an amazing experience as they treated us like Googlers, allowing us to eat their amazing free buffet every day and explore the entire office. They even loaned us Macbooks to bring back home for the entire course!
             \n
             This was the course that kickstarted my journey in web development. Prior to this, the only language I really knew was Python. This course taught me all the basics for HTML, CSS and JavaScript (Python as well with Flask backend but I've already learnt it). jQuery was taught as well but I didn't attend the course due to other competitions on that day. Fun fact, during the Python lesson, I made a full on Minesweeper recreation with Python and tkinter in under 2 hours.
             \n
-            Our end goal was to create any web application with what we have learnt and although my team of 3, only 2 of us knew how to code which meant there was a lack of manpower. On top of that, the person who knew how to code only basically know jQuery. From there, I had to design everything and code out just about all the elements with it's backend, less animations. The picture shown is just a screenshot of the static page, but the actual site when executed with Python works normally.
+            Our end goal was to create any web application with what we have learnt and although my team of 3, only 2 of us knew how to code which meant there was a lack of manpower. On top of that, the person who knew how to code only basically know jQuery. From there, I had to design everything and code out just about all the elements with it's backend, less animations. The picture shown is just a screenshot of the static page, but the actual site when executed with Python works normally. It's basically a Truth of Dare generator for people who want to play Truth or Dare. It will rotate among the players and during each player's turn, their name will be displayed and they can select either option to generate a truth or a dare.
             \n
             It was no surprise that my team wasn't the top few but hey, it was an extremely fun event to go for, with many things learnt, and I would love to go for it again given the opportunity to.`
         ], [
@@ -246,7 +298,7 @@ export let displayableContent: any = {
             JPJC School Colours Award - 2019
             `
         ], [
-            LeagueMasteryImg,
+            [LeagueMasteryImg, LeagueMasteryImg2, LeagueMasteryImg3, LeagueMasteryImg4, LeagueMasteryImg5, LeagueMasteryImg6],
             "League of Legends - Mastery Tracker",
             "2018 - 2020",
             `Honestly, this project was the one that turned me from someone who had never coded anything before, to a somewhat proficient coder in Python, and it stretched my design thinking box. This was in fact, reworked twice throughout the project timeline, with each iteration looking better than the previous one. The latest version took inspiration from the League of Legends client.
@@ -259,7 +311,7 @@ export let displayableContent: any = {
             \n
             As little as it might seem progress was done, you should note that I was new to programming, and all of it was done in Python (in conjuction with tkinter library).`
         ], [
-            XCinematicImg,
+            [XCinematicImg, XCinematicImg2],
             "X-Cinematic",
             "2017",
             `This was the absolute start of my programming career. I never knew how to code before this point. I was even debating on which language I should choose to learn. In the end, I chose Python with tkinter library for the UI.
@@ -315,7 +367,7 @@ export let displayableContent: any = {
             `This was the first Airshow event I went for. I would have went for the one in 2018 but I didn't know Singapore had Airshows till I learnt that it existed from a friend at SYFC. I was initially excited about it as they were supposed to showcase the newly built Boeing 777-9 (or commonly known as the B777X). BOE1 was supposed to fly from Boeing's factory at Everett (KPAE) to Singapore. However, not long after it's takeoff from KPAE, it diverted back to it's origin as Boeing pulled out last minute. At the end of the day, it was still an interesting experience to go for the airshow to see all sorts of planes.
             `
         ], [
-            InfinityPlannerImg,
+            [InfinityPlannerImg, InfinityPlannerImg2, InfinityPlannerImg3, InfinityPlannerImg4],
             "Infinity Flight Planner",
             "Dec 2019 - Q1 2020",
             `At this point into my flight simulator career, I had around 400 flights in my logbook, but they were in text files. I thought maybe I can move them to an actual digital web logbook and merge with my real flight hours as well. It was just for personal use but I quickly realised how tedious it was, along with a few programming reasons (which you can refer to in the Programming Tab), and as such temporarily halted the project for the foreseeable future.`
@@ -344,7 +396,7 @@ export let displayableContent: any = {
             \n
             As much as I wanted to continue to be a controller, most of the time the airports were empty without anyone there, with the only busy time during my S2 test and a World Flight event. As such, I just stopped coming online as a controller, but I still use VATSIM as a pilot from time to time. In total, I managed to be a controller for about 75 hours, giving me a great insight of controller life on whether I could do it as a job in real life.`
         ], [
-            XPlaneWSSSImg, 
+            [XPlaneWSSSImg, XPlaneWSSSImg2, XPlaneWSSSImg3, XPlaneWSSSImg4, XPlaneWSSSImg5, XPlaneWSSSImg6, XPlaneWSSSImg7, XPlaneWSSSImg8, XPlaneWSSSImg9], 
             "Singapore Changi Airport Freeware", 
             "2017 - 2019", 
             `With my love for flight sim and flying in and out of Singapore a lot, I decided to make a scenery for Singapore Changi Airport due to it's lack of sceneries. It taught me on how to model things nicely, as well as scenery creation. I was introduced to Google Sketchup, and it improved my Photoshop skills as well due to the amount of texturing needed.
@@ -357,7 +409,7 @@ export let displayableContent: any = {
             "2017 - 2018", 
             `In the two years, I managed to save enough money to go for a couple of 1 hour sessions in the Flight Experience on a Level C simulator. It was a great joy for me but I realised it was very different from flying it at home. I stopped going for it due to how expensive it is and that it felt very restrictive on what I can and can't do as they treat everyone as no experience. It also wasn't a level D simulator so no motion was involved and hence wasn't as fully realistic as I hoped for. Nonetheless, it was extremely fun to still go for it.`
         ], [
-            XCinematicImg,
+            [XCinematicImg, XCinematicImg2],
             "X-Cinematic for X-Plane 11",
             "2017",
             `I was envious at how Prepar3d had Chaseplane that gave great cinematic views during the flight. I thought perhaps I could try to develop a plugin for X-Plane 11 but tl;dr, it didn't really go that well. As for the details, you may refer to it in the Programming Tab.`
@@ -618,7 +670,7 @@ export let displayableContent: any = {
             "Dec 2020 - Mar 2021", 
             `Before I enlisted into the army, I had an internship with Nam Hong to maintain their website. One of my given task was to create multiple pages under the 'Get Involved' part. Some of these pages were uniquely designed whilst some kept a standard style. Although it wasn't required to design it similar to how the website looked like, I decided that going above and beyond would make the site feel more refreshing. As for how the programming went, you can refer to the programming tab.`
         ], [
-            ThatAquariumImg, 
+            [ThatAquariumImg, ThatAquariumImg2, ThatAquariumImg3, ThatAquariumImg4, ThatAquariumImg5, ThatAquariumImg6, ThatAquariumImg7, ThatAquariumImg8, ThatAquariumImg9, ThatAquariumImg10, ThatAquariumImg11, ThatAquariumImg12, ThatAquariumImg13, ThatAquariumImg14, ThatAquariumImg15, ThatAquariumImg16, ThatAquariumImg17, ThatAquariumImg18, ThatAquariumImg19], 
             "That Aquarium Website", 
             "Dec 2020 - Jan 2021", 
             `This project was a collaboration with my friend in trying to build our portfolio by developing a website for a company that didn't had one. Unfortunately, I was too excited and had designed just about every page before we secured the deal. This was because their response rate was at least 2 weeks when we wanted to get a feedback on our work. Eventually it got so bad that we decided to just drop the project as it seemed as if they lacked interest in our work. Although the design felt a little bubbly or inmature by my standards, I wasn't fully motivated as well at the time as their estimated pay for the freelance project felt quite low.`
@@ -628,12 +680,12 @@ export let displayableContent: any = {
             "Aug 2020", 
             `This was actually a video made solely by myself before Teachers Day in 2020. It was to thank my teachers for their work and although not much design was needed since the basis was made in Minecraft, there were still some design on making it fit the theme as the location was based on the school's hall. It was still a cool little clip for them as it made use of a few knowledge here and there to make it, including command blocks as well.`
         ], [
-            CAQGameShowImg, 
+            [CAQGameShowImg, CAQGameShowImg2, CAQGameShowImg3, CAQGameShowImg4, CAQGameShowImg5], 
             "High School/Junior College Current Affairs Game Show", 
             "Aug 2020", 
             `This project was made for my school's International Current Affairs Society (ICAS) Co-Cirricular Activity (CCA). Although I wasn't a member of the CCA, I still helped them quite a bit throughout their CCA as an extra effort to build up my portfolio. This was a game show for one of their events, and although the design looks plain, I didn't feel the need to design it nicely as they didn't require it, nor did I have much time to make it as well. The design was quickly made up in a short amount of time to make it as least work with what I had in mind.`
         ], [
-            PairProjectSalonImg, 
+            [PairProjectSalonImg, PairProjectSalonImg2, PairProjectSalonImg3, PairProjectSalonImg4, PairProjectSalonImg5, PairProjectSalonImg6], 
             "High School/Junior College Pair Project", 
             "Apr 2020", 
             `The pair project was actually a homework given by my Computing teacher as a means for us to use our programming knowledge to build a small full stack webpage. We were supposed to design and give a wireframe (which only my pair did), and develop a page for admins in a salon shop. It's quite straightforward but many people weren't able to do it. I was lucky to be able to pair with a friend that understood programming quite well so I didn't have to do all the work and I could focus mainly on the frontend whilst he focused on the backend.
@@ -645,12 +697,12 @@ export let displayableContent: any = {
             "Jan 2020", 
             `After the NTU SCSE x Amazon course, I had a friend who wanted to use it as a baseline for his new idea, Cryphex, which was for cryptocurrency trading during it's boom around this period. I don't think it went anywhere after the design phase at that time as he lacked programmers that had the same vision as him. I tried to at least make a a home page for him, which he liked and appreciated very well, but there was no news from him after.`
         ], [
-            NTUSCSEAmazonImg, 
+            [NTUSCSEAmazonImg, NTUSCSEAmazonImg3, NTUSCSEAmazonImg4, NTUSCSEAmazonImg5, NTUSCSEAmazonImg2], 
             "NTU School of Computer Science and Engineering x Amazon Course", 
             "Jan 2020", 
             `This was a course a group of friends and myself signed up for to learn more about web development. They taught a few programming language here, and required us to develop a webpage at the end of the course based on any ideas you had. I would say that most of the design here was actually quite awesome as it felt modern and simple. Though we didn't get any award at the end of the day, I was still proud that I made the project whole in just 1.5 days.`
         ], [
-            InfinityPlannerImg,
+            [InfinityPlannerImg, InfinityPlannerImg2, InfinityPlannerImg3, InfinityPlannerImg4],
             "Infinity Flight Planner",
             "December 2019 - Q1 2020",
             `One of my early projects and idea I had was to keep an personally created online logbooks for my flight simulator. It was inspired by other applications in the flight sim space like projectFLY that got me hyped up into making it. I did design a few pages for myself to use but because of various reasons explained in the programming tab, I dropped the project.
@@ -669,7 +721,7 @@ export let displayableContent: any = {
             "Jul 2019", 
             `STEM Day was a one day event for students to explore the STEM areas subjects. My role was to design and create banners and such to advertise it for the Computing booth. Although I feel that I didn't do as great of a job as I could have with the colours, the design looked great on my monitor then as it showed the image darker. After it was sent for printing did I finally realise the importance of double checking with different screens to see how it really looks like, especially when I was developing on poorly calibrated monitors.`
         ], [
-            GoogleCSSIImg, 
+            [GoogleCSSIImg4, GoogleCSSIImg5, GoogleCSSIImg, GoogleCSSIImg2, GoogleCSSIImg3], 
             "SUTD x Google - Computer Science Summer Institute (CSSI)", 
             "Jul 2019", 
             `CSSI was a prestigious event for me, as it seemed to be hosted once only, although they had thoughts on hosting it again yearly. It was a enriching experience at Google and SUTD to feel how being a Googler was like. For the progamming stories, you can go to the programmng tab to have a look, but as for the design part, I feel that it was underwhelming. It doesn't look good at all but that's because in my group of 3, only I could code and design, whilst the other two basically had nothing skillful, so they were given the job for ideation. At the end of the day, although we had like 3 days to create our app, we ended up only having one as they couldn't decide on something until nearly the end.
@@ -690,14 +742,14 @@ export let displayableContent: any = {
             \n
             Surprisingly, many of my friends found it good and even wanted to pay me to design for their groups. They continuously requested for me to help them as they wanted to spice thier projects up as well. However, I was sufficiently busy with my own group's design and so I didn't accept their request and it didn't feel right to do so as I wasn't part of their groups.`
         ], [
-            LeagueMasteryImg, 
+            [LeagueMasteryImg, LeagueMasteryImg2, LeagueMasteryImg3, LeagueMasteryImg4, LeagueMasteryImg5, LeagueMasteryImg6], 
             "League of Legends - Mastery Tracker", 
             "2018 - 2020", 
             `This was my second ever personal python project in which I wanted to make an app to keep track of a game I played (League of Legends), on how well I scored. It was kinda a statistic app but I was very bad at programming at the time. It was as such, very tedious to develop but fun to design as I could easily get inspiration from the game's UI to design.
             \n
             The design was pretty good for my skill at the time but I was constantly limited by python's tkinter limitations so I couldn't make it better with things like animation. As for further explanation, you can refer to the programming tab as I delve deeper into how development went and why I dropped the project after 2 years.`
         ], [
-            XCinematicImg, 
+            [XCinematicImg, XCinematicImg2], 
             "X-Cinematic", 
             "2017", 
             `This was my first time touching programming really. I didn't actually pre-design the app but did it on the go which was honestly a bad idea as it just looks plain bad. However, it was my stepping stone in learning that I should design things first before coding it out as on the fly designs usually turn out bad.`
