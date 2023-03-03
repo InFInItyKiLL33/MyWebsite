@@ -126,7 +126,7 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
 
         <>
             {/* <button onClick={changeType} className={"timelineChanger fade bolded " + fadeoutContent}>{type}</button> */}
-            <div className={"skillsButtonNavbar flex-row " + fadeoutContent}>
+            <div className={"skillsButtonNavbar flex-row " + fadeoutContent} style={{"filter": "blur(" + (carouselState === true ? "4" : "0") + "px"}}>
                 {skillButtons}
                 <button onClick={changeSortDirection} className="timelineChanger timelineSorter slideInInitial slideIn flex-row">
                     <span className="material-symbols-outlined m-auto">Sort by:&nbsp;</span>
@@ -149,7 +149,7 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
                         <></>
                 }
 
-                <div className="timelineSpecificContent">
+                <div className="timelineSpecificContent" style={{"filter": "blur(" + (carouselState === true ? "4" : "0") + "px"}}>
                     {   
                         loadedContent.length > 0 && loadedContent.map((thisContent: string, i: number): JSX.Element => (
                             <TimelineSpecificContent typeValue={props.typeVal} content={content} index={i} key={i} showHideCarousel={showHideCarousel} carouselState={carouselState} setCarouselCurrentImages={setCarouselCurrentImages} clickAnywhereStatus={clickAnywhereStatus} changeClickAnywhereStatus={changeClickAnywhereStatus} />
