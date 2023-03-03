@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.a82b3d85.css",
-    "main.js": "./static/js/main.6d98f1a5.js",
+    "main.css": "./static/css/main.d4e503a5.css",
+    "main.js": "./static/js/main.358b9263.js",
     "static/media/aviationbg2.png": "./static/media/aviationbg2.0281852de8f72a69a40b.png",
     "static/media/background-fade.png": "./static/media/background-fade.93ee0cf40cc4bffa532f.png",
     "static/media/thataquarium2.png": "./static/media/thataquarium2.ee29b10350126225f186.png",
@@ -188,11 +188,11 @@
     "static/media/statusbot.png": "./static/media/statusbot.ad9d23d71ac618e77237.png",
     "index.html": "./index.html",
     "static/media/aviation.svg": "./static/media/aviation.f91606aa80e8fdd904b1dbe59caad5ed.svg",
-    "main.a82b3d85.css.map": "./static/css/main.a82b3d85.css.map",
-    "main.6d98f1a5.js.map": "./static/js/main.6d98f1a5.js.map"
+    "main.d4e503a5.css.map": "./static/css/main.d4e503a5.css.map",
+    "main.358b9263.js.map": "./static/js/main.358b9263.js.map"
   },
   "entrypoints": [
-    "static/css/main.a82b3d85.css",
-    "static/js/main.6d98f1a5.js"
+    "static/css/main.d4e503a5.css",
+    "static/js/main.358b9263.js"
   ]
 }
