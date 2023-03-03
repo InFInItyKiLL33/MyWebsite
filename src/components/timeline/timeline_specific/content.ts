@@ -11,6 +11,14 @@ import NHWSSImg7 from "../../../images/nhwss7.jpg";
 import NHWSSImg8 from "../../../images/nhwss8.jpg";
 import OfferImg1 from "../../../images/offernus.jpg";
 import OfferImg2 from "../../../images/offerntu.jpg";
+import chatbotImg1 from "../../../images/chatbot1.jpg";
+import chatbotImg2 from "../../../images/chatbot2.jpg";
+import chatbotImg3 from "../../../images/chatbot3.jpg";
+import chatbotImg4 from "../../../images/chatbot4.jpg";
+import chatbotImg5 from "../../../images/chatbot5.jpg";
+import chatbotImg6 from "../../../images/chatbot6.jpg";
+import chatbotImg7 from "../../../images/chatbot7.jpg";
+import WebsiteV1Img from "../../../images/websitev1.png";
 import DiscordStatusImg from "../../../images/statusbot.png";
 import DiscordReminderImg from "../../../images/reminderbot.png";
 import DiscordTechImg from "../../../images/techbot.png";
@@ -131,7 +139,6 @@ import MyLogoImg from "../../../images/logo1.jpg";
 import MyLogoImg2 from "../../../images/logo2.jpg";
 import MyLogoImg3 from "../../../images/logo3.jpg";
 import AlphaLogoImg from "../../../images/alpha.png";
-import WebsiteV1Img from "../../../images/websitev1.png";
 import IndiaC19Img from "../../../images/indiacovid19.jpg";
 import TeachersDayImg from "../../../images/teachersday.jpg";
 import CryphexImg from "../../../images/cryphex.png";
@@ -205,6 +212,11 @@ export let displayableContent: any = {
             \n
             At the end of the day, after the whole mining fiesta in September 2022, I just converted one of my computers to host this bot as it's sole purpose as it's still useful for me. Although it may be cheaper to host it on a webserver, I feel it's much easier and fun to update it on my own computer.`
         ], [
+            [chatbotImg1, chatbotImg2, chatbotImg3, chatbotImg4, chatbotImg5, chatbotImg6, chatbotImg7],
+            "Chatbot for a Private Individual Contractor",
+            "Oct 2021",
+            "I was contacted by a friend for an opportunity to make a quick chatbot for a friend of their, which followed by a one month contract on building a web based chatbot. I took a few days to develop a chatbot from the ground up with Flask and showed them as how the picture was. It was fully animated and working when I sent them the product. However, all the effort was wasted when they wanted something that they can easily edit as well. Since they didn't know how to code, I had to make a new one based on Chatfuel so that they can understand it easier. It is basically the same thing, except that it uses Chatfuel's messaging that looks similar to Facebook messenger."
+        ], [
             WebsiteV1Img, 
             "Personal Website (v1)", 
             "Jun 2021", 
@@ -238,6 +250,8 @@ export let displayableContent: any = {
             `I had a classmate in Junior College who knew I was good at coding, and their family member, who's working at NHWSS, required an intern to maintain their website. I was recommended and join them as an intern for 4 Months, before my enlistment into the Army. This was a good opportunity for me to learn how to use a website building app, Wordpress in this case, instead of only knowing how to create websites with pure HTML/CSS/JS with jQuery.
             \n
             Through this internship, I realised how much easier and restrictive website building apps are, as they make elements super easy to create through the drag and drop experience. However, the ability to customise the styles and elements is quite limited, unless I decide to inject custom code into it. Most of the website was luckily, already done by the previous intern, which only gave me the chance to design and create a few pages (specifically the Get Involved page, picture beside, which does not show hover effects).
+            \n
+            I also made a chatbot for their facebook page so that they can handle any messages easier, and for the people enquiring to get a response to expect a reply in a few working days. In addition, I also made it such that they will receive emails when there is a message, but only for the relevant support teams.
             \n
             I would have definitely continued the internship with how heartwarming and welcome the management was, if it wasn't for the conscription into the Army in April. This would, however, not be the end of working with them as they hired me as a freelancer the next year.
             \n
