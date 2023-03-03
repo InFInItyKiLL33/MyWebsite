@@ -1,10 +1,16 @@
 // import PlaceholderImg from "../../../images/programming_icon_hover.png";
 
 import MyWebsite from "../../../images/mywebsite.jpg";
-import ReactImg from "../../../images/react.png";
+import NewLanguageImg from "../../../images/newlanguage.jpg";
 import NHWSSImg1 from "../../../images/nhwss1.jpg";
 import NHWSSImg2 from "../../../images/nhwss2.jpg";
-import NUSImg from "../../../images/nus.png";
+import NHWSSImg4 from "../../../images/nhwss4.jpg";
+import NHWSSImg5 from "../../../images/nhwss5.jpg";
+import NHWSSImg6 from "../../../images/nhwss6.jpg";
+import NHWSSImg7 from "../../../images/nhwss7.jpg";
+import NHWSSImg8 from "../../../images/nhwss8.jpg";
+import OfferImg1 from "../../../images/offernus.jpg";
+import OfferImg2 from "../../../images/offerntu.jpg";
 import DiscordStatusImg from "../../../images/statusbot.png";
 import DiscordReminderImg from "../../../images/reminderbot.png";
 import DiscordTechImg from "../../../images/techbot.png";
@@ -52,7 +58,19 @@ import GoogleCSSIImg2 from "../../../images/googlecssi2.png";
 import GoogleCSSIImg3 from "../../../images/googlecssi3.png";
 import GoogleCSSIImg4 from "../../../images/googlecssi4.jpg";
 import GoogleCSSIImg5 from "../../../images/googlecssi5.jpg";
-import ColoursAwardImg from "../../../images/coloursaward.jpg";
+import AwardsImg from "../../../images/awards1.jpg";
+import AwardsImg2 from "../../../images/awards2.jpg";
+import AwardsImg3 from "../../../images/awards3.jpg";
+import AwardsImg4 from "../../../images/awards4.jpg";
+import AwardsImg5 from "../../../images/awards5.jpg";
+import AwardsImg6 from "../../../images/awards6.jpg";
+import AwardsImg7 from "../../../images/awards7.jpg";
+import AwardsImg8 from "../../../images/awards8.jpg";
+import AwardsImg9 from "../../../images/awards9.jpg";
+import AwardsImg10 from "../../../images/awards10.jpg";
+import AwardsImg11 from "../../../images/awards11.jpg";
+import AwardsImg12 from "../../../images/awards12.jpg";
+import AwardsImg13 from "../../../images/awards13.jpg";
 import LeagueMasteryImg from "../../../images/leaguemastery.png";
 import LeagueMasteryImg2 from "../../../images/leaguemastery2.png";
 import LeagueMasteryImg3 from "../../../images/leaguemastery3.png";
@@ -76,12 +94,14 @@ import PC5Img1 from "../../../images/PC5_1.jpg";
 import PC5Img2 from "../../../images/PC5_2.jpg";
 import PC5900XImg from "../../../images/5900x.jpg";
 import PersonalServerImg from "../../../images/personalserver.jpg";
-import MiningImg from "../../../images/mining.jpg";
+import MiningImg1 from "../../../images/mining1.jpg";
+import MiningImg2 from "../../../images/mining2.jpg";
 import PC5600XImg from "../../../images/5600x.png";
 import Ventus3080Img from "../../../images/ventus3080.jpg";
 import MSISHX2080TiImg from "../../../images/2080tishx.jpg";
 import Z390FImg from "../../../images/z390f.jpg";
 import SM15Img from "../../../images/sm15.jpg";
+import SM15Img2 from "../../../images/sm15_2.jpg";
 import UltracoreImg from "../../../images/ultracore.jpg";
 import ToshibaGenericImg2 from "../../../images/toshibageneric1.jpg";
 import ToshibaGenericImg1 from "../../../images/toshibageneric2.jpg";
@@ -93,7 +113,8 @@ import Aviation2021SummaryImg from "../../../images/2021summary.jpg";
 import MSFSImg from "../../../images/msfs.png";
 import Airshow2020Img from "../../../images/airshow2020.jpg";
 import SYFCImg from "../../../images/syfc.jpg";
-import VATSIMImg from "../../../images/vatsim.png";
+import SYFCImg2 from "../../../images/syfc2.jpg";
+import VATSIMImg from "../../../images/vatsimstats.jpg";
 import XPlaneWSSSImg from "../../../images/xplanewsss.jpg";
 import XPlaneWSSSImg2 from "../../../images/xplanewsss2.jpg";
 import XPlaneWSSSImg3 from "../../../images/xplanewsss3.jpg";
@@ -106,6 +127,9 @@ import XPlaneWSSSImg9 from "../../../images/xplanewsss9.jpg";
 import FlightExperienceImg from  "../../../images/flightexperience.jpg";
 import XPlane11Img from  "../../../images/xp11.png";
 
+import MyLogoImg from "../../../images/logo1.jpg";
+import MyLogoImg2 from "../../../images/logo2.jpg";
+import MyLogoImg3 from "../../../images/logo3.jpg";
 import AlphaLogoImg from "../../../images/alpha.png";
 import WebsiteV1Img from "../../../images/websitev1.png";
 import IndiaC19Img from "../../../images/indiacovid19.jpg";
@@ -145,11 +169,11 @@ export let displayableContent: any = {
             MyWebsite, 
             "My Personal Website (v2)", 
             "Q4 2022 - Q1 2023", 
-            `After coming back from my trip to the USA, I had a lot of free time in the Army before I finish my service. That's where I decided to make use of my newly learnt knowledge on React to rebuild a second version of my website. This website uses ReactJS, with Typescript and SASS to be fully built.
+            `After coming back from my trip to the USA, I had a lot of free time in the Army before I finish my service. That's where I decided to make use of my newly learnt knowledge on React to rebuild a second version of my website. This website uses ReactJS, with Typescript and SASS to be fully built. This is the website that you are currently looking at right now and I hope you like what you see :)
             \n
             Do note that all graphic design are either self illustrated/coded personally or sourced from open source sites (mainly icons). Trademarked names/logos in design such as 'AMD' and 'GeForce RTX' are used editorially only as this website is not for commercial purposes.`
         ], [
-            ReactImg, 
+            NewLanguageImg, 
             "Learning New Frameworks and Language", 
             "Sep 2022", 
             "During my National Service trip to the USA, I decided to learn React, specifically ReactJS, to further expand my Web Programming knowledge. I also took the time to understand more about frameworks and other complimenting languages for web development like Typescript, Tailwind CSS, and SASS."
@@ -208,7 +232,7 @@ export let displayableContent: any = {
             \n
             On the bright side, it gave me an insight on how the commercial sector works, use Django as a backend server, and allowed me to sharpen my skills on both design and web application building.`
         ], [
-            NHWSSImg1, 
+            [NHWSSImg1, NHWSSImg2, NHWSSImg4, NHWSSImg5, NHWSSImg6, NHWSSImg7, NHWSSImg8], 
             "Nam Hong Welfare Service Society (NHWSS) Internship", 
             "Dec 2020 - Mar 2021", 
             `I had a classmate in Junior College who knew I was good at coding, and their family member, who's working at NHWSS, required an intern to maintain their website. I was recommended and join them as an intern for 4 Months, before my enlistment into the Army. This was a good opportunity for me to learn how to use a website building app, Wordpress in this case, instead of only knowing how to create websites with pure HTML/CSS/JS with jQuery.
@@ -219,7 +243,7 @@ export let displayableContent: any = {
             \n
             If you would like to check it out, and if it hasn't changed, you may view it live at`, "https://namhongwelfare.org.sg/get-involved/"
         ], [
-            NUSImg, 
+            [OfferImg1, OfferImg2], 
             "University Applications", 
             "Q4 2020 - Q1 2021", 
             `I was initially torned between deciding on a Computer Science (CS) course or an Aviation related course. Eventually I settled on CS due to my results and application outcomes. Initially, with my prelim results for Junior College (82.5RP, max 90RP; RP stands for Rank Point), I tried applying for early admission for Nanyang Technological University (NTU) CS Course. I was surprised to find out that I was offered an early spot around my 'A' levels. Although I managed to get a spot, it wasn't what I wanted, so I still did my best for 'A' levels and to my shock during the results date, I managed to score 87.5RP, basically highest in my class. \n
@@ -274,7 +298,7 @@ export let displayableContent: any = {
             \n
             It was no surprise that my team wasn't the top few but hey, it was an extremely fun event to go for, with many things learnt, and I would love to go for it again given the opportunity to.`
         ], [
-            ColoursAwardImg,
+            [AwardsImg, AwardsImg2, AwardsImg3, AwardsImg4, AwardsImg5, AwardsImg6, AwardsImg7, AwardsImg8, AwardsImg9, AwardsImg10, AwardsImg11, AwardsImg12, AwardsImg13],
             "Various Competitions & Achievements in Junior College",
             "2019 - 2020",
             `Here's a list of competitions I've participated in throughout the two years in Junior College. Although most positions might not be impressive, it helped with my knowledge on various parts of Computer Science by a lot.
@@ -293,7 +317,7 @@ export let displayableContent: any = {
 
             Here's a list of of achievements as well, not limited to just Programming:
 
-            EAGLES Award - Both 2019 and 2020
+            EAGLES Award - 2018, 2019 and 2020
             Assistant Class Manager - 2020
             JPJC School Colours Award - 2019
             `
@@ -372,7 +396,7 @@ export let displayableContent: any = {
             "Dec 2019 - Q1 2020",
             `At this point into my flight simulator career, I had around 400 flights in my logbook, but they were in text files. I thought maybe I can move them to an actual digital web logbook and merge with my real flight hours as well. It was just for personal use but I quickly realised how tedious it was, along with a few programming reasons (which you can refer to in the Programming Tab), and as such temporarily halted the project for the foreseeable future.`
         ], [
-            SYFCImg, 
+            [SYFCImg2, SYFCImg], 
             "Singapore Youth Flying Club (SYFC)", 
             "2H 2019", 
             `My time in SYFC went from it's high to it's low very quickly. I was considered one of, or if not the best student in the class (BFC 243). However, my time was cut short after the 8th flying lesson.
@@ -561,7 +585,7 @@ export let displayableContent: any = {
             \n
             At the same time, my want for a full white build started creeping in, and so I changed my motherboard as well to an Asus ROG Strix B550A, purely just for aesthetics. Not only that, I was still using my initial terrible Aftershock Ultracore case, so whilst changing my motherboard, I took the whole system out and made it caseless. It was one way to save money to not use a case, but also a very unique build that made use of the white cardboard that came with the previous used X570 motherboard. Some people hate it when I show it to them but I actually love it.`
         ], [
-            MiningImg, 
+            MiningImg1, 
             "3rd PC Build - Mining",
             "Oct 2021",
             `Throughout the year, I found a couple of GPUs at MSRP and decided to buy them with funds from my current mining build. As much of an issue I might be for the GPU market, I was not completely selfish as I did sell a handful of them to my friends at the price I bought it at so they can enjoy using it new GPUs without needing to suffer and search for it or pay ridiculous prices. 
@@ -572,7 +596,7 @@ export let displayableContent: any = {
             \n
             In the picture, the actual PC for the 3rd PC is the one on top of the left shelf, where the Asus ROG Strix 3070 is sitting at.`
         ], [
-            MiningImg, 
+            MiningImg2, 
             "2nd PC Build - Mining",
             "Apr 2021",
             `After my time searching for an RTX 3080 for my own build, I managed to find an RTX 3060 and an RTX 3070 at MSRP as well. Since I was kind of in a financial crisis, I thought it would be best if I used it for Cryptocurrency Mining. As such, I managed to scrape money from various places to get these two cards, as well as a cheap OEM PC to use it for mining Ethereum. As much as some people would hate me for doing it, I kinda hated myself as well but I needed to save money for my University fees and had no choice but to do so.
@@ -612,7 +636,7 @@ export let displayableContent: any = {
             Do note the image is from when I went caseless in 2021.
             `
         ], [
-            SM15Img, 
+            [SM15Img, SM15Img2], 
             "First Actual Gaming Laptop - Fourth Laptop", 
             "2016", 
             `The past few years in Primary School was generally a build up of software and games interest. However, as games got more demanding, my previous laptop was still too laggy for me. Not only that, I was stuck at 32-bit Windows and I really wanted a 64-bit version to use more than 4GB of RAM.
@@ -642,9 +666,14 @@ export let displayableContent: any = {
             MyWebsite, 
             "Personal Website (v2)", 
             "Q4 2022 - Q1 2023", 
-            `This was my second iteration on desgining my website. It is way better than the first one in my opinion as it looks more clean than before, with better quality pictures as well. The design however, was not a predesigned webpage, meaning no wireframe or mockup was done beforehand and everything was made on the go. As such, there may be some slight mismatch in quality here and there as I'm not following a specific design. Most of the design just comes on the spot on how I felt it looked.
+            `This was my second iteration on desgining my website. It is way better than the first one in my opinion as it looks more clean than before, with better quality pictures as well. The design however, was not a predesigned webpage, meaning no wireframe or mockup was done beforehand and everything was made on the go. As such, there may be some slight mismatch in quality here and there as I'm not following a specific design. Most of the design just comes on the spot on how I felt it looked. In any case, this is the website that you are currently looking at right now and I hope you like what you see :)
             \n
             Although it's not a good way to approach a project, I feel that due to the amount of time I would need to just design it was not worth it, especially when I've stopped my Photoshop subscription awhile back and the other alternatives are either too troublesome or that I'm not used to it.`
+        ], [
+            [MyLogoImg, MyLogoImg2, MyLogoImg3],
+            "My Nickname Logo",
+            "Nov 2022",
+            "My previous logo was made in Secondary School, and I felt that it needed a refresh. As my nickname is usually 'Infinity' or 'InfinityTwo', it was fitting to put an infinity sign on it. It works well on both small and large images. When it is small, giving it a quick glance can let you know that it's an infinity logo. However, when enlarged, there's a Infinity text below the logo and the logo details are viewable, making it unique in that sense."
         ], [
             AlphaLogoImg, 
             "National Service Unit Logo", 
@@ -665,7 +694,7 @@ export let displayableContent: any = {
             "Jun 2021", 
             `A small little project that my friend wanted to work on, and required my help for a quick design of the webpage. This was near the start of the virus and my friend wanted to help their origin country with the virus. I'm not sure where the project went afterwards but hey, I did manage to design a quick static page for them.`
         ], [
-            NHWSSImg1, 
+            [NHWSSImg1, NHWSSImg2, NHWSSImg4, NHWSSImg5, NHWSSImg6, NHWSSImg7, NHWSSImg8], 
             "Nam Hong Welfare Service Society Page", 
             "Dec 2020 - Mar 2021", 
             `Before I enlisted into the army, I had an internship with Nam Hong to maintain their website. One of my given task was to create multiple pages under the 'Get Involved' part. Some of these pages were uniquely designed whilst some kept a standard style. Although it wasn't required to design it similar to how the website looked like, I decided that going above and beyond would make the site feel more refreshing. As for how the programming went, you can refer to the programming tab.`
@@ -759,14 +788,15 @@ export let displayableContent: any = {
             "2016 - 2019", 
             `During this time, I was trying out YouTube to see if it was a thing for me. Although at the end of the day I stopped, I realise now how much of a potential I could have if I took more seriously. Most of my designs here are just very bubbly and/or childish for things like thumnails and mid video animations.
             \n
-            As much as I want to continue YouTube, I've decided that getting popular wasn't really my thing. Although financially it may be viable, the other things that come with it might not be for me, as I prefer a life without much fame and more privacy. Besides, it felt like more of a joke than a serious potential at the time.`
+            As much as I want to continue YouTube, I've decided that getting popular wasn't really my thing. Although financially it may be viable, the other things that come with it might not be for me, as I prefer a life without much fame and more privacy. Besides, it felt like more of a joke than a serious potential at the time. You can however, visit my channel at the following URL:`,
+            "www.youtube.com/infinitytwo"
         ], [
             infocommZHSSImg, 
             "Secondary School Co-Curricular Activity (CCA) - Infocomm", 
             "2015 - 2018", 
             `The four years here in secondary school was how I got into designing. My CCA here was quite enriching as I had a trainer that taught a lot of Photoshop. Although back then I didn't realise the usefulness of it, I managed to learn a lot of things from it that I still use today whenever I design with Photoshop or other Adobe products like Illustrator and After Effects. Many of the designs here are lost as my personal thumbdrive back then, with all my designs, went lost when it was used to distribute files to other CCA members.
             \n
-            I was considered the best among the students from my year in using Photoshop, and would often help others when they needed it. I frequently finished the tasks faster than everyone else and was basially one of the few that could keep up with the trainer. Eventually I became the vice-president of the CCA due to my skills. Although I was a candidate for president, they felt that my friend had better socialising skills and gave him the presidency instead.`
+            I was considered the best among the students from my year in using Photoshop, and would often help others when they needed it. I frequently finished the tasks faster than everyone else and was basially one of the few that could keep up with the trainer. Eventually I became the vice-president of the CCA due to my skills. Although I was a possible candidate for president, my teachers felt that my friend had a better edge in other areas other than skills and gave him the presidency instead.`
         ]
     ]
 }; // For each content, the order is as such: 0 -> image file, 1 -> Title, 2 -> Date, 3 -> Description, 4 (Optional) -> Hyperlink
