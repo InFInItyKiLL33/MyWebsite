@@ -277,7 +277,7 @@ export let displayableContent: any = {
             \n
             The project was to create an online website for a Salon Shop that stored the database for all the transactions and users and we had to display it for the staff. We had to include not only the basic information, but also implement user tiers based on their subscription.
             \n
-            Overall, I probably took the most time out of everyone in the class to finish the project as the design and backend were all functional with animations like bootstrap. It was quite worth it as we were considered unfair to the competition with other groups that we were placed under Special Mention. Fun fact, although the requirement was to submit a wireframe of the design, only my group did as everyone else just had a barebones HTML page without much or even any desingn.`
+            Overall, I probably took the most time out of everyone in the class to finish the project as the design and backend were all functional with animations like bootstrap. It was quite worth it as we were probably considered unfair to the competition with other groups that we were placed under Special Mention. Fun fact, although the requirement was to submit a wireframe of the design, only my group did as everyone else just had a barebones HTML page without much or even any desingn.`
         ], [
             [NTUSCSEAmazonImg, NTUSCSEAmazonImg3, NTUSCSEAmazonImg4, NTUSCSEAmazonImg5, NTUSCSEAmazonImg2],
             "NTU School of Computer Science and Engineering x Amazon Course",
@@ -733,7 +733,7 @@ export let displayableContent: any = {
             "Apr 2020", 
             `The pair project was actually a homework given by my Computing teacher as a means for us to use our programming knowledge to build a small full stack webpage. We were supposed to design and give a wireframe (which only my pair did), and develop a page for admins in a salon shop. It's quite straightforward but many people weren't able to do it. I was lucky to be able to pair with a friend that understood programming quite well so I didn't have to do all the work and I could focus mainly on the frontend whilst he focused on the backend.
             \n
-            At the end of the day, we weren't given first place as it would be unfair for the rest of the pairs that did the work since ours was so outstanding. We were given a special mention for our work instead to keep a fair playing ground.`
+            At the end of the day, we weren't given first place as it would probably be unfair for the rest of the pairs that did the work since ours was so outstanding. We were given a special mention for our work instead to keep a fair playing ground.`
         ], [
             CryphexImg, 
             "Cryphex", 
