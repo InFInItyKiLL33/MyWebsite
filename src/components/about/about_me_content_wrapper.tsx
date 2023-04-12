@@ -129,7 +129,7 @@ function AboutMeContentWrappers(props: AboutMeContentWrappersProps): JSX.Element
                         <p className="aboutMeTexts indented">
                             <OrangeSpan text=" DA40" /><span className="footnotes"> @ Singapore Youth Flying Club</span> (9.0 Flight Hours + 8.0 Simulator Hours, 2019),
                             <BreakLine count="2" />
-                            <OrangeSpan text=" X-Plane 11" /> + <OrangeSpan text="Microsoft Flight Simulator" /> (Around 2000 Flight Hours from 2017 till now)
+                            <OrangeSpan text=" X-Plane 11" /> + <OrangeSpan text="Microsoft Flight Simulator" /> (Around 3000 Flight Hours from 2017 till now)
                         </p>
     
                         <BreakLine count="2" />
@@ -137,7 +137,7 @@ function AboutMeContentWrappers(props: AboutMeContentWrappersProps): JSX.Element
                             <span className="bolded">• PC Building •</span> <span className="footnotes"></span>
                         </p>
                         <p className="aboutMeTexts indented">
-                            Built <OrangeSpan text="8 complete PCs" />, and additionally, <OrangeSpan text="helped source parts" /> and <OrangeSpan text="handcrafted lists for countless PCs" /> in my lifetime
+                            Built <OrangeSpan text="9 complete PCs" />, and additionally, <OrangeSpan text="helped source parts" /> and <OrangeSpan text="handcrafted lists for countless PCs" /> in my lifetime
                             <BreakLine count="2" />
                             <OrangeSpan text="Experience in handling with PC parts" /> for at least <OrangeSpan text={String(getYears(2019))} /> years
                         </p>

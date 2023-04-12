@@ -88,6 +88,7 @@ import LeagueMasteryImg6 from "../../../images/leaguemastery6.png";
 import XCinematicImg from "../../../images/x-cinematic.png";
 import XCinematicImg2 from "../../../images/x-cinematic2.png";
 
+import PC9Img from "../../../images/pc9.jpg";
 import MyPCImg from "../../../images/mypc.jpg";
 import dec2022ChangesImg from "../../../images/dec2022changes.jpg";
 import PC8Img1 from "../../../images/PC8_1.jpg";
@@ -369,7 +370,7 @@ export let displayableContent: any = {
             `As part of the summary of all the flight simulator hours and things I've done in the past, this is not meant to be exhaustive. There are more experiences that are mentioned in description below that aren't mentioned here. The stats are correct as of 1st Jan 2023. I do recommend scrolling down to read more but here's a tl;dr anyways:
             \n
             \nFlight Simulator Flight Hours: ~3000 Hours
-            \nFlight Simulator Completed Full Flights: 497 (~400 on X-Plane 11, remainder on MSFS)
+            \nFlight Simulator Completed Full Flights: 510 (~400 on X-Plane 11, remainder on MSFS)
             \nFlight Simulator VATSIM Hours: ~1050 Hours
             \nFlight Simulator Experienced Aircrafts: B789, B77W, B738, B736, A339, A320, A32N, DA40
             \nReal Life Flight Hours: 9.0 Hours (DA40 NG @ SYFC)
@@ -485,6 +486,21 @@ export let displayableContent: any = {
             \nMousepad: Glorious Large Mousepad
             \nKeyboard: Razer Hunstman Mecury White
             \nOther Peripherals: Thrustmaster T16000M, Thrustmaster TFRP, Logitech G Pro Flight Throttle, Logitech G29 Steering Wheel, Blue Yeti Whiteout`
+        ], [
+            PC9Img,
+            "9th PC Build",
+            "Apr 2023",
+            `A comissioned build from Carousell with parts chosen by the buyer. I had no control over it and was just tasked to build it.
+            \n
+            \nCase: Corsair 220T
+            \nPSU: Corsair RM750 White 
+            \nMotherboard: Asus ROG Maximus XIII Hero
+            \nCPU: Intel Core i9-10900
+            \nGPU: Zotac Twin Edge Gaming RTX 3060 Ti OC 8GB
+            \nRAM: 64GB (4x16) Corsair Vengeance RGB Pro SL 3600MHz CL18
+            \nCooler: Corsair H150
+            \nDrives: 1TB Samsung 980 Pro, 1TB Samsung 980, 1TB Seagate Barracuda 7200RPM, 500GB Seagate Barracuda 7200RPM
+            `
         ], [
             dec2022ChangesImg, 
             "Personal PC CPU & RAM Changes",
