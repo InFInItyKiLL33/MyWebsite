@@ -44,10 +44,20 @@ function TimelineInitial(props: TimelineInitialProps): JSX.Element {
             }
             <div className="timelineInitialWrapper flex-row" data-state-changer={dataStateChanger}>
                 {
-                    Object.keys(props.types).map((thisKey: string, i: number): JSX.Element => {
+                    props.allowedContent.reduce((partialSum: number, a: number): number => partialSum + a, 0) === 0 ? // checks if access are all 0
+                        <div className="invalidUUID">
+                            <p>You will need a valid UUID to view my content. Request one from me and include it in the URL parameters.</p>
+                            {/* <p>You will need to accept Cookies to view this content. Click on the given link with UUID again to accept Cookies.</p> */}
+                        </div>
+                    : props.allowedContent.reduce((partialSum: number, a: number): number => partialSum + a, 0) === -8 ?
+                            <></>
+                    : Object.keys(props.types).map((thisKey: string, i: number): JSX.Element => {
                         return(
-                            <TimelineInitialTypes index={i} key={i} imageOptions={props.imageOptions} imageInitialOptions={props.imageInitialOptions} types={props.types} setTypeVal={props.setTypeVal} changeTimelineState={props.changeTimelineState} changeImage={props.changeImage} changeTransitionAnimationState={props.changeTransitionAnimationState} timelineToFadeOut={timelineToFadeOut} staggeredFadeout={staggeredFadeout} />
-                        );
+                            props.allowedContent[i] != 0 ?
+                                <TimelineInitialTypes index={i} key={i} imageOptions={props.imageOptions} imageInitialOptions={props.imageInitialOptions} types={props.types} setTypeVal={props.setTypeVal} changeTimelineState={props.changeTimelineState} changeImage={props.changeImage} changeTransitionAnimationState={props.changeTransitionAnimationState} timelineToFadeOut={timelineToFadeOut} staggeredFadeout={staggeredFadeout} />
+                            :
+                                <div key={i}></div>
+                        )
                     })
                 }
             </div>

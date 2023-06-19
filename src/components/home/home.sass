@@ -16,7 +16,7 @@ body
 
 .homepage 
     margin: 0
-    height: 625vh
+    // height: 625vh
 
 
 .backgroundImageHome 
@@ -153,8 +153,8 @@ body
 
 
 .contactMeEndPage 
-    position: absolute
-    margin: 530vh 0px 0px 0px
+    // margin: 530vh 0px 0px 0px
+    padding-top: 37.5vh
     width: 100vw
     font-size: 2em
     z-index: 1
@@ -177,6 +177,7 @@ body
     transition: 0.3s ease
     border-radius: 10px
     font-weight: 600
+    border: none
 
 
 .contactMeEndPageButton:hover 
@@ -185,7 +186,9 @@ body
 
 .backgroundImageLast 
     position: absolute
-    margin: 490vh 0px 0px 0px
+    z-index: -1
+    // margin: 490vh 0px 0px 0px
+    margin-top: -60vh
     filter: brightness(0.25)
 
 
@@ -200,9 +203,10 @@ body
 
 
 .backToTop 
-    position: absolute
+    bottom: 0
+    position: fixed
     color: $orange
-    margin: 585vh auto 0px auto
+    margin: auto auto 0px auto
     left: 0
     right: 0
     height: 5vh

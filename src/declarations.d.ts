@@ -24,11 +24,22 @@ export declare interface LinkCustomProps {
 // Home
 export declare interface HomeProps {
     page: string;
+    backendURL: string;
+    allowedContentTypes: any; 
+    setAllowedContentTypes: any;
+    types: any;
 }
 
 // Timeline
 export declare interface TimelineProps {
     page: string;
+    backendURL: string;
+    getCookie: any;
+    allowedContentTypes: any; 
+    setAllowedContentTypes: any;
+    retrievedContent: any;
+    getAccess: any;
+    types: any;
 }
 
 export declare interface TimelineInitialProps {
@@ -39,6 +50,7 @@ export declare interface TimelineInitialProps {
     changeTimelineState: any;
     changeImage: any;
     changeTransitionAnimationState: any;
+    allowedContent: Array[number];
 }
 
 export declare interface TimelineInitialTypesProps {
@@ -84,6 +96,10 @@ export declare interface TimelineSpecificProps {
     setTypeVal: any;
     changeImage: any;
     imageOptions: any;
+    retrievedContent: any;
+    backendURL: string;
+    allowedContent: Array<number>;
+    getCookie: any;
 }
 
 export declare interface TimelineSpecificContentProps {
@@ -95,6 +111,9 @@ export declare interface TimelineSpecificContentProps {
     setCarouselCurrentImages: any;
     clickAnywhereStatus: any;
     changeClickAnywhereStatus: any;
+    retrievedContent: any;
+    backendURL: string;
+    getCookie: any;
 }
 
 export declare interface TypeButtonsProps {
@@ -165,11 +184,14 @@ export declare interface CustomRectStyle {
 export declare interface ImageCarouselProps {
     images: any;
     exitHandler: any;
+    backendURL: string;
+    getCookie: any;
 }
 
 // About Me
 export declare interface AboutMeProps {
     page: string;
+    backendURL: string;
 }
 
 export declare interface AboutMeContentWrappersProps {
@@ -189,4 +211,5 @@ export declare interface LineBreakProps {
 // Contact
 export declare interface ContactProps {
     page: string;
+    backendURL: string;
 }

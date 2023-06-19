@@ -44,19 +44,26 @@ function TimelineSpecificContent(props: TimelineSpecificContentProps): JSX.Eleme
     const [secondaryImageScale, setSecondaryImageScale] = useState(defaultZoom);
     const [hoveringStatus, setHoveringStatus] = useState(0); // 0 for no hover, any other value for hover additional zoom
     const [rendered, setRendered] = useState(false);
+    const [img, setImg]:any = useState();
     
-    const currentThumbnail = getThumbnail();
     const contentRef = useRef<HTMLInputElement>(null);
 
     const {
         carouselState, changeClickAnywhereStatus
     } = props; // this is just to avoid eslint error for useeffect
 
-    function getThumbnail() {
-        if (typeof(props.content[props.typeValue][props.index][0]) === "string") {
-            return props.content[props.typeValue][props.index][0];
+    async function getThumbnail() {
+        let imageSrc;
+        if (typeof(props.content[props.typeValue][props.index][0]) == "string") {
+            imageSrc = props.content[props.typeValue][props.index][0];
         } else {
-            return props.content[props.typeValue][props.index][0][0];
+            imageSrc = props.content[props.typeValue][props.index][0][0];
+        };
+        const res:any = await fetch(props.backendURL + "image?img=" + imageSrc + "&uuid=" + props.getCookie("uuid"));
+        if (res != 404 && res != 403) {
+            const imageBlob = await res.blob();
+            const imageObjectURL = URL.createObjectURL(imageBlob);
+            setImg(imageObjectURL);
         };
     };
 
@@ -126,6 +133,8 @@ function TimelineSpecificContent(props: TimelineSpecificContentProps): JSX.Eleme
 
     useEffect(() => {
         scrollingEffects();
+        getThumbnail();
+        // console.log(props.content)
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
@@ -160,8 +169,8 @@ function TimelineSpecificContent(props: TimelineSpecificContentProps): JSX.Eleme
             <div className={"arrowDecoration arrowDecoration" + reverseRow === "flex-reverse-row" ? "R" : "L"}></div>
             <div className="eachContentLeftWrapper">
                 <div className="eachContentImageWrapper flex-row" onMouseOver={(event) => setHoveringStatus(0.05)} onMouseLeave={(event) => setHoveringStatus(0)}>
-                    <img src={currentThumbnail} className={"eachContentImage " + clickStatus + reverseImage + (props.carouselState ? " disable-pointer" : "")} onClick={handleClick} alt={props.content[props.typeValue][props.index][1]} style={{"scale": String(imageScale + hoveringStatus)}}></img>
-                    <img src={currentThumbnail} className={"eachContentImage2" + reverseImage} alt={props.content[props.typeValue][props.index][1]} style={{"scale": String(secondaryImageScale + hoveringStatus)}}></img>
+                    <img src={img} className={"eachContentImage " + clickStatus + reverseImage + (props.carouselState ? " disable-pointer" : "")} onClick={handleClick} alt={props.content[props.typeValue][props.index][1]} style={{"scale": String(imageScale + hoveringStatus)}}></img>
+                    <img src={img} className={"eachContentImage2" + reverseImage} alt={props.content[props.typeValue][props.index][1]} style={{"scale": String(secondaryImageScale + hoveringStatus)}}></img>
                 </div>
                 <p className="eachContentYear bolded">{props.content[props.typeValue][props.index][2]}</p>
             </div>

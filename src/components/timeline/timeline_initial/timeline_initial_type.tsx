@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import {TimelineInitialTypesProps} from "../../../declarations";
 
 function TimelineInitialTypes(props: TimelineInitialTypesProps): JSX.Element {
@@ -7,6 +8,9 @@ function TimelineInitialTypes(props: TimelineInitialTypesProps): JSX.Element {
     const [activeData, setActiveData] = useState("inactive");
     const customAnimationLength = [1600, 825, 4500, 3100];
     const customAnimationDelay = [600, 600, 600, 950];
+    const imageScale = [1, 1, 1, 0.6];
+    const imageObjectPosition = ["7% 0%", "center", "center", "center"]; //y axis, in vh
+    const [searchParams, setSearchParams]:any = useSearchParams(); // search params on url
     let alternateFit = props.index === 3 ? "timelineInitialTypesImgAlt" : "";
 
     function setType(currIndex: number): void {
@@ -47,24 +51,15 @@ function TimelineInitialTypes(props: TimelineInitialTypesProps): JSX.Element {
     };
 
     useEffect(() => {
-        
-        const urlParams = window.location.href.split("?");
-        const params: any = {};
-        urlParams.forEach((curr: string): void => {
-            const thisParam: any = curr.split("=");
-            params[thisParam[0]] = thisParam[1];
-        });
 
-        if ("type" in params) {
+        const params: any = searchParams.get("type");
             
-            if (params["type"] === "0" || params["type"] === "1" || params["type"] === "2" || params["type"] === "3") {
-    
-                let currType: any = params["type"];
-                currType = parseInt(currType);
-                setType(currType);
+        if (params === "0" || params === "1" || params === "2" || params === "3") {
 
-            };
-                
+            let currType: any = params;
+            currType = parseInt(currType);
+            setType(currType);
+
         } else {
 
             initialTimelineAnimation(props.index);
@@ -75,7 +70,7 @@ function TimelineInitialTypes(props: TimelineInitialTypesProps): JSX.Element {
 
     return(
         <button className={"timelineInitialTypes " + props.timelineToFadeOut[props.index] + initialTimelineAnimationDelay} key={props.index} data-index={props.index} data-selection={activeData} onClick={chooseType}>
-            <img src={props.imageInitialOptions[props.index]} alt="bg img for each type" data-index={props.index} className={"timelineInitialTypesImg " + alternateFit}></img>
+            <img src={props.imageInitialOptions[props.index]} style={{"transform": "scale(" + String(imageScale[props.index]) + ")", "objectPosition": imageObjectPosition[props.index]}} alt="background img for each type" data-index={props.index} className={"timelineInitialTypesImg " + alternateFit}></img>
             <p className="timelineInitialTypesText" data-index={props.index}>{props.types[props.index]}</p>
         </button>
     );

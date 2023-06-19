@@ -15,7 +15,6 @@ import DesignImgActive from '../../../images/design_icon_active.png';
 import PCBuildingImgDefault from '../../../images/pc_building_icon_default.png';
 import PCBuildingImgHover from '../../../images/pc_building_icon_hover.png';
 import PCBuildingImgActive from '../../../images/pc_building_icon_active.png';
-import {displayableContent} from './content';
 import {TimelineSpecificProps} from "../../../declarations";
 
 function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
@@ -26,7 +25,7 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
     const timelineChangerOrange = "timelineChangerOrange";
     const infiniteScrollerInitialAmount = 5;
     const infiniteScrollerLoadAmount = 2;
-    const [content, setContent] = useState(displayableContent); // For each content, the order is as such: 0 -> image file, 1 -> Title, 2 -> Date, 3 -> Description, 4 (Optional) -> Hyperlink
+    const [content, setContent] = useState(props.retrievedContent); // For each content, the order is as such: 0 -> image file, 1 -> Title, 2 -> Date, 3 -> Description, 4 (Optional) -> Hyperlink
     const [fadeoutContent, status] = useState("active");
     const [sortText, setSortText] = useState("Newest");
     const [loadedContent, setLoadedContent] = useState([]);
@@ -43,9 +42,13 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
     // the header options for timeline
     let skillButtons = Object.keys(props.types).map((currentKey: string, i: number): JSX.Element => {
         let toOrange = props.typeVal === i ? timelineChangerOrange : "";
-        return(
-            <TypeButtons index={i} key={i} toOrange={toOrange} typeVal={props.typeVal} changeType={changeType} types={props.types} defaultIcons={defaultIcons} hoverIcons={hoverIcons} activeIcons={activeIcons} typeImage={typeImage} setTypeImage={setTypeImage} />
-        );
+        if (props.allowedContent[i] != 0) {
+            return(
+                <TypeButtons index={i} key={i} toOrange={toOrange} typeVal={props.typeVal} changeType={changeType} types={props.types} defaultIcons={defaultIcons} hoverIcons={hoverIcons} activeIcons={activeIcons} typeImage={typeImage} setTypeImage={setTypeImage} />
+            );
+        } else {
+            return(<></>);
+        };
     });
 
     function changeType(e: any): void { // click on type header
@@ -144,7 +147,7 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
 
                 {
                     carouselState ? 
-                        <ImageCarousel images={carouselCurrentImages} exitHandler={showHideCarousel}/>
+                        <ImageCarousel images={carouselCurrentImages} exitHandler={showHideCarousel} backendURL={props.backendURL} getCookie={props.getCookie} />
                     :
                         <></>
                 }
@@ -152,7 +155,7 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
                 <div className="timelineSpecificContent" style={{"filter": "blur(" + (carouselState === true ? "4" : "0") + "px"}}>
                     {   
                         loadedContent.length > 0 && loadedContent.map((thisContent: string, i: number): JSX.Element => (
-                            <TimelineSpecificContent typeValue={props.typeVal} content={content} index={i} key={i} showHideCarousel={showHideCarousel} carouselState={carouselState} setCarouselCurrentImages={setCarouselCurrentImages} clickAnywhereStatus={clickAnywhereStatus} changeClickAnywhereStatus={changeClickAnywhereStatus} />
+                            <TimelineSpecificContent typeValue={props.typeVal} content={props.retrievedContent} index={i} key={i} showHideCarousel={showHideCarousel} carouselState={carouselState} setCarouselCurrentImages={setCarouselCurrentImages} clickAnywhereStatus={clickAnywhereStatus} changeClickAnywhereStatus={changeClickAnywhereStatus} retrievedContent={props.retrievedContent} backendURL={props.backendURL} getCookie={props.getCookie} />
                         ))
                         
                     }

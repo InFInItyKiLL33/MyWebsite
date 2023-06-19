@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import backgroundImage0 from "../../images/programmingbg.png";
 import backgroundImage1 from "../../images/aviationbg.jpg";
 import backgroundImage1Alt from "../../images/aviationbg2.png";
-import backgroundImage2 from "../../images/pcbuildingbg3.jpg";
+import backgroundImage2 from "../../images/pcbuildingbg5.jpg";
 import backgroundImage2Alt from "../../images/pcbuildingbg4.jpg";
 import backgroundImage3 from "../../images/designbg.png";
 import backgroundImage3Alt from "../../images/jpjcinfocomm1-16_9.jpg";
@@ -18,7 +18,6 @@ import {TimelineProps} from "../../declarations";
 
 function Timeline(props: TimelineProps): JSX.Element {
     const initialTimeline = 0;
-    const types = {0: "Programming", 1: "Aviation", 2: "PC Building", 3: "Design"};
     const imageOptions = [backgroundImage0, backgroundImage1Alt, backgroundImage2Alt, backgroundImage3Alt];
     const imageInitialOptions = [backgroundImage0, backgroundImage1, backgroundImage2, backgroundImage3];
     const [typeVal, setTypeVal] = useState(initialTimeline); // 0 - 3
@@ -46,12 +45,13 @@ function Timeline(props: TimelineProps): JSX.Element {
         };
     };
 
-    useEffect(function() {
+    useEffect(function(): void {
         // changeTransitionAnimationState(4); // For testing
+
     }, []);
 
     return(
-
+        
         <div className="App">
 
             <div>
@@ -64,13 +64,13 @@ function Timeline(props: TimelineProps): JSX.Element {
                     timelineState === 0 ? 
                         <div className="timelineInitialWrapper">
                             <Navbar page={props.page} />
-                            <TimelineInitial types={types} imageOptions={imageOptions} imageInitialOptions={imageInitialOptions} setTypeVal={setTypeVal} changeTimelineState={changeTimelineState} changeImage={changeImageType} changeTransitionAnimationState={changeTransitionAnimationState} /> 
+                            <TimelineInitial types={props.types} imageOptions={imageOptions} imageInitialOptions={imageInitialOptions} setTypeVal={setTypeVal} changeTimelineState={changeTimelineState} changeImage={changeImageType} changeTransitionAnimationState={changeTransitionAnimationState} allowedContent={props.allowedContentTypes} /> 
                         </div>
                     : 
                         <>
                             <img src={imageType} className={"backgroundImage " + fadeoutTimelineImage} alt="timeline bg img" style={{"objectFit": typeVal === 3 ? "contain" : "cover"}}></img>
                             <Navbar page={props.page} />
-                            <TimelineSpecific type="Programming" changeImage={changeImageType} fadeImage={setFadeoutTimelineImage} imageOptions={imageOptions} initialTimeline={initialTimeline} typeVal={typeVal} setTypeVal={setTypeVal} types={types} />
+                            <TimelineSpecific type="Programming" changeImage={changeImageType} fadeImage={setFadeoutTimelineImage} imageOptions={imageOptions} initialTimeline={initialTimeline} typeVal={typeVal} setTypeVal={setTypeVal} types={props.types} retrievedContent={props.retrievedContent} backendURL={props.backendURL} allowedContent={props.allowedContentTypes} getCookie={props.getCookie} />
                         </>
                 }
                 

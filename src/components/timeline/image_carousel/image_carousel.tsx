@@ -11,14 +11,27 @@ function ImageCarousel(props: ImageCarouselProps): JSX.Element {
     const [fadeInOpacity, setFadeInOpacity] = useState(0);
     const [clickable, setClickable] = useState(0);
     const translateCarouselEnds = [-50 * (pageCount - 1), 50 * (pageCount - 1)];
+    const [thisThumbnail, setThisThumbnail]: any = useState(Array(props.images.length).fill(""));
 
     let imageContent = Array(pageCount).fill("").map((eachImage: any, eachIndex: number): JSX.Element => {
         return(
             <div className="carouselImagesDirectWrapper flex-row flex-jc-center">
-                <img src={props.images[eachIndex]} alt="carousel content" className="carouselImages"></img>
+                <img src={thisThumbnail[eachIndex]} alt="carousel content" className="carouselImages"></img>
             </div>
         );
-    })
+    });
+
+    async function getThumbnail(eachIndex: number): Promise<any> {
+        const res:any = await fetch(props.backendURL + "image?img=" + props.images[eachIndex] + "&uuid=" + props.getCookie("uuid"));
+        if (res != 404 && res != 403) {
+            const imageBlob = await res.blob();
+            const imageObjectURL = URL.createObjectURL(imageBlob);
+            setThisThumbnail((prevThumbnail: any): any => {
+                prevThumbnail[eachIndex] = imageObjectURL;
+                return prevThumbnail;
+            });
+        };
+    };
 
     function leftRight() {
         setTranslateCarousel((prevTranslateVal: number): number => {
@@ -40,6 +53,10 @@ function ImageCarousel(props: ImageCarouselProps): JSX.Element {
 
     useEffect(() => {
         // console.log(props.images, imageContent, pageCount);
+        for (let i = 0; i < pageCount; i++) {
+            getThumbnail(i);
+        };
+        // console.log(thisThumbnail);
         let fadeIn = setTimeout(() => {
             setFadeInOpacity(1);
             clearTimeout(fadeIn);
