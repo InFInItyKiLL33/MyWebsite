@@ -12,6 +12,7 @@ function TimelineInitialTypes(props: TimelineInitialTypesProps): JSX.Element {
     const imageObjectPosition = ["7% 0%", "center", "center", "center"]; //y axis, in vh
     const [searchParams, setSearchParams]:any = useSearchParams(); // search params on url
     let alternateFit = props.index === 3 ? "timelineInitialTypesImgAlt" : "";
+    const hiddenOffset = props.allowedContent.slice(0, props.index + 1).reduce((total: number, x: number): number => (x == 0 ? total + 1 : total), 0);
 
     function setType(currIndex: number): void {
 
@@ -19,7 +20,7 @@ function TimelineInitialTypes(props: TimelineInitialTypesProps): JSX.Element {
 
         for (let i = 0; i < Object.keys(props.types).length; i++) {
             if (currIndex === 3 || currIndex === 2 || i !== currIndex) {
-                let delay = (i < currIndex ? 150 : 0) + i * 150;
+                let delay = (i < currIndex ? 150 : 0) + (i - hiddenOffset) * 150;
                 props.staggeredFadeout(i, delay);
             };
         };
@@ -46,8 +47,8 @@ function TimelineInitialTypes(props: TimelineInitialTypesProps): JSX.Element {
 
     function initialTimelineAnimation(index: number): void {
         setTimeout(() => {
-            setDelay(props.index % 2 === 0 ? " timelineInitialTypesAnimation" : " timelineInitialTypesAnimationReverse");
-        }, index * 300);
+            setDelay((props.index - hiddenOffset) % 2 === 0 ? " timelineInitialTypesAnimation" : " timelineInitialTypesAnimationReverse");
+        }, (index - hiddenOffset) * 300);
     };
 
     useEffect(() => {

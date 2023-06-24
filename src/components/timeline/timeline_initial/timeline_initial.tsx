@@ -54,7 +54,7 @@ function TimelineInitial(props: TimelineInitialProps): JSX.Element {
                     : Object.keys(props.types).map((thisKey: string, i: number): JSX.Element => {
                         return(
                             props.allowedContent[i] != 0 ?
-                                <TimelineInitialTypes index={i} key={i} imageOptions={props.imageOptions} imageInitialOptions={props.imageInitialOptions} types={props.types} setTypeVal={props.setTypeVal} changeTimelineState={props.changeTimelineState} changeImage={props.changeImage} changeTransitionAnimationState={props.changeTransitionAnimationState} timelineToFadeOut={timelineToFadeOut} staggeredFadeout={staggeredFadeout} />
+                                <TimelineInitialTypes index={i} key={i} imageOptions={props.imageOptions} imageInitialOptions={props.imageInitialOptions} types={props.types} setTypeVal={props.setTypeVal} changeTimelineState={props.changeTimelineState} changeImage={props.changeImage} changeTransitionAnimationState={props.changeTransitionAnimationState} timelineToFadeOut={timelineToFadeOut} staggeredFadeout={staggeredFadeout} allowedContent={props.allowedContent} />
                             :
                                 <div key={i}></div>
                         )

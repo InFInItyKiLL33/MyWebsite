@@ -20,15 +20,19 @@
 
 
 .carouselPreviousButton, .carouselNextButton 
-    transition: 0.2s ease
+    transition: 0.25s ease
     background-color: rgba($black, 0)
     border: none
-    color: white
+    color: rgba($white, 0.6)
     width: 12.5vw
     cursor: pointer
     font-size: 2em
     font-weight: 900
     z-index: 11
+    font-family: $globalFont4
+
+.carouselPreviousButton:hover, .carouselNextButton:hover
+    color: rgba($white, 1)
 
 
 .carouselPreviousButton 
@@ -40,7 +44,7 @@
 
 
 .carouselImagesWrapper 
-    transition: 0.15s ease
+    transition: 0.225s ease
     background-color: rgba($black, 0.6)
     margin-top: -100vh
     height: 100vh
@@ -62,6 +66,17 @@
     z-index: 10
     object-fit: cover
     border: 3px solid $orange
+
+.carouselCloseIcon
+    transition: 0.25s ease
+    position: absolute
+    filter: invert(0.3)
+    margin-top: -10vh
+    margin-left: 50%
+    scale: 0.5
+
+.carouselImagesWrapper:hover + svg
+    filter: invert(0.75)
 
 
 @media (max-width: $breakpoint_large)

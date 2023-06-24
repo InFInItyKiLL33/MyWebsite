@@ -64,6 +64,7 @@ export declare interface TimelineInitialTypesProps {
     changeImage: any;
     timelineToFadeOut: any;
     imageInitialOptions: any;
+    allowedContent: any;
 }
 
 export declare interface TimelineDesignSVGTextProps {

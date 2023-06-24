@@ -82,7 +82,9 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
         // reverses content
         let newContent: any = content;
         Object.keys(newContent).forEach((key) => {
-            newContent[key].reverse();
+            if (newContent[key] != undefined) {
+                newContent[key].reverse();
+            };
         });
         setContent(newContent);
 
