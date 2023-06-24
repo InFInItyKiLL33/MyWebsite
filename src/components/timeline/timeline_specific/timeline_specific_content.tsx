@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
+import PlaceholderImage from "../../../images/placeholder-image.png";
 import '../timeline.sass';
 import TimelineHyperlink from './timeline_hyperlink';
 import {TimelineSpecificContentProps} from "../../../declarations";
+import axios from 'axios';
 
 function makeRandomChars(entryString: string): string {
     let result = '';
@@ -32,6 +34,7 @@ function TimelineSpecificContent(props: TimelineSpecificContentProps): JSX.Eleme
     const screenHeight = window.innerHeight;
     const eachContentOriginalHeader = props.content[props.typeValue][props.index][1];
     const eachContentOriginalDesc = props.content[props.typeValue][props.index][3];
+    const ERR_RETRIES = 10;
 
     const [clickStatus, changeClickStatus] = useState("");
     const [thisContentHeader, changeThisContentHeader] = useState("");
@@ -52,19 +55,33 @@ function TimelineSpecificContent(props: TimelineSpecificContentProps): JSX.Eleme
         carouselState, changeClickAnywhereStatus
     } = props; // this is just to avoid eslint error for useeffect
 
-    async function getThumbnail() {
+    async function getThumbnail(): Promise<void> {
+
         let imageSrc;
         if (typeof(props.content[props.typeValue][props.index][0]) == "string") {
             imageSrc = props.content[props.typeValue][props.index][0];
         } else {
             imageSrc = props.content[props.typeValue][props.index][0][0];
-        };
-        const res:any = await fetch(props.backendURL + "image?img=" + imageSrc + "&uuid=" + props.getCookie("uuid"));
-        if (res != 404 && res != 403) {
-            const imageBlob = await res.blob();
-            const imageObjectURL = URL.createObjectURL(imageBlob);
-            setImg(imageObjectURL);
-        };
+        }
+
+        const requestData = await axios({
+            method: 'GET', 
+            url: props.backendURL + "image?img=" + imageSrc + "&uuid=" + props.getCookie("uuid"),
+            responseType: 'blob'
+        })
+        .then((res) => {
+            if (res.data != 404 && res.data != 403 && res.status == 200) {
+                const imageBlob = new File([res.data], ""); 
+                const imageObjectURL = URL.createObjectURL(imageBlob);
+                setImg(imageObjectURL);
+            } else {
+                setImg(PlaceholderImage);
+            };
+        })
+        .catch((error) => {
+            setImg(PlaceholderImage);
+        });
+
     };
 
     function scrollingEffects() {
@@ -133,6 +150,7 @@ function TimelineSpecificContent(props: TimelineSpecificContentProps): JSX.Eleme
 
     useEffect(() => {
         scrollingEffects();
+        setImg(PlaceholderImage);
         getThumbnail();
         // console.log(props.content)
     }, []); // eslint-disable-line react-hooks/exhaustive-deps

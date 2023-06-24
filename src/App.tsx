@@ -13,6 +13,7 @@ function App() {
     const DEVMODE = window.location.href.startsWith("http://localhost");
     const BACKENDURL = DEVMODE == true ? "http://127.0.0.1:8000/" : "";
     const types = {0: "Programming", 1: "Aviation", 2: "PC Building", 3: "Design"};
+    const ERR_RETRIES = 10;
     const [searchParams, setSearchParams]:any = useSearchParams(); // search params on url
     const [allowedContentTypes, setAllowedContentTypes] = useState([-2, -2, -2, -2]); // -2 for loading, -1 for access all, 0 for no access, 1 and above for certain access
     const [retrievedContent, setRetrievedContent] = useState([]);
@@ -55,7 +56,11 @@ function App() {
         return cookie[cookieName];
     }
 
-    async function getAccess(uuid:string = ""): Promise<void> {
+    async function getAccess(uuid:string = "", retries = 0): Promise<void> {
+
+        if (retries > ERR_RETRIES) {
+            return;
+        };
 
         const requestData = await axios({
             method: 'GET', 
@@ -75,11 +80,15 @@ function App() {
                 setAllowedContentTypes([0, 0, 0, 0]);
             } else if (response.data == 404) {
                 setAllowedContentTypes([0, 0, 0, 0]);
+            } else {
+                return getAccess(getCookie("uuid"), retries + 1);
             };
+            return;
         })
         .catch((error) => {
             // console.log(`Error: ${error.data}`)
         });
+        
 
     };
 

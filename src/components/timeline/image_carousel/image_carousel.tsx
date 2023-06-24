@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import PlaceholderImage from "../../../images/placeholder-image.png";
 import "./image_carousel.sass";
 import {ImageCarouselProps} from "../../../declarations";
+import axios from 'axios';
 
 function ImageCarousel(props: ImageCarouselProps): JSX.Element {
 
@@ -22,15 +24,32 @@ function ImageCarousel(props: ImageCarouselProps): JSX.Element {
     });
 
     async function getThumbnail(eachIndex: number): Promise<any> {
-        const res:any = await fetch(props.backendURL + "image?img=" + props.images[eachIndex] + "&uuid=" + props.getCookie("uuid"));
-        if (res != 404 && res != 403) {
-            const imageBlob = await res.blob();
-            const imageObjectURL = URL.createObjectURL(imageBlob);
+        const requestData = await axios({
+            method: 'GET', 
+            url: props.backendURL + "image?img=" + props.images[eachIndex] + "&uuid=" + props.getCookie("uuid"),
+            responseType: 'blob'
+        })
+        .then((res) => {
+            if (res.data != 404 && res.data != 403 && res.status == 200) {
+                const imageBlob = new File([res.data], ""); 
+                const imageObjectURL = URL.createObjectURL(imageBlob);
+                setThisThumbnail((prevThumbnail: any): any => {
+                    prevThumbnail[eachIndex] = imageObjectURL;
+                    return prevThumbnail;
+                });
+            } else {
+                setThisThumbnail((prevThumbnail: any): any => {
+                    prevThumbnail[eachIndex] = PlaceholderImage;
+                    return prevThumbnail;
+                });
+            };
+        })
+        .catch((error) => {
             setThisThumbnail((prevThumbnail: any): any => {
-                prevThumbnail[eachIndex] = imageObjectURL;
+                prevThumbnail[eachIndex] = PlaceholderImage;
                 return prevThumbnail;
             });
-        };
+        });
     };
 
     function leftRight() {
@@ -54,6 +73,10 @@ function ImageCarousel(props: ImageCarouselProps): JSX.Element {
     useEffect(() => {
         // console.log(props.images, imageContent, pageCount);
         for (let i = 0; i < pageCount; i++) {
+            setThisThumbnail((prevThumbnail: any): any => {
+                prevThumbnail[i] = PlaceholderImage;
+                return prevThumbnail;
+            });
             getThumbnail(i);
         };
         // console.log(thisThumbnail);
