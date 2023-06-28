@@ -47,7 +47,6 @@ function Timeline(props: TimelineProps): JSX.Element {
 
     useEffect(function(): void {
         // changeTransitionAnimationState(4); // For testing
-
     }, []);
 
     return(
@@ -64,7 +63,14 @@ function Timeline(props: TimelineProps): JSX.Element {
                     timelineState === 0 ? 
                         <div className="timelineInitialWrapper">
                             <Navbar page={props.page} />
-                            <TimelineInitial types={props.types} imageOptions={imageOptions} imageInitialOptions={imageInitialOptions} setTypeVal={setTypeVal} changeTimelineState={changeTimelineState} changeImage={changeImageType} changeTransitionAnimationState={changeTransitionAnimationState} allowedContent={props.allowedContentTypes} /> 
+                            {
+                                props.allowedContentTypes.includes(-2) ? 
+                                    <div className="loadingIconMain"></div>
+                                : props.allowedContentTypes.includes(-3) ? 
+                                    <div className="errorContactingServer flex-col flex-jc-centre">There was an error contacting the backend server. Refresh and try again.</div>
+                                :
+                                    <TimelineInitial types={props.types} imageOptions={imageOptions} imageInitialOptions={imageInitialOptions} setTypeVal={setTypeVal} changeTimelineState={changeTimelineState} changeImage={changeImageType} changeTransitionAnimationState={changeTransitionAnimationState} allowedContent={props.allowedContentTypes} />
+                            }
                         </div>
                     : 
                         <>

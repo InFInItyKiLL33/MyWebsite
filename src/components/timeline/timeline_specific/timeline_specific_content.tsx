@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PlaceholderImage from "../../../images/placeholder-image.png";
+import PlaceholderBlankImage from "../../../images/placeholder-blank.png";
 import '../timeline.sass';
 import TimelineHyperlink from './timeline_hyperlink';
 import {TimelineSpecificContentProps} from "../../../declarations";
@@ -40,6 +41,8 @@ function TimelineSpecificContent(props: TimelineSpecificContentProps): JSX.Eleme
     const [thisContentHeader, changeThisContentHeader] = useState("");
     const [thisContentDesc, changeThisContentDesc] = useState("");
     const [slideEffect, changeSlideEffect] = useState("");
+    const [imageLoadingAnimationState, changeImageLoadingAnimationState] = useState(true); //true to show, false to hide
+    const [failedImageLoading, setFailedImageLoading] = useState(false);
     // eslint-disable-next-line
     const [imagePos, setImagePos] = useState(0); // this is needed for the effect to work, don't know why
     const [contentOpacity, setContentOpacity] = useState(minOpacity);
@@ -55,10 +58,10 @@ function TimelineSpecificContent(props: TimelineSpecificContentProps): JSX.Eleme
         carouselState, changeClickAnywhereStatus
     } = props; // this is just to avoid eslint error for useeffect
 
-    async function getThumbnail(): Promise<void> {
+    async function getThumbnail(retries: number = 0): Promise<void> {
 
         let imageSrc;
-        if (typeof(props.content[props.typeValue][props.index][0]) == "string") {
+        if (typeof(props.content[props.typeValue][props.index][0]) === "string") {
             imageSrc = props.content[props.typeValue][props.index][0];
         } else {
             imageSrc = props.content[props.typeValue][props.index][0][0];
@@ -70,16 +73,29 @@ function TimelineSpecificContent(props: TimelineSpecificContentProps): JSX.Eleme
             responseType: 'blob'
         })
         .then((res) => {
-            if (res.data != 404 && res.data != 403 && res.status == 200) {
+            if (res.data !== 404 && res.data !== 403 && res.status === 200) {
                 const imageBlob = new File([res.data], ""); 
                 const imageObjectURL = URL.createObjectURL(imageBlob);
                 setImg(imageObjectURL);
+                changeImageLoadingAnimationState(false);
             } else {
-                setImg(PlaceholderImage);
+                if (retries < ERR_RETRIES) {
+                    getThumbnail(retries + 1);
+                } else {
+                    setImg(PlaceholderImage);
+                    changeImageLoadingAnimationState(false);
+                    setFailedImageLoading(true);
+                };
             };
         })
         .catch((error) => {
-            setImg(PlaceholderImage);
+            if (retries < ERR_RETRIES) {
+                getThumbnail(retries + 1);
+            } else {
+                setImg(PlaceholderImage);
+                changeImageLoadingAnimationState(false);
+                setFailedImageLoading(true);
+            };
         });
 
     };
@@ -150,7 +166,7 @@ function TimelineSpecificContent(props: TimelineSpecificContentProps): JSX.Eleme
 
     useEffect(() => {
         scrollingEffects();
-        setImg(PlaceholderImage);
+        setImg(PlaceholderBlankImage);
         getThumbnail();
         // console.log(props.content)
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
@@ -170,16 +186,25 @@ function TimelineSpecificContent(props: TimelineSpecificContentProps): JSX.Eleme
 
     function handleClick(event: any): void {
 
-        changeClickStatus("clicked disable-pointer");
-        if (typeof(props.content[props.typeValue][props.index][0]) === "string") {
-            props.setCarouselCurrentImages([props.content[props.typeValue][props.index][0]]);
+        if (!failedImageLoading && !imageLoadingAnimationState) {
+
+            changeClickStatus("clicked disable-pointer");
+            if (typeof(props.content[props.typeValue][props.index][0]) === "string") {
+                props.setCarouselCurrentImages([props.content[props.typeValue][props.index][0]]);
+            } else {
+                props.setCarouselCurrentImages(props.content[props.typeValue][props.index][0]);
+            };
+            props.showHideCarousel();
+            setTimeout(() => {
+                changeClickStatus("clicked clicked-end");
+            }, 300)
+
         } else {
-            props.setCarouselCurrentImages(props.content[props.typeValue][props.index][0]);
+            changeImageLoadingAnimationState(true);
+            setFailedImageLoading(false);
+            setImg(PlaceholderBlankImage);
+            getThumbnail();
         };
-        props.showHideCarousel();
-        setTimeout(() => {
-            changeClickStatus("clicked clicked-end");
-        }, 300)
     };
 
     return(
@@ -187,6 +212,12 @@ function TimelineSpecificContent(props: TimelineSpecificContentProps): JSX.Eleme
             <div className={"arrowDecoration arrowDecoration" + reverseRow === "flex-reverse-row" ? "R" : "L"}></div>
             <div className="eachContentLeftWrapper">
                 <div className="eachContentImageWrapper flex-row" onMouseOver={(event) => setHoveringStatus(0.05)} onMouseLeave={(event) => setHoveringStatus(0)}>
+                    {
+                        imageLoadingAnimationState ? 
+                            <div className="loadingIcon"></div>
+                        : 
+                            <></>
+                    }
                     <img src={img} className={"eachContentImage " + clickStatus + reverseImage + (props.carouselState ? " disable-pointer" : "")} onClick={handleClick} alt={props.content[props.typeValue][props.index][1]} style={{"scale": String(imageScale + hoveringStatus)}}></img>
                     <img src={img} className={"eachContentImage2" + reverseImage} alt={props.content[props.typeValue][props.index][1]} style={{"scale": String(secondaryImageScale + hoveringStatus)}}></img>
                 </div>

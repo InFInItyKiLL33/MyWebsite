@@ -18,6 +18,11 @@ function Home(props: HomeProps): JSX.Element {
     const MAXOFFSETMOUSE = -3; // in px
     const [mouseToImageMovement, setMouseOffset] = useState([0, 0]);
 
+    const [popUpEnabled, setPopUpEnabled] = useState(1); // 0 for disable, 1 for enable, 2 for animation before disabling
+    const [popUpAnimation, setPopUpAnimation] = useState("");
+    const [popUpMessage, setPopUpMessage] = useState("");
+    const [cookieIconState, setCookieIconState] = useState(0); // 0 for cookie, 1 for close
+
     const [pointerEvents, setPointerEvents] = useState([0, 0, 0, 0]);
     const [homepageHeight, setHomepageHeight] = useState(625);
 
@@ -34,6 +39,16 @@ function Home(props: HomeProps): JSX.Element {
 
     function mouseMoveEvent(event: any): void {
         setMouseOffset([MAXOFFSETMOUSE * ((event.pageX * 2)/window.innerWidth - 1), MAXOFFSETMOUSE * ((event.pageY * 2)/window.innerHeight - 1)]);
+    };
+
+    function closePopUp(event: any): void {
+        setPopUpAnimation("fadeOut 2s ease");
+        setTimeout(() => {
+            setPopUpEnabled(0);
+            var now = new Date();
+            now.setTime(now.getTime() + 86400*30); // 30 days expiry cookie
+            document.cookie = "popUp=0;expires=" + now.toUTCString();
+        }, 2000);
     };
 
     function updateImgOffset(type: number, index: number, offset: number, offset2: number = 0): void { // type 0 is scroll, type 1 is opacity, 2 if both
@@ -212,7 +227,7 @@ function Home(props: HomeProps): JSX.Element {
     }, [pointerEventsOffset]);
 
     useEffect(():void => {
-        console.log(props.allowedContentTypes)
+        // console.log(props.allowedContentTypes)
         setImageCounterOffset(() => {
             let defaultOffset = Array(Object.keys(props.types).length + 2).fill(0);
             if (props.allowedContentTypes.reduce((partialSum: number, a: number): number => partialSum + a, 0) !== 0) {
@@ -254,6 +269,15 @@ function Home(props: HomeProps): JSX.Element {
         });
     }, [props.allowedContentTypes]);
 
+    useEffect(() => {
+        console.log(props.getCookie("uuid"));
+        if (props.getCookie("uuid") == undefined || props.getCookie("uuid") == null) {
+            setPopUpMessage("No UUID detected in the link, some content will be hidden. Request for one to view it. Dismiss to accept all optional cookies.")
+        } else {
+            setPopUpMessage("By entering your UUID, you agree to necessary cookies. Your UUID is used to access content, and won't be tracked. Dismiss to accept all optional cookies.");
+        };
+    }, []);
+
     return(
         <div className="homepage" onMouseMove={mouseMoveEvent} style={{"height": String(homepageHeight) + "vh"}}>
 
@@ -263,6 +287,27 @@ function Home(props: HomeProps): JSX.Element {
 
             <img src={squigglyArrow} className="squigglyArrow" alt="arrow below timeline button"></img>
             <p className="pastExperience semi-bold">My Past Experiences</p>
+
+            {
+                popUpEnabled >= 1 && popUpMessage != "" && props.getCookie("popUp") != "0" ?
+                    <div className='popUpTextWrapper flex-row' onMouseEnter={(e) => setCookieIconState(1)} onMouseLeave={(e) => setCookieIconState(0)} style={{"animation": popUpAnimation, "opacity": imgOpacityOffset[0 + imgCounterOffset[0]]}}>
+                        <p className='popUpText'>{popUpMessage}</p>
+                        <div className='popUpCloseWrapper' onMouseUp={closePopUp}>
+                            {
+                                cookieIconState === 0 ?
+                                    <svg className='popUpClose' xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48">
+                                        <path d="M420.118-558Q446-558 464-576.118q18-18.117 18-44Q482-646 463.882-664q-18.117-18-44-18Q394-682 376-663.882q-18 18.117-18 44Q358-594 376.118-576q18.117 18 44 18Zm-80 200Q366-358 384-376.118q18-18.117 18-44Q402-446 383.882-464q-18.117-18-44-18Q314-482 296-463.882q-18 18.117-18 44Q278-394 296.118-376q18.117 18 44 18ZM600-320q17 0 28.5-11.5T640-360q0-17-11.5-28.5T600-400q-17 0-28.5 11.5T560-360q0 17 11.5 28.5T600-320ZM480.677-63Q394-63 318-96q-76-33-132.5-89.5T96-318.188Q63-394.376 63-480q0-93 35-169t92.5-130.5Q248-834 322-865t153-34q40 0 66 19t30 58q7 55 41.5 90t89.5 45q25 3 41 19.5t23 45.5q8 24 23.5 44.5T826-545q41.103 19.75 57.052 45.375Q899-474 895-431q-10 76.281-45 143.141Q815-221 760.5-171T634.808-92q-71.192 29-154.131 29Zm-.382-94q132.862 0 219.783-85.5Q787-328 802-454q-50-20-82.5-58.5T679-599q-77-12-134-69t-68-134q-61 1-118.5 24t-102 64.5q-44.5 41.5-72 100.348Q157-554.305 157-480q0 135.441 93.78 229.22Q344.559-157 480.295-157ZM480-482Z"/>
+                                    </svg>
+                                :
+                                    <svg className='popUpClose' xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48">
+                                        <path d="M480-414 282-216q-14 14-33 14t-33-14q-14-14-14-33t14-33l198-198-198-198q-14-14-14-33t14-33q14-14 33-14t33 14l198 198 198-198q14-14 33-14t33 14q14 14 14 33t-14 33L546-480l198 198q14 14 14 33t-14 33q-14 14-33 14t-33-14L480-414Z"/>
+                                    </svg>
+                            }
+                        </div>
+                    </div>
+                : 
+                    <></>
+            }
 
             <div className="appMain">
                 <BasicInfo />

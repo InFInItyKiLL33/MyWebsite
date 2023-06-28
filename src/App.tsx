@@ -59,6 +59,7 @@ function App() {
     async function getAccess(uuid:string = "", retries = 0): Promise<void> {
 
         if (retries > ERR_RETRIES) {
+            setAllowedContentTypes([-3, -3, -3, -3]);
             return;
         };
 
@@ -87,6 +88,7 @@ function App() {
         })
         .catch((error) => {
             // console.log(`Error: ${error.data}`)
+            return getAccess(getCookie("uuid"), retries + 1);
         });
         
 
@@ -100,7 +102,7 @@ function App() {
     return (
         <>
             <Routes>
-                <Route path="/" element={<Home page="1" backendURL={BACKENDURL} allowedContentTypes={allowedContentTypes} setAllowedContentTypes={setAllowedContentTypes} types={types} />} />
+                <Route path="/" element={<Home page="1" backendURL={BACKENDURL} allowedContentTypes={allowedContentTypes} setAllowedContentTypes={setAllowedContentTypes} types={types} getCookie={getCookie} />} />
                 <Route path="/timeline" element={<Timeline page="2" backendURL={BACKENDURL} getCookie={getCookie} allowedContentTypes={allowedContentTypes} setAllowedContentTypes={setAllowedContentTypes} retrievedContent={retrievedContent} getAccess={getAccess} types={types} />} />
                 <Route path="/about" element={<About page="3" backendURL={BACKENDURL} />} />
                 <Route path="/contact" element={<ContactMe page="4" backendURL={BACKENDURL} />} />

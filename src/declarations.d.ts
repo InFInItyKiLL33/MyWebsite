@@ -28,6 +28,7 @@ export declare interface HomeProps {
     allowedContentTypes: any; 
     setAllowedContentTypes: any;
     types: any;
+    getCookie: any;
 }
 
 // Timeline

@@ -69,6 +69,65 @@ body
     animation: 1.5s fadeDelayed2 ease-in both 3s, 3.6s bounceArrow infinite
 
 
+.popUpTextWrapper
+    position: absolute
+    right: 0
+    bottom: 0
+    background-color: rgba($grey3, 0.35)
+    border-radius: 10px
+    margin: 0px 30px 70px 0px
+    opacity: 0
+    animation: fade 3s ease 3s backwards
+    z-index: 10
+    min-width: fit-content
+    transition: height 0.1s ease 0.2s, 0.2s ease
+    overflow: hidden
+
+
+.popUpTextWrapper:hover > .popUpText
+    min-width: 100px
+    max-width: 20vw
+    width: 20vw
+    max-height: 28px
+    overflow: auto
+    opacity: 1
+    height: auto
+    padding: 0px 20px 0px 25px
+    margin: 10px 0px 10px 0px
+    transition: 0.4s ease, opacity 0.3s ease 0.1s
+
+
+.popUpText
+    padding: 0px
+    width: 0px
+    height: 28px
+    opacity: 0
+    text-align: left
+    margin: auto 0 auto 0
+    color: rgba($white, 0.5)
+    font-size: 0.65em
+    font-style: italic
+    transition: 0.4s ease, opacity 0.3s ease
+
+
+.popUpClose
+    filter: invert(1) opacity(0.5)
+    scale: 0.35
+    margin: auto
+    height: 100%
+    transition: 0.3s ease
+
+
+.popUpCloseWrapper
+    cursor: pointer
+
+
+.popUpCloseWrapper:hover > svg
+    // rotate: 90deg
+    filter: invert(1) opacity(1)
+    // scale: 0.45
+
+
 .scrollPrompt 
     position: absolute
     color: $white
