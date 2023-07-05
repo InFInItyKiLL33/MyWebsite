@@ -14,6 +14,13 @@ p, h1
 .infoBackground 
     justify-content: left
     margin-top: 5vh
+    z-index: 11
+    position: relative
+
+
+.infoDescription
+    z-index: 11
+    position: relative
 
 
 .infoDescription > p 
@@ -21,15 +28,17 @@ p, h1
 
 
 .greetings 
-    padding: 20px 15px 0px 20px
+    padding: 25px 15px 0px 20px
     margin-left: 10%
-    font-size: 2em
+    font-size: 1.5em
     animation: 1.25s fade ease-in
     color: $white
+    z-index: 11
+    position: relative
 
 
 .homeName 
-    font-size: 2.5em
+    font-size: 2em
     padding-top: 20px
     color: #f06f4f
     animation: 0.75s fade ease-in
@@ -62,11 +71,17 @@ p, h1
     margin-right: 10vw
     animation: 2s fadeDelayed ease-in 1s both, 2s slideInR ease 1.5s both
     color: $white
-    font-size: 0.9em
+    font-size: 0.75em
 
 
 .divider2 + .infoDescription > .description 
-    animation: 2s fadeDelayed ease-in 0.5s both, 2s slideInR ease 0.5s both !important
+    animation: 2s fadeDelayed ease-in 0.5s both, 4s slideInTopRightToBottomLeft ease 0.5s both !important
+
+
+
+@media (min-width: $breakpoint_medium)
+    .appBGOverlay1
+        margin-top: calc(25vh - 180px)
     
 
 

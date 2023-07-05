@@ -15,9 +15,11 @@ import BasicInfo from "./basic_info";
 import Navbar from "../navbar/navbar";
 import {HomeProps} from "../../declarations";
 
+const aspectRatioBreakpoint = 1.5
+
 function Home(props: HomeProps): JSX.Element {
 
-    const BACKGROUNDIMAGES = [backgroundImageA, window.innerWidth / window.innerHeight > 1 ? backgroundImageB : backgroundImageBAlt];
+    const BACKGROUNDIMAGES = [backgroundImageA, window.innerWidth / window.innerHeight > aspectRatioBreakpoint ? backgroundImageB : backgroundImageBAlt];
     const [backgroundImageType, setBackgroundImageType] = useState(props.allowedContentTypes[1] == 1 ? 2 : 1);
 
     const MAXOFFSETMOUSE = -3; // in px
@@ -293,7 +295,7 @@ function Home(props: HomeProps): JSX.Element {
                     <></>
             }
 
-            <img src={BACKGROUNDIMAGES[backgroundImageType]} className="backgroundImage backgroundImageHome backgroundImageHomeTop" alt="background wing view" style={{"scale": "1.05", "marginTop": imgScrollOffset[0], "opacity": imgOpacityOffset[0 + imgCounterOffset[0]], "translate": String(mouseToImageMovement[0]) + "px " + String(mouseToImageMovement[1]) + "px", "animation": "1.75s backgroundImageAnimation" + String(backgroundImageType + 1) + " ease 3s both", zIndex: backgroundImageType === 1 ? "10" : ""}}></img>
+            <img src={BACKGROUNDIMAGES[backgroundImageType]} className="backgroundImage backgroundImageHome backgroundImageHomeTop" alt="background wing view" style={{"scale": "1.05", "marginTop": imgScrollOffset[0], "opacity": imgOpacityOffset[0 + imgCounterOffset[0]], "translate": String(mouseToImageMovement[0]) + "px " + String(mouseToImageMovement[1]) + "px", "animation": "1.75s backgroundImageAnimation" + String(backgroundImageType + 1) + " ease 3s both", zIndex: backgroundImageType === 1 && window.innerWidth / window.innerHeight > aspectRatioBreakpoint ? "10" : ""}}></img>
 
             <Navbar page={props.page} />
 
@@ -321,7 +323,7 @@ function Home(props: HomeProps): JSX.Element {
                     <></>
             }
 
-            <div className="appMain">
+            <div className={"appMain " + (backgroundImageType === 1 && window.innerWidth / window.innerHeight < aspectRatioBreakpoint ? "appMain2" : "")}>
                 <BasicInfo bgType={backgroundImageType} />
             </div>
 
