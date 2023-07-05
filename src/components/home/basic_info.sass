@@ -13,6 +13,7 @@ p, h1
 
 .infoBackground 
     justify-content: left
+    margin-top: 5vh
 
 
 .infoDescription > p 
@@ -42,6 +43,20 @@ p, h1
     animation: 1s fade ease-in 0.75s both, 1s slideInR ease 1s both
 
 
+.divider2
+    width: 100vw
+    height: 70vh
+    margin: 0
+    transform: translate(0px, 0px)!important
+    position: absolute
+    transition: 0s !important
+    animation: 1s backgroundColour2 ease 3s both
+
+
+.divider2 + .infoDescription
+    margin-top: 25px
+
+
 .description 
     margin-left: calc(10% + 20px)
     margin-right: 10vw
@@ -50,7 +65,12 @@ p, h1
     font-size: 0.9em
 
 
-@media (max-width: 768px)
+.divider2 + .infoDescription > .description 
+    animation: 2s fadeDelayed ease-in 0.5s both, 2s slideInR ease 0.5s both !important
+    
+
+
+@media (max-width: $breakpoint_medium)
     .infoBackground
         flex-direction: column!important
 
@@ -63,7 +83,8 @@ p, h1
         margin-left: 12.5%
 
     .infoBackground > h1
-        padding-bottom: 20px
+        padding-bottom: 10px
+        padding-top: 5px
 
     .homeName
         font-size: 1.75em
@@ -73,3 +94,25 @@ p, h1
 
     .description
         font-size: 0.75em
+        margin-top: 15px
+        margin-bottom: 5px
+
+    .age
+        margin-top: 0px
+
+
+
+@media (max-width: $breakpoint_small)
+    .infoBackground
+        flex-direction: column!important
+        margin-top: 10vh
+        margin-left: 7.5px
+
+    .greetings
+        padding-bottom: 0px!important
+
+    .description
+        font-size: 0.55em
+
+    .age
+        font-size: 0.6em

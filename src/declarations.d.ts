@@ -31,6 +31,10 @@ export declare interface HomeProps {
     getCookie: any;
 }
 
+export declare interface BasicInfoProps {
+    bgType: number;
+}
+
 // Timeline
 export declare interface TimelineProps {
     page: string;

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink as Link } from "react-router-dom";
-import backgroundImage from "../../images/background-main.png"; // this is Image2=
+import backgroundImageA from "../../images/background-main.png"; 
+import backgroundImageB from "../../images/background-main2.png";
+import backgroundImageBAlt from "../../images/background-main2-alt.png"; 
 import backgroundImage1 from "../../images/programming2-vignette.png";
 import backgroundImage2 from "../../images/aviation-vignette.png";
 import backgroundImage3 from "../../images/pcbuildingbg4.jpg";
@@ -14,6 +16,9 @@ import Navbar from "../navbar/navbar";
 import {HomeProps} from "../../declarations";
 
 function Home(props: HomeProps): JSX.Element {
+
+    const BACKGROUNDIMAGES = [backgroundImageA, window.innerWidth / window.innerHeight > 1 ? backgroundImageB : backgroundImageBAlt];
+    const [backgroundImageType, setBackgroundImageType] = useState(props.allowedContentTypes[1] == 1 ? 2 : 1);
 
     const MAXOFFSETMOUSE = -3; // in px
     const [mouseToImageMovement, setMouseOffset] = useState([0, 0]);
@@ -129,74 +134,74 @@ function Home(props: HomeProps): JSX.Element {
 
                     updateImgOffset(
                         2, 0, 
-                        document.documentElement.scrollTop / 3, 
+                        backgroundImageType !== 1 ? document.documentElement.scrollTop / 3 : 0, 
                         Math.min(0.99, 1.25 - document.documentElement.scrollTop / (window.innerHeight * 0.6))
                     );
                     /* falls through */
 
 
-                case document.documentElement.scrollTop >= window.innerHeight * 1.5 && document.documentElement.scrollTop < window.innerHeight * 3:
+                case document.documentElement.scrollTop >= window.innerHeight * 1 && document.documentElement.scrollTop < window.innerHeight * 3:
 
                     updateImgOffset(
                         2, 1, 
-                        window.innerHeight * 1.4 + Math.min((document.documentElement.scrollTop - window.innerHeight) / 3, window.innerHeight * 2), 
+                        window.innerHeight * 1.8 + Math.min((document.documentElement.scrollTop - window.innerHeight * 2.4) / 3, window.innerHeight * 2), 
                         Math.min(0.99,
-                            document.documentElement.scrollTop > window.innerHeight * 2.5 ? 
-                                1 - (((document.documentElement.scrollTop - window.innerHeight * 2.5) / window.innerHeight) / 0.35)
+                            document.documentElement.scrollTop > window.innerHeight * 2.4 ? 
+                                1 - (((document.documentElement.scrollTop - window.innerHeight * 2.4) / window.innerHeight) / 0.35)
                             : 
-                                document.documentElement.scrollTop > window.innerHeight * 1.5 ? 
-                                    ((document.documentElement.scrollTop - window.innerHeight * 1.5) / window.innerHeight) / 0.4
+                                document.documentElement.scrollTop > window.innerHeight * 1.75 ? 
+                                    ((document.documentElement.scrollTop - window.innerHeight * 1.75) / window.innerHeight) / 0.4
                                 : 
                                     0
                         )
                     );
                     /* falls through */
 
-                case document.documentElement.scrollTop >= window.innerHeight * 2.5 && document.documentElement.scrollTop < window.innerHeight * 4:
+                case document.documentElement.scrollTop >= window.innerHeight * 2 && document.documentElement.scrollTop < window.innerHeight * 4:
                     
                     updateImgOffset(
                         2, 2, 
                         window.innerHeight * 2.8 - Math.min((document.documentElement.scrollTop - window.innerHeight * 2.5) / 3, window.innerHeight * 2), 
                         Math.min(0.99,
-                            document.documentElement.scrollTop > window.innerHeight * 3.3 ? 
-                                1 - (((document.documentElement.scrollTop - window.innerHeight * 3.3) / window.innerHeight) / 0.35)
+                            document.documentElement.scrollTop > window.innerHeight * 3.2 ? 
+                                1 - (((document.documentElement.scrollTop - window.innerHeight * 3.2) / window.innerHeight) / 0.35)
                             : 
-                                document.documentElement.scrollTop > window.innerHeight * 2.5 ? 
-                                    ((document.documentElement.scrollTop - window.innerHeight * 2.5) / window.innerHeight) / 0.4
+                                document.documentElement.scrollTop > window.innerHeight * 2.65 ? 
+                                    ((document.documentElement.scrollTop - window.innerHeight * 2.65) / window.innerHeight) / 0.4
                                 : 
                                     0
                         )
                     );
                     /* falls through */
                     
-                case document.documentElement.scrollTop >= window.innerHeight * 3.5 && document.documentElement.scrollTop < window.innerHeight * 5:
+                case document.documentElement.scrollTop >= window.innerHeight * 3 && document.documentElement.scrollTop < window.innerHeight * 5:
                     
                     updateImgOffset(
                         2, 3, 
                         window.innerHeight * 3.8 - Math.min((document.documentElement.scrollTop - window.innerHeight * 2.5) / 3, window.innerHeight * 2), 
                         Math.min(0.99,
-                            document.documentElement.scrollTop > window.innerHeight * 4.1 ? 
-                                1 - (((document.documentElement.scrollTop - window.innerHeight * 4.1) / window.innerHeight) / 0.35)
+                            document.documentElement.scrollTop > window.innerHeight * 4.0 ? 
+                                1 - (((document.documentElement.scrollTop - window.innerHeight * 4.0) / window.innerHeight) / 0.35)
                             : 
-                                document.documentElement.scrollTop > window.innerHeight * 3.5 ? 
-                                    ((document.documentElement.scrollTop - window.innerHeight * 3.5) / window.innerHeight) / 0.4
+                                document.documentElement.scrollTop > window.innerHeight * 3.4 ? 
+                                    ((document.documentElement.scrollTop - window.innerHeight * 3.4) / window.innerHeight) / 0.4
                                 : 
                                     0
                         )
                     );
                     /* falls through */
                     
-                case document.documentElement.scrollTop >= window.innerHeight * 4.1 && document.documentElement.scrollTop < window.innerHeight * 6:
+                case document.documentElement.scrollTop >= window.innerHeight * 4 && document.documentElement.scrollTop < window.innerHeight * 6:
                     
                     updateImgOffset(
                         2, 4, 
-                        window.innerHeight * 4.7 - Math.min((document.documentElement.scrollTop - window.innerHeight * 2.5) / 3, window.innerHeight * 2), 
+                        window.innerHeight * 4.8 - Math.min((document.documentElement.scrollTop - window.innerHeight * 2.5) / 3, window.innerHeight * 2), 
                         Math.min(0.99,
-                            document.documentElement.scrollTop > window.innerHeight * 5 ? 
-                                1 - (((document.documentElement.scrollTop - window.innerHeight * 5) / window.innerHeight) / 0.35)
+                            document.documentElement.scrollTop > window.innerHeight * 4.8 ? 
+                                1 - (((document.documentElement.scrollTop - window.innerHeight * 4.8) / window.innerHeight) / 0.35)
                             : 
-                                document.documentElement.scrollTop > window.innerHeight * 4.1 ? 
-                                    ((document.documentElement.scrollTop - window.innerHeight * 4.1) / window.innerHeight) / 0.4
+                                document.documentElement.scrollTop > window.innerHeight * 4.15 ? 
+                                    ((document.documentElement.scrollTop - window.innerHeight * 4.15) / window.innerHeight) / 0.4
                                 : 
                                     0
                         )
@@ -281,7 +286,14 @@ function Home(props: HomeProps): JSX.Element {
     return(
         <div className="homepage" onMouseMove={mouseMoveEvent} style={{"height": String(homepageHeight) + "vh"}}>
 
-            <img src={backgroundImage} className="backgroundImage backgroundImageHome backgroundImageHomeTop" alt="background wing view" style={{"scale": "1.05", "marginTop": imgScrollOffset[0], "opacity": imgOpacityOffset[0 + imgCounterOffset[0]], "translate": String(mouseToImageMovement[0]) + "px " + String(mouseToImageMovement[1]) + "px"}}></img>
+            {
+                backgroundImageType === 1 ?
+                    <div className='topBackground'></div>
+                :
+                    <></>
+            }
+
+            <img src={BACKGROUNDIMAGES[backgroundImageType]} className="backgroundImage backgroundImageHome backgroundImageHomeTop" alt="background wing view" style={{"scale": "1.05", "marginTop": imgScrollOffset[0], "opacity": imgOpacityOffset[0 + imgCounterOffset[0]], "translate": String(mouseToImageMovement[0]) + "px " + String(mouseToImageMovement[1]) + "px", "animation": "1.75s backgroundImageAnimation" + String(backgroundImageType + 1) + " ease 3s both", zIndex: backgroundImageType === 1 ? "10" : ""}}></img>
 
             <Navbar page={props.page} />
 
@@ -310,7 +322,7 @@ function Home(props: HomeProps): JSX.Element {
             }
 
             <div className="appMain">
-                <BasicInfo />
+                <BasicInfo bgType={backgroundImageType} />
             </div>
 
             <div className="flex-col scrollPrompt" style={{"filter": "brightness(" + scollPromptOpacity + ")"}}>
@@ -346,7 +358,7 @@ function Home(props: HomeProps): JSX.Element {
                         </div>
                     </Link>
     
-                    <img src={backgroundImage2} className="backgroundImage backgroundImageHome backgroundImage3" alt="aviation pic" style={{"marginTop": imgScrollOffset[2 + imgCounterOffset[2]], "opacity": imgOpacityOffset[2 + imgCounterOffset[2]], "filter": "brightness(0.3) blur(2px)", "translate": String(mouseToImageMovement[0]) + "px " + String(mouseToImageMovement[1]) + "px"}}></img>
+                    <img src={backgroundImage2} className="backgroundImage backgroundImageHome backgroundImage3" alt="aviation pic" style={{"marginTop": imgScrollOffset[2 + imgCounterOffset[2]], "opacity": imgOpacityOffset[2 + imgCounterOffset[2]], "filter": "brightness(0.35) blur(0px) contrast(1.05)", "translate": String(mouseToImageMovement[0]) + "px " + String(mouseToImageMovement[1]) + "px"}}></img>
                 </>
             :
                 <></>
