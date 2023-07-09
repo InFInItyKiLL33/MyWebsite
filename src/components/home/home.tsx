@@ -88,7 +88,7 @@ function Home(props: HomeProps): JSX.Element {
         function updatePointerEvents(index: number): void {
             setPointerEvents(() => {
                 let newPointerEvents = [0, 0, 0, 0];
-                if (index >= 0 && index < pointerEvents.length) {
+                if (index >= 0 && index < newPointerEvents.length) {
                     newPointerEvents[index] = 1;
                 };
                 return newPointerEvents;
@@ -280,7 +280,8 @@ function Home(props: HomeProps): JSX.Element {
 
     useEffect(() => {
         // console.log(props.getCookie("uuid"));
-        if (props.getCookie("uuid") === undefined || props.getCookie("uuid") === null) {
+        let currentUUIDCookie = props.getCookie("uuid")
+        if (currentUUIDCookie === undefined || currentUUIDCookie === null) {
             setPopUpMessage("No UUID detected in the link, some content will be hidden. Request for one to view it. Dismiss to accept all optional cookies.")
         } else {
             setPopUpMessage("By entering your UUID, you agree to necessary cookies. Your UUID is used to access content, and won't be tracked. Dismiss to accept all optional cookies.");
