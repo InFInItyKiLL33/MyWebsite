@@ -82,18 +82,18 @@ function Home(props: HomeProps): JSX.Element {
             });
         };
     };
-
-    function updatePointerEvents(index: number): void {
-        setPointerEvents(() => {
-            let newPointerEvents = [0, 0, 0, 0];
-            if (index >= 0 && index < pointerEvents.length) {
-                newPointerEvents[index] = 1;
-            };
-            return newPointerEvents;
-        });
-    };
     
     useEffect(() => {
+
+        function updatePointerEvents(index: number): void {
+            setPointerEvents(() => {
+                let newPointerEvents = [0, 0, 0, 0];
+                if (index >= 0 && index < pointerEvents.length) {
+                    newPointerEvents[index] = 1;
+                };
+                return newPointerEvents;
+            });
+        };
     
         function scrollEffect(): void {
 
@@ -233,7 +233,7 @@ function Home(props: HomeProps): JSX.Element {
 
         return () => window.removeEventListener('scroll', scrollEffect);
 
-    }, [pointerEventsOffset]);
+    }, [pointerEventsOffset, backgroundImageType]);
 
     useEffect(():void => {
         // console.log(props.allowedContentTypes)
@@ -276,10 +276,10 @@ function Home(props: HomeProps): JSX.Element {
             };
             return prevHeight;
         });
-    }, [props.allowedContentTypes]);
+    }, [props.allowedContentTypes, props.types]);
 
     useEffect(() => {
-        console.log(props.getCookie("uuid"));
+        // console.log(props.getCookie("uuid"));
         if (props.getCookie("uuid") === undefined || props.getCookie("uuid") === null) {
             setPopUpMessage("No UUID detected in the link, some content will be hidden. Request for one to view it. Dismiss to accept all optional cookies.")
         } else {
@@ -297,7 +297,7 @@ function Home(props: HomeProps): JSX.Element {
                     <></>
             }
 
-            <img src={BACKGROUNDIMAGES[backgroundImageType]} className="backgroundImage backgroundImageHome backgroundImageHomeTop" alt="background image main" style={{
+            <img src={BACKGROUNDIMAGES[backgroundImageType]} className="backgroundImage backgroundImageHome backgroundImageHomeTop" alt="background top" style={{
                 "scale": "1.05",
                 "marginTop": imgScrollOffset[0],
                 "opacity": imgOpacityOffset[0 + imgCounterOffset[0]],

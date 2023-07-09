@@ -35,16 +35,6 @@ function App() {
         return rtn;
     }
 
-    function uuidParamToCookie(): void {
-        let uuid = searchParams.get("uuid");
-        if (uuid !== "" && uuid !== null) {
-            var now = new Date();
-            now.setTime(now.getTime() + 86400*30); // 30 days expiry cookie
-            document.cookie = "uuid=" + uuid + ";expires=" + now.toUTCString();
-            window.location.replace(removeParam("uuid", window.location.href)); 
-        };
-    };
-
     function getCookie(cookieName: string): string {
         let cookie: any = {};
         document.cookie.split(';').forEach(function(el) {
@@ -68,7 +58,7 @@ function App() {
         })
         .then((response) => {
             // console.log(response);
-            if (response.status == 200 && response.data["result"] == "ok") {
+            if (response.status === 200 && response.data["result"] === "ok") {
                 // console.log(response.data);
                 setAllowedContentTypes(response.data["allowedCategories"]);
                 for (let i = 0; i < Object.keys(types).length; i++) {
@@ -76,9 +66,9 @@ function App() {
                         return [...prevRetrievedContent, response.data["content" + String(i + 1)]];
                     });
                 };
-            } else if (response.data["result"] == "error" || response.data["result"] == "excessive") {
+            } else if (response.data["result"] === "error" || response.data["result"] === "excessive") {
                 setAllowedContentTypes([-3, -3, -3, -3]);
-            } else if (response.data["result"] == "invalid") {
+            } else if (response.data["result"] === "invalid") {
                 setAllowedContentTypes([0, 0, 0, 0]);
             } else {
                 setTimeout(function() {
@@ -91,13 +81,22 @@ function App() {
             // console.log(`Error: ${error.data}`)
             return getAccess(getCookie("uuid"), retries + 1);
         });
-        
 
     };
 
     useEffect(():void => {
-        uuidParamToCookie();
+
+        //uuidParamToCookie
+        let uuid = searchParams.get("uuid");
+        if (uuid !== "" && uuid !== null) {
+            var now = new Date();
+            now.setTime(now.getTime() + 86400*30); // 30 days expiry cookie
+            document.cookie = "uuid=" + uuid + ";expires=" + now.toUTCString();
+            window.location.replace(removeParam("uuid", window.location.href)); 
+        };
+
         getAccess(getCookie("uuid"));
+
     }, [])
 
     return (
