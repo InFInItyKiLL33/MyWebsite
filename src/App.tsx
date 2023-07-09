@@ -14,7 +14,7 @@ function App() {
     const types = {0: "Programming", 1: "Aviation", 2: "PC Building", 3: "Design"};
     const ERR_RETRIES = 10;
     const [searchParams, setSearchParams]:any = useSearchParams(); // search params on url
-    const [allowedContentTypes, setAllowedContentTypes] = useState([-2, -2, -2, -2]); // -2 for loading, -1 for access all, 0 for no access, 1 and above for certain access
+    const [allowedContentTypes, setAllowedContentTypes] = useState([-2, -2, -2, -2]); // -3 backend error, -2 for loading, -1 for access all, 0 for no access (all 0 for invalid uuid), 1 and above for certain access
     const [retrievedContent, setRetrievedContent] = useState([]);
 
     function removeParam(key: string, sourceURL: string): string {

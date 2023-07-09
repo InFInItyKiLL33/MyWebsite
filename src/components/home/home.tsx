@@ -20,7 +20,7 @@ const aspectRatioBreakpoint = 1.5
 function Home(props: HomeProps): JSX.Element {
 
     const BACKGROUNDIMAGES = [backgroundImageA, window.innerWidth / window.innerHeight > aspectRatioBreakpoint ? backgroundImageB : backgroundImageBAlt];
-    const [backgroundImageType, setBackgroundImageType] = useState(props.allowedContentTypes[1] >= 1 ? 0 : 1);
+    const [backgroundImageType, setBackgroundImageType] = useState(props.allowedContentTypes[1] >= 1 || props.allowedContentTypes[1] === -1 ? 0 : 1);
 
     const MAXOFFSETMOUSE = -3; // in px
     const [mouseToImageMovement, setMouseOffset] = useState([0, 0]);
@@ -61,17 +61,17 @@ function Home(props: HomeProps): JSX.Element {
     };
 
     function updateImgOffset(type: number, index: number, offset: number, offset2: number = 0): void { // type 0 is scroll, type 1 is opacity, 2 if both
-        if (type == 0) {
+        if (type === 0) {
             setImageScrollOffset((prevOffset) => {
                 prevOffset[index] = offset;
                 return prevOffset;
             });
-        } else if (type == 1) {
+        } else if (type === 1) {
             setImageOpacityOffset((prevOffset) => {
                 prevOffset[index] = offset;
                 return prevOffset;
             });
-        } else if (type == 2) {
+        } else if (type === 2) {
             setImageScrollOffset((prevOffset) => {
                 prevOffset[index] = offset;
                 return prevOffset;
@@ -280,7 +280,7 @@ function Home(props: HomeProps): JSX.Element {
 
     useEffect(() => {
         console.log(props.getCookie("uuid"));
-        if (props.getCookie("uuid") == undefined || props.getCookie("uuid") == null) {
+        if (props.getCookie("uuid") === undefined || props.getCookie("uuid") === null) {
             setPopUpMessage("No UUID detected in the link, some content will be hidden. Request for one to view it. Dismiss to accept all optional cookies.")
         } else {
             setPopUpMessage("By entering your UUID, you agree to necessary cookies. Your UUID is used to access content, and won't be tracked. Dismiss to accept all optional cookies.");
@@ -312,7 +312,7 @@ function Home(props: HomeProps): JSX.Element {
             <p className="pastExperience semi-bold">My Past Experiences</p>
 
             {
-                popUpEnabled >= 1 && popUpMessage != "" && props.getCookie("popUp") != "0" ?
+                popUpEnabled >= 1 && popUpMessage !== "" && props.getCookie("popUp") !== "0" ?
                     <div className='popUpTextWrapper flex-row' onMouseEnter={(e) => setCookieIconState(1)} onMouseLeave={(e) => setCookieIconState(0)} style={{"animation": popUpAnimation, "opacity": imgOpacityOffset[0 + imgCounterOffset[0]]}}>
                         <p className='popUpText'>{popUpMessage}</p>
                         <div className='popUpCloseWrapper' onMouseUp={closePopUp}>
