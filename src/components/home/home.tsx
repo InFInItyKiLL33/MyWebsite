@@ -20,7 +20,7 @@ const aspectRatioBreakpoint = 1.5
 function Home(props: HomeProps): JSX.Element {
 
     const BACKGROUNDIMAGES = [backgroundImageA, window.innerWidth / window.innerHeight > aspectRatioBreakpoint ? backgroundImageB : backgroundImageBAlt];
-    const [backgroundImageType, setBackgroundImageType] = useState(props.allowedContentTypes[1] >= 1 || props.allowedContentTypes[1] === -1 ? 0 : 1);
+    const [backgroundImageType, setBackgroundImageType] = useState(props.allowedContentTypes[1] >= 1 || props.allowedContentTypes[1] === -1 ? 0 : 1); // eslint-disable-line @typescript-eslint/no-unused-vars
 
     const MAXOFFSETMOUSE = -3; // in px
     const [mouseToImageMovement, setMouseOffset] = useState([0, 0]);
