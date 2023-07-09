@@ -10,8 +10,9 @@ import axios from 'axios';
 
 function App() {
 
-    const DEVMODE = window.location.href.startsWith("http://localhost");
-    const BACKENDURL = DEVMODE == true ? "http://127.0.0.1:8000/" : "";
+    // const DEVMODE = window.location.href.startsWith("http://localhost");
+    const DEVMODE = !window.location.href.startsWith("http://localhost");
+    const BACKENDURL = DEVMODE === true ? "http://127.0.0.1:8000/" : "https://infinitytwoproxy.onrender.com";
     const types = {0: "Programming", 1: "Aviation", 2: "PC Building", 3: "Design"};
     const ERR_RETRIES = 10;
     const [searchParams, setSearchParams]:any = useSearchParams(); // search params on url

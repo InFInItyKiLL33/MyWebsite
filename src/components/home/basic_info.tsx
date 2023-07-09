@@ -24,8 +24,8 @@ function BasicInfo(props: BasicInfoProps): JSX.Element {
             </div>
             <div className={"divider slideInInitialR " + (desktopModeProgBG ? "divider2" : "")}></div>
             <div className="infoDescription slideInInitialR slideInRDelayed">
-                <p className="skills description" style={{"fontSize": desktopModeProgBG ? getFontSize(0.85) : ""}}>Programmer • Graphic Designer • Aviation Enthusiast • PC Builder</p>
-                <p className="age description" style={{"fontSize": desktopModeProgBG ? getFontSize(0.85) : ""}}>I'm currently {getAge()}!</p>
+                <p className="skills description" style={{"fontSize": desktopModeProgBG ? getFontSize(1) : ""}}>Programmer • Graphic Designer • Aviation Enthusiast • PC Builder</p>
+                <p className="age description" style={{"fontSize": desktopModeProgBG ? getFontSize(1) : ""}}>I'm currently {getAge()}!</p>
             </div>
         </div>
     )
