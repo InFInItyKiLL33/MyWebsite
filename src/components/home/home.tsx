@@ -20,7 +20,7 @@ const aspectRatioBreakpoint = 1.5
 function Home(props: HomeProps): JSX.Element {
 
     const BACKGROUNDIMAGES = [backgroundImageA, window.innerWidth / window.innerHeight > aspectRatioBreakpoint ? backgroundImageB : backgroundImageBAlt];
-    const [backgroundImageType, setBackgroundImageType] = useState(props.allowedContentTypes[1] == 1 ? 2 : 1);
+    const [backgroundImageType, setBackgroundImageType] = useState(props.allowedContentTypes[1] >= 1 ? 0 : 1);
 
     const MAXOFFSETMOUSE = -3; // in px
     const [mouseToImageMovement, setMouseOffset] = useState([0, 0]);
@@ -297,7 +297,7 @@ function Home(props: HomeProps): JSX.Element {
                     <></>
             }
 
-            <img src={BACKGROUNDIMAGES[backgroundImageType]} className="backgroundImage backgroundImageHome backgroundImageHomeTop" alt="background wing view" style={{
+            <img src={BACKGROUNDIMAGES[backgroundImageType]} className="backgroundImage backgroundImageHome backgroundImageHomeTop" alt="background image main" style={{
                 "scale": "1.05",
                 "marginTop": imgScrollOffset[0],
                 "opacity": imgOpacityOffset[0 + imgCounterOffset[0]],
