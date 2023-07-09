@@ -28,20 +28,25 @@ p, h1
 
 
 .greetings 
-    padding: 25px 15px 0px 20px
+    padding: 0px 15px 0px 20px
+    margin-bottom: 1.75vh
+    height: 3.6vh
     margin-left: 10%
-    font-size: 1.5em
+    font-size: 1.75em
     animation: 1.25s fade ease-in
     color: $white
     z-index: 11
     position: relative
+    justify-content: end !important
 
 
 .homeName 
-    font-size: 2em
-    padding-top: 20px
+    font-size: 2.25em
+    margin-bottom: 1.75vh
+    height: 4vh
     color: #f06f4f
     animation: 0.75s fade ease-in
+    justify-content: end !important
 
 
 .divider 
@@ -60,10 +65,11 @@ p, h1
     position: absolute
     transition: 0s !important
     animation: 1s backgroundColour2 ease 3s both
+    border-top: 1px solid rgba($orange, 0.7)
 
 
 .divider2 + .infoDescription
-    margin-top: 25px
+    margin-top: 1.5vh
 
 
 .description 
@@ -71,17 +77,17 @@ p, h1
     margin-right: 10vw
     animation: 2s fadeDelayed ease-in 1s both, 2s slideInR ease 1.5s both
     color: $white
-    font-size: 0.75em
+    font-size: 0.85em
 
 
 .divider2 + .infoDescription > .description 
-    animation: 2s fadeDelayed ease-in 0.5s both, 4s slideInTopRightToBottomLeft ease 0.5s both !important
+    animation: 2s fadeDelayed ease-in 0.5s both, 4s slideInTopRightToBottomLeft ease 0s both !important
 
 
 
 @media (min-width: $breakpoint_medium)
     .appBGOverlay1
-        margin-top: calc(25vh - 180px)
+        margin-top: calc(30vh - 180px)
     
 
 
@@ -103,13 +109,16 @@ p, h1
 
     .homeName
         font-size: 1.75em
+        margin-bottom: 1.25vh!important
+        padding-top: 0px!important
 
     .greetings
-        font-size: 1.3em
+        font-size: 1em
+        margin-bottom: 0vh!important
 
     .description
         font-size: 0.75em
-        margin-top: 15px
+        margin-top: 20px
         margin-bottom: 5px
 
     .age

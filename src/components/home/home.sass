@@ -23,7 +23,8 @@ body
     position: absolute
     width: 100vw
     height: 100vh
-    background-color: rgba($grey1, 1)
+    // background-color: rgba($grey1, 1)
+    // background: linear-gradient(to bottom, rgba($grey1, 1) 30%, rgba($black, 1) 100%)
     z-index: -1
     animation: 0s fadeIn ease 3s both, 1s backgroundColour ease 3s both
 
@@ -82,7 +83,7 @@ body
     position: absolute
     right: 0
     bottom: 0
-    background-color: rgba($grey3, 0.35)
+    background-color: rgba($orange, 0.6)
     border-radius: 10px
     margin: 0px 30px 70px 0px
     opacity: 0
@@ -93,7 +94,7 @@ body
     overflow: hidden
 
 
-.popUpTextWrapper:hover > .popUpText
+.popUpTextWrapper:hover > .popUpText, .popUpTextWrapper:active > .popUpText
     min-width: 100px
     max-width: 20vw
     width: 20vw
@@ -106,6 +107,10 @@ body
     transition: 0.4s ease, opacity 0.3s ease 0.1s
 
 
+.popUpTextWrapper:hover, .popUpTextWrapper:active
+    background-color: rgba($orange, 0.2)
+
+
 .popUpText
     padding: 0px
     width: 0px
@@ -113,7 +118,7 @@ body
     opacity: 0
     text-align: left
     margin: auto 0 auto 0
-    color: rgba($white, 0.5)
+    color: rgba($white, 0.8)
     font-size: 0.65em
     font-style: italic
     transition: 0.4s ease, opacity 0.3s ease
@@ -164,6 +169,7 @@ body
     font-weight: 700
     position: absolute
     margin: 100vh auto 0px auto
+    padding: 0px 10vw 0px 10vw
     left: 0
     right: 0
     font-size: 3em
@@ -320,7 +326,7 @@ body
 @media (max-width: $breakpoint_medium)
 
     .divider
-        width: 72vw!important
+        width: 80vw!important
 
 
     .scrollCheckOutText
@@ -329,6 +335,17 @@ body
 
     .contactMeEndPageText, .programmingText, .aviationText, .pcText, .designText
         font-size: 0.6em
+
+    .popUpTextWrapper:hover > .popUpText, .popUpTextWrapper:active > .popUpText
+        max-width: calc(100vw - 160px)
+        width: calc(100vw - 160px)
+        max-height: 48px
+        display: flex
+        flex-direction: column
+        justify-content: center
+
+    .popUpTextWrapper:hover
+        height: 65px
 
 
 

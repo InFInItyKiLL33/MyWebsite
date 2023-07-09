@@ -49,13 +49,15 @@ function Home(props: HomeProps): JSX.Element {
     };
 
     function closePopUp(event: any): void {
-        setPopUpAnimation("fadeOut 2s ease");
-        setTimeout(() => {
-            setPopUpEnabled(0);
-            var now = new Date();
-            now.setTime(now.getTime() + 86400*30); // 30 days expiry cookie
-            document.cookie = "popUp=0;expires=" + now.toUTCString();
-        }, 2000);
+        if (cookieIconState) {
+            setPopUpAnimation("fadeOut 2s ease");
+            setTimeout(() => {
+                setPopUpEnabled(0);
+                var now = new Date();
+                now.setTime(now.getTime() + 86400*30); // 30 days expiry cookie
+                document.cookie = "popUp=0;expires=" + now.toUTCString();
+            }, 2000);
+        };
     };
 
     function updateImgOffset(type: number, index: number, offset: number, offset2: number = 0): void { // type 0 is scroll, type 1 is opacity, 2 if both
@@ -210,14 +212,14 @@ function Home(props: HomeProps): JSX.Element {
                     );
                     /* falls through */
                     
-                case document.documentElement.scrollTop >= window.innerHeight * 5.0:
+                case document.documentElement.scrollTop >= window.innerHeight * 4.9:
                     
                     updateImgOffset(
                         2, 5, 
-                        window.innerHeight * 4.8,
+                        window.innerHeight * 4.9,
                         Math.min(0.99,
-                            document.documentElement.scrollTop > window.innerHeight * 5.0 ? 
-                                ((document.documentElement.scrollTop - window.innerHeight * 5.0) / window.innerHeight) / 0.4
+                            document.documentElement.scrollTop > window.innerHeight * 4.9 ? 
+                                ((document.documentElement.scrollTop - window.innerHeight * 4.9) / window.innerHeight) / 0.4
                             : 
                                 0
                         )
@@ -290,12 +292,19 @@ function Home(props: HomeProps): JSX.Element {
 
             {
                 backgroundImageType === 1 ?
-                    <div className='topBackground'></div>
+                    <div className='topBackground' style={{"background": backgroundImageType === 1 && window.innerWidth / window.innerHeight <= aspectRatioBreakpoint ? "linear-gradient(to bottom, rgba(16, 16, 16, 1) 30%, rgba(0, 0, 0, 1) 100%)" : "rgba(16, 16, 16, 1)"}}></div>
                 :
                     <></>
             }
 
-            <img src={BACKGROUNDIMAGES[backgroundImageType]} className="backgroundImage backgroundImageHome backgroundImageHomeTop" alt="background wing view" style={{"scale": "1.05", "marginTop": imgScrollOffset[0], "opacity": imgOpacityOffset[0 + imgCounterOffset[0]], "translate": String(mouseToImageMovement[0]) + "px " + String(mouseToImageMovement[1]) + "px", "animation": "1.75s backgroundImageAnimation" + String(backgroundImageType + 1) + " ease 3s both", zIndex: backgroundImageType === 1 && window.innerWidth / window.innerHeight > aspectRatioBreakpoint ? "10" : ""}}></img>
+            <img src={BACKGROUNDIMAGES[backgroundImageType]} className="backgroundImage backgroundImageHome backgroundImageHomeTop" alt="background wing view" style={{
+                "scale": "1.05",
+                "marginTop": imgScrollOffset[0],
+                "opacity": imgOpacityOffset[0 + imgCounterOffset[0]],
+                "translate": String(mouseToImageMovement[0]) + "px " + String(mouseToImageMovement[1]) + "px",
+                "animation": "1.75s backgroundImageAnimation" + String(backgroundImageType + 1) + " ease 3s both",
+                zIndex: backgroundImageType === 1 && window.innerWidth / window.innerHeight > aspectRatioBreakpoint ? "1" : ""
+            }}></img>
 
             <Navbar page={props.page} />
 
