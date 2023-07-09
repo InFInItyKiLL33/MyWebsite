@@ -77,7 +77,7 @@ function App() {
                     });
                 };
             } else if (response.data["result"] == "error" || response.data["result"] == "excessive") {
-                setAllowedContentTypes([0, 0, 0, 0]);
+                setAllowedContentTypes([-3, -3, -3, -3]);
             } else if (response.data["result"] == "invalid") {
                 setAllowedContentTypes([0, 0, 0, 0]);
             } else {
