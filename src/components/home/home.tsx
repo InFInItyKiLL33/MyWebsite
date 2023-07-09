@@ -286,7 +286,7 @@ function Home(props: HomeProps): JSX.Element {
         } else {
             setPopUpMessage("By entering your UUID, you agree to necessary cookies. Your UUID is used to access content, and won't be tracked. Dismiss to accept all optional cookies.");
         };
-    }, []);
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     return(
         <div className="homepage" onMouseMove={mouseMoveEvent} style={{"height": String(homepageHeight) + "vh"}}>

@@ -97,7 +97,7 @@ function App() {
 
         getAccess(getCookie("uuid"));
 
-    }, [])
+    }, [searchParams]) // eslint-disable-line react-hooks/exhaustive-deps (getAccess requires to be reused as child props)
 
     return (
         <>
