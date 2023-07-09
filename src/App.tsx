@@ -68,7 +68,7 @@ function App() {
         })
         .then((response) => {
             // console.log(response);
-            if (response.data != 404 && response.data != 403 && response.status == 200) {
+            if (response.status == 200 && response.data["result"] == "ok") {
                 // console.log(response.data);
                 setAllowedContentTypes(response.data["allowedCategories"]);
                 for (let i = 0; i < Object.keys(types).length; i++) {
@@ -76,12 +76,14 @@ function App() {
                         return [...prevRetrievedContent, response.data["content" + String(i + 1)]];
                     });
                 };
-            } else if (response.data == 403) {
+            } else if (response.data["result"] == "error" || response.data["result"] == "excessive") {
                 setAllowedContentTypes([0, 0, 0, 0]);
-            } else if (response.data == 404) {
+            } else if (response.data["result"] == "invalid") {
                 setAllowedContentTypes([0, 0, 0, 0]);
             } else {
-                return getAccess(getCookie("uuid"), retries + 1);
+                setTimeout(function() {
+                    return getAccess(getCookie("uuid"), retries + 1);
+                }, 1000);
             };
             return;
         })

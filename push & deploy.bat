@@ -1,5 +1,6 @@
 git add .
-git commit -m "sync"
+set /p msg=Enter your commit message: 
+git commit -m "%msg%"
 git push origin master
 npm run deploy
 pause
