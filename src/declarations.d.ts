@@ -197,6 +197,8 @@ export declare interface ImageCarouselProps {
 export declare interface ImageCarouselSpecificProps {
     thisImage: any;
     backendURL: string;
+    getCookie: any;
+    placeholderImage: any;
 }
 
 // About Me

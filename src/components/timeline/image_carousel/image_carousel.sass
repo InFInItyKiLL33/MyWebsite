@@ -23,7 +23,7 @@
     transition: 0.25s ease
     background-color: rgba($black, 0)
     border: none
-    color: rgba($white, 0.6)
+    color: rgba($white, 0.3)
     width: 12.5vw
     cursor: pointer
     font-size: 2em
@@ -76,7 +76,18 @@
     scale: 0.5
 
 .carouselImagesWrapper:hover + svg, .carouselCloseIcon:hover
-    filter: invert(0.75)
+    filter: invert(1)
+
+
+.loadingIconMain
+    border: 8px solid transparent
+    border-top: 8px solid $white
+    border-radius: 50%
+    width: 40px
+    height: 40px
+    position: absolute
+    margin: auto
+    animation: 0.75s FanRotateCW linear infinite both
 
 
 @media (max-width: $breakpoint_large)
