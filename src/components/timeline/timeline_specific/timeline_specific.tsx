@@ -154,7 +154,7 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
                         <></>
                 }
 
-                <div className="timelineSpecificContent" style={{"filter": "blur(" + (carouselState === true ? "4" : "0") + "px"}}>
+                <div className={"timelineSpecificContent " + fadeoutContent !== "active" ? "fadeOutImage" : ""} style={{"filter": "blur(" + (carouselState === true ? "4" : "0") + "px"}}>
                     {   
                         loadedContent.length > 0 && loadedContent.map((thisContent: string, i: number): JSX.Element => (
                             <TimelineSpecificContent typeValue={props.typeVal} content={props.retrievedContent} index={i} key={i} showHideCarousel={showHideCarousel} carouselState={carouselState} setCarouselCurrentImages={setCarouselCurrentImages} clickAnywhereStatus={clickAnywhereStatus} changeClickAnywhereStatus={changeClickAnywhereStatus} retrievedContent={props.retrievedContent} backendURL={props.backendURL} getCookie={props.getCookie} />
