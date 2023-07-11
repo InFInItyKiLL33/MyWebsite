@@ -42,7 +42,7 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
     // the header options for timeline
     let skillButtons = Object.keys(props.types).map((currentKey: string, i: number): JSX.Element => {
         let toOrange = props.typeVal === i ? timelineChangerOrange : "";
-        if (props.allowedContent[i] != 0) {
+        if (props.allowedContent[i] !== 0) {
             return(
                 <TypeButtons index={i} key={i} toOrange={toOrange} typeVal={props.typeVal} changeType={changeType} types={props.types} defaultIcons={defaultIcons} hoverIcons={hoverIcons} activeIcons={activeIcons} typeImage={typeImage} setTypeImage={setTypeImage} />
             );
@@ -82,7 +82,7 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
         // reverses content
         let newContent: any = content;
         Object.keys(newContent).forEach((key) => {
-            if (newContent[key] != undefined) {
+            if (newContent[key] !== undefined) {
                 newContent[key].reverse();
             };
         });
@@ -154,7 +154,7 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
                         <></>
                 }
 
-                <div className={"timelineSpecificContent " + fadeoutContent !== "active" ? "fadeOutImage" : ""} style={{"filter": "blur(" + (carouselState === true ? "4" : "0") + "px"}}>
+                <div className={"timelineSpecificContent " + (fadeoutContent !== "active" ? "fadeOutTimelineContent" : "")} style={{"filter": "blur(" + (carouselState === true ? "4" : "0") + "px"}}>
                     {   
                         loadedContent.length > 0 && loadedContent.map((thisContent: string, i: number): JSX.Element => (
                             <TimelineSpecificContent typeValue={props.typeVal} content={props.retrievedContent} index={i} key={i} showHideCarousel={showHideCarousel} carouselState={carouselState} setCarouselCurrentImages={setCarouselCurrentImages} clickAnywhereStatus={clickAnywhereStatus} changeClickAnywhereStatus={changeClickAnywhereStatus} retrievedContent={props.retrievedContent} backendURL={props.backendURL} getCookie={props.getCookie} />

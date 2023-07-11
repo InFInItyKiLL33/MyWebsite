@@ -30,7 +30,7 @@ function ImageCarousel(props: ImageCarouselProps): JSX.Element {
             responseType: 'blob'
         })
         .then((res) => {
-            if (res.data != 404 && res.data != 403 && res.status == 200) {
+            if (res.data !== 404 && res.data !== 403 && res.status === 200) {
                 const imageBlob = new File([res.data], ""); 
                 const imageObjectURL = URL.createObjectURL(imageBlob);
                 setThisThumbnail((prevThumbnail: any): any => {
