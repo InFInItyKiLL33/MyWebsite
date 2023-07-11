@@ -15,13 +15,19 @@ function ImageCarousel(props: ImageCarouselProps): JSX.Element {
     const translateCarouselEnds = [-50 * (pageCount - 1), 50 * (pageCount - 1)];
     const [thisThumbnail, setThisThumbnail]: any = useState(Array(props.images.length).fill(""));
 
-    let imageContent = Array(pageCount).fill("").map((eachImage: any, eachIndex: number): JSX.Element => {
-        return(
-            <div className="carouselImagesDirectWrapper flex-row flex-jc-center">
-                <img src={thisThumbnail[eachIndex]} alt="carousel content" className="carouselImages"></img>
-            </div>
-        );
-    });
+    const [imageContent, setImageContent]: any = useState(updateImageContent());
+
+    function updateImageContent(): void {
+        setImageContent(() => {
+            return Array(pageCount).fill("").map((eachImage: any, eachIndex: number): JSX.Element => {
+                return(
+                    <div className="carouselImagesDirectWrapper flex-row flex-jc-center">
+                        <img src={thisThumbnail[eachIndex]} alt="carousel content" className="carouselImages"></img>
+                    </div>
+                );
+            })
+        });
+    };
 
     async function getThumbnail(eachIndex: number): Promise<any> {
         await axios({
@@ -90,6 +96,10 @@ function ImageCarousel(props: ImageCarouselProps): JSX.Element {
             clearTimeout(clickableInitial);
         }, 300);
     }, []);
+
+    useEffect(() => {
+        updateImageContent();
+    }, [thisThumbnail])
 
     return(
         <div className="imageCarousel" style={{"opacity": String(fadeInOpacity), "pointerEvents": clickable ? "initial" : "none"}}>
