@@ -24,12 +24,13 @@ function ImageCarousel(props: ImageCarouselProps): JSX.Element {
     });
 
     async function getThumbnail(eachIndex: number): Promise<any> {
-        const requestData = await axios({
+        await axios({
             method: 'GET', 
             url: props.backendURL + "image?img=" + props.images[eachIndex] + "&uuid=" + props.getCookie("uuid"),
             responseType: 'blob'
         })
         .then((res) => {
+            console.log(res.data)
             if (res.data !== 404 && res.data !== 403 && res.status === 200) {
                 const imageBlob = new File([res.data], ""); 
                 const imageObjectURL = URL.createObjectURL(imageBlob);
