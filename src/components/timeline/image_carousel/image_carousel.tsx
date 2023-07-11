@@ -3,6 +3,7 @@ import PlaceholderImage from "../../../images/placeholder-image.png";
 import "./image_carousel.sass";
 import {ImageCarouselProps} from "../../../declarations";
 import axios from 'axios';
+import ImageCarouselSpecific from './image_carousel_specific';
 
 function ImageCarousel(props: ImageCarouselProps): JSX.Element {
 
@@ -14,19 +15,17 @@ function ImageCarousel(props: ImageCarouselProps): JSX.Element {
     const [clickable, setClickable] = useState(0);
     const translateCarouselEnds = [-50 * (pageCount - 1), 50 * (pageCount - 1)];
     const [thisThumbnail, setThisThumbnail]: any = useState(Array(props.images.length).fill(""));
-
-    const [imageContent, setImageContent]: any = useState(updateImageContent());
+    const [imageContent, setImageContent]: any = useState(
+        Array(pageCount).fill("").map((eachImage: any, eachIndex: number): JSX.Element => {
+            return(
+                <ImageCarouselSpecific thisImage={props.images[eachIndex]} backendURL={props.backendURL} />
+            );
+        })
+    );
 
     function updateImageContent(): void {
-        setImageContent(() => {
-            return Array(pageCount).fill("").map((eachImage: any, eachIndex: number): JSX.Element => {
-                return(
-                    <div className="carouselImagesDirectWrapper flex-row flex-jc-center">
-                        <img src={thisThumbnail[eachIndex]} alt="carousel content" className="carouselImages"></img>
-                    </div>
-                );
-            })
-        });
+        console.log("updating")
+        setImageContent((prevImageContent: any): any => {return prevImageContent});
     };
 
     async function getThumbnail(eachIndex: number): Promise<any> {
@@ -44,11 +43,13 @@ function ImageCarousel(props: ImageCarouselProps): JSX.Element {
                     prevThumbnail[eachIndex] = imageObjectURL;
                     return prevThumbnail;
                 });
+                updateImageContent();
             } else {
                 setThisThumbnail((prevThumbnail: any): any => {
                     prevThumbnail[eachIndex] = PlaceholderImage;
                     return prevThumbnail;
                 });
+                updateImageContent();
             };
         })
         .catch((error) => {
@@ -96,10 +97,6 @@ function ImageCarousel(props: ImageCarouselProps): JSX.Element {
             clearTimeout(clickableInitial);
         }, 300);
     }, []);
-
-    useEffect(() => {
-        updateImageContent();
-    }, [thisThumbnail])
 
     return(
         <div className="imageCarousel" style={{"opacity": String(fadeInOpacity), "pointerEvents": clickable ? "initial" : "none"}}>
