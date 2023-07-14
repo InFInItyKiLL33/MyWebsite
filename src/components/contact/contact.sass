@@ -17,6 +17,7 @@
     position: relative
     transition: 0.25s ease
     animation: 1s ContactContent ease both 0.1s
+    backdrop-filter: blur(5px)
 
 
 .contactContent:hover, .contactInfo:hover, .contactContent:hover > .contactDesc > .meImageWrapper 
@@ -31,10 +32,10 @@
 .meImageWrapper 
     border: 2px solid rgba($orange, 0.27)
     transition: 0.25s ease
-    margin: 5vh
+    margin: 7.5vh 0vh 7.5vh 5vh
     border-radius: 50%
     width: fit-content
-    height: fit-content
+    height: 100%
     background-color: rgba($grey1, 0.75)
 
 
@@ -65,10 +66,12 @@
     margin: 0
     border-radius: 50%
     transform: translateY(10px)
+    width: auto
+    height: 250px
 
 
 .contactDescText 
-    margin: auto
+    margin: auto auto auto max(3vw, 30px)
     padding: 5vh 2.5vw 5vh 0
     color: white
     transition: 0.25s ease
@@ -87,15 +90,18 @@
 .contactDescTextHeader 
     animation: 1s ContactContent ease both 0.4s
     margin-bottom: 10px
+    font-size: 2em
 
 
 .contactDescTextPara 
     animation: 1s ContactContent ease both 0.6s
+    font-size: 1.5em
 
 
 .contactDescTextDecorator 
     animation: 1s ContactContent ease both 0.5s
     width: 4vw
+    min-width: 72px
     border-radius: 3px
     height: 5px
     background-color: $orange
@@ -117,6 +123,7 @@
     border-radius: 20px
     transition: 0.25s ease
     animation: 1s ContactContent ease both 0.3s
+    backdrop-filter: blur(5px)
 
 
 .contactInfoEach 
@@ -184,6 +191,7 @@
 
     .meImage
         width: 35vw!important
+        height: auto
         transform: translateY(10px)
 
     .meImageWrapper
@@ -199,7 +207,8 @@
         top: 150%
 
     .contactDescText
-        padding: 0px 40px 25px 40px
+        padding: 0px 56px 24px 48px
+        margin-left: 0
 
     .contactInfo
         width: 70%
@@ -215,10 +224,11 @@
         width: fit-content
 
     .contactDescTextHeader
-        font-size: 1.25em
+        font-size: 1.6em
+        letter-spacing: -1px
 
     .contactDescTextPara
-        font-size: 0.6em
+        font-size: 0.7em!important
 
     h6
         font-size: 0.5em

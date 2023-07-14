@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import backgroundImage from "../../images/background-about.jpg";
 import MyPicture from "../../images/me filter.png";
 import './about.sass';
@@ -11,11 +11,25 @@ import {AboutMeProps} from "../../declarations"
 
 function About(props: AboutMeProps): JSX.Element {
 
+    const [BGImageScroll, setBGImageScroll] = useState(0);
+
+    useEffect(() => {
+    
+        function scrollEffect(): void {
+            setBGImageScroll((document.documentElement.scrollTop / document.body.scrollHeight) * -1.5)
+        };
+
+        window.addEventListener('scroll', scrollEffect);
+
+        return () => window.removeEventListener('scroll', scrollEffect);
+
+    }, [BGImageScroll]);
+
     
     return(
         <div className="App AboutApp">
 
-            <img src={backgroundImage} className="backgroundImage backgroundImageAbout" alt="background wing view"></img>
+            <img src={backgroundImage} className="backgroundImage backgroundImageAbout" alt="background wing view" style={{"scale": "1.02", "transform": "translateY(" + String(BGImageScroll) + "%)"}}></img>
 
             <Navbar page={props.page} />
 

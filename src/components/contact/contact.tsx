@@ -19,21 +19,19 @@ function ContactMe(props: ContactProps): JSX.Element {
                 <div className="flex-row contactDesc">
 
                     <div className='meImageWrapper flex-row flex-jc-center'>
-                        <img src={meImage} className="meImage" alt="myself" style={{"scale": String(0.925), "width": String((350 * window.innerWidth / 2560)) + "px"}}></img>
+                        <img src={meImage} className="meImage" alt="myself" style={{"scale": String(0.925)}}></img>
                     </div>
 
                     <div className="flex-col contactDescText">
-                        <h2 className="contactDescTextHeader">Interested in contacting me?</h2>
+                        <h2 className="contactDescTextHeader">Feel like contacting me?</h2>
                         <div className="contactDescTextDecorator"></div>
                         <p className="contactDescTextPara">
-                            Click on any of the links below to send a message or follow my social media!
+                            Click on any of the links below to send a message and I'll get back to you as soon as I can!
                             <br></br>
                             <br></br>
-                            Feel like I'm lacking ways to be contactable? Don't worry, more channels are available once we are in contact :)
+                            Shoot an email or drop a text on telegram for a faster response :)
                             <br></br>
-                            <h6>
-                                **Please indicate that you are contacting me from my website. If not, I'll most likely mark you as spam**
-                            </h6>
+                            <br></br>
                         </p>
                     </div>
 

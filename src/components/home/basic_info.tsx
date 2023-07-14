@@ -19,8 +19,8 @@ function BasicInfo(props: BasicInfoProps): JSX.Element {
     return(
         <div className={"appBGOverlay " + (desktopModeProgBG ? "appBGOverlay1" : "")}>
             <div className="infoBackground flex-row slideInInitialR slideInR">
-                <p className="greetings flex-col" style={{"fontSize": desktopModeProgBG ? getFontSize(1.75) : ""}}>Hey! I'm</p>
-                <h1 className="homeName flex-col" style={{"fontSize": desktopModeProgBG ? getFontSize(2.25) : ""}}>Poh Jun Kang</h1>
+                <p className="greetings flex-col" style={{"fontSize": desktopModeProgBG ? getFontSize(1.6) : ""}}>Hey! I'm</p>
+                <h1 className="homeName flex-col" style={{"fontSize": desktopModeProgBG ? getFontSize(2.75) : ""}}>Poh Jun Kang</h1>
             </div>
             <div className={"divider slideInInitialR " + (desktopModeProgBG ? "divider2" : "")}></div>
             <div className="infoDescription slideInInitialR slideInRDelayed">

@@ -108,13 +108,13 @@ function Home(props: HomeProps): JSX.Element {
             // Scroll to view my interests and skillsets... animated text
             if (document.documentElement.scrollTop >= window.innerHeight * 0.6 && document.documentElement.scrollTop < window.innerHeight * 1.7) {
                 const scrollTextList = "Scroll to see my interests and skillsets...";
-                if (document.documentElement.scrollTop < window.innerHeight * 0.8) {
+                if (document.documentElement.scrollTop < window.innerHeight * 0.85) {
                     setScrollTextOpacity((document.documentElement.scrollTop - window.innerHeight * 0.7) / (window.innerHeight * 0.1))
                     setScrollText("Scroll");
                 } else if (document.documentElement.scrollTop > window.innerHeight * 1.35) {
                     setScrollTextOpacity(1 - (document.documentElement.scrollTop - window.innerHeight * 1.35) / (window.innerHeight * 0.2))
                 } else {
-                    setScrollText(scrollTextList.slice(0, Math.floor(Math.max(6, ((document.documentElement.scrollTop - window.innerHeight * 0.75) / window.innerHeight * 1) * 125))));
+                    setScrollText(scrollTextList.slice(0, Math.floor(Math.max(6, ((document.documentElement.scrollTop - window.innerHeight * 0.85) / window.innerHeight * 1) * 125))));
                 };
             };
 
