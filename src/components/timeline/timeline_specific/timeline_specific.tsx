@@ -148,7 +148,7 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
 
                 {
                     carouselState ? 
-                        <ImageCarousel images={carouselCurrentImages} exitHandler={showHideCarousel} backendURL={props.backendURL} getCookie={props.getCookie} />
+                        <ImageCarousel images={carouselCurrentImages} exitHandler={showHideCarousel} getCookie={props.getCookie} />
                     :
                         <></>
                 }
@@ -156,7 +156,7 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
                 <div className={"timelineSpecificContent " + (fadeoutContent !== "active" ? "fadeOutTimelineContent" : "")} style={{"filter": "blur(" + (carouselState === true ? "4" : "0") + "px"}}>
                     {   
                         loadedContent.length > 0 && loadedContent.map((thisContent: string, i: number): JSX.Element => (
-                            <TimelineSpecificContent typeValue={props.typeVal} content={props.retrievedContent} index={i} key={i} showHideCarousel={showHideCarousel} carouselState={carouselState} setCarouselCurrentImages={setCarouselCurrentImages} clickAnywhereStatus={clickAnywhereStatus} changeClickAnywhereStatus={changeClickAnywhereStatus} retrievedContent={props.retrievedContent} backendURL={props.backendURL} getCookie={props.getCookie} />
+                            <TimelineSpecificContent typeValue={props.typeVal} content={props.retrievedContent} index={i} key={i} showHideCarousel={showHideCarousel} carouselState={carouselState} setCarouselCurrentImages={setCarouselCurrentImages} clickAnywhereStatus={clickAnywhereStatus} changeClickAnywhereStatus={changeClickAnywhereStatus} retrievedContent={props.retrievedContent} getCookie={props.getCookie} />
                         ))
                         
                     }

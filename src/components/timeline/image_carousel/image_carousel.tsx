@@ -15,7 +15,7 @@ function ImageCarousel(props: ImageCarouselProps): JSX.Element {
 
     const IAMGE_CONTENT: any = Array(PAGE_COUNT).fill("").map((eachImage: any, eachIndex: number): JSX.Element => {
                                     return(
-                                        <ImageCarouselSpecific thisImage={props.images[eachIndex]} backendURL={props.backendURL} getCookie={props.getCookie} placeholderImage={PlaceholderImage} />
+                                        <ImageCarouselSpecific thisImage={props.images[eachIndex]} getCookie={props.getCookie} placeholderImage={PlaceholderImage} />
                                     );
                                 })
 

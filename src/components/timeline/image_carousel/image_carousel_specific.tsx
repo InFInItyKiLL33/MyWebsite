@@ -10,7 +10,7 @@ function ImageCarouselSpecific(props: ImageCarouselSpecificProps): JSX.Element {
     async function getThumbnail(): Promise<any> {
         await axios({
             method: 'GET', 
-            url: props.backendURL + "image?img=" + props.thisImage + "&uuid=" + props.getCookie("uuid"),
+            url: process.env.REACT_APP_BACKEND_URL + "image?img=" + props.thisImage + "&uuid=" + props.getCookie("uuid"),
             responseType: 'blob'
         })
         .then((res) => {

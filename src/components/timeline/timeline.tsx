@@ -77,7 +77,7 @@ function Timeline(props: TimelineProps): JSX.Element {
                         <>
                             <img src={imageType} className={"backgroundImage " + fadeoutTimelineImage} alt="timeline bg img" style={{"objectFit": typeVal === 3 ? "contain" : "cover"}}></img>
                             <Navbar page={props.page} />
-                            <TimelineSpecific type="Programming" changeImage={changeImageType} fadeImage={setFadeoutTimelineImage} imageOptions={imageOptions} initialTimeline={INITIAL_TIMELINE} typeVal={typeVal} setTypeVal={setTypeVal} types={props.types} retrievedContent={props.retrievedContent} backendURL={props.backendURL} allowedContent={props.allowedContentTypes} getCookie={props.getCookie} />
+                            <TimelineSpecific type="Programming" changeImage={changeImageType} fadeImage={setFadeoutTimelineImage} imageOptions={imageOptions} initialTimeline={INITIAL_TIMELINE} typeVal={typeVal} setTypeVal={setTypeVal} types={props.types} retrievedContent={props.retrievedContent} allowedContent={props.allowedContentTypes} getCookie={props.getCookie} />
                         </>
                 }
                 

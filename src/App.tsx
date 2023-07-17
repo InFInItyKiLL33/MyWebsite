@@ -10,7 +10,7 @@ import axios from 'axios';
 
 function App() {
 
-    const BACKEND_URL = "https://infinitytwoproxy.onrender.com/";
+    const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
     const TYPES = {0: "Programming", 1: "Aviation", 2: "PC Building", 3: "Design"};
     const ERR_RETRIES = 10;
     const [searchParams, setSearchParams]:any = useSearchParams(); // eslint-disable-line @typescript-eslint/no-unused-vars
@@ -105,10 +105,10 @@ function App() {
     return (
         <>
             <Routes>
-                <Route path="/" element={<Home page="1" backendURL={BACKEND_URL} allowedContentTypes={allowedContentTypes} setAllowedContentTypes={setAllowedContentTypes} types={TYPES} getCookie={getCookie} />} />
-                <Route path="/timeline" element={<Timeline page="2" backendURL={BACKEND_URL} getCookie={getCookie} allowedContentTypes={allowedContentTypes} setAllowedContentTypes={setAllowedContentTypes} retrievedContent={retrievedContent} getAccess={getAccess} types={TYPES} />} />
-                <Route path="/about" element={<About page="3" backendURL={BACKEND_URL} />} />
-                <Route path="/contact" element={<ContactMe page="4" backendURL={BACKEND_URL} />} />
+                <Route path="/" element={<Home page="1" allowedContentTypes={allowedContentTypes} setAllowedContentTypes={setAllowedContentTypes} types={TYPES} getCookie={getCookie} />} />
+                <Route path="/timeline" element={<Timeline page="2" getCookie={getCookie} allowedContentTypes={allowedContentTypes} setAllowedContentTypes={setAllowedContentTypes} retrievedContent={retrievedContent} getAccess={getAccess} types={TYPES} />} />
+                <Route path="/about" element={<About page="3" />} />
+                <Route path="/contact" element={<ContactMe page="4" />} />
             </Routes>
         </>
     );

@@ -69,7 +69,7 @@ function TimelineSpecificContent(props: TimelineSpecificContentProps): JSX.Eleme
 
         const requestData = await axios({
             method: 'GET', 
-            url: props.backendURL + "image?img=" + imageSrc + "&uuid=" + props.getCookie("uuid"),
+            url: process.env.REACT_APP_BACKEND_URL + "image?img=" + imageSrc + "&uuid=" + props.getCookie("uuid"),
             responseType: 'blob'
         })
         .then((res) => {
