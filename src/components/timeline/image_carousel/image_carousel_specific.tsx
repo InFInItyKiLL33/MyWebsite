@@ -15,9 +15,9 @@ function ImageCarouselSpecific(props: ImageCarouselSpecificProps): JSX.Element {
         })
         .then((res) => {
             if (res.data !== 404 && res.data !== 403 && res.status === 200) {
-                const imageBlob = new File([res.data], ""); 
-                const imageObjectURL = URL.createObjectURL(imageBlob);
-                setThisImage(imageObjectURL);
+                const IMG_BLOB = new File([res.data], ""); 
+                const IMG_OBJ_URL = URL.createObjectURL(IMG_BLOB);
+                setThisImage(IMG_OBJ_URL);
             } else {
                 setThisImage(props.placeholderImage);
             };

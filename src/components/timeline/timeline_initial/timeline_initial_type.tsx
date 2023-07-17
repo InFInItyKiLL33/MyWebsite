@@ -6,13 +6,13 @@ function TimelineInitialTypes(props: TimelineInitialTypesProps): JSX.Element {
 
     const [initialTimelineAnimationDelay, setDelay] = useState(" timelineInitialTypesAnimationBefore");
     const [activeData, setActiveData] = useState("inactive");
-    const customAnimationLength = [1600, 825, 4500, 3100];
-    const customAnimationDelay = [600, 600, 600, 950];
-    const imageScale = [1, 1, 1, 0.6];
-    const imageObjectPosition = ["7% 0%", "center", "center", "center"]; //y axis, in vh
+    const CUSTOM_ANIM_LENGTH = [1600, 825, 4500, 3100];
+    const CUSTOM_ANIM_DELAY = [600, 600, 600, 950];
+    const IMAGE_SCALE = [1, 1, 1, 0.6];
+    const IMG_OBJ_POS = ["7% 0%", "center", "center", "center"]; //y axis, in vh
     const [searchParams, setSearchParams]:any = useSearchParams(); // search params on url
     let alternateFit = props.index === 3 ? "timelineInitialTypesImgAlt" : "";
-    const hiddenOffset = props.allowedContent.slice(0, props.index + 1).reduce((total: number, x: number): number => (x == 0 ? total + 1 : total), 0);
+    const HIDDEN_OFFSET = props.allowedContent.slice(0, props.index + 1).reduce((total: number, x: number): number => (x == 0 ? total + 1 : total), 0);
 
     function setType(currIndex: number): void {
 
@@ -20,7 +20,7 @@ function TimelineInitialTypes(props: TimelineInitialTypesProps): JSX.Element {
 
         for (let i = 0; i < Object.keys(props.types).length; i++) {
             if (currIndex === 3 || currIndex === 2 || i !== currIndex) {
-                let delay = (i < currIndex ? 150 : 0) + (i - hiddenOffset) * 150;
+                let delay = (i < currIndex ? 150 : 0) + (i - HIDDEN_OFFSET) * 150;
                 props.staggeredFadeout(i, delay);
             };
         };
@@ -34,8 +34,8 @@ function TimelineInitialTypes(props: TimelineInitialTypesProps): JSX.Element {
                 setTimeout(() => {
                     props.changeTransitionAnimationState(0);
                 }, 1000);
-            }, customAnimationLength[currIndex]);
-        }, customAnimationDelay[currIndex]);
+            }, CUSTOM_ANIM_LENGTH[currIndex]);
+        }, CUSTOM_ANIM_DELAY[currIndex]);
 
     };
 
@@ -47,8 +47,8 @@ function TimelineInitialTypes(props: TimelineInitialTypesProps): JSX.Element {
 
     function initialTimelineAnimation(index: number): void {
         setTimeout(() => {
-            setDelay((props.index - hiddenOffset) % 2 === 0 ? " timelineInitialTypesAnimation" : " timelineInitialTypesAnimationReverse");
-        }, (index - hiddenOffset) * 300);
+            setDelay((props.index - HIDDEN_OFFSET) % 2 === 0 ? " timelineInitialTypesAnimation" : " timelineInitialTypesAnimationReverse");
+        }, (index - HIDDEN_OFFSET) * 300);
     };
 
     useEffect(() => {
@@ -71,7 +71,7 @@ function TimelineInitialTypes(props: TimelineInitialTypesProps): JSX.Element {
 
     return(
         <button className={"timelineInitialTypes " + props.timelineToFadeOut[props.index] + initialTimelineAnimationDelay} key={props.index} data-index={props.index} data-selection={activeData} onClick={chooseType}>
-            <img src={props.imageInitialOptions[props.index]} style={{"transform": "scale(" + String(imageScale[props.index]) + ")", "objectPosition": imageObjectPosition[props.index]}} alt="background img for each type" data-index={props.index} className={"timelineInitialTypesImg " + alternateFit}></img>
+            <img src={props.imageInitialOptions[props.index]} style={{"transform": "scale(" + String(IMAGE_SCALE[props.index]) + ")", "objectPosition": IMG_OBJ_POS[props.index]}} alt="background img for each type" data-index={props.index} className={"timelineInitialTypesImg " + alternateFit}></img>
             <p className="timelineInitialTypesText" data-index={props.index}>{props.types[props.index]}</p>
         </button>
     );

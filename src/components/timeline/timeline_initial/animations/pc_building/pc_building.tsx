@@ -5,7 +5,7 @@ import "./pc_building.sass";
 
 function TimelinePCBuildingAnimation() {
 
-    const ignoredCPUHoles = [
+    const IGNORED_CPU_HOLES = [
         // corners
         [0, 0],
         [0, 1],
@@ -37,8 +37,8 @@ function TimelinePCBuildingAnimation() {
         // center holes
         if (index1 >= 13 && index2 >= 13 && index1 <= 25 && index2 <= 25) return true;
         // other holes
-        for (let i = 0; i < ignoredCPUHoles.length; i++) {
-            if (index1 === ignoredCPUHoles[i][0] && index2 === ignoredCPUHoles[i][1]) return true;
+        for (let i = 0; i < IGNORED_CPU_HOLES.length; i++) {
+            if (index1 === IGNORED_CPU_HOLES[i][0] && index2 === IGNORED_CPU_HOLES[i][1]) return true;
         };
 
         return false;

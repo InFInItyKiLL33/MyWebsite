@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import backgroundImage from "../../images/background-about.jpg";
+import BackgroundImage from "../../images/background-about.jpg";
 import MyPicture from "../../images/me filter.png";
 import './about.sass';
 import Navbar from "../navbar/navbar";
@@ -11,7 +11,7 @@ import {AboutMeProps} from "../../declarations"
 
 function About(props: AboutMeProps): JSX.Element {
 
-    const [BGImageScroll, setBGImageScroll] = useState(0);
+    const [bgImageScroll, setBGImageScroll] = useState(0);
 
     useEffect(() => {
     
@@ -23,13 +23,13 @@ function About(props: AboutMeProps): JSX.Element {
 
         return () => window.removeEventListener('scroll', scrollEffect);
 
-    }, [BGImageScroll]);
+    }, [bgImageScroll]);
 
     
     return(
         <div className="App AboutApp">
 
-            <img src={backgroundImage} className="backgroundImage backgroundImageAbout" alt="background wing view" style={{"scale": "1.02", "transform": "translateY(" + String(BGImageScroll) + "%)"}}></img>
+            <img src={BackgroundImage} className="backgroundImage backgroundImageAbout" alt="background wing view" style={{"scale": "1.02", "transform": "translateY(" + String(bgImageScroll) + "%)"}}></img>
 
             <Navbar page={props.page} />
 

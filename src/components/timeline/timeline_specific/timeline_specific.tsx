@@ -19,32 +19,31 @@ import {TimelineSpecificProps} from "../../../declarations";
 
 function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
 
-    const defaultIcons = [ProgrammingImgDefault, AviationImgDefault, PCBuildingImgDefault, DesignImgDefault];
-    const hoverIcons = [ProgrammingImgHover, AviationImgHover, PCBuildingImgHover, DesignImgHover];
-    const activeIcons = [ProgrammingImgActive, AviationImgActive, PCBuildingImgActive, DesignImgActive];
-    const timelineChangerOrange = "timelineChangerOrange";
-    const infiniteScrollerInitialAmount = 5;
-    const infiniteScrollerLoadAmount = 2;
+    const DEFAULT_ICONS = [ProgrammingImgDefault, AviationImgDefault, PCBuildingImgDefault, DesignImgDefault];
+    const HOVER_ICONS = [ProgrammingImgHover, AviationImgHover, PCBuildingImgHover, DesignImgHover];
+    const ACTIVE_ICONS = [ProgrammingImgActive, AviationImgActive, PCBuildingImgActive, DesignImgActive];
+    const INF_SCROLLER_INITIAL_AMT = 5;
+    const INF_SCROLLER_LOAD_AMT = 2;
     const [content, setContent] = useState(props.retrievedContent); // For each content, the order is as such: 0 -> image file, 1 -> Title, 2 -> Date, 3 -> Description, 4 (Optional) -> Hyperlink
     const [fadeoutContent, status] = useState("active");
     const [sortText, setSortText] = useState("Newest");
     const [loadedContent, setLoadedContent] = useState([]);
-    const [lastLoadedIndex, setLastLoadedIndex] = useState(infiniteScrollerInitialAmount - infiniteScrollerLoadAmount);
+    const [lastLoadedIndex, setLastLoadedIndex] = useState(INF_SCROLLER_INITIAL_AMT - INF_SCROLLER_LOAD_AMT);
     const [carouselState, setCarouselState] = useState(false); // false for hide, true for show
     const [carouselCurrentImages, setCarouselCurrentImages] = useState([]);
     const [clickAnywhereStatus, changeClickAnywhereStatus] = useState("fadeInitialOpacity");
     
     // set whichever type value is active to the right image
-    let tempTypeImage = [...defaultIcons];
-    tempTypeImage[props.typeVal] = activeIcons[props.typeVal];
+    let tempTypeImage = [...DEFAULT_ICONS];
+    tempTypeImage[props.typeVal] = ACTIVE_ICONS[props.typeVal];
     const [typeImage, setTypeImage] = useState(tempTypeImage); // this needs to be here instead of TypeButtons component as I need to unactive the previous active type
 
     // the header options for timeline
     let skillButtons = Object.keys(props.types).map((currentKey: string, i: number): JSX.Element => {
-        let toOrange = props.typeVal === i ? timelineChangerOrange : "";
+        let toOrange = props.typeVal === i ? "timelineChangerOrange" : "";
         if (props.allowedContent[i] !== 0) {
             return(
-                <TypeButtons index={i} key={i} toOrange={toOrange} typeVal={props.typeVal} changeType={changeType} types={props.types} defaultIcons={defaultIcons} hoverIcons={hoverIcons} activeIcons={activeIcons} typeImage={typeImage} setTypeImage={setTypeImage} />
+                <TypeButtons index={i} key={i} toOrange={toOrange} typeVal={props.typeVal} changeType={changeType} types={props.types} defaultIcons={DEFAULT_ICONS} hoverIcons={HOVER_ICONS} activeIcons={ACTIVE_ICONS} typeImage={typeImage} setTypeImage={setTypeImage} />
             );
         } else {
             return(<></>);
@@ -94,7 +93,7 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
 
     function emptyLoadedContent(): void {
         setLoadedContent([]);
-        setLastLoadedIndex(infiniteScrollerInitialAmount);
+        setLastLoadedIndex(INF_SCROLLER_INITIAL_AMT);
     };
 
     function showHideCarousel() {
@@ -111,7 +110,7 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
                 
                 if (content[props.typeVal].length === loadedContent.length) return; // case if no more to load
                 
-                setLastLoadedIndex(prevIndex => Math.min(prevIndex + infiniteScrollerLoadAmount, content[props.typeVal].length));
+                setLastLoadedIndex(prevIndex => Math.min(prevIndex + INF_SCROLLER_LOAD_AMT, content[props.typeVal].length));
             };
         };
 

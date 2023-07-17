@@ -1,28 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink as Link } from "react-router-dom";
-import backgroundImageA from "../../images/background-main.png"; 
-import backgroundImageB from "../../images/background-main2.png";
-import backgroundImageBAlt from "../../images/background-main2-alt.png"; 
-import backgroundImage1 from "../../images/programming2-vignette.png";
-import backgroundImage2 from "../../images/aviation-vignette.png";
-import backgroundImage3 from "../../images/pcbuildingbg4.jpg";
-import backgroundImage4 from "../../images/jpmun5-black-vignette.png";
-import backgroundImage5 from "../../images/background-fade.png";
-import squigglyArrow from "../../images/arrow left custom.png";
+import BackgroundImageA from "../../images/background-main.png"; 
+import BackgroundImageB from "../../images/background-main2.png";
+import BackgroundImageBAlt from "../../images/background-main2-alt.png"; 
+import BackgroundImage1 from "../../images/programming2-vignette.png";
+import BackgroundImage2 from "../../images/aviation-vignette.png";
+import BackgroundImage3 from "../../images/pcbuildingbg4.jpg";
+import BackgroundImage4 from "../../images/jpmun5-black-vignette.png";
+import BackgroundImage5 from "../../images/background-fade.png";
+import SquigglyArrow from "../../images/arrow left custom.png";
 import './home.sass';
 import '../navbar/navbar.sass';
 import BasicInfo from "./basic_info";
 import Navbar from "../navbar/navbar";
 import {HomeProps} from "../../declarations";
 
-const aspectRatioBreakpoint = 1.5
+const ASPECT_RATIO_BREAKPT = 1.5
 
 function Home(props: HomeProps): JSX.Element {
 
-    const BACKGROUNDIMAGES = [backgroundImageA, window.innerWidth / window.innerHeight > aspectRatioBreakpoint ? backgroundImageB : backgroundImageBAlt];
+    const BACKGROUND_IMAGES = [BackgroundImageA, window.innerWidth / window.innerHeight > ASPECT_RATIO_BREAKPT ? BackgroundImageB : BackgroundImageBAlt];
     const [backgroundImageType, setBackgroundImageType] = useState(1); // eslint-disable-line @typescript-eslint/no-unused-vars
 
-    const MAXOFFSETMOUSE = -3; // in px
+    const MAX_OFFSET_MOUSE = -3; // in px
     const [mouseToImageMovement, setMouseOffset] = useState([0, 0]);
 
     const [popUpEnabled, setPopUpEnabled] = useState(1); // 0 for disable, 1 for enable, 2 for animation before disabling
@@ -45,7 +45,7 @@ function Home(props: HomeProps): JSX.Element {
     const [imgOpacityOffset, setImageOpacityOffset] = useState([1, ...Array(Object.keys(props.types).length + 1).fill(0)]);
 
     function mouseMoveEvent(event: any): void {
-        setMouseOffset([MAXOFFSETMOUSE * ((event.pageX * 2)/window.innerWidth - 1), MAXOFFSETMOUSE * ((event.pageY * 2)/window.innerHeight - 1)]);
+        setMouseOffset([MAX_OFFSET_MOUSE * ((event.pageX * 2)/window.innerWidth - 1), MAX_OFFSET_MOUSE * ((event.pageY * 2)/window.innerHeight - 1)]);
     };
 
     function closePopUp(event: any): void {
@@ -297,23 +297,23 @@ function Home(props: HomeProps): JSX.Element {
 
             {
                 backgroundImageType === 1 ?
-                    <div className='topBackground' style={{"background": backgroundImageType === 1 && window.innerWidth / window.innerHeight <= aspectRatioBreakpoint ? "linear-gradient(to bottom, rgba(16, 16, 16, 1) 30%, rgba(0, 0, 0, 1) 100%)" : "rgba(16, 16, 16, 1)"}}></div>
+                    <div className='topBackground' style={{"background": backgroundImageType === 1 && window.innerWidth / window.innerHeight <= ASPECT_RATIO_BREAKPT ? "linear-gradient(to bottom, rgba(16, 16, 16, 1) 30%, rgba(0, 0, 0, 1) 100%)" : "rgba(16, 16, 16, 1)"}}></div>
                 :
                     <></>
             }
 
-            <img src={BACKGROUNDIMAGES[backgroundImageType]} className="backgroundImage backgroundImageHome backgroundImageHomeTop" alt="background top" style={{
+            <img src={BACKGROUND_IMAGES[backgroundImageType]} className="backgroundImage backgroundImageHome backgroundImageHomeTop" alt="background top" style={{
                 "scale": "1.05",
                 "marginTop": imgScrollOffset[0],
                 "opacity": imgOpacityOffset[0 + imgCounterOffset[0]],
                 "translate": String(mouseToImageMovement[0]) + "px " + String(mouseToImageMovement[1]) + "px",
                 "animation": "1.75s backgroundImageAnimation" + String(backgroundImageType + 1) + " ease 3s both",
-                zIndex: backgroundImageType === 1 && window.innerWidth / window.innerHeight > aspectRatioBreakpoint ? "1" : ""
+                zIndex: backgroundImageType === 1 && window.innerWidth / window.innerHeight > ASPECT_RATIO_BREAKPT ? "1" : ""
             }}></img>
 
             <Navbar page={props.page} />
 
-            <img src={squigglyArrow} className="squigglyArrow" alt="arrow below timeline button"></img>
+            <img src={SquigglyArrow} className="squigglyArrow" alt="arrow below timeline button"></img>
             <p className="pastExperience semi-bold">My Past Experiences</p>
 
             {
@@ -337,7 +337,7 @@ function Home(props: HomeProps): JSX.Element {
                     <></>
             }
 
-            <div className={"appMain " + (backgroundImageType === 1 && window.innerWidth / window.innerHeight < aspectRatioBreakpoint ? "appMain2" : "")}>
+            <div className={"appMain " + (backgroundImageType === 1 && window.innerWidth / window.innerHeight < ASPECT_RATIO_BREAKPT ? "appMain2" : "")}>
                 <BasicInfo bgType={backgroundImageType} />
             </div>
 
@@ -359,7 +359,7 @@ function Home(props: HomeProps): JSX.Element {
                         </div>
                     </Link>
     
-                    <img src={backgroundImage1} className="backgroundImage backgroundImageHome backgroundImage2" alt="programming pic" style={{"marginTop": imgScrollOffset[1 + imgCounterOffset[1]], "opacity": imgOpacityOffset[1 + imgCounterOffset[1]], "filter": "brightness(0.3) blur(5px)", "translate": String(mouseToImageMovement[0]) + "px " + String(mouseToImageMovement[1]) + "px"}}></img>
+                    <img src={BackgroundImage1} className="backgroundImage backgroundImageHome backgroundImage2" alt="programming pic" style={{"marginTop": imgScrollOffset[1 + imgCounterOffset[1]], "opacity": imgOpacityOffset[1 + imgCounterOffset[1]], "filter": "brightness(0.3) blur(5px)", "translate": String(mouseToImageMovement[0]) + "px " + String(mouseToImageMovement[1]) + "px"}}></img>
                 </>
             :
                 <></>
@@ -374,7 +374,7 @@ function Home(props: HomeProps): JSX.Element {
                         </div>
                     </Link>
     
-                    <img src={backgroundImage2} className="backgroundImage backgroundImageHome backgroundImage3" alt="aviation pic" style={{"marginTop": imgScrollOffset[2 + imgCounterOffset[2]], "opacity": imgOpacityOffset[2 + imgCounterOffset[2]], "filter": "brightness(0.35) blur(0px) contrast(1.05)", "translate": String(mouseToImageMovement[0]) + "px " + String(mouseToImageMovement[1]) + "px"}}></img>
+                    <img src={BackgroundImage2} className="backgroundImage backgroundImageHome backgroundImage3" alt="aviation pic" style={{"marginTop": imgScrollOffset[2 + imgCounterOffset[2]], "opacity": imgOpacityOffset[2 + imgCounterOffset[2]], "filter": "brightness(0.35) blur(0px) contrast(1.05)", "translate": String(mouseToImageMovement[0]) + "px " + String(mouseToImageMovement[1]) + "px"}}></img>
                 </>
             :
                 <></>
@@ -389,7 +389,7 @@ function Home(props: HomeProps): JSX.Element {
                         </div>
                     </Link>
     
-                    <img src={backgroundImage3} className="backgroundImage backgroundImageHome backgroundImage4" alt="pc building pic" style={{"marginTop": imgScrollOffset[3 + imgCounterOffset[3]], "opacity": imgOpacityOffset[3 + imgCounterOffset[3]], "rotate": "0deg", "translate": String(mouseToImageMovement[0]) + "px " + String(mouseToImageMovement[1]) + "px"}}></img>
+                    <img src={BackgroundImage3} className="backgroundImage backgroundImageHome backgroundImage4" alt="pc building pic" style={{"marginTop": imgScrollOffset[3 + imgCounterOffset[3]], "opacity": imgOpacityOffset[3 + imgCounterOffset[3]], "rotate": "0deg", "translate": String(mouseToImageMovement[0]) + "px " + String(mouseToImageMovement[1]) + "px"}}></img>
                 </>
             :
                 <></>
@@ -404,7 +404,7 @@ function Home(props: HomeProps): JSX.Element {
                         </div>
                     </Link>
     
-                    <img src={backgroundImage4} className="backgroundImage backgroundImageHome backgroundImage5" alt="design pic" style={{"marginTop": imgScrollOffset[4 + imgCounterOffset[4]], "opacity": imgOpacityOffset[4 + imgCounterOffset[4]], "rotate": "0deg", "filter": "brightness(0.3) blur(1px)", "translate": String(mouseToImageMovement[0]) + "px " + String(mouseToImageMovement[1]) + "px"}}></img>
+                    <img src={BackgroundImage4} className="backgroundImage backgroundImageHome backgroundImage5" alt="design pic" style={{"marginTop": imgScrollOffset[4 + imgCounterOffset[4]], "opacity": imgOpacityOffset[4 + imgCounterOffset[4]], "rotate": "0deg", "filter": "brightness(0.3) blur(1px)", "translate": String(mouseToImageMovement[0]) + "px " + String(mouseToImageMovement[1]) + "px"}}></img>
                 </>
             :
                 <></>
@@ -419,7 +419,7 @@ function Home(props: HomeProps): JSX.Element {
                 </button>
             </div>
 
-            <img src={backgroundImage5} alt="end page bg" className="backgroundImage backgroundImageHome backgroundImageLast" style={{"opacity": Math.min(0.99, 1.5 * imgOpacityOffset[5 + imgCounterOffset[5]])}}></img>
+            <img src={BackgroundImage5} alt="end page bg" className="backgroundImage backgroundImageHome backgroundImageLast" style={{"opacity": Math.min(0.99, 1.5 * imgOpacityOffset[5 + imgCounterOffset[5]])}}></img>
 
             <button className="backToTop" style={{"opacity": Math.min(0.99, 1.5 * imgOpacityOffset[5 + imgCounterOffset[5]])}} onClick={() => {window.scrollTo({top: 0, behavior: 'smooth'})}}>Back to Top</button>
 

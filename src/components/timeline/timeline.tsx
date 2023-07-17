@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import backgroundImage0 from "../../images/programmingbg.png";
-import backgroundImage1 from "../../images/aviationbg.jpg";
-import backgroundImage1Alt from "../../images/aviationbg2.png";
-import backgroundImage2 from "../../images/pcbuildingbg5.jpg";
-import backgroundImage2Alt from "../../images/pcbuildingbg4.jpg";
-import backgroundImage3 from "../../images/designbg.png";
-import backgroundImage3Alt from "../../images/jpjcinfocomm1-16_9.jpg";
+import BackgroundImage0 from "../../images/programmingbg.png";
+import BackgroundImage1 from "../../images/aviationbg.jpg";
+import BackgroundImage1Alt from "../../images/aviationbg2.png";
+import BackgroundImage2 from "../../images/pcbuildingbg5.jpg";
+import BackgroundImage2Alt from "../../images/pcbuildingbg4.jpg";
+import BackgroundImage3 from "../../images/designbg.png";
+import BackgroundImage3Alt from "../../images/jpjcinfocomm1-16_9.jpg";
 import './timeline.sass';
 import Navbar from "../navbar/navbar";
 import TimelineInitial from "./timeline_initial/timeline_initial";
@@ -17,10 +17,11 @@ import TimelinePCBuildingAnimation from './timeline_initial/animations/pc_buildi
 import {TimelineProps} from "../../declarations";
 
 function Timeline(props: TimelineProps): JSX.Element {
-    const initialTimeline = 0;
-    const imageOptions = [backgroundImage0, backgroundImage1Alt, backgroundImage2Alt, backgroundImage3Alt];
-    const imageInitialOptions = [backgroundImage0, backgroundImage1, backgroundImage2, backgroundImage3];
-    const [typeVal, setTypeVal] = useState(initialTimeline); // 0 - 3
+    const INITIAL_TIMELINE = 0;
+
+    const imageOptions = [BackgroundImage0, BackgroundImage1Alt, BackgroundImage2Alt, BackgroundImage3Alt];
+    const imageInitialOptions = [BackgroundImage0, BackgroundImage1, BackgroundImage2, BackgroundImage3];
+    const [typeVal, setTypeVal] = useState(INITIAL_TIMELINE); // 0 - 3
     const [fadeoutTimelineImage, setFadeoutTimelineImage] = useState("backgroundImage active")
     const [imageType, changeImageType] = useState(imageOptions[typeVal]);
     const [timelineState, changeTimelineState] = useState(0); // 0 - Initial, 1 - Specific
@@ -76,7 +77,7 @@ function Timeline(props: TimelineProps): JSX.Element {
                         <>
                             <img src={imageType} className={"backgroundImage " + fadeoutTimelineImage} alt="timeline bg img" style={{"objectFit": typeVal === 3 ? "contain" : "cover"}}></img>
                             <Navbar page={props.page} />
-                            <TimelineSpecific type="Programming" changeImage={changeImageType} fadeImage={setFadeoutTimelineImage} imageOptions={imageOptions} initialTimeline={initialTimeline} typeVal={typeVal} setTypeVal={setTypeVal} types={props.types} retrievedContent={props.retrievedContent} backendURL={props.backendURL} allowedContent={props.allowedContentTypes} getCookie={props.getCookie} />
+                            <TimelineSpecific type="Programming" changeImage={changeImageType} fadeImage={setFadeoutTimelineImage} imageOptions={imageOptions} initialTimeline={INITIAL_TIMELINE} typeVal={typeVal} setTypeVal={setTypeVal} types={props.types} retrievedContent={props.retrievedContent} backendURL={props.backendURL} allowedContent={props.allowedContentTypes} getCookie={props.getCookie} />
                         </>
                 }
                 

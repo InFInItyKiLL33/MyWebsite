@@ -3,13 +3,13 @@ import "./programming_animation.sass"
 
 const TimelineProgrammingAnimation = () => {
 
-    const displayTextCharsSpaceless = "ABCDEF12345678901234567890██";
-    const displayTextChars = displayTextCharsSpaceless + "            ";
-    const displayTextChoicesLength = displayTextChars.length;
-    const displayTextChoicesSpacelessLength = displayTextCharsSpaceless.length;
-    const textLimit = randomInt(Math.max(35, Math.round(120 * (window.innerWidth / 2160))), Math.min(235, Math.round(120 * (window.innerWidth / 2160)))) + 15;
-    const textSize = Math.max(20, Math.round(40 * ((window.innerWidth * window.innerHeight) / (2160 * 1440))));
-    const maxRecursionDepth = 20;
+    const SPACELESS_CHARS = "ABCDEF12345678901234567890██";
+    const TEXT_CHAR = SPACELESS_CHARS + "            ";
+    const TEXT_CHAR_LEN = TEXT_CHAR.length;
+    const SPACELSS_CHARS_LEN = SPACELESS_CHARS.length;
+    const TEXT_LIMIT = randomInt(Math.max(35, Math.round(120 * (window.innerWidth / 2160))), Math.min(235, Math.round(120 * (window.innerWidth / 2160)))) + 15;
+    const TEXT_SIZE = Math.max(20, Math.round(40 * ((window.innerWidth * window.innerHeight) / (2160 * 1440))));
+    const MAX_RECUR_DEPTH = 20;
     const [randText, setRandomText] = useState(randomArray(false));
     // eslint-disable-next-line
     const [randStyle, setRandomStyle] = useState(randomStyle()); // required to be a state for the animation to work properly
@@ -21,8 +21,8 @@ const TimelineProgrammingAnimation = () => {
 
     function randomiseText(): string {
         let newRandomText = "";
-        for (let j = 0; j < textLimit; j++) {
-            newRandomText += displayTextChars[randomInt(0, displayTextChoicesLength - 1)];
+        for (let j = 0; j < TEXT_LIMIT; j++) {
+            newRandomText += TEXT_CHAR[randomInt(0, TEXT_CHAR_LEN - 1)];
         };
         return newRandomText;
     };
@@ -32,7 +32,7 @@ const TimelineProgrammingAnimation = () => {
         for (let j = 0; j < newRandomText.length; j++) {
             if (newRandomText[j] !== " ") {
                 if (randomInt(0, 4) === 0) {
-                    newRandomText = newRandomText.substring(0, j) + displayTextCharsSpaceless[randomInt(0, displayTextChoicesSpacelessLength - 1)] + newRandomText.substring(j + 1);
+                    newRandomText = newRandomText.substring(0, j) + SPACELESS_CHARS[randomInt(0, SPACELSS_CHARS_LEN - 1)] + newRandomText.substring(j + 1);
                 };
             };
         };
@@ -40,13 +40,13 @@ const TimelineProgrammingAnimation = () => {
     };
 
     function randomArray(randomiseChangeSome: boolean): any {
-        return Array(textSize).fill("").map((eachPass: string, i: number): string => {
+        return Array(TEXT_SIZE).fill("").map((eachPass: string, i: number): string => {
             return randomiseChangeSome ? (randomInt(0, 25) < 1 ? randText[i] : randomiseExistingText(randText[i])) : randomiseText();
         });
     };
 
     function randomStyle(): any {
-        return Array(textSize).fill("").map((eachPass: string, i: number): any => {
+        return Array(TEXT_SIZE).fill("").map((eachPass: string, i: number): any => {
             let randomFontAndBlurVal = randomInt(0, 20)/10;
             return {
                 opacity: String(randomInt(0, 75)/100 + 0.25),
@@ -74,7 +74,7 @@ const TimelineProgrammingAnimation = () => {
             setRandomText(randomArray(true)); 
         }, randomInt(0, 125) + 100);
 
-        if (recursionDepth > maxRecursionDepth) {
+        if (recursionDepth > MAX_RECUR_DEPTH) {
             clearTimeout(loopRandomiser);
         };
         
@@ -83,7 +83,7 @@ const TimelineProgrammingAnimation = () => {
     return(
         <div className="timelineProgrammingAnimWrapper">
             {
-                Array(textSize).fill("").map((eachDisplayText: string, i: number): JSX.Element => {
+                Array(TEXT_SIZE).fill("").map((eachDisplayText: string, i: number): JSX.Element => {
                     return (
                         <div className={"timelineProgrammingAnimTextWrapper "} style={randStyle[i]} key={i} >
                             <p className="timelineProgrammingAnimText">{randText[i]}</p>

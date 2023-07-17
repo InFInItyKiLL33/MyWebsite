@@ -10,8 +10,8 @@ import axios from 'axios';
 
 function App() {
 
-    const BACKENDURL = "https://infinitytwoproxy.onrender.com/";
-    const types = {0: "Programming", 1: "Aviation", 2: "PC Building", 3: "Design"};
+    const BACKEND_URL = "https://infinitytwoproxy.onrender.com/";
+    const TYPES = {0: "Programming", 1: "Aviation", 2: "PC Building", 3: "Design"};
     const ERR_RETRIES = 10;
     const [searchParams, setSearchParams]:any = useSearchParams(); // eslint-disable-line @typescript-eslint/no-unused-vars
     const [allowedContentTypes, setAllowedContentTypes] = useState([-2, -2, -2, -2]); // -3 backend error, -2 for loading, -1 for access all, 0 for no access (all 0 for invalid uuid), 1 and above for certain access
@@ -54,14 +54,14 @@ function App() {
 
         await axios({
             method: 'GET', 
-            url: BACKENDURL + "?uuid=" + uuid,
+            url: BACKEND_URL + "?uuid=" + uuid,
         })
         .then((response) => {
             console.log(response, uuid);
             if (response.status === 200 && response.data["result"] === "ok") {
                 // console.log(response.data);
                 setAllowedContentTypes(response.data["allowedCategories"]);
-                for (let i = 0; i < Object.keys(types).length; i++) {
+                for (let i = 0; i < Object.keys(TYPES).length; i++) {
                     setRetrievedContent((prevRetrievedContent: any): any => {
                         return [...prevRetrievedContent, response.data["content" + String(i + 1)]];
                     });
@@ -105,10 +105,10 @@ function App() {
     return (
         <>
             <Routes>
-                <Route path="/" element={<Home page="1" backendURL={BACKENDURL} allowedContentTypes={allowedContentTypes} setAllowedContentTypes={setAllowedContentTypes} types={types} getCookie={getCookie} />} />
-                <Route path="/timeline" element={<Timeline page="2" backendURL={BACKENDURL} getCookie={getCookie} allowedContentTypes={allowedContentTypes} setAllowedContentTypes={setAllowedContentTypes} retrievedContent={retrievedContent} getAccess={getAccess} types={types} />} />
-                <Route path="/about" element={<About page="3" backendURL={BACKENDURL} />} />
-                <Route path="/contact" element={<ContactMe page="4" backendURL={BACKENDURL} />} />
+                <Route path="/" element={<Home page="1" backendURL={BACKEND_URL} allowedContentTypes={allowedContentTypes} setAllowedContentTypes={setAllowedContentTypes} types={TYPES} getCookie={getCookie} />} />
+                <Route path="/timeline" element={<Timeline page="2" backendURL={BACKEND_URL} getCookie={getCookie} allowedContentTypes={allowedContentTypes} setAllowedContentTypes={setAllowedContentTypes} retrievedContent={retrievedContent} getAccess={getAccess} types={TYPES} />} />
+                <Route path="/about" element={<About page="3" backendURL={BACKEND_URL} />} />
+                <Route path="/contact" element={<ContactMe page="4" backendURL={BACKEND_URL} />} />
             </Routes>
         </>
     );

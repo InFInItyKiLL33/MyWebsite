@@ -1,8 +1,8 @@
 import React from 'react';
 import './contact.sass';
 import { ContactProps } from '../../declarations';
-import backgroundImage from "../../images/background-contact.jpg";
-import meImage from "../../images/me 2.png";
+import BackgroundImage from "../../images/background-contact.jpg";
+import MeImage from "../../images/me 2.png";
 import Navbar from "../navbar/navbar";
 
 function ContactMe(props: ContactProps): JSX.Element {
@@ -10,7 +10,7 @@ function ContactMe(props: ContactProps): JSX.Element {
     return(
         <div className="contact">
 
-            <img src={backgroundImage} className="backgroundImage backgroundImageContact" alt="background wing view"></img>
+            <img src={BackgroundImage} className="backgroundImage backgroundImageContact" alt="background wing view"></img>
 
             <Navbar page={props.page} />
 
@@ -19,7 +19,7 @@ function ContactMe(props: ContactProps): JSX.Element {
                 <div className="flex-row contactDesc">
 
                     <div className='meImageWrapper flex-row flex-jc-center'>
-                        <img src={meImage} className="meImage" alt="myself" style={{"scale": String(0.925)}}></img>
+                        <img src={MeImage} className="meImage" alt="myself" style={{"scale": String(0.925)}}></img>
                     </div>
 
                     <div className="flex-col contactDescText">
