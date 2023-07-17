@@ -72,7 +72,7 @@
     position: absolute
     filter: invert(0.3)
     margin-top: -10vh
-    margin-left: 50%
+    margin-left: calc(50% - 24px)
     scale: 0.5
 
 .carouselImagesWrapper:hover + svg, .carouselCloseIcon:hover
@@ -94,3 +94,7 @@
 
     .carouselButtons
         font-size: 0.6em
+
+
+    .carouselCloseIcon
+        margin-top: -25vh

@@ -20,7 +20,7 @@ const aspectRatioBreakpoint = 1.5
 function Home(props: HomeProps): JSX.Element {
 
     const BACKGROUNDIMAGES = [backgroundImageA, window.innerWidth / window.innerHeight > aspectRatioBreakpoint ? backgroundImageB : backgroundImageBAlt];
-    const [backgroundImageType, setBackgroundImageType] = useState(props.allowedContentTypes[1] >= 1 || props.allowedContentTypes[1] === -1 ? 0 : 1); // eslint-disable-line @typescript-eslint/no-unused-vars
+    const [backgroundImageType, setBackgroundImageType] = useState(1); // eslint-disable-line @typescript-eslint/no-unused-vars
 
     const MAXOFFSETMOUSE = -3; // in px
     const [mouseToImageMovement, setMouseOffset] = useState([0, 0]);
@@ -287,6 +287,10 @@ function Home(props: HomeProps): JSX.Element {
             setPopUpMessage("By entering your UUID, you agree to necessary cookies. Your UUID is used to access content, and won't be tracked. Dismiss to accept all optional cookies.");
         };
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+    useEffect(() => {
+        setBackgroundImageType(props.allowedContentTypes[1] >= 1 || props.allowedContentTypes[1] === -1 ? Math.floor(Math.random() * 2) : 1);
+    }, [props.allowedContentTypes])
 
     return(
         <div className="homepage" onMouseMove={mouseMoveEvent} style={{"height": String(homepageHeight) + "vh"}}>

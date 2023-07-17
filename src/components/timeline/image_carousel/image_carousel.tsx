@@ -13,13 +13,11 @@ function ImageCarousel(props: ImageCarouselProps): JSX.Element {
     const [clickable, setClickable] = useState(0);
     const translateCarouselEnds = [-50 * (pageCount - 1), 50 * (pageCount - 1)];
 
-    const IAMGECONTENT: any = useState(
-        Array(pageCount).fill("").map((eachImage: any, eachIndex: number): JSX.Element => {
-            return(
-                <ImageCarouselSpecific thisImage={props.images[eachIndex]} backendURL={props.backendURL} getCookie={props.getCookie} placeholderImage={PlaceholderImage} />
-            );
-        })
-    );
+    const IAMGECONTENT: any = Array(pageCount).fill("").map((eachImage: any, eachIndex: number): JSX.Element => {
+                                    return(
+                                        <ImageCarouselSpecific thisImage={props.images[eachIndex]} backendURL={props.backendURL} getCookie={props.getCookie} placeholderImage={PlaceholderImage} />
+                                    );
+                                })
 
     function leftRight() {
         setTranslateCarousel((prevTranslateVal: number): number => {

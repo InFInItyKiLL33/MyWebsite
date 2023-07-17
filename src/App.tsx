@@ -57,7 +57,7 @@ function App() {
             url: BACKENDURL + "?uuid=" + uuid,
         })
         .then((response) => {
-            // console.log(response);
+            console.log(response, uuid);
             if (response.status === 200 && response.data["result"] === "ok") {
                 // console.log(response.data);
                 setAllowedContentTypes(response.data["allowedCategories"]);
@@ -93,11 +93,13 @@ function App() {
             now.setTime(now.getTime() + 86400*30); // 30 days expiry cookie
             document.cookie = "uuid=" + uuid + ";expires=" + now.toUTCString();
             window.location.replace(removeParam("uuid", window.location.href)); 
+        } else {
+            uuid = getCookie("uuid");
         };
 
-        getAccess(getCookie("uuid"));
+        getAccess(uuid);
 
-    }, [searchParams]) // eslint-disable-line react-hooks/exhaustive-deps
+    }, []) // eslint-disable-line react-hooks/exhaustive-deps
     // getAccess requires to be reused as child props
 
     return (
