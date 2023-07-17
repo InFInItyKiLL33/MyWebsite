@@ -7,9 +7,9 @@ import {TimelineInitialProps} from "../../../declarations";
 
 function TimelineInitial(props: TimelineInitialProps): JSX.Element {
     
-    const [timelineToFadeOut, setToFadeOut] = useState(Array(Object.keys(props.types).length).fill(""));
-    const [dataStateChanger, setDataState] = useState(0);
-    const [hwaEnabled, setHWAEnabled] = useState(true);
+    const [timelineToFadeOut, setToFadeOut] = useState<Array<string>>(Array(Object.keys(props.types).length).fill(""));
+    const [dataStateChanger, setDataState] = useState<number>(0);
+    const [hwaEnabled, setHWAEnabled] = useState<boolean>(true);
 
     function staggeredFadeout(timerIndex: number, finalDelay: number): void {
         setTimeout(() => {
@@ -25,7 +25,7 @@ function TimelineInitial(props: TimelineInitialProps): JSX.Element {
     useEffect(() => {
 
         async function checkHWA(): Promise<void> {
-            const gpuTier = await getGPUTier();
+            const gpuTier: any = await getGPUTier();
             setHWAEnabled(gpuTier["tier"] >= 2);
         };
 

@@ -5,7 +5,7 @@ import {ImageCarouselSpecificProps} from "../../../declarations";
 
 function ImageCarouselSpecific(props: ImageCarouselSpecificProps): JSX.Element {
     
-    const [thisImage, setThisImage]: any = useState("");
+    const [thisImage, setThisImage] = useState<string>("");
 
     async function getThumbnail(): Promise<any> {
         await axios({
@@ -27,7 +27,7 @@ function ImageCarouselSpecific(props: ImageCarouselSpecificProps): JSX.Element {
         });
     };
 
-    useEffect(() => {
+    useEffect((): void => {
         getThumbnail();
     }, []);
 

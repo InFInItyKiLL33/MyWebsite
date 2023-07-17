@@ -7,42 +7,42 @@ import ImageCarouselSpecific from './image_carousel_specific';
 
 function ImageCarousel(props: ImageCarouselProps): JSX.Element {
 
-    const PAGE_COUNT = props.images.length;
-    const [translateCarousel, setTranslateCarousel] = useState(50 * (PAGE_COUNT - 1)); // 0 based index
-    const [fadeInOpacity, setFadeInOpacity] = useState(0);
-    const [clickable, setClickable] = useState(0);
-    const TRANSLATE_CAROUSEL_END = [-50 * (PAGE_COUNT - 1), 50 * (PAGE_COUNT - 1)];
+    const PAGE_COUNT: number = props.images.length;
+    const [translateCarousel, setTranslateCarousel] = useState<number>(50 * (PAGE_COUNT - 1)); // 0 based index
+    const [fadeInOpacity, setFadeInOpacity] = useState<number>(0);
+    const [clickable, setClickable] = useState<number>(0);
+    const TRANSLATE_CAROUSEL_END: Array<number> = [-50 * (PAGE_COUNT - 1), 50 * (PAGE_COUNT - 1)];
 
-    const IAMGE_CONTENT: any = Array(PAGE_COUNT).fill("").map((eachImage: any, eachIndex: number): JSX.Element => {
+    const IAMGE_CONTENT: Array<JSX.Element> = Array(PAGE_COUNT).fill("").map((eachImage: any, eachIndex: number): JSX.Element => {
                                     return(
                                         <ImageCarouselSpecific thisImage={props.images[eachIndex]} getCookie={props.getCookie} placeholderImage={PlaceholderImage} />
                                     );
                                 })
 
-    function leftRight() {
+    function leftRight(): void {
         setTranslateCarousel((prevTranslateVal: number): number => {
             return prevTranslateVal + 100 > TRANSLATE_CAROUSEL_END[1] ? TRANSLATE_CAROUSEL_END[0] : prevTranslateVal + 100;
         });
     };
 
-    function rightLeft() {
+    function rightLeft(): void {
         setTranslateCarousel((prevTranslateVal: number): number => {
             return prevTranslateVal - 100 < TRANSLATE_CAROUSEL_END[0] ? TRANSLATE_CAROUSEL_END[1] : prevTranslateVal - 100;
         });
     };
 
-    function clickExit() {
+    function clickExit(): void {
         setFadeInOpacity(0);
         setClickable(0);
         props.exitHandler();
     };
 
-    useEffect(() => {
-        let fadeIn = setTimeout(() => {
+    useEffect((): void => {
+        let fadeIn = setTimeout((): void => {
             setFadeInOpacity(1);
             clearTimeout(fadeIn);
         }, 10);
-        let clickableInitial = setTimeout(() => {
+        let clickableInitial = setTimeout((): void => {
             setClickable(1);
             clearTimeout(clickableInitial);
         }, 300);

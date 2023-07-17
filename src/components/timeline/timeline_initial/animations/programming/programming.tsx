@@ -3,24 +3,24 @@ import "./programming_animation.sass"
 
 const TimelineProgrammingAnimation = () => {
 
-    const SPACELESS_CHARS = "ABCDEF12345678901234567890██";
-    const TEXT_CHAR = SPACELESS_CHARS + "            ";
-    const TEXT_CHAR_LEN = TEXT_CHAR.length;
-    const SPACELSS_CHARS_LEN = SPACELESS_CHARS.length;
-    const TEXT_LIMIT = randomInt(Math.max(35, Math.round(120 * (window.innerWidth / 2160))), Math.min(235, Math.round(120 * (window.innerWidth / 2160)))) + 15;
-    const TEXT_SIZE = Math.max(20, Math.round(40 * ((window.innerWidth * window.innerHeight) / (2160 * 1440))));
-    const MAX_RECUR_DEPTH = 20;
-    const [randText, setRandomText] = useState(randomArray(false));
+    const SPACELESS_CHARS: string = "ABCDEF12345678901234567890██";
+    const TEXT_CHAR: string = SPACELESS_CHARS + "            ";
+    const TEXT_CHAR_LEN: number = TEXT_CHAR.length;
+    const SPACELSS_CHARS_LEN: number = SPACELESS_CHARS.length;
+    const TEXT_LIMIT: number = randomInt(Math.max(35, Math.round(120 * (window.innerWidth / 2160))), Math.min(235, Math.round(120 * (window.innerWidth / 2160)))) + 15;
+    const TEXT_SIZE: number = Math.max(20, Math.round(40 * ((window.innerWidth * window.innerHeight) / (2160 * 1440))));
+    const MAX_RECUR_DEPTH: number = 20;
+    const [randText, setRandomText] = useState<Array<string>>(randomArray(false));
     // eslint-disable-next-line
-    const [randStyle, setRandomStyle] = useState(randomStyle()); // required to be a state for the animation to work properly
-    const [recursionDepth, setRecursionDepth] = useState(0);
+    const [randStyle, setRandomStyle] = useState<Array<Object>>(randomStyle()); // required to be a state for the animation to work properly
+    const [recursionDepth, setRecursionDepth] = useState<number>(0);
     
     function randomInt(min: number, max: number): number { // inclusive of both min and max
         return Math.floor(Math.random() * (max - min + 1) + min);
     };
 
     function randomiseText(): string {
-        let newRandomText = "";
+        let newRandomText: string = "";
         for (let j = 0; j < TEXT_LIMIT; j++) {
             newRandomText += TEXT_CHAR[randomInt(0, TEXT_CHAR_LEN - 1)];
         };
@@ -28,7 +28,7 @@ const TimelineProgrammingAnimation = () => {
     };
 
     function randomiseExistingText(text: string): string {
-        let newRandomText = text;
+        let newRandomText: string = text;
         for (let j = 0; j < newRandomText.length; j++) {
             if (newRandomText[j] !== " ") {
                 if (randomInt(0, 4) === 0) {
@@ -39,15 +39,15 @@ const TimelineProgrammingAnimation = () => {
         return newRandomText;
     };
 
-    function randomArray(randomiseChangeSome: boolean): any {
+    function randomArray(randomiseChangeSome: boolean): Array<string> {
         return Array(TEXT_SIZE).fill("").map((eachPass: string, i: number): string => {
             return randomiseChangeSome ? (randomInt(0, 25) < 1 ? randText[i] : randomiseExistingText(randText[i])) : randomiseText();
         });
     };
 
-    function randomStyle(): any {
-        return Array(TEXT_SIZE).fill("").map((eachPass: string, i: number): any => {
-            let randomFontAndBlurVal = randomInt(0, 20)/10;
+    function randomStyle(): Array<Object> {
+        return Array(TEXT_SIZE).fill("").map((eachPass: string, i: number): Object => {
+            let randomFontAndBlurVal: number = randomInt(0, 20)/10;
             return {
                 opacity: String(randomInt(0, 75)/100 + 0.25),
                 animation: 
@@ -68,7 +68,7 @@ const TimelineProgrammingAnimation = () => {
 
     useEffect(() => {
         
-        let loopRandomiser = setTimeout(() => {
+        let loopRandomiser: ReturnType<typeof setTimeout> = setTimeout((): void => {
             // randomises array
             setRecursionDepth((prevRecursionDepth: number): number => (prevRecursionDepth + 1));
             setRandomText(randomArray(true)); 

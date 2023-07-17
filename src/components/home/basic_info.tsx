@@ -3,14 +3,14 @@ import './basic_info.sass';
 import {BasicInfoProps} from "../../declarations";
 
 export function getAge(): number {
-    let d = new Date();
-    let ageDate = new Date(d.getTime() - 1025712000000)
+    let d: Date = new Date();
+    let ageDate: Date = new Date(d.getTime() - 1025712000000)
     return Math.abs(ageDate.getUTCFullYear() - 1970);
 };
 
 function BasicInfo(props: BasicInfoProps): JSX.Element {
 
-    let desktopModeProgBG = props.bgType === 1 && window.innerWidth / window.innerHeight > 1.5;
+    let desktopModeProgBG: boolean = props.bgType === 1 && window.innerWidth / window.innerHeight > 1.5;
 
     function getFontSize(refSize: number): string {
         return String(refSize * window.innerWidth / 2560) + "em";

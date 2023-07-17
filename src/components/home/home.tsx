@@ -19,30 +19,30 @@ const ASPECT_RATIO_BREAKPT = 1.5
 
 function Home(props: HomeProps): JSX.Element {
 
-    const BACKGROUND_IMAGES = [BackgroundImageA, window.innerWidth / window.innerHeight > ASPECT_RATIO_BREAKPT ? BackgroundImageB : BackgroundImageBAlt];
-    const [backgroundImageType, setBackgroundImageType] = useState(1); // eslint-disable-line @typescript-eslint/no-unused-vars
+    const BACKGROUND_IMAGES: Array<string> = [BackgroundImageA, window.innerWidth / window.innerHeight > ASPECT_RATIO_BREAKPT ? BackgroundImageB : BackgroundImageBAlt];
+    const [backgroundImageType, setBackgroundImageType] = useState<number>(1); // eslint-disable-line @typescript-eslint/no-unused-vars
 
-    const MAX_OFFSET_MOUSE = -3; // in px
-    const [mouseToImageMovement, setMouseOffset] = useState([0, 0]);
+    const MAX_OFFSET_MOUSE: number = -3; // in px
+    const [mouseToImageMovement, setMouseOffset] = useState<Array<number>>([0, 0]);
 
-    const [popUpEnabled, setPopUpEnabled] = useState(1); // 0 for disable, 1 for enable, 2 for animation before disabling
-    const [popUpAnimation, setPopUpAnimation] = useState("");
-    const [popUpMessage, setPopUpMessage] = useState("");
-    const [cookieIconState, setCookieIconState] = useState(0); // 0 for cookie, 1 for close
+    const [popUpEnabled, setPopUpEnabled] = useState<number>(1); // 0 for disable, 1 for enable, 2 for animation before disabling
+    const [popUpAnimation, setPopUpAnimation] = useState<string>("");
+    const [popUpMessage, setPopUpMessage] = useState<string>("");
+    const [cookieIconState, setCookieIconState] = useState<number>(0); // 0 for cookie, 1 for close
 
-    const [pointerEvents, setPointerEvents] = useState([0, 0, 0, 0]);
-    const [homepageHeight, setHomepageHeight] = useState(625);
+    const [pointerEvents, setPointerEvents] = useState<Array<number>>([0, 0, 0, 0]);
+    const [homepageHeight, setHomepageHeight] = useState<number>(625);
 
-    const [imgCounterOffset, setImageCounterOffset] = useState(Array(Object.keys(props.types).length + 2).fill(0));
-    const [pointerEventsOffset, setPointerEventsOffset] = useState(Array(Object.keys(props.types).length).fill(0));
+    const [imgCounterOffset, setImageCounterOffset] = useState<Array<number>>(Array(Object.keys(props.types).length + 2).fill(0));
+    const [pointerEventsOffset, setPointerEventsOffset] = useState<Array<number>>(Array(Object.keys(props.types).length).fill(0));
 
-    const [scollPromptOpacity, setScollPromptOpacity] = useState(1);
+    const [scollPromptOpacity, setScollPromptOpacity] = useState<number>(1);
 
-    const [scrollText, setScrollText] = useState("Scroll");         
-    const [scrollTextOpacity, setScrollTextOpacity] = useState(0);
+    const [scrollText, setScrollText] = useState<string>("Scroll");         
+    const [scrollTextOpacity, setScrollTextOpacity] = useState<number>(0);
     
-    const [imgScrollOffset, setImageScrollOffset] = useState(Array(Object.keys(props.types).length + 2).fill(0));
-    const [imgOpacityOffset, setImageOpacityOffset] = useState([1, ...Array(Object.keys(props.types).length + 1).fill(0)]);
+    const [imgScrollOffset, setImageScrollOffset] = useState<Array<number>>(Array(Object.keys(props.types).length + 2).fill(0));
+    const [imgOpacityOffset, setImageOpacityOffset] = useState<Array<number>>([1, ...Array(Object.keys(props.types).length + 1).fill(0)]);
 
     function mouseMoveEvent(event: any): void {
         setMouseOffset([MAX_OFFSET_MOUSE * ((event.pageX * 2)/window.innerWidth - 1), MAX_OFFSET_MOUSE * ((event.pageY * 2)/window.innerHeight - 1)]);
@@ -53,7 +53,7 @@ function Home(props: HomeProps): JSX.Element {
             setPopUpAnimation("fadeOut 2s ease");
             setTimeout(() => {
                 setPopUpEnabled(0);
-                var now = new Date();
+                let now: Date = new Date();
                 now.setTime(now.getTime() + 86400*30); // 30 days expiry cookie
                 document.cookie = "popUp=0;expires=" + now.toUTCString();
             }, 2000);
@@ -87,7 +87,7 @@ function Home(props: HomeProps): JSX.Element {
 
         function updatePointerEvents(index: number): void {
             setPointerEvents(() => {
-                let newPointerEvents = [0, 0, 0, 0];
+                let newPointerEvents: Array<number> = [0, 0, 0, 0];
                 if (index >= 0 && index < newPointerEvents.length) {
                     newPointerEvents[index] = 1;
                 };
@@ -107,7 +107,7 @@ function Home(props: HomeProps): JSX.Element {
             
             // Scroll to view my interests and skillsets... animated text
             if (document.documentElement.scrollTop >= window.innerHeight * 0.6 && document.documentElement.scrollTop < window.innerHeight * 1.7) {
-                const scrollTextList = "Scroll to see my interests and skillsets...";
+                const scrollTextList: string = "Scroll to see my interests and skillsets...";
                 if (document.documentElement.scrollTop < window.innerHeight * 0.85) {
                     setScrollTextOpacity((document.documentElement.scrollTop - window.innerHeight * 0.7) / (window.innerHeight * 0.1))
                     setScrollText("Scroll");
@@ -238,7 +238,7 @@ function Home(props: HomeProps): JSX.Element {
     useEffect(():void => {
         // console.log(props.allowedContentTypes)
         setImageCounterOffset(() => {
-            let defaultOffset = Array(Object.keys(props.types).length + 2).fill(0);
+            let defaultOffset: Array<number> = Array(Object.keys(props.types).length + 2).fill(0);
             if (props.allowedContentTypes.reduce((partialSum: number, a: number): number => partialSum + a, 0) !== 0) {
                 for (let i = 0; i < props.allowedContentTypes.length; i++) {
                     if (props.allowedContentTypes[i] === 0) {
@@ -251,7 +251,7 @@ function Home(props: HomeProps): JSX.Element {
             return defaultOffset;
         });
         setPointerEventsOffset(() => {
-            let defaultOffset = Array(Object.keys(props.types).length).fill(0);
+            let defaultOffset: Array<number> = Array(Object.keys(props.types).length).fill(0);
             if (props.allowedContentTypes.reduce((partialSum: number, a: number): number => partialSum + a, 0) !== 0) {
                 let prevIndex = 0;
                 for (let i = 0; i < props.allowedContentTypes.length; i++) {
@@ -280,7 +280,7 @@ function Home(props: HomeProps): JSX.Element {
 
     useEffect(() => {
         // console.log(props.getCookie("uuid"));
-        let currentUUIDCookie = props.getCookie("uuid")
+        let currentUUIDCookie: string | undefined | null = props.getCookie("uuid")
         if (currentUUIDCookie === undefined || currentUUIDCookie === null) {
             setPopUpMessage("No UUID detected in the link, some content will be hidden. Request for one to view it. Dismiss to accept all optional cookies.")
         } else {

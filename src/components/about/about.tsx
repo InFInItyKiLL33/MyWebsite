@@ -11,7 +11,7 @@ import {AboutMeProps} from "../../declarations"
 
 function About(props: AboutMeProps): JSX.Element {
 
-    const [bgImageScroll, setBGImageScroll] = useState(0);
+    const [bgImageScroll, setBGImageScroll] = useState<number>(0);
 
     useEffect(() => {
     

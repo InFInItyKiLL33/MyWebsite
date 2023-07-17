@@ -19,28 +19,28 @@ import {TimelineSpecificProps} from "../../../declarations";
 
 function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
 
-    const DEFAULT_ICONS = [ProgrammingImgDefault, AviationImgDefault, PCBuildingImgDefault, DesignImgDefault];
-    const HOVER_ICONS = [ProgrammingImgHover, AviationImgHover, PCBuildingImgHover, DesignImgHover];
-    const ACTIVE_ICONS = [ProgrammingImgActive, AviationImgActive, PCBuildingImgActive, DesignImgActive];
-    const INF_SCROLLER_INITIAL_AMT = 5;
-    const INF_SCROLLER_LOAD_AMT = 2;
-    const [content, setContent] = useState(props.retrievedContent); // For each content, the order is as such: 0 -> image file, 1 -> Title, 2 -> Date, 3 -> Description, 4 (Optional) -> Hyperlink
-    const [fadeoutContent, status] = useState("active");
-    const [sortText, setSortText] = useState("Newest");
-    const [loadedContent, setLoadedContent] = useState([]);
-    const [lastLoadedIndex, setLastLoadedIndex] = useState(INF_SCROLLER_INITIAL_AMT - INF_SCROLLER_LOAD_AMT);
-    const [carouselState, setCarouselState] = useState(false); // false for hide, true for show
-    const [carouselCurrentImages, setCarouselCurrentImages] = useState([]);
-    const [clickAnywhereStatus, changeClickAnywhereStatus] = useState("fadeInitialOpacity");
+    const DEFAULT_ICONS: Array<string> = [ProgrammingImgDefault, AviationImgDefault, PCBuildingImgDefault, DesignImgDefault];
+    const HOVER_ICONS: Array<string> = [ProgrammingImgHover, AviationImgHover, PCBuildingImgHover, DesignImgHover];
+    const ACTIVE_ICONS: Array<string>= [ProgrammingImgActive, AviationImgActive, PCBuildingImgActive, DesignImgActive];
+    const INF_SCROLLER_INITIAL_AMT: number = 5;
+    const INF_SCROLLER_LOAD_AMT: number = 2;
+    const [content, setContent] = useState<any>(props.retrievedContent); // For each content, the order is as such: 0 -> image file, 1 -> Title, 2 -> Date, 3 -> Description, 4 (Optional) -> Hyperlink
+    const [fadeoutContent, status] = useState<string>("active");
+    const [sortText, setSortText] = useState<string>("Newest");
+    const [loadedContent, setLoadedContent] = useState<Array<any>>([]);
+    const [lastLoadedIndex, setLastLoadedIndex] = useState<number>(INF_SCROLLER_INITIAL_AMT - INF_SCROLLER_LOAD_AMT);
+    const [carouselState, setCarouselState] = useState<boolean>(false); // false for hide, true for show
+    const [carouselCurrentImages, setCarouselCurrentImages] = useState<Array<string>>([]);
+    const [clickAnywhereStatus, changeClickAnywhereStatus] = useState<string>("fadeInitialOpacity");
     
     // set whichever type value is active to the right image
-    let tempTypeImage = [...DEFAULT_ICONS];
+    let tempTypeImage: Array<string> = [...DEFAULT_ICONS];
     tempTypeImage[props.typeVal] = ACTIVE_ICONS[props.typeVal];
-    const [typeImage, setTypeImage] = useState(tempTypeImage); // this needs to be here instead of TypeButtons component as I need to unactive the previous active type
+    const [typeImage, setTypeImage] = useState<Array<string>>(tempTypeImage); // this needs to be here instead of TypeButtons component as I need to unactive the previous active type
 
     // the header options for timeline
-    let skillButtons = Object.keys(props.types).map((currentKey: string, i: number): JSX.Element => {
-        let toOrange = props.typeVal === i ? "timelineChangerOrange" : "";
+    let skillButtons: Array<JSX.Element> = Object.keys(props.types).map((currentKey: string, i: number): JSX.Element => {
+        let toOrange: string = props.typeVal === i ? "timelineChangerOrange" : "";
         if (props.allowedContent[i] !== 0) {
             return(
                 <TypeButtons index={i} key={i} toOrange={toOrange} typeVal={props.typeVal} changeType={changeType} types={props.types} defaultIcons={DEFAULT_ICONS} hoverIcons={HOVER_ICONS} activeIcons={ACTIVE_ICONS} typeImage={typeImage} setTypeImage={setTypeImage} />
@@ -51,7 +51,7 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
     });
 
     function changeType(e: any): void { // click on type header
-        let newType = parseInt(e.target.getAttribute("data-index"));
+        let newType: number = parseInt(e.target.getAttribute("data-index"));
         props.fadeImage("fadeOutImage");
         status("disablePointer fadeOutTimelineContent");
 
@@ -118,7 +118,7 @@ function TimelineSpecific(props: TimelineSpecificProps): JSX.Element {
         
         // gets new content
         (async () => {
-            const newData = await content[props.typeVal].slice(loadedContent.length, lastLoadedIndex); // apparently async and await is needed even though it's not api, if not it doesn't work
+            const newData: any = await content[props.typeVal].slice(loadedContent.length, lastLoadedIndex); // apparently async and await is needed even though it's not api, if not it doesn't work
             setLoadedContent((prevLoadedContent: any): any => [...prevLoadedContent, ...newData]);
         })()
 

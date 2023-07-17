@@ -53,7 +53,7 @@ export declare interface TimelineInitialProps {
     changeTimelineState: any;
     changeImage: any;
     changeTransitionAnimationState: any;
-    allowedContent: Array[number];
+    allowedContent: Array<number>;
 }
 
 export declare interface TimelineInitialTypesProps {

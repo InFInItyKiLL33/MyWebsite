@@ -17,15 +17,15 @@ import TimelinePCBuildingAnimation from './timeline_initial/animations/pc_buildi
 import {TimelineProps} from "../../declarations";
 
 function Timeline(props: TimelineProps): JSX.Element {
-    const INITIAL_TIMELINE = 0;
+    const INITIAL_TIMELINE: number = 0;
 
-    const imageOptions = [BackgroundImage0, BackgroundImage1Alt, BackgroundImage2Alt, BackgroundImage3Alt];
-    const imageInitialOptions = [BackgroundImage0, BackgroundImage1, BackgroundImage2, BackgroundImage3];
-    const [typeVal, setTypeVal] = useState(INITIAL_TIMELINE); // 0 - 3
-    const [fadeoutTimelineImage, setFadeoutTimelineImage] = useState("backgroundImage active")
-    const [imageType, changeImageType] = useState(imageOptions[typeVal]);
-    const [timelineState, changeTimelineState] = useState(0); // 0 - Initial, 1 - Specific
-    const [transitionAnimation, changeTransitionAnimationState] = useState(0); // 0 - Disable, 1 - Run animation for type 1, 2 - for 2, etc..
+    const imageOptions: Array<string> = [BackgroundImage0, BackgroundImage1Alt, BackgroundImage2Alt, BackgroundImage3Alt];
+    const imageInitialOptions: Array<string> = [BackgroundImage0, BackgroundImage1, BackgroundImage2, BackgroundImage3];
+    const [typeVal, setTypeVal] = useState<number>(INITIAL_TIMELINE); // 0 - 3
+    const [fadeoutTimelineImage, setFadeoutTimelineImage] = useState<string>("backgroundImage active")
+    const [imageType, changeImageType] = useState<string>(imageOptions[typeVal]);
+    const [timelineState, changeTimelineState] = useState<number>(0); // 0 - Initial, 1 - Specific
+    const [transitionAnimation, changeTransitionAnimationState] = useState<number>(0); // 0 - Disable, 1 - Run animation for type 1, 2 - for 2, etc..
 
     function renderAnimation() {
         switch(transitionAnimation) {

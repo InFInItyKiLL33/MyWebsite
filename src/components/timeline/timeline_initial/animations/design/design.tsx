@@ -6,9 +6,9 @@ import TimelineDesignSVGTextPath from "./design_svg_text_path";
 
 function TimelineDesignAnimation() {
 
-    const COLOUR_PALETTE = ["#111", "#222", "#666", "#777", "#FFF", "#f06f4f", "#d64e2d"];
-    const WHOLE_DESIGN_SCALE = (window.innerWidth / window.innerHeight < 16 / 9) ? String((window.innerHeight) / (1440)) : String((window.innerWidth) / (2560));
-    const WHOLE_DESIGN_TRANSLATION = [
+    const COLOUR_PALETTE: Array<string> = ["#111", "#222", "#666", "#777", "#FFF", "#f06f4f", "#d64e2d"];
+    const WHOLE_DESIGN_SCALE: string = (window.innerWidth / window.innerHeight < 16 / 9) ? String((window.innerHeight) / (1440)) : String((window.innerWidth) / (2560));
+    const WHOLE_DESIGN_TRANSLATION: Array<string> = [
         (window.innerWidth / window.innerHeight < 16 / 9) ? String(-2560 * ((1.0 - ((window.innerWidth) / (2560))) / 2)) + "px" : "0px",
         (window.innerWidth / window.innerHeight < 16 / 9) ? "0px" : String(-1440 * ((1.0 - ((window.innerHeight) / (1440))) / 2)) + "px"
     ];

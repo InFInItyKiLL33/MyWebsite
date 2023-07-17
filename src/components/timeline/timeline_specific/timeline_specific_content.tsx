@@ -7,9 +7,9 @@ import {TimelineSpecificContentProps} from "../../../declarations";
 import axios from 'axios';
 
 function makeRandomChars(entryString: string): string {
-    const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789<>+-';
-    const BLACKLIST = [" ", "\n", "(", ")", ".", ","];
-    let result = '';
+    const CHARS: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789<>+-';
+    const BLACKLIST: Array<string> = [" ", "\n", "(", ")", ".", ","];
+    let result: string = '';
     for (let i = 0; i < entryString.length; i++) {
         if (BLACKLIST.includes(entryString[i])) {
             result += entryString[i];
@@ -22,37 +22,37 @@ function makeRandomChars(entryString: string): string {
 
 function TimelineSpecificContent(props: TimelineSpecificContentProps): JSX.Element {
     
-    const REVERSE_ROW = Math.floor(props.index % 2) !== 0 ? "flex-reverse-row" : "flex-row";
+    const REVERSE_ROW: string = Math.floor(props.index % 2) !== 0 ? "flex-reverse-row" : "flex-row";
     // REVERSE_ROW = "flex-row"; // used for testing purposes
-    const REVERSE_IMAGE = REVERSE_ROW === "flex-reverse-row" ? " eachContentImageReverse" : "";
-    const REVERSE_TEXT = REVERSE_ROW === "flex-reverse-row" ? " eachContentTextReverse" : "";
-    const ZOOM_REGION = 0.85; // 0.0 - 1.0
-    const MAX_ZOOM_REGION = 0.75; // 0.0 - ZOOM_REGION
-    const DEFAULT_ZOOM = 1.0; // default scale value
-    const ZOOM = 1.1; // scale value
-    const MIN_OPACITY = 0.2;
-    const MAX_OPACITY = 1.0;
-    const SCREEN_HEIGHT = window.innerHeight;
-    const EACH_CONTENT_ORIGINAL_HEADER = props.content[props.typeValue][props.index][1];
-    const EACH_CONTENT_ORIGINAL_DESCRIPTION = props.content[props.typeValue][props.index][3];
-    const ERR_RETRIES = 10;
+    const REVERSE_IMAGE: string = REVERSE_ROW === "flex-reverse-row" ? " eachContentImageReverse" : "";
+    const REVERSE_TEXT: string = REVERSE_ROW === "flex-reverse-row" ? " eachContentTextReverse" : "";
+    const ZOOM_REGION: number = 0.85; // 0.0 - 1.0
+    const MAX_ZOOM_REGION: number = 0.75; // 0.0 - ZOOM_REGION
+    const DEFAULT_ZOOM: number = 1.0; // default scale value
+    const ZOOM: number = 1.1; // scale value
+    const MIN_OPACITY: number = 0.2;
+    const MAX_OPACITY: number = 1.0;
+    const SCREEN_HEIGHT: number = window.innerHeight;
+    const EACH_CONTENT_ORIGINAL_HEADER: string = props.content[props.typeValue][props.index][1];
+    const EACH_CONTENT_ORIGINAL_DESCRIPTION: string = props.content[props.typeValue][props.index][3];
+    const ERR_RETRIES: number = 10;
 
-    const [clickStatus, changeClickStatus] = useState("");
-    const [thisContentHeader, changeThisContentHeader] = useState("");
-    const [thisContentDesc, changeThisContentDesc] = useState("");
-    const [slideEffect, changeSlideEffect] = useState("");
-    const [imageLoadingAnimationState, changeImageLoadingAnimationState] = useState(true); //true to show, false to hide
-    const [failedImageLoading, setFailedImageLoading] = useState(false);
+    const [clickStatus, changeClickStatus] = useState<string>("");
+    const [thisContentHeader, changeThisContentHeader] = useState<string>("");
+    const [thisContentDesc, changeThisContentDesc] = useState<string>("");
+    const [slideEffect, changeSlideEffect] = useState<string>("");
+    const [imageLoadingAnimationState, changeImageLoadingAnimationState] = useState<boolean>(true); //true to show, false to hide
+    const [failedImageLoading, setFailedImageLoading] = useState<boolean>(false);
     // eslint-disable-next-line
-    const [imagePos, setImagePos] = useState(0); // this is needed for the effect to work, don't know why
-    const [contentOpacity, setContentOpacity] = useState(MIN_OPACITY);
-    const [imageScale, setImageScale] = useState(DEFAULT_ZOOM);
-    const [secondaryImageScale, setSecondaryImageScale] = useState(DEFAULT_ZOOM);
-    const [hoveringStatus, setHoveringStatus] = useState(0); // 0 for no hover, any other value for hover additional ZOOM
-    const [rendered, setRendered] = useState(false);
-    const [img, setImg]:any = useState();
+    const [imagePos, setImagePos] = useState<number>(0); // this is needed for the effect to work, don't know why
+    const [contentOpacity, setContentOpacity] = useState<number>(MIN_OPACITY);
+    const [imageScale, setImageScale] = useState<number>(DEFAULT_ZOOM);
+    const [secondaryImageScale, setSecondaryImageScale] = useState<number>(DEFAULT_ZOOM);
+    const [hoveringStatus, setHoveringStatus] = useState<number>(0); // 0 for no hover, any other value for hover additional ZOOM
+    const [rendered, setRendered] = useState<boolean>(false);
+    const [img, setImg] = useState<string>();
     
-    const contentRef = useRef<HTMLInputElement>(null);
+    const contentRef: any = useRef<HTMLInputElement>(null);
 
     const {
         carouselState, changeClickAnywhereStatus
@@ -60,7 +60,7 @@ function TimelineSpecificContent(props: TimelineSpecificContentProps): JSX.Eleme
 
     async function getThumbnail(retries: number = 0): Promise<void> {
 
-        let imageSrc;
+        let imageSrc: string;
         if (typeof(props.content[props.typeValue][props.index][0]) === "string") {
             imageSrc = props.content[props.typeValue][props.index][0];
         } else {
@@ -74,8 +74,8 @@ function TimelineSpecificContent(props: TimelineSpecificContentProps): JSX.Eleme
         })
         .then((res) => {
             if (res.data !== 404 && res.data !== 403 && res.status === 200) {
-                const imageBlob = new File([res.data], ""); 
-                const imageObjectURL = URL.createObjectURL(imageBlob);
+                const imageBlob: any = new File([res.data], ""); 
+                const imageObjectURL: string = URL.createObjectURL(imageBlob);
                 setImg(imageObjectURL);
                 changeImageLoadingAnimationState(false);
             } else {
@@ -105,13 +105,13 @@ function TimelineSpecificContent(props: TimelineSpecificContentProps): JSX.Eleme
         if (contentRef.current) {
     
             window.removeEventListener('scroll', scrollingEffects);
-            let boundingBox = contentRef?.current?.getBoundingClientRect();
-            const offset = 0.5 * boundingBox.top + 0.5 * boundingBox.bottom;
+            let boundingBox: any = contentRef?.current?.getBoundingClientRect();
+            const offset: number = 0.5 * boundingBox.top + 0.5 * boundingBox.bottom;
                 
             if (!rendered && boundingBox.top < SCREEN_HEIGHT * 0.875 && boundingBox.bottom > 0.0) {
                 setRendered(true);
-                let delay = [0, 15, 30, 45, 55, 65, 70, 75];
-                let counter = 0;
+                let delay: Array<number> = [0, 15, 30, 45, 55, 65, 70, 75];
+                let counter: number = 0;
                 changeSlideEffect(REVERSE_ROW === "flex-reverse-row" ? " slideInInitial slideIn" : " slideInInitialR slideInR");
                 setTimeout(() => {
                     changeSlideEffect("")

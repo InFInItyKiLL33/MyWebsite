@@ -5,7 +5,7 @@ import "./pc_building.sass";
 
 function TimelinePCBuildingAnimation() {
 
-    const IGNORED_CPU_HOLES = [
+    const IGNORED_CPU_HOLES: Array<Array<number>> = [
         // corners
         [0, 0],
         [0, 1],
@@ -30,8 +30,8 @@ function TimelinePCBuildingAnimation() {
         [23, 29],
     ];
 
-    const [rescaleValue, setRescaleValue] = useState(window.innerWidth / 2560);
-    const [marginValues, setMarginValues] = useState(["25vh", "24vw"]);
+    const [rescaleValue, setRescaleValue] = useState<number>(window.innerWidth / 2560);
+    const [marginValues, setMarginValues] = useState<Array<string>>(["25vh", "24vw"]);
 
     const checkCPUEmptyHole = (index1: number, index2: number): boolean => {
         // center holes
@@ -58,12 +58,12 @@ function TimelinePCBuildingAnimation() {
         );
     };
 
-    useEffect(() => {
+    useEffect((): void => {
         window.scrollTo(0, 0);
-        const rescaleTimeout = setTimeout(() => {
-            let marginXOffset = -20;
-            let marginYOffset = 0;
-            let scaleValue = 1;
+        const rescaleTimeout: ReturnType<typeof setTimeout> = setTimeout((): void => {
+            let marginXOffset: number = -20;
+            let marginYOffset: number = 0;
+            let scaleValue: number = 1;
             if (window.innerWidth / window.innerHeight < 16 / 9) {
                 scaleValue = (window.innerHeight * 5.12) / 1440
                 marginXOffset -= ((((16 / 9) - (window.innerWidth / window.innerHeight)) / 2) / (16 / 9)) * 500 * scaleValue;

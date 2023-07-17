@@ -6,7 +6,7 @@ import {AboutMeContentWrappersProps} from "../../declarations";
 import {getAge} from "../home/basic_info";
 
 function getYears(year: number): number | string {
-    let d = new Date();
+    let d: Date = new Date();
     return d.getFullYear() - year;
     // if (Math.floor((d.getTime() - 31536000000 * (year - 1970)) / 31536000000) < 1) {
     //     return ("<1");
@@ -16,7 +16,7 @@ function getYears(year: number): number | string {
 
 function AboutMeContentWrappers(props: AboutMeContentWrappersProps): JSX.Element {
 
-    const [fadeDelay, setFadeDelay] = useState("fadeInitialOpacity slideInInitial");
+    const [fadeDelay, setFadeDelay] = useState<string>("fadeInitialOpacity slideInInitial");
 
     setTimeout(() => {
         setFadeDelay("fadeLong slideIn");
