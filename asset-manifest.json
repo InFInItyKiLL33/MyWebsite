@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "./static/css/main.3f5c2ea8.css",
+    "main.css": "./static/css/main.9ecd8a42.css",
     "main.js": "./static/js/main.13753ce1.js",
     "static/media/aviationbg2.png": "./static/media/aviationbg2.0281852de8f72a69a40b.png",
     "static/media/aviation-vignette.png": "./static/media/aviation-vignette.03644daa3f35de94b7bc.png",
@@ -25,11 +25,11 @@
     "static/media/Caprasimo-Regular.ttf": "./static/media/Caprasimo-Regular.1fb14e3bf85c52709856.ttf",
     "index.html": "./index.html",
     "static/media/aviation.svg": "./static/media/aviation.f91606aa80e8fdd904b1dbe59caad5ed.svg",
-    "main.3f5c2ea8.css.map": "./static/css/main.3f5c2ea8.css.map",
+    "main.9ecd8a42.css.map": "./static/css/main.9ecd8a42.css.map",
     "main.13753ce1.js.map": "./static/js/main.13753ce1.js.map"
   },
   "entrypoints": [
-    "static/css/main.3f5c2ea8.css",
+    "static/css/main.9ecd8a42.css",
     "static/js/main.13753ce1.js"
   ]
 }
