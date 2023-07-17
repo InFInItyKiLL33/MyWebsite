@@ -163,10 +163,14 @@
     text-align: left
 
 
-.telegramLogo, .githubLogo, .mailLogo 
+.telegramLogo, .githubLogo, .mailLogo, .linkedInLogo
     height: 75%
-    margin: calc(4vh/8) 0 auto 0
+    margin: calc(4vh/8) 0 auto 0!important
     fill: rgba($orange, 0.66)
+
+
+.contactLinksLinkedIn // change this class to the final item if the final item is diff
+    padding-right: 1vw
 
 
 .contactLinks 
@@ -180,6 +184,9 @@
     transition-property: margin, opacity
     font-size: 0.6em
     text-decoration: underline
+    overflow: show
+    inline-size: -webkit-fill-available
+    overflow-wrap: break-word
 
 
 @media (max-width: $breakpoint_large)
