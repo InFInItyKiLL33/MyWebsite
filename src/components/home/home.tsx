@@ -45,7 +45,9 @@ function Home(props: HomeProps): JSX.Element {
     const [imgOpacityOffset, setImageOpacityOffset] = useState<Array<number>>([1, ...Array(Object.keys(props.types).length + 1).fill(0)]);
 
     function mouseMoveEvent(event: any): void {
-        setMouseOffset([MAX_OFFSET_MOUSE * ((event.pageX * 2)/window.innerWidth - 1), MAX_OFFSET_MOUSE * ((event.pageY * 2)/window.innerHeight - 1)]);
+        if (window.innerWidth / window.innerHeight > ASPECT_RATIO_BREAKPT) {
+            setMouseOffset([MAX_OFFSET_MOUSE * ((event.pageX * 2)/window.innerWidth - 1), MAX_OFFSET_MOUSE * ((event.pageY * 2)/window.innerHeight - 1)]);
+        };
     };
 
     function closePopUp(event: any): void {
@@ -297,17 +299,19 @@ function Home(props: HomeProps): JSX.Element {
 
             {
                 backgroundImageType === 1 ?
-                    <div className='topBackground' style={{"background": backgroundImageType === 1 && window.innerWidth / window.innerHeight <= ASPECT_RATIO_BREAKPT ? "linear-gradient(to bottom, rgba(16, 16, 16, 1) 30%, rgba(0, 0, 0, 1) 100%)" : "rgba(16, 16, 16, 1)"}}></div>
+                    <div className='topBackground' style={{
+                        "background": backgroundImageType === 1 && window.innerWidth / window.innerHeight <= ASPECT_RATIO_BREAKPT ? "linear-gradient(to bottom, rgba(16, 16, 16, 1) 30%, rgba(0, 0, 0, 1) 100%)" : "rgba(16, 16, 16, 1)"
+                    }}></div>
                 :
                     <></>
             }
 
             <img src={BACKGROUND_IMAGES[backgroundImageType]} className="backgroundImage backgroundImageHome backgroundImageHomeTop" alt="background top" style={{
-                "scale": "1.05",
+                "scale": (window.innerWidth / window.innerHeight > ASPECT_RATIO_BREAKPT ? "1.05" : "1"),
                 "marginTop": imgScrollOffset[0],
                 "opacity": imgOpacityOffset[0 + imgCounterOffset[0]],
                 "translate": String(mouseToImageMovement[0]) + "px " + String(mouseToImageMovement[1]) + "px",
-                "animation": "1.75s backgroundImageAnimation" + String(backgroundImageType + 1) + " ease 3s both",
+                "animation": "2.25s backgroundImageAnimation" + String(backgroundImageType + 1) + " ease 5s both",
                 zIndex: backgroundImageType === 1 && window.innerWidth / window.innerHeight > ASPECT_RATIO_BREAKPT ? "1" : ""
             }}></img>
 

@@ -23,7 +23,7 @@ function BasicInfo(props: BasicInfoProps): JSX.Element {
                 <h1 className="homeName flex-col" style={{"fontSize": desktopModeProgBG ? getFontSize(2.75) : ""}}>Poh Jun Kang</h1>
             </div>
             <div className={"divider slideInInitialR " + (desktopModeProgBG ? "divider2" : "")}></div>
-            <div className="infoDescription slideInInitialR slideInRDelayed">
+            <div className="infoDescription">
                 <p className="skills description" style={{"fontSize": desktopModeProgBG ? getFontSize(1) : ""}}>Programmer • Graphic Designer • Aviation Enthusiast • PC Builder</p>
                 <p className="age description" style={{"fontSize": desktopModeProgBG ? getFontSize(1) : ""}}>I'm currently {getAge()}!</p>
             </div>

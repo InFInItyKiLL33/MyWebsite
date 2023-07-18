@@ -6,7 +6,7 @@ body
 
 
 .navbarBG[data-index="1"]
-    animation: 1.75s fadeIn ease 3s both
+    animation: 1.75s fadeIn ease 5s both
 
 
 %fill-screen
@@ -23,12 +23,12 @@ body
     width: 100vw
     height: 100vh
     z-index: -1
-    animation: 0s fadeIn ease 3s both, 1s backgroundColour ease 3s both
+    animation: 0s fadeIn ease 5s both, 1s backgroundColour ease 5s both
 
 
 .backgroundImageHome 
     position: absolute!important
-    scale: 1.01
+    // scale: 1.01
 
 
 
@@ -60,7 +60,7 @@ body
     color: $white
     opacity: 0.4
     position: absolute
-    animation: 1.5s fadeDelayed2 ease-in both 3s, 3.6s bounceText infinite
+    animation: 1.5s fadeDelayed2 ease-in both 5s, 3.6s bounceText infinite
 
 
 .squigglyArrow 
@@ -70,7 +70,7 @@ body
     right: 0
     margin: -250px calc(2.5vw + 145px) 0px 72.5vw
     opacity: 0.4
-    animation: 1.5s fadeDelayed2 ease-in both 3s, 3.6s bounceArrow infinite
+    animation: 1.5s fadeDelayed2 ease-in both 5s, 3.6s bounceArrow infinite
 
 
 .popUpTextWrapper
@@ -81,7 +81,7 @@ body
     border-radius: 10px
     margin: 0px 30px 70px 0px
     opacity: 0
-    animation: fade 3s ease 3s backwards
+    animation: fade 3s ease 5s backwards
     z-index: 10
     min-width: fit-content
     transition: height 0.1s ease 0.2s, 0.2s ease
@@ -98,7 +98,7 @@ body
     height: auto
     padding: 0px 20px 0px 25px
     margin: 10px 0px 10px 0px
-    transition: 0.4s ease, opacity 0.3s ease 0.1s
+    transition: 0.5s ease, opacity 0.3s ease 0.1s
 
 
 .popUpTextWrapper:hover, .popUpTextWrapper:active
@@ -115,7 +115,7 @@ body
     color: rgba($white, 0.8)
     font-size: 0.65em
     font-style: italic
-    transition: 0.4s ease, opacity 0.3s ease
+    transition: 0.5s ease, opacity 0.3s ease
 
 
 .popUpClose
@@ -141,7 +141,7 @@ body
     left: 0
     right: 0
     transition: 0.5s ease
-    animation: 1.5s fadeDelayed2 ease-in both 3s, 3.6s bounceScrollPrompt infinite
+    animation: 1.5s fadeDelayed2 ease-in both 5s, 3.6s bounceScrollPrompt infinite
     pointer-events: none
 
 
@@ -314,14 +314,8 @@ body
 
     
 @media (max-width: $breakpoint_medium)
-
-    .divider
-        width: 80vw!important
-
-
     .scrollCheckOutText
         font-size: 1.5em
-
 
     .contactMeEndPageText, .programmingText, .aviationText, .pcText, .designText
         font-size: 0.6em

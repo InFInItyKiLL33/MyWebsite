@@ -65,10 +65,10 @@
 
 @keyframes slideInTopRightToBottomLeft
     0%
-        transform: translate(20px, -15px)
-    30%
+        transform: translate(10px, -15px)
+    40%
         transform: translate(0px, -15px)
-    70%
+    60%
         transform: translate(0px, -15px)
     100%
         transform: translate(0px, 0px)
@@ -301,6 +301,28 @@
         margin-bottom: 0px
 
 
+@keyframes dividerOne
+
+    0%
+        width: 30px
+        margin-left: calc(10% + min(520px, 75vw - 30px))
+    100%
+        width: min(550px, 75vw)
+        margin-left: calc(10%)
+
+
+@keyframes dividerTwo
+
+    0%
+        width: 0vw
+        opacity: 0
+        border-color: rgba($orange, 0.7)
+    100%
+        width: 80vw
+        opacity: 1
+        border-color: rgba($orange, 0.7)
+
+
 @keyframes backgroundColour
 
     0%
@@ -314,13 +336,14 @@
 
     0%
         background: linear-gradient(black, black)
-        border-color: rgba($orange, 0)
-
+        width: 80vw
+        // border-color: rgba($orange, 0)
     10%
         background: linear-gradient(0deg, black 0%, rgba(1, 1, 1, 1) 70%)
 
     20%
         background: linear-gradient(0deg, black 0%, rgba(2, 2, 2, 1) 70%)
+        width: 100vw
 
     30%
         background: linear-gradient(0deg, black 0%, rgba(3, 3, 3, 1) 70%)

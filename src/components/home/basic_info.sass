@@ -33,30 +33,34 @@ p, h1
     margin-bottom: 1.75vh
     height: 3.8vh
     margin-left: 10%
-    font-size: 1.75em
+    font-size: 1.5em
     animation: 1.25s fade ease-in
-    color: $white
     z-index: 11
     position: relative
     justify-content: end !important
     letter-spacing: -0.5px
+    background: linear-gradient(135deg, rgba($grey7, 1) 0%, rgba($white, 1) 70%)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
 
 
 .homeName 
-    font-size: 2.25em
+    font-size: 2.4em
     margin-bottom: 1.75vh
     height: 4vh
-    color: #f06f4f
-    animation: 0.75s fade ease-in
+    animation: 1s fade ease-in 1.5s both, 2s slideInR ease 1.5s both
     justify-content: end !important
+    background: linear-gradient(135deg, #db4d2a 0%, rgba($orange, 1) 50%, #db4d2a 100%)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
 
 
 .divider 
     width: 550px
     height: 2px
     background-color: rgba($white, 0.3)
-    margin-left: 10%
-    animation: 1s fade ease-in 0.75s both, 1s slideInR ease 1s both
+    margin: -0.5vh 0px 1.25vh 10%
+    animation: 1s fade ease-in 2.3s both, 1s dividerOne cubic-bezier(.25,.02,.25,1) 2.8s both
 
 
 .divider2
@@ -66,7 +70,7 @@ p, h1
     transform: translate(0px, 0px)!important
     position: absolute
     transition: 0s !important
-    animation: 1s backgroundColour2 ease 3s both
+    animation: 1s backgroundColour2 ease 5s both, 2.4s dividerTwo cubic-bezier(.25,.02,.25,1) 2.5s backwards
     border-top: 1px solid rgba($orange, 0.7)
 
 
@@ -76,13 +80,13 @@ p, h1
 
 .description 
     margin: 0.75vh 10vw 0px calc(10% + 20px)
-    animation: 2s fadeDelayed ease-in 1s both, 2s slideInR ease 1.5s both
+    animation: 2.5s fadeDelayed ease 3s both, 2.5s slideInR ease 3.5s both
     color: $white
     font-size: 0.85em
 
 
 .divider2 + .infoDescription > .description 
-    animation: 2s fadeDelayed ease-in 0.5s both, 4s slideInTopRightToBottomLeft ease 0s both !important
+    animation: 2s fadeDelayed ease 2.8s both, 2.5s slideInR ease 3.5s both !important
 
 
 
@@ -111,7 +115,7 @@ p, h1
     .homeName
         font-size: 1.75em
         margin-bottom: 1.25vh!important
-        padding-top: 0px!important
+        padding-top: 5px!important
 
     .greetings
         font-size: 1em
