@@ -54,9 +54,11 @@ function AboutMeContentWrappers(props: AboutMeContentWrappersProps): JSX.Element
                             <BreakLine count="2" />
                             Studies wise, I came from neighbourhood schools and worked my way up slowly over the years, eventually being able to join NUS in their Degree for Computer Science with just my academic results. Here's a history of where I'm studying/studied at:
                             <BreakLine count="2" />
-                            <OrangeSpan text="National University of Singapore (NUS)" className="bolded" /> - 2023 and onwards
+                            <OrangeSpan text="National University of Singapore (NUS)" className="bolded" /> - AY2324 and onwards
                             <BreakLine count="1" />
-                            Bachelor of Computing in Computer Science
+                            Bachelor of Computing in Computer Science - Current GPA (as of Y1S1): 4.83
+                            <BreakLine count="1" />
+                            CS1101S: A, CS1231S: A-
                             <BreakLine count="2" />
                             <OrangeSpan text="Jurong Pioneer Junior College" /> - 2019-2020
                             <BreakLine count="1" />
@@ -89,26 +91,27 @@ function AboutMeContentWrappers(props: AboutMeContentWrappersProps): JSX.Element
                         <p className="aboutMeTexts">
                             <span className="bolded footnoteForeword">• Progamming Skills •</span>
                             <BreakLine count="1" />
-                            <span className="aboutMeTexts footnotes"><i>(Years of experience in brackets, ordered by proficiency. Italicised skills are non-language skills.)</i></span>
+                            <span className="aboutMeTexts footnotes"><i>(Years of experience/ago learnt in brackets, ordered by proficiency. Italicised skills are non-language skills.)</i></span>
                         </p>
                         <p className="aboutMeTexts indented">    
-                            Proficient - 
-                            <OrangeSpan text=" Python" /> ({getYears(2018)}), 
-                            <OrangeSpan text=" CSS" /> ({getYears(2019)}), 
-                            <OrangeSpan text=" HTML5" /> ({getYears(2019)}), 
+                            Currently more Familiar - 
                             <OrangeSpan text=" Javascript" /> ({getYears(2019)}), 
                             <i><OrangeSpan text=" Typescript" /></i> ({getYears(2022)}),
-                            <i><OrangeSpan text=" React" /></i> ({getYears(2022)}),
-                            <i><OrangeSpan text=" SASS" /></i> ({getYears(2022)}),
+                            <i><OrangeSpan text=" React & some of its libraries" /></i> ({getYears(2022)}),
+                            <OrangeSpan text=" CSS" /> ({getYears(2019)}), 
+                            <i><OrangeSpan text=" SCSS & SASS" /></i> ({getYears(2022)}),
                             <i><OrangeSpan text=" Git" /> ({getYears(2019)})</i>,
-                            <i><OrangeSpan text=" jQuery" /></i> ({getYears(2019)}), 
-                            <i><OrangeSpan text=" Wordpress" /></i> ({getYears(2021)}), 
-                            <OrangeSpan text=" SQL" /> ({getYears(2019)}), and
-                            <i><OrangeSpan text=" Flask" /></i> (2).
+                            <OrangeSpan text=" HTML5" /> ({getYears(2019)}), 
+                            <OrangeSpan text=" Java" /> ({getYears(2023)}),
+                            <OrangeSpan text=" Python" /> ({getYears(2018)}), 
+                            <OrangeSpan text=" SQL" /> (2), and
                             <BreakLine count="2" />
-                            Less Proficient - 
+                            Less Used - 
+                            <i><OrangeSpan text=" Wordpress" /></i> (1), 
+                            <i><OrangeSpan text=" jQuery" /></i> (2), 
+                            <i><OrangeSpan text=" Flask" /></i> (2),
                             <i><OrangeSpan text=" Django" /></i> (&#60;1),
-                            <OrangeSpan text=" C++" /> (1), 
+                            <OrangeSpan text=" C++" /> (&#60;1), 
                             <OrangeSpan text=" NoSQL" /> (2), 
                             <OrangeSpan text=" Lua" /> (&#60;1), and
                             <OrangeSpan text=" PHP" /> (&#60;1).
