@@ -99,7 +99,7 @@ function AboutMeContentWrappers(
               <BreakLine count="1" />
               Bachelor of Computing in Computer Science - Current GPA: 4.79
               <BreakLine count="1" />
-              A: CS1101S, CS2030S, CS2040S, IS1108
+              A: CS1101S (TA as well in Y2S1), CS2030S, CS2040S, IS1108
               <BreakLine count="1" />
               A-: CS1231S, MA1522, GEA1000N
               <BreakLine count="1" />
@@ -151,10 +151,10 @@ function AboutMeContentWrappers(
               </span>
             </p>
             <p className="aboutMeTexts indented">
-              Languages -
+              <span className="bolded">Languages</span> -
               <OrangeSpan text=" JavaScript, TypeScript, HTML/CSS, Python, SASS, Java, SQL, NoSQL" />
-              <BreakLine count="1" />
-              Framework/Libraries -
+              <BreakLine count="2" />
+              <span className="bolded">Framework/Libraries</span> -
               <OrangeSpan text=" NextJs, ReactJS, Redux, Saga, Tanstack, AG Grid, Tailwind, Prisma, Jest, jQuery, PyTorch, Django, Flask" />
             </p>
 
